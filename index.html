@@ -201,5 +201,51 @@ tourBtn.addEventListener('click', () => {
 });
 </script>
 
+<div style="text-align:center; font-size:2.5rem; margin:20px 0;">
+  <span id="star-rating"></span>
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(loadStars);
+
+function loadStars() {
+  var queryString = encodeURIComponent('SELECT D'); // العمود D للتقييم
+  var dataSourceUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTpgx7xPbW_mR4nomNth-MBNP2MSL-OJXYpq0JoVaiTgZYgZv23Kbb8tdFyT9gzqCGbFqjP79vCUw03/gviz/tq?tq=' + queryString;
+
+  var query = new google.visualization.Query(dataSourceUrl);
+  query.send(function(response) {
+    if (response.isError()) return;
+
+    var data = response.getDataTable();
+    var total = data.getNumberOfRows();
+    if(total === 0) return;
+
+    var sum = 0;
+    for(var i=0; i<total; i++) sum += data.getValue(i,0);
+    var avg = sum / total;
+
+    // نجوم كاملة ونصفية وفارغة
+    var fullStars = Math.floor(avg);
+    var halfStar = (avg - fullStars) >= 0.5 ? true : false;
+    var starsHTML = '';
+
+    for(var i=0; i<fullStars; i++) starsHTML += '<span style="color:#FFD700; opacity:0;">⭐</span>';
+    if(halfStar) starsHTML += '<span style="color:#FFD700; opacity:0;">✰</span>';
+    for(var i=fullStars + (halfStar?1:0); i<5; i++) starsHTML += '<span style="color:#FFD700; opacity:0;">☆</span>';
+
+    var container = document.getElementById('star-rating');
+    container.innerHTML = starsHTML;
+
+    // animation للظهور تدريجيًا
+    var spans = container.querySelectorAll('span');
+    spans.forEach((span, index) => {
+      setTimeout(() => { span.style.opacity = 1; span.style.transition = 'opacity 0.5s'; }, index*200);
+    });
+  });
+}
+</script>
+
 
 
