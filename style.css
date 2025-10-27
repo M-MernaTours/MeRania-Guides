@@ -100,3 +100,17 @@ header .logo { width: 140px; }
 #star-container span {
   margin: 0 2px;
 }
+<style>
+  .responsive-iframe {
+    width: 100%;
+    max-width: 640px;
+    height: 800px;
+    border: none;
+  }
+</style>
+
+<iframe class="responsive-iframe"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdTdHMrIlH72UToiB7taM20Pp9O96Z3ni32tESwl0OEDLaQVA/viewform?usp=sf_link">
+  جاري التحميل…
+</iframe>
+
