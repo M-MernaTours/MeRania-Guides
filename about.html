@@ -19,7 +19,6 @@
     justify-content: space-between;
     padding: 15px 20px;
     background-color: rgba(0,0,0,0.7);
-    position: relative;
   }
 
   header img { height: 60px; }
@@ -82,9 +81,7 @@
     transition: transform 0.3s;
   }
 
-  .about-image img:hover {
-    transform: scale(1.05);
-  }
+  .about-image img:hover { transform: scale(1.05); }
 
   .about-text {
     flex: 1;
@@ -102,24 +99,6 @@
   }
 
   .about-text h1:hover { color: #FFD700; }
-
-  .rating-section {
-    margin-top: 20px;
-    text-align: left;
-  }
-
-  .stars {
-    font-size: 2rem;
-    cursor: pointer;
-  }
-
-  .star { color: gold; margin-right: 8px; }
-
-  #average-rating {
-    font-weight: bold;
-    margin-top: 10px;
-    color: #B8860B;
-  }
 
   .contact-buttons {
     margin-top: 20px;
@@ -206,20 +185,6 @@
         <a href="https://wa.me/+201029545765" target="_blank">WhatsApp</a>
         <a href="https://www.facebook.com/share/17Q14LwbrG/" target="_blank">Facebook</a>
       </div>
-
-      <!-- Rating Section -->
-      <div class="rating-section">
-        <h3>Rate Your Experience:</h3>
-        <div class="stars">
-          <span class="star" data-value="1">&#9734;</span>
-          <span class="star" data-value="2">&#9734;</span>
-          <span class="star" data-value="3">&#9734;</span>
-          <span class="star" data-value="4">&#9734;</span>
-          <span class="star" data-value="5">&#9734;</span>
-        </div>
-        <button id="submit-rating" style="margin-top:10px;padding:8px 20px;background-color:#FFD700;border:none;border-radius:5px;font-weight:bold;cursor:pointer;">Submit Rating</button>
-        <div id="average-rating">Average Rating: Loading…</div>
-      </div>
     </div>
   </div>
 
@@ -232,48 +197,7 @@
   // Hamburger menu toggle
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
-
-  // Rating functionality
-  const stars = document.querySelectorAll(".star");
-  let rating = 0;
-
-  stars.forEach(star => {
-    star.addEventListener("mouseover", () => highlightStars(star.dataset.value));
-    star.addEventListener("mouseout", () => highlightStars(rating));
-    star.addEventListener("click", () => { rating = star.dataset.value; highlightStars(rating); });
-  });
-
-  function highlightStars(value) {
-    stars.forEach(star => {
-      star.textContent = star.dataset.value <= value ? "★" : "☆";
-    });
-  }
-
-  document.getElementById("submit-rating").addEventListener("click", () => {
-    if (rating === 0) {
-      alert("Please select a rating!");
-      return;
-    }
-    // فتح Google Form للتقييم
-    window.open("https://docs.google.com/forms/d/e/1FAIpQLSdTdHMrIlH72UToiB7taM20Pp9O96Z3ni32tESwl0OEDLaQVA/viewform?usp=dialog","_blank");
-  });
-
-  // Fetch average rating from Web App
-  fetch("https://script.google.com/macros/s/AKfycbyvF1SjkDyWkuA2b69qiTWxymq2sB3xOQnDJdORdK1NoDyeSiNu3nAdLfgCz0jwceDw/exec")
-    .then(res => res.json())
-    .then(data => {
-      let starsDisplay = "";
-      const avg = Math.round(data.average);
-      for (let i = 1; i <= 5; i++) {
-        starsDisplay += i <= avg ? "★" : "☆";
-      }
-      document.getElementById("average-rating").textContent =
-        `Average Rating: ${starsDisplay} (${data.average.toFixed(1)})`;
-    })
-    .catch(err => { console.error(err); document.getElementById("average-rating").textContent = "Average Rating: N/A"; });
+  menuToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
 </script>
 </body>
 </html>
