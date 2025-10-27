@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - M-Merna Tours</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Georgia', serif;
+    background-color: #fff8e1;
+    color: #000;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: rgba(0,0,0,0.7);
+    position: relative;
+  }
+
+  header img { height: 60px; }
+
+  nav { display: flex; gap: 25px; }
+
+  nav a {
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  nav a:hover { color: #FFC107; }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #FFD700;
+    display: block;
+  }
+
+  .banner {
+    width: 100%;
+    height: 250px;
+    background: url('https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/home-banner.jpg.jpg') no-repeat center center;
+    background-size: cover;
+    margin-bottom: 30px;
+  }
+
+  .about-section {
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+    gap: 30px;
+    align-items: center;
+    background: linear-gradient(135deg, #fff8e1, #ffe082);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  }
+
+  .about-image {
+    flex: 1;
+  }
+
+  .about-image img {
+    width: 100%;
+    border-radius: 15px;
+    border: 3px solid #FFD700;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s;
+  }
+
+  .about-image img:hover {
+    transform: scale(1.05);
+  }
+
+  .about-text {
+    flex: 1;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #4B3B0A;
+  }
+
+  .about-text h1 {
+    color: #B8860B;
+    margin-bottom: 15px;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 5px #000;
+    transition: color 0.3s;
+  }
+
+  .about-text h1:hover { color: #FFD700; }
+
+  .rating-section {
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .stars {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .star { color: gold; margin-right: 8px; }
+
+  #average-rating {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #B8860B;
+  }
+
+  .contact-buttons {
+    margin-top: 20px;
+  }
+
+  .contact-buttons a {
+    text-decoration: none;
+    color: #000;
+    background-color: #FFD700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: 0.3s;
+  }
+
+  .contact-buttons a:hover { background-color: #FFC107; }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.7);
+    color: #FFD700;
+    font-family: 'Georgia', serif;
+    margin-top: 50px;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0,0,0,0.9);
+      flex-direction: column;
+      align-items: center;
+      display: none;
+    }
+    nav.show { display: flex; }
+    .menu-toggle { display: flex; }
+    .about-section { flex-direction: column; padding: 20px; }
+    .about-text h1 { font-size: 1.8rem; }
+    .about-text p { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <img src="https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/guidelogo.png" alt="M-Merna Tours Logo">
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#">About Us</a>
+      <a href="tours.html">Tours</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <div class="banner"></div>
+
+  <!-- About Section -->
+  <div class="about-section">
+    <div class="about-image">
+      <img src="https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/about-us.jpg.jpg" alt="About Us Image">
+    </div>
+    <div class="about-text">
+      <h1>Discover Egypt Like Never Before!</h1>
+      <p>
+        At M-Merna Tours, we turn every journey into a magical adventure. Explore the timeless wonders of the pyramids, sail along the majestic Nile, 
+        and immerse yourself in Egypt’s rich history and vibrant culture. Our expert guides ensure every trip is unforgettable, safe, and full of excitement.
+      </p>
+      <p>
+        Join us for an extraordinary experience where every step uncovers the beauty, mystery, and charm of Egypt. Your dream adventure starts here!
+      </p>
+
+      <!-- Contact Buttons -->
+      <div class="contact-buttons">
+        <a href="https://wa.me/+201029545765" target="_blank">WhatsApp</a>
+        <a href="https://www.facebook.com/share/17Q14LwbrG/" target="_blank">Facebook</a>
+      </div>
+
+      <!-- Rating Section -->
+      <div class="rating-section">
+        <h3>Rate Your Experience:</h3>
+        <div class="stars">
+          <span class="star" data-value="1">&#9734;</span>
+          <span class="star" data-value="2">&#9734;</span>
+          <span class="star" data-value="3">&#9734;</span>
+          <span class="star" data-value="4">&#9734;</span>
+          <span class="star" data-value="5">&#9734;</span>
+        </div>
+        <button id="submit-rating" style="margin-top:10px;padding:8px 20px;background-color:#FFD700;border:none;border-radius:5px;font-weight:bold;cursor:pointer;">Submit Rating</button>
+        <div id="average-rating">Average Rating: Loading…</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 M-Merna Tours. All rights reserved.
+  </footer>
+
+<script>
+  // Hamburger menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  // Rating functionality
+  const stars = document.querySelectorAll(".star");
+  let rating = 0;
+
+  stars.forEach(star => {
+    star.addEventListener("mouseover", () => highlightStars(star.dataset.value));
+    star.addEventListener("mouseout", () => highlightStars(rating));
+    star.addEventListener("click", () => { rating = star.dataset.value; highlightStars(rating); });
+  });
+
+  function highlightStars(value) {
+    stars.forEach(star => {
+      star.textContent = star.dataset.value <= value ? "★" : "☆";
+    });
+  }
+
+  document.getElementById("submit-rating").addEventListener("click", () => {
+    if (rating === 0) {
+      alert("Please select a rating!");
+      return;
+    }
+    // فتح Google Form للتقييم
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSdTdHMrIlH72UToiB7taM20Pp9O96Z3ni32tESwl0OEDLaQVA/viewform?usp=dialog","_blank");
+  });
+
+  // Fetch average rating from Web App
+  fetch("https://script.google.com/macros/s/AKfycbyvF1SjkDyWkuA2b69qiTWxymq2sB3xOQnDJdORdK1NoDyeSiNu3nAdLfgCz0jwceDw/exec")
+    .then(res => res.json())
+    .then(data => {
+      let starsDisplay = "";
+      const avg = Math.round(data.average);
+      for (let i = 1; i <= 5; i++) {
+        starsDisplay += i <= avg ? "★" : "☆";
+      }
+      document.getElementById("average-rating").textContent =
+        `Average Rating: ${starsDisplay} (${data.average.toFixed(1)})`;
+    })
+    .catch(err => { console.error(err); document.getElementById("average-rating").textContent = "Average Rating: N/A"; });
+</script>
+</body>
+</html>
