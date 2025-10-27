@@ -125,3 +125,79 @@
 
 </body>
 </html>
+<!-- Book Your Tour Button -->
+<div class="book-tour-container">
+  <button id="book-tour-btn">Book Your Tour</button>
+  <div class="book-social-buttons" id="book-social-buttons">
+    <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">WhatsApp</a>
+    <a href="https://www.facebook.com/share/17Q14LwbrG/" target="_blank" class="facebook">Facebook</a>
+  </div>
+</div>
+
+<style>
+.book-tour-container {
+  margin: 30px 0;
+  text-align:center;
+  position: relative;
+}
+
+#book-tour-btn {
+  padding:15px 40px;
+  border:none;
+  border-radius:12px;
+  background: linear-gradient(135deg, #FFD700, #FFC107);
+  font-weight:bold;
+  font-size:18px;
+  cursor:pointer;
+  transition:0.3s;
+}
+#book-tour-btn:hover { 
+  transform: translateY(-3px); 
+  box-shadow:0 8px 20px rgba(0,0,0,0.4); 
+}
+
+.book-social-buttons {
+  display:none; /* مخفية افتراضياً */
+  margin-top:15px;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.book-social-buttons a {
+  display:inline-block;
+  padding:12px 30px;
+  border-radius:12px;
+  font-weight:bold;
+  font-size:16px;
+  color:#fff;
+  text-decoration:none;
+  transition:0.3s;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+.book-social-buttons a:hover { 
+  transform: translateY(-3px); 
+  box-shadow:0 8px 20px rgba(0,0,0,0.4); 
+  opacity:0.95; 
+}
+.book-social-buttons .whatsapp { background: linear-gradient(135deg, #25D366, #1DA851); }
+.book-social-buttons .facebook { background: linear-gradient(135deg, #3b5998, #2d4373); }
+
+@media(max-width:768px){
+  .book-social-buttons { flex-direction:column; gap:15px; }
+}
+</style>
+
+<script>
+const tourBtn = document.getElementById('book-tour-btn');
+const socialBtns = document.getElementById('book-social-buttons');
+
+tourBtn.addEventListener('click', () => {
+  if(socialBtns.style.display === "flex"){
+    socialBtns.style.display = "none";
+  } else {
+    socialBtns.style.display = "flex";
+  }
+});
+</script>
+
