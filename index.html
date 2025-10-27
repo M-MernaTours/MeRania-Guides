@@ -20,7 +20,6 @@
     justify-content: space-between;
     padding: 15px 20px;
     background-color: rgba(0,0,0,0.7);
-    position: relative;
   }
 
   header img { height: 60px; }
@@ -63,7 +62,6 @@
   .contact-buttons {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     margin: 20px 0;
     gap: 15px;
   }
@@ -80,12 +78,37 @@
 
   .contact-buttons a:hover { background-color: #FFC107; }
 
-  #average-rating {
+  #rating-container {
     text-align: center;
-    margin: 20px 0;
-    font-size: 1.5rem;
-    color: #FFD700;
-    text-shadow: 1px 1px 2px #000;
+    margin: 40px 0;
+  }
+
+  .stars {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .star { color: gold; margin-right: 8px; }
+
+  #submit-rating {
+    margin-top: 15px;
+    padding: 10px 25px;
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  #submit-rating:hover { background-color: #FFC107; }
+
+  #average-rating {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #B8860B;
   }
 
   footer {
@@ -109,11 +132,7 @@
     }
     nav.show { display: flex; }
     .menu-toggle { display: flex; }
-    .banner-text {
-      font-size: 2rem;
-      margin-top: 100px;
-      padding: 0 15px;
-    }
+    .banner-text { font-size: 2rem; margin-top: 100px; padding: 0 15px; }
     .contact-buttons a { padding: 10px 20px; }
   }
 </style>
@@ -129,29 +148,36 @@
     </div>
     <nav id="nav-links">
       <a href="#">Home</a>
-      <a href="#">About Us</a>
-      <a href="#">Tours</a>
-      <a href="#">Contact</a>
+      <a href="about.html">About Us</a>
+      <a href="tours.html">Tours</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <!-- Banner Text -->
-  <div class="banner-text">
-    Explore Egypt with Us
-  </div>
+  <div class="banner-text">Explore Egypt with Us</div>
 
-  <!-- Contact & Rating Buttons -->
+  <!-- Contact Buttons -->
   <div class="contact-buttons">
     <a href="https://wa.me/+201029545765" target="_blank">WhatsApp</a>
     <a href="https://www.facebook.com/share/17Q14LwbrG/" target="_blank">Facebook</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdTdHMrIlH72UToiB7taM20Pp9O96Z3ni32tESwl0OEDLaQVA/viewform?usp=sf_link"
-       target="_blank">Rate Us</a>
   </div>
 
-  <!-- Average Rating Display -->
-  <div id="average-rating">Average Rating: Loading…</div>
+  <!-- Rating Section -->
+  <div id="rating-container">
+    <h3>Rate Your Experience:</h3>
+    <div class="stars">
+      <span class="star" data-value="1">&#9734;</span>
+      <span class="star" data-value="2">&#9734;</span>
+      <span class="star" data-value="3">&#9734;</span>
+      <span class="star" data-value="4">&#9734;</span>
+      <span class="star" data-value="5">&#9734;</span>
+    </div>
+    <br>
+    <button id="submit-rating">Submit Rating</button>
+    <div id="average-rating">Average Rating: Loading…</div>
+  </div>
 
-  <!-- Footer -->
   <footer>
     &copy; 2025 M-Merna Tours. All rights reserved.
   </footer>
@@ -160,21 +186,36 @@
   // Hamburger menu toggle
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
+  menuToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+
+  // Rating stars highlight
+  const stars = document.querySelectorAll(".star");
+  let rating = 0;
+  stars.forEach(star => {
+    star.addEventListener("mouseover", () => highlightStars(star.dataset.value));
+    star.addEventListener("mouseout", () => highlightStars(rating));
+    star.addEventListener("click", () => { rating = star.dataset.value; highlightStars(rating); });
+  });
+  function highlightStars(value) {
+    stars.forEach(star => { star.textContent = star.dataset.value <= value ? "★" : "☆"; });
+  }
+
+  // Open Google Form on submit
+  document.getElementById("submit-rating").addEventListener("click", () => {
+    if (rating === 0) { alert("Please select a rating!"); return; }
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSdTdHMrIlH72UToiB7taM20Pp9O96Z3ni32tESwl0OEDLaQVA/viewform?usp=dialog","_blank");
   });
 
-  // Fetch average rating from Web App
+  // Fetch average rating from Apps Script
   fetch("https://script.google.com/macros/s/AKfycbyvF1SjkDyWkuA2b69qiTWxymq2sB3xOQnDJdORdK1NoDyeSiNu3nAdLfgCz0jwceDw/exec")
     .then(res => res.json())
     .then(data => {
-      document.getElementById("average-rating").textContent =
-        "Average Rating: " + parseFloat(data.average).toFixed(1) + " ★";
+      let starsDisplay = "";
+      const avg = Math.round(data.average);
+      for (let i = 1; i <= 5; i++) { starsDisplay += i <= avg ? "★" : "☆"; }
+      document.getElementById("average-rating").textContent = `Average Rating: ${starsDisplay} (${data.average.toFixed(1)})`;
     })
-    .catch(err => {
-      console.error(err);
-      document.getElementById("average-rating").textContent = "Average Rating: N/A";
-    });
+    .catch(err => { console.error(err); document.getElementById("average-rating").textContent = "Average Rating: N/A"; });
 </script>
 </body>
 </html>
