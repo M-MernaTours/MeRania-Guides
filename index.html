@@ -255,6 +255,42 @@ function loadStars() {
   });
 }
 </script>
+<div id="rating-container" style="text-align:center; font-family:Arial; margin:20px;">
+  <h3 style="color:#b8860b;">⭐ Our Customer Rating ⭐</h3>
+  <div id="stars" style="font-size:28px; color:gold;">Loading...</div>
+  <p id="count" style="font-size:14px; color:#555;"></p>
+</div>
+
+<script>
+const sheetUrl = "https://script.google.com/macros/s/AKfycbzCGKtIZxKdQuY2T9cLNERP6clQFcgmJ6Exe0cK-3HNlYJpWCh4InRInZe3zoG8yDQ7/exec";
+
+async function getRatings() {
+  try {
+    const response = await fetch(sheetUrl);
+    if (!response.ok) throw new Error(`Fetch error: ${response.status}`);
+    
+    const data = await response.json();
+    console.log("Fetched data:", data);
+
+    const avg = data.average;
+    const count = data.count;
+
+    const fullStars = Math.floor(avg);
+    const halfStar = avg - fullStars >= 0.5;
+    const stars = "★".repeat(fullStars) + (halfStar ? "☆" : "") + "☆".repeat(5 - fullStars - (halfStar ? 1 : 0));
+
+    document.getElementById("stars").innerText = `${stars} (${avg}/5)`;
+    document.getElementById("count").innerText = `${count} reviews`;
+  } catch (err) {
+    console.error(err);
+    document.getElementById("stars").innerText = "⚠️ Error loading ratings";
+    document.getElementById("count").innerText = "";
+  }
+}
+
+getRatings();
+</script>
+
 
 
 
