@@ -290,6 +290,139 @@ async function getRatings() {
 
 getRatings();
 </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Programs - M-Merna Tours</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family:'Georgia', serif;
+    background: url('https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/cover.jpg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color:#fff;
+    text-align:center;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
+
+  header {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    background-color: rgba(0,0,0,0.7);
+  }
+
+  header img { height:60px; }
+
+  nav { display:flex; gap:25px; }
+  nav a { color:#FFD700; text-decoration:none; font-weight:bold; font-size:1.2rem; transition:0.3s; }
+  nav a:hover { color:#FFC107; }
+
+  .menu-toggle { display:none; flex-direction:column; cursor:pointer; gap:5px; }
+  .menu-toggle span { width:25px; height:3px; background-color:#FFD700; display:block; }
+
+  .banner-text {
+    font-size:3rem;
+    font-weight:bold;
+    text-shadow: 2px 2px 5px #000;
+    margin-bottom:50px;
+  }
+
+  .program-buttons a {
+    display:inline-block;
+    text-decoration:none;
+    color:#000;
+    background-color:#FFD700;
+    padding:20px 45px;
+    font-weight:bold;
+    font-size:1.3rem;
+    margin:15px 20px;
+    border-radius:10px;
+    transition:0.3s;
+  }
+
+  .program-buttons a:hover {
+    background-color:#FFC107;
+    transform:translateY(-3px);
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+  }
+
+  footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align:center;
+    padding:15px;
+    background-color: rgba(0,0,0,0.7);
+    color:#FFD700;
+    font-family: 'Georgia', serif;
+  }
+
+  @media(max-width:768px){
+    .banner-text { font-size:2rem; padding:0 15px; }
+    .program-buttons a { padding:15px 30px; font-size:1.1rem; }
+    nav {
+      position:absolute;
+      top:70px;
+      left:0;
+      width:100%;
+      flex-direction:column;
+      background-color: rgba(0,0,0,0.9);
+      align-items:center;
+      display:none;
+    }
+    nav.show { display:flex; }
+    .menu-toggle { display:flex; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/guidelogo.png" alt="M-Merna Tours Logo">
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span><span></span><span></span>
+  </div>
+  <nav id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="tours.html">Tours</a>
+    <a href="our-programs.html">Our Programs</a>
+  </nav>
+</header>
+
+<div class="banner-text">
+  Our Programs
+</div>
+
+<div class="program-buttons">
+  <a href="tours.html">Check Tours</a>
+  <a href="program.html">Book Program</a>
+</div>
+
+<footer>&copy; 2025 M-Merna Tours. All rights reserved.</footer>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  menuToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+</script>
+
+</body>
+</html>
+
 
 
 
