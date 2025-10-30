@@ -104,6 +104,19 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+<script>
+function checkAds() {
+  const adZones = document.querySelectorAll('script[src*="propellerads"], .mnet-ad');
+  if(adZones.length > 0) {
+    console.log(`✅ ${adZones.length} Ad Zone(s) found on this page.`);
+  } else {
+    console.log("⚠️ No Ad Zones detected on this page.");
+  }
+}
+
+// افحص الإعلانات بعد تحميل الصفحة
+window.addEventListener('load', checkAds);
+</script>
 
 <body>
 
