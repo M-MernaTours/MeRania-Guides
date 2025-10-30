@@ -94,6 +94,35 @@
 </style>
 </head>
 <body>
+<!-- Coming Soon Banner -->
+<div class="coming-soon-banner">
+  Coming Soon
+</div>
+
+<style>
+.coming-soon-banner {
+  position: fixed; /* ثابت في منتصف الشاشة */
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 215, 0, 0.9); /* ذهبي شفاف */
+  color: #000;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 1000; /* يكون فوق كل العناصر */
+  text-align: center;
+  animation: bounce 1s infinite alternate;
+}
+
+/* حركة بسيطة للبانر */
+@keyframes bounce {
+  from { transform: translateX(-50%) translateY(0); }
+  to { transform: translateX(-50%) translateY(-10px); }
+}
+</style>
 
 <header>
   <img src="https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/guidelogo.png" alt="M-Merna Tours Logo">
