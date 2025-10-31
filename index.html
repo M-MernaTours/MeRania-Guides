@@ -307,29 +307,24 @@ async function getRatings() {
 
 getRatings();
 </script>
-<div style="position:fixed; left:10px; bottom:10px;">
-  <script type="text/javascript">
-    atOptions = {
-      'key' : 'f22990751be3b3f3b5cda620ef769db2',
-      'format' : 'iframe',
-      'height' : 300,
-      'width' : 80,
-      'params' : {}
-    };
-  </script>
-  <script type="text/javascript" src="//www.highperformanceformat.com/f22990751be3b3f3b5cda620ef769db2/invoke.js"></script>
+<!-- إعلان يسار -->
+<div id="ad-left" style="position:fixed; bottom:20px; left:10px; z-index:1000;">
+  <div style="position:relative; display:inline-block;">
+    <button onclick="document.getElementById('ad-left').remove()" 
+            style="position:absolute; top:-8px; right:-8px; background:red; color:white; border:none; border-radius:50%; width:20px; height:20px; cursor:pointer;">×</button>
+    <iframe src="//www.highperformanceformat.com/f22990751be3b3f3b5cda620ef769db2/invoke.js" 
+            style="border:none; width:120px; height:120px;"></iframe>
+  </div>
 </div>
-<div>
-  <script type="text/javascript">
-	atOptions = {
-		'key' : 'f22990751be3b3f3b5cda620ef769db2',
-		'format' : 'iframe',
-		'height' : 300,
-		'width' : 80,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/f22990751be3b3f3b5cda620ef769db2/invoke.js"></script>
+
+<!-- إعلان يمين -->
+<div id="ad-right" style="position:fixed; bottom:20px; right:10px; z-index:1000;">
+  <div style="position:relative; display:inline-block;">
+    <button onclick="document.getElementById('ad-right').remove()" 
+            style="position:absolute; top:-8px; right:-8px; background:red; color:white; border:none; border-radius:50%; width:20px; height:20px; cursor:pointer;">×</button>
+    <iframe src="//www.highperformanceformat.com/f22990751be3b3f3b5cda620ef769db2/invoke.js" 
+            style="border:none; width:120px; height:120px;"></iframe>
+  </div>
 </div>
 
 
