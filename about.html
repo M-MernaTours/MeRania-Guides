@@ -140,20 +140,41 @@ if ('serviceWorker' in navigator) {
   const navLinks = document.getElementById('nav-links');
   menuToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
 </script>
-
-</body>
-</html>
-<div style="position:fixed; right:10px; bottom:10px;">
-  <script type="text/javascript">
-    atOptions = {
-      'key' : 'f22990751be3b3f3b5cda620ef769db2',
-      'format' : 'iframe',
-      'height' : 600,
-      'width' : 160,
-      'params' : {}
-    };
-  </script>
-  <script type="text/javascript" src="//www.highperformanceformat.com/f22990751be3b3f3b5cda620ef769db2/invoke.js"></script>
+<!-- إعلان يسار -->
+<div id="ad-left" style="position:fixed; bottom:20px; left:10px; z-index:1000;">
+  <div style="position:relative; display:inline-block;">
+    <button onclick="document.getElementById('ad-left').remove()" 
+            style="position:absolute; top:-10px; right:-10px; background:red; color:white; border:none; border-radius:50%; width:22px; height:22px; cursor:pointer;">×</button>
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'f22990751be3b3f3b5cda620ef769db2',
+        'format' : 'iframe',
+        'height' : 120,
+        'width' : 120,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/f22990751be3b3f3b5cda620ef769db2/invoke.js"></script>
+  </div>
 </div>
+
+<!-- إعلان يمين -->
+<div id="ad-right" style="position:fixed; bottom:20px; right:10px; z-index:1000;">
+  <div style="position:relative; display:inline-block;">
+    <button onclick="document.getElementById('ad-right').remove()" 
+            style="position:absolute; top:-10px; right:-10px; background:red; color:white; border:none; border-radius:50%; width:22px; height:22px; cursor:pointer;">×</button>
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'f22990751be3b3f3b5cda620ef769db2',
+        'format' : 'iframe',
+        'height' : 120,
+        'width' : 120,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/f22990751be3b3f3b5cda620ef769db2/invoke.js"></script>
+  </div>
+</div>
+
 
 
