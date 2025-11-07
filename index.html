@@ -166,6 +166,26 @@ window.addEventListener('load', checkAds);
     <button id="nextBtn" style="padding:10px 25px; margin:5px; border:none; border-radius:8px; background:#f5d142; color:#1a1a1a; cursor:pointer; font-weight:bold; transition:0.3s;">Next ➡</button>
   </div>
 </section>
+<!-- ضع هذا الجزء داخل <head> أو قبل إغلاق </body> -->
+<style>
+/* إظهار الأزرار على الكمبيوتر فقط */
+@media (max-width: 768px) {
+  #prevBtn,
+  #nextBtn {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+</style>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTpgx7xPbW_mR4nomNth-MBNP2MSL-OJXYpq0JoVaiTgZYgZv23Kbb8tdFyT9gzqCGbFqjP79vCUw03/pub?output=csv";
@@ -182,7 +202,14 @@ document.addEventListener("DOMContentLoaded", function() {
   msg.style.fontStyle = "italic";
   msg.style.marginBottom = "10px";
   msg.classList.add("mobile-only");
-  document.body.prepend(msg);
+
+  // ضع الرسالة تحت عنصر "Our guests review"
+  const title = document.getElementById("review-title"); // لازم يكون للعنوان id="review-title"
+  if (title) {
+    title.insertAdjacentElement("afterend", msg);
+  } else {
+    document.body.prepend(msg); // fallback لو مفيش العنصر
+  }
 
   function parseCSV(text) {
     const rows = [];
@@ -243,17 +270,17 @@ document.addEventListener("DOMContentLoaded", function() {
     showReview(current);
   };
 
-  prev.addEventListener("click", goPrev);
-  next.addEventListener("click", goNext);
+  prev?.addEventListener("click", goPrev);
+  next?.addEventListener("click", goNext);
 
   // التنقل بالسحب (للموبايل فقط)
   const box = document.getElementById("review-box");
 
-  box.addEventListener("touchstart", e => {
+  box?.addEventListener("touchstart", e => {
     startX = e.touches[0].clientX;
   });
 
-  box.addEventListener("touchend", e => {
+  box?.addEventListener("touchend", e => {
     const endX = e.changedTouches[0].clientX;
     const diff = endX - startX;
     if (Math.abs(diff) > 50) {
@@ -269,25 +296,6 @@ document.addEventListener("DOMContentLoaded", function() {
   loadReviews();
 });
 </script>
-
-<style>
-/* إظهار الأزرار على الكمبيوتر فقط */
-@media (max-width: 768px) {
-  #prevBtn,
-  #nextBtn {
-    display: none !important;
-  }
-  .mobile-only {
-    display: block !important;
-  }
-}
-
-@media (min-width: 769px) {
-  .mobile-only {
-    display: none !important;
-  }
-}
-</style>
 
 </body>
 </html>
