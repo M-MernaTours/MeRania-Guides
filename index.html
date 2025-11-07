@@ -196,7 +196,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // رسالة تعليمية للموبايل فقط
   const msg = document.createElement("p");
-  msg.textContent = "👉 Swipe to show our guests’ reviews";
   msg.style.textAlign = "center";
   msg.style.color = "#ccc";
   msg.style.fontStyle = "italic";
@@ -204,6 +203,8 @@ document.addEventListener("DOMContentLoaded", function() {
   msg.classList.add("mobile-only");
 
   // ضع الرسالة تحت عنصر "Our guests review"
+    msg.textContent = "👉 Swipe to show our guest's reviews";
+
   const title = document.getElementById("review-title"); // لازم يكون للعنوان id="review-title"
   if (title) {
     title.insertAdjacentElement("afterend", msg);
