@@ -151,6 +151,7 @@ window.addEventListener('load', checkAds);
 </script>
 <section id="reviews-section" style="text-align:center; margin:50px auto; max-width:800px;">
   <h2 style="color:#f5d142; font-family:Georgia; text-shadow:0 0 10px rgba(245,209,66,0.5);">🌟 Our Guest Reviews 🌟</h2>
+     👉 "Swipe to show our guest's reviews"
 
   <div id="review-box" style="background:rgba(0,0,0,0.35); backdrop-filter:blur(10px); border:1px solid rgba(245,209,66,0.3); border-radius:20px; padding:35px; margin:25px; box-shadow:0 0 25px rgba(245,209,66,0.2), inset 0 0 10px rgba(245,209,66,0.05); transition:0.5s;">
     <p id="review-date" style="color:#e0d39b; font-size:14px; letter-spacing:0.5px;"></p>
@@ -203,7 +204,6 @@ document.addEventListener("DOMContentLoaded", function() {
   msg.classList.add("mobile-only");
 
   // ضع الرسالة تحت عنصر "Our guests review"
-    msg.textContent = "👉 Swipe to show our guest's reviews";
 
   const title = document.getElementById("review-title"); // لازم يكون للعنوان id="review-title"
   if (title) {
@@ -276,7 +276,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // التنقل بالسحب (للموبايل فقط)
   const box = document.getElementById("review-box");
-
   box?.addEventListener("touchstart", e => {
     startX = e.touches[0].clientX;
   });
@@ -297,7 +296,6 @@ document.addEventListener("DOMContentLoaded", function() {
   loadReviews();
 });
 </script>
-
 </body>
 </html>
 <!-- Book Your Tour Button -->
