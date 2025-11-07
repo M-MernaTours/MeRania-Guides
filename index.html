@@ -168,68 +168,84 @@ window.addEventListener('load', checkAds);
 </section>
 
 <script>
-const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTpgx7xPbW_mR4nomNth-MBNP2MSL-OJXYpq0JoVaiTgZYgZv23Kbb8tdFyT9gzqCGbFqjP79vCUw03/pub?output=csv";
+  
+document.addEventListener("DOMContentLoaded", function() {
+  const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTpgx7xPbW_mR4nomNth-MBNP2MSL-OJXYpq0JoVaiTgZYgZv23Kbb8tdFyT9gzqCGbFqjP79vCUw03/pub?output=csv";
 
-let reviews = [];
-let current = 0;
+  let reviews = [];
+  let current = 0;
 
-function parseCSV(text) {
-  const rows = [];
-  const lines = text.split(/\r?\n/).filter(l => l.trim() !== "");
-  for (let line of lines.slice(1)) {
-    const matches = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
-    if (matches) rows.push(matches.map(v => v.replace(/^"|"$/g, '').trim()));
-  }
-  return rows;
-}
-
-async function loadReviews() {
-  try {
-    const response = await fetch(sheetURL);
-    const text = await response.text();
-    const data = parseCSV(text);
-
-    reviews = data.map(row => {
-      const [date, name, country, rating, comment] = row;
-      return { date, name, country, rating, comment };
-    }).filter(r => r.name && r.comment);
-
-    if (reviews.length === 0) {
-      document.getElementById("review-box").innerHTML = "<p style='color:#ccc;'>No reviews available yet.</p>";
-      return;
+  function parseCSV(text) {
+    const rows = [];
+    const lines = text.split(/\r?\n/).filter(l => l.trim() !== "");
+    for (let line of lines.slice(1)) {
+      const matches = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+      if (matches) rows.push(matches.map(v => v.replace(/^"|"$/g, '').trim()));
     }
-
-    showReview(current);
-  } catch (error) {
-    console.error("Error loading reviews:", error);
-    document.getElementById("review-box").innerHTML = "<p style='color:red;'>⚠️ Error loading reviews.</p>";
+    return rows;
   }
-}
 
-function showReview(index) {
-  const r = reviews[index];
-  if (!r) return;
+  async function loadReviews() {
+    try {
+      const response = await fetch(sheetURL);
+      const text = await response.text();
+      const data = parseCSV(text);
 
-  document.getElementById("review-date").textContent = r.date || "";
-  document.getElementById("review-name").textContent = r.name || "Anonymous";
-  document.getElementById("review-country").textContent = r.country || "";
-  document.getElementById("review-comment").textContent = r.comment || "";
-  document.getElementById("review-stars").textContent = "⭐".repeat(parseInt(r.rating || 5));
+      reviews = data.map(row => {
+        const [date, name, country, rating, comment] = row;
+        return { date, name, country, rating, comment };
+      }).filter(r => r.name && r.comment);
 
-  document.getElementById("review-counter").textContent = `${index + 1} / ${reviews.length} Reviews`;
-}
+      if (reviews.length === 0) {
+        document.getElementById("review-box").innerHTML = "<p style='color:#ccc;'>No reviews available yet.</p>";
+        return;
+      }
 
-document.getElementById("prevBtn").addEventListener("click", () => {
-  current = (current - 1 + reviews.length) % reviews.length;
-  showReview(current);
+      showReview(current);
+    } catch (error) {
+      console.error("Error loading reviews:", error);
+      document.getElementById("review-box").innerHTML = "<p style='color:red;'>⚠️ Error loading reviews.</p>";
+    }
+  }
+
+  function showReview(index) {
+    const r = reviews[index];
+    if (!r) return;
+
+    document.getElementById("review-date").textContent = r.date || "";
+    document.getElementById("review-name").textContent = r.name || "Anonymous";
+    document.getElementById("review-country").textContent = r.country || "";
+    document.getElementById("review-comment").textContent = r.comment || "";
+    document.getElementById("review-stars").textContent = "⭐".repeat(parseInt(r.rating || 5));
+
+    document.getElementById("review-counter").textContent = `${index + 1} / ${reviews.length} Reviews`;
+  }
+
+  const prev = document.getElementById("prevBtn");
+  const next = document.getElementById("nextBtn");
+
+  // يدوي بالضغط أو اللمس
+  const goPrev = () => {
+    current = (current - 1 + reviews.length) % reviews.length;
+    showReview(current);
+  };
+
+  const goNext = () => {
+    current = (current + 1) % reviews.length;
+    showReview(current);
+  };
+
+  prev.addEventListener("click", goPrev);
+  next.addEventListener("click", goNext);
+
+  // دعم اللمس للموبايل
+  prev.addEventListener("touchstart", e => { e.preventDefault(); goPrev(); });
+  next.addEventListener("touchstart", e => { e.preventDefault(); goNext(); });
+
+  loadReviews();
 });
+</script>
 
-document.getElementById("nextBtn").addEventListener("click", () => {
-  current = (current + 1) % reviews.length;
-  showReview(current);
-});
-
-loadReviews();
 </script>
 
 </body>
@@ -385,9 +401,7 @@ async function getRatings() {
 getRatings();
 </script>
 <div id="reviews-slider" style="max-width:800px;margin:50px auto;text-align:center;">
-  <h2 style="color:#FFD700; font-family:Georgia;">⭐ What Our Guests Say ⭐</h2>
   <div id="review-box" style="margin-top:30px; min-height:180px; font-family:'Georgia'; font-size:18px; color:white;"></div>
 </div>
 
 <script>
-
