@@ -167,13 +167,23 @@ window.addEventListener('load', checkAds);
   </div>
 </section>
 
+
 <script>
-  
 document.addEventListener("DOMContentLoaded", function() {
   const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTpgx7xPbW_mR4nomNth-MBNP2MSL-OJXYpq0JoVaiTgZYgZv23Kbb8tdFyT9gzqCGbFqjP79vCUw03/pub?output=csv";
 
   let reviews = [];
   let current = 0;
+  let startX = 0;
+
+  // عرض رسالة للمستخدم
+  const msg = document.createElement("p");
+  msg.textContent = "👉 Swipe to show our guests’ reviews";
+  msg.style.textAlign = "center";
+  msg.style.color = "#ccc";
+  msg.style.fontStyle = "italic";
+  msg.style.marginBottom = "10px";
+  document.body.prepend(msg);
 
   function parseCSV(text) {
     const rows = [];
@@ -221,32 +231,32 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("review-counter").textContent = `${index + 1} / ${reviews.length} Reviews`;
   }
 
-  const prev = document.getElementById("prevBtn");
-  const next = document.getElementById("nextBtn");
+  // وظائف السحب Swipe
+  const box = document.getElementById("review-box");
 
-  // يدوي بالضغط أو اللمس
-  const goPrev = () => {
-    current = (current - 1 + reviews.length) % reviews.length;
-    showReview(current);
-  };
+  box.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
 
-  const goNext = () => {
-    current = (current + 1) % reviews.length;
-    showReview(current);
-  };
-
-  prev.addEventListener("click", goPrev);
-  next.addEventListener("click", goNext);
-
-  // دعم اللمس للموبايل
-  prev.addEventListener("touchstart", e => { e.preventDefault(); goPrev(); });
-  next.addEventListener("touchstart", e => { e.preventDefault(); goNext(); });
+  box.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = endX - startX;
+    if (Math.abs(diff) > 50) { // لازم يسحب بوضوح
+      if (diff > 0) {
+        // سحب لليمين = عرض السابق
+        current = (current - 1 + reviews.length) % reviews.length;
+      } else {
+        // سحب لليسار = عرض التالي
+        current = (current + 1) % reviews.length;
+      }
+      showReview(current);
+    }
+  });
 
   loadReviews();
 });
 </script>
 
-</script>
 
 </body>
 </html>
