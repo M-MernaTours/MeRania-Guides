@@ -149,6 +149,88 @@ window.addEventListener('load', checkAds);
   const navLinks = document.getElementById('nav-links');
   menuToggle.addEventListener('click', () => { navLinks.classList.toggle('show'); });
 </script>
+<section id="reviews-section" style="text-align:center; margin:50px auto; max-width:800px;">
+  <h2 style="color:#f5d142; font-family:Georgia; text-shadow:0 0 10px rgba(245,209,66,0.5);">🌟 Our Guest Reviews 🌟</h2>
+
+  <div id="review-box" style="background:rgba(0,0,0,0.35); backdrop-filter:blur(10px); border:1px solid rgba(245,209,66,0.3); border-radius:20px; padding:35px; margin:25px; box-shadow:0 0 25px rgba(245,209,66,0.2), inset 0 0 10px rgba(245,209,66,0.05); transition:0.5s;">
+    <p id="review-date" style="color:#e0d39b; font-size:14px; letter-spacing:0.5px;"></p>
+    <h3 id="review-name" style="color:#f5d142; font-size:24px; margin-bottom:8px; letter-spacing:1px;"></h3>
+    <p id="review-country" style="color:#f1f1f1; font-style:italic; margin-bottom:12px;"></p>
+    <div id="review-stars" style="font-size:22px; color:#ffd86e; margin-bottom:18px; text-shadow:0 0 5px rgba(255,216,110,0.6);"></div>
+    <p id="review-comment" style="color:#fff; font-size:18px; line-height:1.7; white-space:pre-wrap; text-shadow:0 0 4px rgba(0,0,0,0.5);"></p>
+  </div>
+
+  <div style="margin-top:25px;">
+    <button id="prevBtn" style="padding:10px 25px; margin:5px; border:none; border-radius:8px; background:#f5d142; color:#1a1a1a; cursor:pointer; font-weight:bold; transition:0.3s;">⬅ Prev</button>
+    <span id="review-counter" style="color:#f5d142; font-size:16px; margin:0 12px; font-family:Georgia;"></span>
+    <button id="nextBtn" style="padding:10px 25px; margin:5px; border:none; border-radius:8px; background:#f5d142; color:#1a1a1a; cursor:pointer; font-weight:bold; transition:0.3s;">Next ➡</button>
+  </div>
+</section>
+
+<script>
+const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTpgx7xPbW_mR4nomNth-MBNP2MSL-OJXYpq0JoVaiTgZYgZv23Kbb8tdFyT9gzqCGbFqjP79vCUw03/pub?output=csv";
+
+let reviews = [];
+let current = 0;
+
+function parseCSV(text) {
+  const rows = [];
+  const lines = text.split(/\r?\n/).filter(l => l.trim() !== "");
+  for (let line of lines.slice(1)) {
+    const matches = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+    if (matches) rows.push(matches.map(v => v.replace(/^"|"$/g, '').trim()));
+  }
+  return rows;
+}
+
+async function loadReviews() {
+  try {
+    const response = await fetch(sheetURL);
+    const text = await response.text();
+    const data = parseCSV(text);
+
+    reviews = data.map(row => {
+      const [date, name, country, rating, comment] = row;
+      return { date, name, country, rating, comment };
+    }).filter(r => r.name && r.comment);
+
+    if (reviews.length === 0) {
+      document.getElementById("review-box").innerHTML = "<p style='color:#ccc;'>No reviews available yet.</p>";
+      return;
+    }
+
+    showReview(current);
+  } catch (error) {
+    console.error("Error loading reviews:", error);
+    document.getElementById("review-box").innerHTML = "<p style='color:red;'>⚠️ Error loading reviews.</p>";
+  }
+}
+
+function showReview(index) {
+  const r = reviews[index];
+  if (!r) return;
+
+  document.getElementById("review-date").textContent = r.date || "";
+  document.getElementById("review-name").textContent = r.name || "Anonymous";
+  document.getElementById("review-country").textContent = r.country || "";
+  document.getElementById("review-comment").textContent = r.comment || "";
+  document.getElementById("review-stars").textContent = "⭐".repeat(parseInt(r.rating || 5));
+
+  document.getElementById("review-counter").textContent = `${index + 1} / ${reviews.length} Reviews`;
+}
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+  current = (current - 1 + reviews.length) % reviews.length;
+  showReview(current);
+});
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  current = (current + 1) % reviews.length;
+  showReview(current);
+});
+
+loadReviews();
+</script>
 
 </body>
 </html>
@@ -273,7 +355,6 @@ function loadStars() {
 }
 </script>
 
-
 <script>
 const sheetUrl = "https://script.google.com/macros/s/AKfycbzCGKtIZxKdQuY2T9cLNERP6clQFcgmJ6Exe0cK-3HNlYJpWCh4InRInZe3zoG8yDQ7/exec";
 
@@ -309,45 +390,4 @@ getRatings();
 </div>
 
 <script>
-const sheetURL = "https://docs.google.com/spreadsheets/d/1G7OnovztisilHjIxRXfmoQoH5pQwX_oI4DNEj52cURI/gviz/tq?tqx=out:json&tq=SELECT%20B,C,D,E"; 
-// الأعمدة: Name (B), Review (C), Comment (D), Country  (E)
 
-fetch(sheetURL)
-  .then(res => res.text())
-  .then(text => {
-    const json = JSON.parse(text.substr(47).slice(0, -2));
-    const rows = json.table.rows.map(r => ({
-      name: r.c[0]?.v || "Anonymous",
-      country: r.c[1]?.v || "",
-      rating: r.c[2]?.v || "",
-      comment: r.c[3]?.v || ""
-    }));
-
-    let index = 0;
-    const box = document.getElementById("review-box");
-
-    function renderReview() {
-      const r = rows[index];
-      const stars = "⭐".repeat(Math.round(r.rating || 5));
-      box.innerHTML = `
-        <div style="animation:fade 1s ease;">
-          <p style="font-size:20px; margin-bottom:15px;">"${r.comment}"</p>
-          <p style="color:#FFD700; margin-bottom:5px;">${stars}</p>
-          <p style="font-style:italic; color:#ccc;">– ${r.name} (${r.country})</p>
-        </div>`;
-      index = (index + 1) % rows.length;
-    }
-
-    renderReview();
-    setInterval(renderReview, 5000); // يتغير كل 5 ثواني
-  })
-  .catch(err => console.error("Error loading reviews:", err));
-
-const fadeStyle = document.createElement("style");
-fadeStyle.textContent = `
-@keyframes fade {
-  from {opacity:0; transform:translateY(20px);}
-  to {opacity:1; transform:translateY(0);}
-}`;
-document.head.appendChild(fadeStyle);
-</script>
