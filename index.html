@@ -166,8 +166,6 @@ window.addEventListener('load', checkAds);
     <button id="nextBtn" style="padding:10px 25px; margin:5px; border:none; border-radius:8px; background:#f5d142; color:#1a1a1a; cursor:pointer; font-weight:bold; transition:0.3s;">Next ➡</button>
   </div>
 </section>
-
-
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTpgx7xPbW_mR4nomNth-MBNP2MSL-OJXYpq0JoVaiTgZYgZv23Kbb8tdFyT9gzqCGbFqjP79vCUw03/pub?output=csv";
@@ -176,13 +174,14 @@ document.addEventListener("DOMContentLoaded", function() {
   let current = 0;
   let startX = 0;
 
-  // عرض رسالة للمستخدم
+  // رسالة تعليمية للموبايل فقط
   const msg = document.createElement("p");
   msg.textContent = "👉 Swipe to show our guests’ reviews";
   msg.style.textAlign = "center";
   msg.style.color = "#ccc";
   msg.style.fontStyle = "italic";
   msg.style.marginBottom = "10px";
+  msg.classList.add("mobile-only");
   document.body.prepend(msg);
 
   function parseCSV(text) {
@@ -231,7 +230,23 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("review-counter").textContent = `${index + 1} / ${reviews.length} Reviews`;
   }
 
-  // وظائف السحب Swipe
+  // التنقل بالأزرار (للكمبيوتر فقط)
+  const prev = document.getElementById("prevBtn");
+  const next = document.getElementById("nextBtn");
+
+  const goPrev = () => {
+    current = (current - 1 + reviews.length) % reviews.length;
+    showReview(current);
+  };
+  const goNext = () => {
+    current = (current + 1) % reviews.length;
+    showReview(current);
+  };
+
+  prev.addEventListener("click", goPrev);
+  next.addEventListener("click", goNext);
+
+  // التنقل بالسحب (للموبايل فقط)
   const box = document.getElementById("review-box");
 
   box.addEventListener("touchstart", e => {
@@ -241,12 +256,10 @@ document.addEventListener("DOMContentLoaded", function() {
   box.addEventListener("touchend", e => {
     const endX = e.changedTouches[0].clientX;
     const diff = endX - startX;
-    if (Math.abs(diff) > 50) { // لازم يسحب بوضوح
+    if (Math.abs(diff) > 50) {
       if (diff > 0) {
-        // سحب لليمين = عرض السابق
         current = (current - 1 + reviews.length) % reviews.length;
       } else {
-        // سحب لليسار = عرض التالي
         current = (current + 1) % reviews.length;
       }
       showReview(current);
@@ -257,6 +270,24 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+<style>
+/* إظهار الأزرار على الكمبيوتر فقط */
+@media (max-width: 768px) {
+  #prevBtn,
+  #nextBtn {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+</style>
 
 </body>
 </html>
