@@ -568,6 +568,123 @@
     if(e.target === alexPopup) alexPopup.style.display = 'none';
   });
 </script>
+<!-- ========== ASWAN TAB ========== -->
+<div class="tour-tab" onclick="openPopup('aswanPopup')">
+  Aswan
+</div>
+
+<!-- ========== ASWAN POPUP ========== -->
+<div id="aswanPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup('aswanPopup')">&times;</span>
+    <h2>Discover Aswan, Egypt</h2>
+    <p>
+      Experience the beauty and serenity of Aswan, the jewel of southern Egypt. Nestled along the Nile, 
+      Aswan is home to breathtaking temples and timeless monuments, including the majestic Philae Temple 
+      dedicated to Isis, the massive Unfinished Obelisk, and the grand temples of Abu Simbel. 
+      Sail on a traditional felucca, explore Nubian culture, and witness where history, nature, 
+      and ancient charm meet in perfect harmony.
+    </p>
+
+    <div class="popup-gallery">
+      <img src="images/Aswan1.jpg" alt="Aswan1">
+      <img src="images/Aswan2.jpg" alt="Aswan2">
+      <img src="images/Aswan3.jpg" alt="Aswan3">
+      <img src="images/Aswan4.jpg" alt="Aswan4">
+      <img src="images/Aswan5.jpg" alt="Aswan5">
+      <img src="images/Aswan6.jpg" alt="Aswan6">
+      <img src="images/Aswan7.jpg" alt="Aswan7">
+      <img src="images/Aswan8.jpg" alt="Aswan8">
+    </div>
+
+    <button class="book-btn" onclick="openSocialLinks()">Book Your Tour</button>
+  </div>
+</div>
+
+<!-- ========== POPUP & BUTTON STYLES (لو مش موجودة قبل كده) ========== -->
+<style>
+  .tour-tab {
+    background: #b38b59;
+    color: white;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .tour-tab:hover {
+    background: #8c6b45;
+  }
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    overflow-y: auto;
+  }
+  .popup-content {
+    background: #fff;
+    margin: 60px auto;
+    padding: 25px;
+    border-radius: 20px;
+    max-width: 850px;
+    color: #333;
+    text-align: center;
+  }
+  .popup-content h2 {
+    color: #b38b59;
+    margin-bottom: 15px;
+  }
+  .popup-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .popup-gallery img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .book-btn {
+    background: #b38b59;
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .book-btn:hover {
+    background: #8c6b45;
+  }
+  .close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+  }
+</style>
+
+<!-- ========== JS FUNCTIONS ========== -->
+<script>
+  function openPopup(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+  function closePopup(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+  function openSocialLinks() {
+    window.open("https://mmernaguide.info", "_blank");
+    window.open("https://www.facebook.com/M-Merna-tour-guide", "_blank");
+    window.open("https://www.instagram.com/mmernaguide", "_blank");
+    window.open("https://wa.me/201234567890", "_blank"); // رقم الواتساب لو تحب أبدله بالفعلي
+  }
+</script>
+
 
 
 
