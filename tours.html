@@ -568,123 +568,80 @@
     if(e.target === alexPopup) alexPopup.style.display = 'none';
   });
 </script>
-<!-- ========== ASWAN TAB ========== -->
-<div class="tour-tab" onclick="openPopup('aswanPopup')">
-  Aswan
-</div>
-
-<!-- ========== ASWAN POPUP ========== -->
-<div id="aswanPopup" class="popup">
-  <div class="popup-content">
-    <span class="close" onclick="closePopup('aswanPopup')">&times;</span>
-    <h2>Discover Aswan, Egypt</h2>
-    <p>
-      Experience the beauty and serenity of Aswan, the jewel of southern Egypt. 
-      Nestled along the Nile, Aswan is home to breathtaking temples and timeless monuments, 
-      including the majestic Philae Temple dedicated to Isis, the massive Unfinished Obelisk, 
-      and the grand temples of Abu Simbel. Sail on a traditional felucca, explore Nubian culture, 
-      and witness where history, nature, and ancient charm meet in perfect harmony.
-    </p>
-
-    <div class="popup-gallery">
-      <img src="images/Aswan1.jpg" alt="Aswan1">
-      <img src="images/Aswan2.jpg" alt="Aswan2">
-      <img src="images/Aswan3.jpg" alt="Aswan3">
-      <img src="images/Aswan4.jpg" alt="Aswan4">
-      <img src="images/Aswan5.jpg" alt="Aswan5">
-      <img src="images/Aswan6.jpg" alt="Aswan6">
-      <img src="images/Aswan7.jpg" alt="Aswan7">
-      <img src="images/Aswan8.jpg" alt="Aswan8">
-    </div>
-
-    <button class="book-btn" onclick="openSocialLinks()">Book Your Tour</button>
+<!-- Aswan Tab -->
+<div class="container">
+  <div id="aswanTab" style="display:inline-block; background:#FFD700; color:#000; padding:15px 25px; margin:20px 0; border-radius:10px; cursor:pointer; font-weight:bold; font-size:1.2rem; transition:0.3s;">
+    Aswan
   </div>
 </div>
 
-<!-- ========== POPUP & BUTTON STYLES (لو مش عندك بالفعل) ========== -->
-<style>
-  .tour-tab {
-    background: #b38b59;
-    color: white;
-    padding: 12px 20px;
-    margin: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  .tour-tab:hover {
-    background: #8c6b45;
-  }
-  .popup {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.85);
-    overflow-y: auto;
-  }
-  .popup-content {
-    background: #fff;
-    margin: 60px auto;
-    padding: 25px;
-    border-radius: 20px;
-    max-width: 850px;
-    color: #333;
-    text-align: center;
-  }
-  .popup-content h2 {
-    color: #b38b59;
-    margin-bottom: 15px;
-  }
-  .popup-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 10px;
-    margin: 20px 0;
-  }
-  .popup-gallery img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  }
-  .book-btn {
-    background: #b38b59;
-    color: #fff;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  .book-btn:hover {
-    background: #8c6b45;
-  }
-  .close {
-    float: right;
-    font-size: 28px;
-    cursor: pointer;
-  }
-</style>
+<!-- Popup Overlay -->
+<div id="aswanPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999; overflow-y:auto; padding:20px;">
+  <div style="background:#111; border-radius:12px; padding:25px; max-width:800px; width:100%; color:#fff; position:relative;">
+    <span id="closeAswanPopup" style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:24px; font-weight:bold;">&times;</span>
+    
+    <h2 style="color:#FFD700; margin-bottom:20px;">Discover Aswan, Egypt</h2>
+    
+    <p style="margin-bottom:20px; line-height:1.6;">
+      Experience the beauty and serenity of Aswan, the jewel of southern Egypt. Nestled along the Nile, Aswan is home to breathtaking temples and timeless monuments, including the majestic Philae Temple dedicated to Isis, the massive Unfinished Obelisk, and the grand temples of Abu Simbel. Sail on a traditional felucca, explore Nubian culture, and witness where history, nature, and ancient charm meet in perfect harmony.
+    </p>
 
-<!-- ========== JS FUNCTIONS ========== -->
+    <!-- Images -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px; margin-bottom:25px;">
+      <img src="Aswan1.jpg" alt="Aswan1" style="width:100%; border-radius:8px;">
+      <img src="Aswan2.jpg" alt="Aswan2" style="width:100%; border-radius:8px;">
+      <img src="Aswan3.jpg" alt="Aswan3" style="width:100%; border-radius:8px;">
+      <img src="Aswan4.jpg" alt="Aswan4" style="width:100%; border-radius:8px;">
+      <img src="Aswan5.jpg" alt="Aswan5" style="width:100%; border-radius:8px;">
+      <img src="Aswan6.jpg" alt="Aswan6" style="width:100%; border-radius:8px;">
+      <img src="Aswan7.jpg" alt="Aswan7" style="width:100%; border-radius:8px;">
+      <img src="Aswan8.jpg" alt="Aswan8" style="width:100%; border-radius:8px;">
+    </div>
+
+    <!-- Book Your Tour Button -->
+    <div style="text-align:center;">
+      <button id="bookAswanBtn" style="padding:12px 35px; font-size:18px; font-weight:bold; border:none; border-radius:10px; background:#FFD700; color:#000; cursor:pointer; transition:0.3s;">Book Your Tour</button>
+    </div>
+
+    <!-- Social Media Links -->
+    <div id="aswanSocialLinks" style="display:none; margin-top:20px; text-align:center; gap:15px; flex-wrap:wrap; justify-content:center;">
+      <a href="https://www.instagram.com/mmerna.guide/" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#C13584; padding:10px 18px; border-radius:8px;">Instagram</a>
+      <a href="https://www.tiktok.com/@mmernaguide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#69C9D0; padding:10px 18px; border-radius:8px;">TikTok</a>
+      <a href="https://wa.me/201029545765" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#25D366; padding:10px 18px; border-radius:8px;">WhatsApp</a>
+      <a href="https://www.facebook.com/M-MernaTourGuide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#3b5998; padding:10px 18px; border-radius:8px;">Facebook</a>
+      <a href="https://mmernaguide.info" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#000; background:#FFD700; padding:10px 18px; border-radius:8px;">Website</a>
+    </div>
+
+  </div>
+</div>
+
 <script>
-  function openPopup(id) {
-    document.getElementById(id).style.display = 'block';
-  }
-  function closePopup(id) {
-    document.getElementById(id).style.display = 'none';
-  }
-  function openSocialLinks() {
-    window.open("https://mmernaguide.info", "_blank");
-    window.open("https://www.facebook.com/M-Merna-tour-guide", "_blank");
-    window.open("https://www.instagram.com/mmernaguide", "_blank");
-    window.open("https://wa.me/201029545765", "_blank"); // عدّل الرقم لرقم واتسابك الفعلي
-  }
+  const aswanTab = document.getElementById('aswanTab');
+  const aswanPopup = document.getElementById('aswanPopup');
+  const closeAswan = document.getElementById('closeAswanPopup');
+  const bookAswanBtn = document.getElementById('bookAswanBtn');
+  const aswanSocialLinks = document.getElementById('aswanSocialLinks');
+
+  aswanTab.addEventListener('click', () => {
+    aswanPopup.style.display = 'flex';
+    aswanSocialLinks.style.display = 'none';
+  });
+
+  closeAswan.addEventListener('click', () => {
+    aswanPopup.style.display = 'none';
+  });
+
+  bookAswanBtn.addEventListener('click', () => {
+    aswanSocialLinks.style.display = 'flex';
+  });
+
+  aswanPopup.addEventListener('click', e => {
+    if(e.target === aswanPopup) aswanPopup.style.display = 'none';
+  });
 </script>
 
+
+  
 
 
 
