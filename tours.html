@@ -698,10 +698,37 @@
     if(e.target === customizePopup) customizePopup.style.display = 'none';
   });
 </script>
-<footer>&copy; 2025 M-Merna Tours. All rights reserved.</footer>
+<!-- Footer صغير -->
+<div class="popup-footer">
+  © 2025 M-Merna Tours. All rights reserved.
+</div>
+
+<style>
+/* تصميم الفوتر */
+.popup-footer {
+  margin-top: 20px;
+  padding: 10px 15px;
+  border-top: 1px solid #555;
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
+  background-color: transparent; /* يبقى شفاف إذا تحت المحتوى */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* متجاوب على الموبايل */
+@media (max-width: 768px) {
+  .popup-footer {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+  }
+}
+</style>
 
 
   
+
 
 
 
