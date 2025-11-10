@@ -3,190 +3,163 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M-Merna Tours - All Programs</title>
+<title>Tours - M-Merna Tours</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: Georgia, serif; background:#000; color:#fff; min-height:100vh; }
-  header { display:flex; justify-content:space-between; align-items:center; padding:15px 20px; background:rgba(0,0,0,0.7); }
-  header img { height:60px; }
-  nav a { color:#FFD700; text-decoration:none; margin-left:15px; font-weight:bold; }
-  nav a:hover { color:#FFC107; }
-  .container { max-width:1200px; margin:40px auto; padding:0 20px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px; }
-  .card { background: rgba(0,0,0,0.65); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; transition: transform .18s, box-shadow .18s; }
-  .card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,0,0,0.45); }
-  .card img { width:100%; height:160px; object-fit:cover; display:block; }
-  .card .body { padding:14px; }
-  .card h3 a { color:#FFD700; text-decoration:none; font-size:1.1rem; }
-  .card h3 a:hover { color:#FFC107; }
-  .card p { color:#fff; opacity:.95; font-size:.95rem; line-height:1.4; margin:10px 0; }
-  footer { padding:18px; text-align:center; background:rgba(0,0,0,0.7); color:#FFD700; margin-top:36px; }
+  body {
+    font-family: Georgia, serif;
+    background: #111;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
 
-  /* صفحة الجولة */
-  .tour-images img { width:100%; max-width:600px; margin:15px 0; border-radius:8px; }
-  .tour-desc { margin:20px 0; line-height:1.7; font-size:1rem; }
-  .book-tour { display:flex; justify-content:center; margin:25px 0; }
-  .book-tour button { padding:12px 25px; border:none; border-radius:8px; background:#FFD700; color:#000; font-weight:bold; cursor:pointer; transition:0.3s; }
-  .book-tour button:hover { background:#FFC107; }
-  .social-links { display:none; justify-content:center; gap:15px; margin-top:15px; flex-wrap:wrap; }
-  .social-links a { text-decoration:none; padding:10px 20px; border-radius:8px; font-weight:bold; color:#fff; transition:0.3s; }
-  .social-links a.whatsapp { background:#25D366; }
-  .social-links a.facebook { background:#3b5998; }
-  .social-links a.instagram { background:#E4405F; }
-  .social-links a.tiktok { background:#000000; color:#fff; border:1px solid #fff; }
+  .container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
 
-  @media(max-width:768px) {
-    .card img { height:140px; }
+  .card {
+    background: rgba(0,0,0,0.65);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+  }
+
+  .card h3 {
+    color: #FFD700;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+  }
+
+  /* Popup Overlay */
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    top:0; left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .popup-content {
+    background: #222;
+    border-radius: 12px;
+    max-width: 900px;
+    width: 100%;
+    padding: 25px;
+    text-align: left;
+    position: relative;
+  }
+
+  .popup-content h2 {
+    color: #FFD700;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .popup-content p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #FFD700;
+    cursor: pointer;
+  }
+
+  /* Carousel */
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    scroll-behavior: smooth;
+  }
+
+  .carousel img {
+    height: 250px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  /* Scrollbar styling */
+  .carousel::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .carousel::-webkit-scrollbar-thumb {
+    background: #FFD700;
+    border-radius: 4px;
   }
 </style>
 </head>
 <body>
 
-<header>
-  <img src="images/guidelogo.png" alt="logo">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="tours.html">Tours</a>
-    <a href="Programs.html">Programs</a>
-  </nav>
-</header>
-
-<main class="container">
-  <div class="grid">
-    <!-- 1: The Pyramids -->
-    <article class="card">
-      <img src="images/Pyramids.jpg" alt="Pyramids">
-      <div class="body">
-        <h3><a href="#pyramids">The Pyramids - Memphis - Sakkara</a></h3>
-        <p>استكشف أعظم عجائب مصر القديمة: أهرامات الجيزة، ممفيس، وسقارة في جولة لا تُنسى.</p>
-      </div>
-    </article>
-
-    <!-- 2: Grand Egyptian Museum -->
-    <article class="card">
-      <img src="images/Grand Egyptian Museum.jpg" alt="Grand Egyptian Museum">
-      <div class="body">
-        <h3><a href="#gem">Grand Egyptian Museum (GEM)</a></h3>
-        <p>استكشف أكبر متحف أثري في العالم مع كنوز توت عنخ آمون والمزيد!</p>
-      </div>
-    </article>
-
-    <!-- 3: Luxor -->
-    <article class="card">
-      <img src="images/Luxor.jpg" alt="Luxor">
-      <div class="body">
-        <h3><a href="#luxor">Luxor & Valley of the Kings</a></h3>
-        <p>جولة في قلب الحضارة المصرية: وادي الملوك ومعابد الكرنك والأقصر.</p>
-      </div>
-    </article>
-
-    <!-- 4: Aswan -->
-    <article class="card">
-      <img src="images/Aswan.jpg" alt="Aswan">
-      <div class="body">
-        <h3><a href="#aswan">Aswan & Nile Islands</a></h3>
-        <p>تمتع بجمال نهر النيل وجزر أسوان وثقافة النوبة الساحرة.</p>
-      </div>
-    </article>
-
-    <!-- 5: Western Oases -->
-    <article class="card">
-      <img src="images/Western Oases.jpg" alt="Western Oases">
-      <div class="body">
-        <h3><a href="#oases">Western Desert Oases</a></h3>
-        <p>اكتشف واحات مصرية صحراوية فريدة: سيوة، بحيرة قارون، والفرافرة.</p>
-      </div>
-    </article>
-
-    <!-- 6: Alexandria -->
-    <article class="card">
-      <img src="images/Alexandria.jpeg" alt="Alexandria">
-      <div class="body">
-        <h3><a href="#alexandria">Alexandria</a></h3>
-        <p>جولة في ميناء البحر المتوسط والتراث اليوناني الروماني في الإسكندرية.</p>
-      </div>
-    </article>
+<div class="container">
+  <div class="card" id="gem-card">
+    <h3>GEM</h3>
+    <p>Click to explore the Egyptian Museum in Cairo</p>
   </div>
+</div>
 
-  <!-- أقسام الجولات المفصلة -->
-  <section id="pyramids" class="tour-section">
-    <h1>The Pyramids - Memphis - Sakkara</h1>
-    <div class="tour-images">
-      <img src="images/Pyramids.jpg" alt="Pyramids">
-      <img src="images/Giza pyramids.jpg" alt="Giza Pyramids">
-      <img src="images/Memphis.jpg" alt="Memphis">
-      <img src="images/Sakkara.jpg" alt="Sakkara">
-    </div>
-    <div class="tour-desc">
-      <p>Step into the land of the Pharaohs and embark on an unforgettable journey through Egypt’s most iconic sites. Marvel at the Pyramids of Giza...</p>
-    </div>
-    <div class="book-tour">
-      <button onclick="toggleLinks('links1')">Book Your Tour</button>
-    </div>
-    <div class="social-links" id="links1">
-      <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">WhatsApp</a>
-      <a href="https://www.facebook.com/M-Merna-tour-guide" target="_blank" class="facebook">Facebook</a>
-      <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="instagram">Instagram</a>
-      <a href="https://www.tiktok.com/@mmernaguide" target="_blank" class="tiktok">TikTok</a>
-    </div>
-  </section>
+<!-- Popup -->
+<div class="popup-overlay" id="gem-popup">
+  <div class="popup-content">
+    <span class="close-btn" id="gem-close">&times;</span>
+    <h2>Discover the Egyptian Museum</h2>
+    <p>
+      Step into the world of ancient Egypt at the Egyptian Museum in Cairo, home to over 5,000 years of history. Explore the treasures of King Tutankhamun, colossal statues, mummies, and countless artifacts that tell the story of one of the world’s greatest civilizations.<br><br>
+      Experience the wonder of ancient rituals, pharaohs’ lives, and timeless art. Every room, every artifact, every display invites you to step back in time and witness the legacy of the Pharaohs.<br><br>
+      Don’t just see history—live it. Make your visit unforgettable and immerse yourself in the magic of the Egyptian Museum!
+    </p>
 
-  <!-- يمكنك نسخ نفس البنية لكل جولة أخرى -->
-  <section id="gem" class="tour-section">
-    <h1>Grand Egyptian Museum (GEM)</h1>
-    <div class="tour-images">
-      <img src="images/Grand Egyptian Museum.jpg" alt="GEM">
+    <div class="carousel">
+      <img src="https://raw.githubusercontent.com/YOUR_USERNAME/GEM/main/GEM1.jpg" alt="GEM1">
+      <img src="https://raw.githubusercontent.com/YOUR_USERNAME/GEM/main/GEM2.jpg" alt="GEM2">
+      <img src="https://raw.githubusercontent.com/YOUR_USERNAME/GEM/main/GEM3.jpg" alt="GEM3">
+      <img src="https://raw.githubusercontent.com/YOUR_USERNAME/GEM/main/GEM4.jpg" alt="GEM4">
+      <img src="https://raw.githubusercontent.com/YOUR_USERNAME/GEM/main/GEM5.jpg" alt="GEM5">
+      <img src="https://raw.githubusercontent.com/YOUR_USERNAME/GEM/main/GEM6.jpg" alt="GEM6">
+      <img src="https://raw.githubusercontent.com/YOUR_USERNAME/GEM/main/GEM7.jpg" alt="GEM7">
+      <img src="https://raw.githubusercontent.com/YOUR_USERNAME/GEM/main/GEM8.jpg" alt="GEM8">
     </div>
-    <div class="tour-desc">
-      <p>Explore over 100,000 artifacts, including Tutankhamun’s treasures, and enjoy private guided tours.</p>
-    </div>
-    <div class="book-tour">
-      <button onclick="toggleLinks('links2')">Book Your Tour</button>
-    </div>
-    <div class="social-links" id="links2">
-      <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">WhatsApp</a>
-      <a href="https://www.facebook.com/M-Merna-tour-guide" target="_blank" class="facebook">Facebook</a>
-      <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="instagram">Instagram</a>
-      <a href="https://www.tiktok.com/@mmernaguide" target="_blank" class="tiktok">TikTok</a>
-    </div>
-  </section>
-
-  <!-- Luxor -->
-  <section id="luxor" class="tour-section">
-    <h1>Luxor & Valley of the Kings</h1>
-    <div class="tour-images">
-      <img src="images/Luxor.jpg" alt="Luxor">
-    </div>
-    <div class="tour-desc">
-      <p>Explore temples and tombs of the New Kingdom, including the Valley of the Kings and Karnak Temple.</p>
-    </div>
-    <div class="book-tour">
-      <button onclick="toggleLinks('links3')">Book Your Tour</button>
-    </div>
-    <div class="social-links" id="links3">
-      <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">WhatsApp</a>
-      <a href="https://www.facebook.com/M-Merna-tour-guide" target="_blank" class="facebook">Facebook</a>
-      <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="instagram">Instagram</a>
-      <a href="https://www.tiktok.com/@mmernaguide" target="_blank" class="tiktok">TikTok</a>
-    </div>
-  </section>
-
-  <!-- يمكن إضافة Aswan, Oases, Alexandria بنفس الطريقة -->
-
-</main>
-
-<footer>&copy; 2025 M-Merna Tours. All rights reserved.</footer>
+  </div>
+</div>
 
 <script>
-  function toggleLinks(id) {
-    const el = document.getElementById(id);
-    if(el.style.display === "flex") {
-      el.style.display = "none";
-    } else {
-      el.style.display = "flex";
-    }
-  }
+  const gemCard = document.getElementById('gem-card');
+  const gemPopup = document.getElementById('gem-popup');
+  const gemClose = document.getElementById('gem-close');
+
+  gemCard.addEventListener('click', () => {
+    gemPopup.style.display = 'flex';
+  });
+
+  gemClose.addEventListener('click', () => {
+    gemPopup.style.display = 'none';
+  });
+
+  // Close popup if clicking outside content
+  gemPopup.addEventListener('click', (e) => {
+    if(e.target === gemPopup) gemPopup.style.display = 'none';
+  });
 </script>
 
 </body>
