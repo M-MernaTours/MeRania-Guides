@@ -25,7 +25,7 @@
   .container{max-width:1200px; margin:20px auto; padding:0 20px;}
   .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
     gap:22px;
   }
 
@@ -62,26 +62,56 @@
     box-shadow:0 6px 15px rgba(0,0,0,0.3);
   }
 
-  .social-links {
+  /* Modal styles */
+  .modal {
     display:none;
-    flex-direction:column;
-    gap:10px;
-    margin-top:10px;
-    text-align:center;
+    position: fixed;
+    z-index: 999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    padding:20px;
   }
-  .social-links a {
+  .modal-content {
+    background: rgba(0,0,0,0.95);
+    padding:30px;
+    border-radius:12px;
+    max-width:400px;
+    width:100%;
+    text-align:center;
+    color:#fff;
+    position: relative;
+  }
+  .modal-content h3{
+    margin-bottom:20px;
+    color:#FFD700;
+  }
+  .modal-content a{
+    display:block;
+    margin:10px 0;
+    padding:12px;
+    border-radius:8px;
     text-decoration:none;
     color:#fff;
-    padding:10px 18px;
-    border-radius:8px;
     font-weight:bold;
-    display:inline-block;
     transition:0.3s;
   }
-  .social-links a.facebook{background:#3b5998;}
-  .social-links a.whatsapp{background:#25D366;}
-  .social-links a.instagram{background:#C13584;}
-  .social-links a.tiktok{background:#010101;}
+  .modal-content a.facebook{background:#3b5998;}
+  .modal-content a.whatsapp{background:#25D366;}
+  .modal-content a.instagram{background:#C13584;}
+  .modal-content a.tiktok{background:#010101;}
+  .close-modal{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:20px;
+    cursor:pointer;
+    color:#FFD700;
+  }
 
   @media(max-width:768px){
     .grid{grid-template-columns:1fr;}
@@ -103,58 +133,35 @@
 <main class="container">
   <div class="grid">
 
-    <!-- مثال لكارد واحد من المحتوى القديم -->
+    <!-- كارد 1 -->
     <article class="card">
       <img src="images/Pyramids.jpg" alt="Pyramids">
-      <img src="images/Giza pyramids.jpg" alt="Giza Pyramids">
-      <img src="images/Memphis.jpg" alt="Memphis">
-      <img src="images/Sakkara.jpg" alt="Sakkara">
       <div class="body">
         <h3>The <span class="highlight">Pyramids</span>-Memphis-Sakkara</h3>
-        <p>Step into the land of the Pharaohs and embark on an unforgettable journey through Egypt’s most iconic sites. Marvel at the Pyramids of Giza, where the grandeur of ancient architecture meets the mysteries of the past. Feel the awe as you stand before these timeless monuments, symbols of power and ingenuity that have fascinated the world for millennia.
-
-Travel back in time to Memphis, the ancient capital of Egypt, where history comes alive among monumental statues and fascinating ruins. Explore the stories of kings and queens, and imagine life in the heart of one of the world’s oldest civilizations.
-
-Continue your adventure to Saqqara, home of the famous Step Pyramid, the world’s oldest stone pyramid. Wander through the vast necropolis and discover the secrets of Egypt’s early dynasties. Every stone tells a story, and every corner offers a glimpse into a civilization that shaped human history.
-
-Experience these extraordinary sites on a journey filled with wonder, culture, and unforgettable memories. Let the magic of Egypt inspire your spirit and take you on a once-in-a-lifetime adventure!</p>
-
+        <p>Step into the land of the Pharaohs and embark on an unforgettable journey through Egypt’s most iconic sites...</p>
         <button class="book-btn">Book Your Tour</button>
-        <div class="social-links">
-          <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">WhatsApp</a>
-          <a href="https://www.facebook.com/M-MernaTourGuide/" target="_blank" class="facebook">Facebook</a>
-          <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="instagram">Instagram</a>
-          <a href="https://www.tiktok.com/@mmernaguide" target="_blank" class="tiktok">TikTok</a>
-        </div>
       </div>
     </article>
 
-    <!-- كارد آخر من المحتوى القديم -->
+    <!-- كارد 2 -->
     <article class="card">
       <img src="images/Sakkara.jpg" alt="Sakkara">
-      <img src="images/Memphis.jpg" alt="Memphis">
-      <img src="images/Dahshur.jpg" alt="Dahshur">
       <div class="body">
         <h3>Sakkara - Memphis - Dahshur</h3>
-        <p>Step back in time and uncover the secrets of Egypt’s legendary past. Begin your journey at Saqqara, home of the famous Step Pyramid—the world’s oldest stone pyramid. Wander through this vast necropolis, where every tomb and monument tells the story of early Egyptian dynasties.
-
-Continue to Memphis, the ancient capital, where colossal statues and historic ruins transport you to the heart of one of the world’s greatest civilizations. Experience the grandeur of kings and queens and immerse yourself in the rich heritage of ancient Egypt.
-
-Finally, discover Dahshur, a site of architectural wonders including the Bent and Red Pyramids. Marvel at the ingenuity of the ancient builders and witness the timeless beauty of these monumental tombs.
-
-This journey through Saqqara, Memphis, and Dahshur offers an unforgettable adventure filled with history, culture, and awe-inspiring sights. Let the magic of these ancient wonders inspire your spirit and create memories that will last a lifetime.</p>
-
+        <p>Step back in time and uncover the secrets of Egypt’s legendary past...</p>
         <button class="book-btn">Book Your Tour</button>
-        <div class="social-links">
-          <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">WhatsApp</a>
-          <a href="https://www.facebook.com/M-MernaTourGuide/" target="_blank" class="facebook">Facebook</a>
-          <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="instagram">Instagram</a>
-          <a href="https://www.tiktok.com/@mmernaguide" target="_blank" class="tiktok">TikTok</a>
-        </div>
       </div>
     </article>
 
-    <!-- استمر بنفس الطريقة لكل كارد موجود في الصفحة القديمة -->
+    <!-- كارد 3 -->
+    <article class="card">
+      <img src="images/Grand Egyptian Museum.jpg" alt="Grand Egyptian Museum">
+      <div class="body">
+        <h3>The Grand Egyptian Museum G.E.M</h3>
+        <p>🌍 Discover Egypt’s New Wonder — The Grand Egyptian Museum!...</p>
+        <button class="book-btn">Book Your Tour</button>
+      </div>
+    </article>
 
   </div>
 </main>
@@ -163,18 +170,38 @@ This journey through Saqqara, Memphis, and Dahshur offers an unforgettable adven
   &copy; 2025 M-Merna Tours. All rights reserved.
 </footer>
 
+<!-- Modal -->
+<div class="modal" id="tourModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Book Your Tour</h3>
+    <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">WhatsApp</a>
+    <a href="https://www.facebook.com/M-MernaTourGuide/" target="_blank" class="facebook">Facebook</a>
+    <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="instagram">Instagram</a>
+    <a href="https://www.tiktok.com/@mmernaguide" target="_blank" class="tiktok">TikTok</a>
+  </div>
+</div>
+
 <script>
-  const buttons = document.querySelectorAll('.book-btn');
-  buttons.forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      const links = btn.nextElementSibling;
-      if(links.style.display==='flex'){
-        links.style.display='none';
-      }else{
-        links.style.display='flex';
-      }
-    });
+const modal = document.getElementById('tourModal');
+const openBtns = document.querySelectorAll('.book-btn');
+const closeBtn = document.querySelector('.close-modal');
+
+openBtns.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    modal.style.display='flex';
   });
+});
+
+closeBtn.addEventListener('click', ()=>{
+  modal.style.display='none';
+});
+
+window.addEventListener('click', e=>{
+  if(e.target==modal){
+    modal.style.display='none';
+  }
+});
 </script>
 
 </body>
