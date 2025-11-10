@@ -341,5 +341,87 @@
     if(e.target === dahshurPopup) dahshurPopup.style.display = 'none';
   });
 </script>
+<!-- Memphis Tab -->
+<div class="container">
+  <div id="memphisTab" style="display:inline-block; background:#FFD700; color:#000; padding:15px 25px; margin:20px 0; border-radius:10px; cursor:pointer; font-weight:bold; font-size:1.2rem; transition:0.3s;">
+    Memphis
+  </div>
+</div>
+
+<!-- Popup Overlay for Memphis -->
+<div id="memphisPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999; overflow-y:auto; padding:20px;">
+  <div style="background:#111; border-radius:12px; padding:25px; max-width:800px; width:100%; color:#fff; position:relative;">
+    <span id="closeMemphisPopup" style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:24px; font-weight:bold;">&times;</span>
+    
+    <h2 style="color:#FFD700; margin-bottom:20px;">Discover the Ancient Splendors of Memphis, Egypt</h2>
+    
+    <p style="margin-bottom:20px; line-height:1.6;">
+      Step into the cradle of ancient Egyptian civilization at Memphis, the legendary capital of the Old Kingdom. Nestled along the Nile, Memphis was once the political, cultural, and religious heart of Egypt, a city where pharaohs ruled and monumental temples rose to honor the gods.
+      <br><br>
+      Explore the vast archaeological treasures that tell the story of a city that flourished over 4,500 years ago. Wander among the ruins of majestic temples dedicated to Ptah, the creator god, and witness the colossal statues that have survived the millennia, including the iconic Colossus of Ramses II. Each stone whispers the legacy of a civilization that shaped the course of human history.
+      <br><br>
+      Discover the necropolis of Saqqara nearby, home to the famous Step Pyramid of Djoser, a pioneering architectural marvel that marked the birth of pyramid construction. Walk through ancient courtyards, ceremonial halls, and tombs adorned with intricate reliefs, offering an unparalleled glimpse into the lives, beliefs, and artistry of the pharaohs and their subjects.
+      <br><br>
+      Beyond its monuments, Memphis was a hub of learning, trade, and spiritual devotion, influencing generations of architects, scribes, and artisans. Every artifact, from statues and stelae to ceremonial objects, reveals the sophistication, creativity, and enduring legacy of this magnificent city.
+      <br><br>
+      Memphis is more than ruins—it's a journey into the origins of Egyptian civilization. Experience the grandeur, the mystery, and the awe of a city that shaped one of the world’s greatest cultures. Stand where kings once ruled, where gods were worshiped, and where history comes alive with every step.
+      <br><br>
+      Don’t just learn about history—immerse yourself in it. Memphis invites you to witness the birth of a civilization, connect with ancient traditions, and create memories that will last a lifetime.
+    </p>
+
+    <!-- Images -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px; margin-bottom:25px;">
+      <img src="Memphis1.jpg" alt="Memphis1" style="width:100%; border-radius:8px;">
+      <img src="Memphis2.jpg" alt="Memphis2" style="width:100%; border-radius:8px;">
+      <img src="Memphis3.jpg" alt="Memphis3" style="width:100%; border-radius:8px;">
+      <img src="Memphis4.jpg" alt="Memphis4" style="width:100%; border-radius:8px;">
+      <img src="Memphis5.jpg" alt="Memphis5" style="width:100%; border-radius:8px;">
+      <img src="Memphis6.jpg" alt="Memphis6" style="width:100%; border-radius:8px;">
+      <img src="Memphis7.jpg" alt="Memphis7" style="width:100%; border-radius:8px;">
+      <img src="Memphis8.jpg" alt="Memphis8" style="width:100%; border-radius:8px;">
+    </div>
+
+    <!-- Book Your Tour Button -->
+    <div style="text-align:center;">
+      <button id="bookMemphisBtn" style="padding:12px 35px; font-size:18px; font-weight:bold; border:none; border-radius:10px; background:#FFD700; color:#000; cursor:pointer; transition:0.3s;">Book Your Tour</button>
+    </div>
+
+    <!-- Social Media Links -->
+    <div id="memphisSocialLinks" style="display:none; margin-top:20px; text-align:center; gap:15px; flex-wrap:wrap; justify-content:center;">
+      <a href="https://www.instagram.com/mmerna.guide/" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#C13584; padding:10px 18px; border-radius:8px;">Instagram</a>
+      <a href="https://www.tiktok.com/@mmernaguide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#69C9D0; padding:10px 18px; border-radius:8px;">TikTok</a>
+      <a href="https://wa.me/201029545765" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#25D366; padding:10px 18px; border-radius:8px;">WhatsApp</a>
+      <a href="https://www.facebook.com/M-MernaTourGuide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#3b5998; padding:10px 18px; border-radius:8px;">Facebook</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Scripts for Memphis Popup -->
+<script>
+  const memphisTab = document.getElementById('memphisTab');
+  const memphisPopup = document.getElementById('memphisPopup');
+  const closeMemphis = document.getElementById('closeMemphisPopup');
+  const bookMemphisBtn = document.getElementById('bookMemphisBtn');
+  const memphisSocialLinks = document.getElementById('memphisSocialLinks');
+
+  memphisTab.addEventListener('click', () => {
+    memphisPopup.style.display = 'flex';
+    memphisSocialLinks.style.display = 'none';
+  });
+
+  closeMemphis.addEventListener('click', () => {
+    memphisPopup.style.display = 'none';
+  });
+
+  bookMemphisBtn.addEventListener('click', () => {
+    memphisSocialLinks.style.display = 'flex';
+  });
+
+  memphisPopup.addEventListener('click', e => {
+    if(e.target === memphisPopup) memphisPopup.style.display = 'none';
+  });
+</script>
+
 
 
