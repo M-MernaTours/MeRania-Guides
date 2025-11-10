@@ -187,55 +187,64 @@
 
       function parseCSV(text) {
         const rows = [];
-        const lines = text.split(/\r?\n/).filter(l => l.trim()!=="");
-        for(let line of lines.slice(1)){
+        const lines = text.split(/\r?\n/).filter(l => l.trim() !== "");
+        for (let line of lines.slice(1)) {
           const matches = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
-          if(matches) rows.push(matches.map(v=>v.replace(/^"|"$/g,'').trim()));
+          if (matches && matches.length >= 5) {
+            rows.push(matches.map(v => v.replace(/^"|"$/g, '').trim()));
+          }
         }
         return rows;
       }
 
       async function loadReviews() {
         try {
-          const response = await fetch(sheetURL);
+          const response = await fetch(sheetURL, { cache: "no-store" });
           const text = await response.text();
           const data = parseCSV(text);
           reviews = data.map(row => {
-            const [date,name,country,rating,comment] = row;
-            return {date,name,country,rating,comment};
-          }).filter(r => r.name && r.comment);
-          if(reviews.length===0){
-            document.getElementById("review-box").innerHTML="<p style='color:#ccc;'>No reviews available yet.</p>";
+            const [date, name, country, rating, comment] = row;
+            return { date, name: name || "Anonymous", country, rating: parseInt(rating) || 5, comment };
+          }).filter(r => r.comment);
+
+          if (reviews.length === 0) {
+            document.getElementById("review-box").innerHTML = "<p style='color:#ccc;'>No reviews available yet.</p>";
+            document.getElementById("review-counter").textContent = "";
             return;
           }
           showReview(current);
-        } catch(e){
+        } catch (e) {
           console.error("Error loading reviews:", e);
-          document.getElementById("review-box").innerHTML="<p style='color:red;'>⚠️ Error loading reviews.</p>";
+          document.getElementById("review-box").innerHTML = "<p style='color:red;'>⚠️ Error loading reviews.</p>";
+          document.getElementById("review-counter").textContent = "";
         }
       }
 
-      function showReview(index){
+      function showReview(index) {
         const r = reviews[index];
-        if(!r) return;
-        document.getElementById("review-date").textContent=r.date||"";
-        document.getElementById("review-name").textContent=r.name||"Anonymous";
-        document.getElementById("review-country").textContent=r.country||"";
-        document.getElementById("review-comment").textContent=r.comment||"";
-        document.getElementById("review-stars").textContent="⭐".repeat(parseInt(r.rating||5));
-        document.getElementById("review-counter").textContent=`${index+1} / ${reviews.length} Reviews`;
+        if (!r) return;
+        document.getElementById("review-date").textContent = r.date || "";
+        document.getElementById("review-name").textContent = r.name;
+        document.getElementById("review-country").textContent = r.country || "";
+        document.getElementById("review-comment").textContent = r.comment;
+        document.getElementById("review-stars").textContent = "⭐".repeat(r.rating);
+        document.getElementById("review-counter").textContent = `${index + 1} / ${reviews.length} Reviews`;
       }
 
       const prev = document.getElementById("prevBtn");
       const next = document.getElementById("nextBtn");
-      prev?.addEventListener("click",()=>{current=(current-1+reviews.length)%reviews.length;showReview(current);});
-      next?.addEventListener("click",()=>{current=(current+1)%reviews.length;showReview(current);});
+      prev?.addEventListener("click", () => { current = (current - 1 + reviews.length) % reviews.length; showReview(current); });
+      next?.addEventListener("click", () => { current = (current + 1) % reviews.length; showReview(current); });
 
       const box = document.getElementById("review-box");
       box?.addEventListener("touchstart", e => startX = e.touches[0].clientX);
       box?.addEventListener("touchend", e => {
-        const endX = e.changedTouches[0].clientX, diff = endX-startX;
-        if(Math.abs(diff)>50){ current = diff>0 ? (current-1+reviews.length)%reviews.length : (current+1)%reviews.length; showReview(current); }
+        const endX = e.changedTouches[0].clientX;
+        const diff = endX - startX;
+        if (Math.abs(diff) > 50) {
+          current = diff > 0 ? (current - 1 + reviews.length) % reviews.length : (current + 1) % reviews.length;
+          showReview(current);
+        }
       });
 
       loadReviews();
@@ -250,4 +259,3 @@
   </script>
 </body>
 </html>
-
