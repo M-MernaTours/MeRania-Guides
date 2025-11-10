@@ -265,4 +265,81 @@
     if(e.target === pyramidPopup) pyramidPopup.style.display = 'none';
   });
 </script>
+<!-- Dahshur Tab -->
+<div class="container">
+  <div id="dahshurTab" style="display:inline-block; background:#FFD700; color:#000; padding:15px 25px; margin:20px 0; border-radius:10px; cursor:pointer; font-weight:bold; font-size:1.2rem; transition:0.3s;">
+    Dahshur
+  </div>
+</div>
+
+<!-- Dahshur Popup Overlay -->
+<div id="dahshurPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999; overflow-y:auto; padding:20px;">
+  <div style="background:#111; border-radius:12px; padding:25px; max-width:800px; width:100%; color:#fff; position:relative;">
+    <span id="closeDahshurPopup" style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:24px; font-weight:bold;">&times;</span>
+    
+    <h2 style="color:#FFD700; margin-bottom:20px;">Discover the Ancient Wonders of Dahshur</h2>
+    
+    <p style="margin-bottom:20px; line-height:1.6;">
+      Step into the timeless world of Dahshur, a serene plateau south of Cairo, where the mysteries of Egypt’s royal past await. Home to the legendary Bent Pyramid and the Red Pyramid, Dahshur offers a unique glimpse into the early experiments of pyramid construction, long before the Great Pyramid of Giza rose to fame.
+      <br><br>
+      Marvel at the innovative architecture of the Bent Pyramid, whose unusual shape tells the story of ancient builders testing new techniques to reach perfection. Walk around the Red Pyramid, the first successful smooth-sided pyramid, and feel the awe of standing in a monument that set the standard for centuries to come.
+      <br><br>
+      Beyond the pyramids, explore the quiet landscapes where history whispers through the sands. Dahshur’s peaceful surroundings and fewer crowds make it the perfect place to truly connect with Egypt’s ancient heritage. Capture stunning photographs, uncover fascinating stories of pharaohs and architects, and experience the magic of structures that have stood for over 4,000 years.
+      <br><br>
+      Don’t just see history—experience it. Dahshur invites you to step off the beaten path, explore the early marvels of pyramid building, and immerse yourself in the wonder of Egypt’s enduring legacy.
+    </p>
+
+    <!-- Images -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px; margin-bottom:25px;">
+      <img src="Dahshur1.jpg" alt="Dahshur1" style="width:100%; border-radius:8px;">
+      <img src="Dahshur2.jpg" alt="Dahshur2" style="width:100%; border-radius:8px;">
+      <img src="Dahshur3.jpg" alt="Dahshur3" style="width:100%; border-radius:8px;">
+      <img src="Dahshur4.jpg" alt="Dahshur4" style="width:100%; border-radius:8px;">
+      <img src="Dahshur5.jpg" alt="Dahshur5" style="width:100%; border-radius:8px;">
+      <img src="Dahshur6.jpg" alt="Dahshur6" style="width:100%; border-radius:8px;">
+      <img src="Dahshur7.jpg" alt="Dahshur7" style="width:100%; border-radius:8px;">
+    </div>
+
+    <!-- Book Your Tour Button -->
+    <div style="text-align:center;">
+      <button id="bookDahshurBtn" style="padding:12px 35px; font-size:18px; font-weight:bold; border:none; border-radius:10px; background:#FFD700; color:#000; cursor:pointer; transition:0.3s;">Book Your Tour</button>
+    </div>
+
+    <!-- Social Media Links -->
+    <div id="dahshurSocialLinks" style="display:none; margin-top:20px; text-align:center; gap:15px; flex-wrap:wrap; justify-content:center;">
+      <a href="https://www.instagram.com/mmerna.guide/" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#C13584; padding:10px 18px; border-radius:8px;">Instagram</a>
+      <a href="https://www.tiktok.com/@mmernaguide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#69C9D0; padding:10px 18px; border-radius:8px;">TikTok</a>
+      <a href="https://wa.me/201029545765" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#25D366; padding:10px 18px; border-radius:8px;">WhatsApp</a>
+      <a href="https://www.facebook.com/M-MernaTourGuide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#3b5998; padding:10px 18px; border-radius:8px;">Facebook</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const dahshurTab = document.getElementById('dahshurTab');
+  const dahshurPopup = document.getElementById('dahshurPopup');
+  const closeDahshur = document.getElementById('closeDahshurPopup');
+  const bookDahshurBtn = document.getElementById('bookDahshurBtn');
+  const dahshurSocialLinks = document.getElementById('dahshurSocialLinks');
+
+  dahshurTab.addEventListener('click', () => {
+    dahshurPopup.style.display = 'flex';
+    dahshurSocialLinks.style.display = 'none';
+  });
+
+  closeDahshur.addEventListener('click', () => {
+    dahshurPopup.style.display = 'none';
+  });
+
+  bookDahshurBtn.addEventListener('click', () => {
+    dahshurSocialLinks.style.display = 'flex';
+  });
+
+  // Close popup if click outside content
+  dahshurPopup.addEventListener('click', e => {
+    if(e.target === dahshurPopup) dahshurPopup.style.display = 'none';
+  });
+</script>
+
 
