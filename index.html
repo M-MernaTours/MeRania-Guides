@@ -1,254 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M-Merna Tours</title>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2336401557195623" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M-Merna Tours</title>
 
-  <!-- Styles -->
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Georgia', serif;
-      background: url('https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/cover.jpg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-      text-align: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+<style>
+/* === عام === */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Georgia, serif; background:#111; color:#fff; min-height:100vh; }
+.container { text-align:center; margin:20px; }
 
-    header {
-      position: absolute; top:0; left:0; width:100%;
-      display:flex; justify-content:space-between; align-items:center;
-      padding:15px 20px; background-color: rgba(0,0,0,0.7);
-    }
-    header img { height:60px; }
-    nav { display:flex; gap:25px; }
-    nav a {
-      color: #FFD700; text-decoration:none; font-weight:bold; font-size:1.2rem;
-      transition:0.3s;
-    }
-    nav a:hover { color:#FFC107; }
-    .menu-toggle { display:none; flex-direction:column; cursor:pointer; gap:5px; }
-    .menu-toggle span { width:25px; height:3px; background-color:#FFD700; display:block; }
-    .banner-text { font-size:3rem; font-weight:bold; text-shadow:2px 2px 5px #000; margin-bottom:50px; }
-    .home-buttons a {
-      display:inline-block; text-decoration:none; color:#000;
-      background-color:#FFD700; padding:15px 30px; font-weight:bold;
-      margin:15px 0; border-radius:8px; transition:0.3s;
-    }
-    .home-buttons a:hover { background-color:#FFC107; }
-    footer {
-      width:100%; text-align:center; padding:15px;
-      background-color: rgba(0,0,0,0.7); color:#FFD700;
-    }
+/* === Tabs === */
+.tab-btn { display:inline-block; background:#FFD700; color:#000; padding:12px 25px; margin:10px; border-radius:10px; cursor:pointer; font-weight:bold; transition:0.3s; }
+.tab-btn:hover { background:#FFC107; }
 
-    /* Book Your Tour Button */
-    .book-tour-container { margin:30px 0; text-align:center; position:relative; }
-    #book-tour-btn {
-      padding:15px 40px; border:none; border-radius:12px;
-      background: linear-gradient(135deg, #FFD700, #FFC107);
-      font-weight:bold; font-size:18px; cursor:pointer; transition:0.3s;
-    }
-    #book-tour-btn:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.4); }
-    .book-social-buttons {
-      display:none; margin-top:15px; justify-content:center; gap:20px; flex-wrap:wrap;
-    }
-    .book-social-buttons a {
-      display:inline-flex; align-items:center; padding:12px 20px;
-      border-radius:12px; font-weight:bold; font-size:16px; color:#fff;
-      text-decoration:none; transition:0.3s; box-shadow:0 5px 15px rgba(0,0,0,0.3);
-    }
-    .book-social-buttons a img { width:24px; vertical-align:middle; margin-right:8px; }
-    .book-social-buttons a:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.4); opacity:0.95; }
-    .book-social-buttons .whatsapp { background: linear-gradient(135deg,#25D366,#1DA851); }
-    .book-social-buttons .facebook { background: linear-gradient(135deg,#3b5998,#2d4373); }
-    .book-social-buttons .instagram { background: linear-gradient(135deg,#E1306C,#C13584); }
-    .book-social-buttons .tiktok { background: linear-gradient(135deg,#010101,#69C9D0); }
+/* === Popup Overlay === */
+.popup { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999; overflow-y:auto; padding:20px; }
+.popup-content { background:#111; border-radius:12px; padding:25px; max-width:800px; width:100%; color:#fff; position:relative; }
+.popup-content h2 { color:#FFD700; margin-bottom:20px; }
+.popup-content p { margin-bottom:20px; line-height:1.6; }
 
-    /* Reviews Section */
-    #reviews-section { text-align:center; margin:50px auto; max-width:800px; }
-    #reviews-section h2 { color:#f5d142; text-shadow:0 0 10px rgba(245,209,66,0.5); margin-bottom:10px; }
-    #review-box {
-      background:rgba(0,0,0,0.35); backdrop-filter:blur(10px);
-      border:1px solid rgba(245,209,66,0.3); border-radius:20px; padding:35px; margin:25px;
-      box-shadow:0 0 25px rgba(245,209,66,0.2), inset 0 0 10px rgba(245,209,66,0.05);
-      transition:0.5s; min-height:180px;
-    }
-    #review-date { color:#e0d39b; font-size:14px; letter-spacing:0.5px; }
-    #review-name { color:#f5d142; font-size:24px; margin-bottom:8px; letter-spacing:1px; }
-    #review-country { color:#f1f1f1; font-style:italic; margin-bottom:12px; }
-    #review-stars { font-size:22px; color:#ffd86e; margin-bottom:18px; text-shadow:0 0 5px rgba(255,216,110,0.6); }
-    #review-comment { color:#fff; font-size:18px; line-height:1.7; white-space:pre-wrap; text-shadow:0 0 4px rgba(0,0,0,0.5); }
+/* Close button */
+.close-popup { position:absolute; top:15px; right:20px; cursor:pointer; font-size:24px; font-weight:bold; }
 
-    /* Review buttons */
-    #prevBtn, #nextBtn {
-      padding:10px 25px; margin:5px; border:none; border-radius:8px;
-      background:#f5d142; color:#1a1a1a; cursor:pointer; font-weight:bold; transition:0.3s;
-    }
+/* Images grid */
+.images-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px; margin-bottom:25px; }
+.images-grid img { width:100%; border-radius:8px; }
 
-    /* Responsive */
-    @media(max-width:768px) {
-      .banner-text { font-size:2rem; padding:0 15px; }
-      .home-buttons a { padding:12px 25px; }
-      nav { position:absolute; top:70px; left:0; width:100%; flex-direction:column; background-color: rgba(0,0,0,0.9); align-items:center; display:none; }
-      nav.show { display:flex; }
-      .menu-toggle { display:flex; }
-      #prevBtn, #nextBtn { display:none !important; }
-      .mobile-only { display:block; margin-bottom:10px; color:#ccc; font-style:italic; }
-      .book-social-buttons { flex-direction:column; gap:15px; }
-    }
-    @media(min-width:769px) { .mobile-only { display:none; } }
-  </style>
+/* Book Your Tour */
+.book-btn { padding:12px 35px; font-size:18px; font-weight:bold; border:none; border-radius:10px; background:#FFD700; color:#000; cursor:pointer; transition:0.3s; }
+.book-btn:hover { background:#FFC107; }
+.social-links { display:none; margin-top:20px; text-align:center; gap:15px; flex-wrap:wrap; justify-content:center; }
+.social-links a { display:inline-block; margin:5px; text-decoration:none; color:#fff; padding:10px 18px; border-radius:8px; font-weight:bold; }
+.social-links .whatsapp { background:#25D366; }
+.social-links .facebook { background:#3b5998; }
+.social-links .instagram { background:#C13584; }
+.social-links .tiktok { background:#69C9D0; }
+
+/* Reviews Section */
+#reviews-section { text-align:center; margin:50px auto; max-width:800px; }
+#reviews-section h2 { color:#f5d142; margin-bottom:10px; }
+#review-box { background:rgba(0,0,0,0.35); border:1px solid rgba(245,209,66,0.3); border-radius:20px; padding:35px; margin:25px; min-height:180px; }
+#review-date { color:#e0d39b; font-size:14px; }
+#review-name { color:#f5d142; font-size:24px; margin-bottom:8px; }
+#review-country { color:#f1f1f1; font-style:italic; margin-bottom:12px; }
+#review-stars { font-size:22px; color:#ffd86e; margin-bottom:18px; }
+#review-comment { color:#fff; font-size:18px; line-height:1.7; white-space:pre-wrap; }
+#prevBtn, #nextBtn { padding:10px 25px; margin:5px; border:none; border-radius:8px; background:#f5d142; color:#1a1a1a; cursor:pointer; font-weight:bold; }
+
+/* Footer */
+footer { width:100%; text-align:center; padding:15px; background-color: rgba(0,0,0,0.7); color:#FFD700; }
+
+/* Responsive */
+@media(max-width:768px) { .images-grid { grid-template-columns:repeat(auto-fit,minmax(100px,1fr)); } }
+</style>
 </head>
 <body>
-  <header>
-    <img src="https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/guidelogo.png" alt="M-Merna Tours Logo">
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span><span></span><span></span>
-    </div>
-    <nav id="nav-links">
-      <a href="#">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="tours.html">Tours</a>
-      <a href="Processes & Policies.html">Processes & Policies</a>
-    </nav>
-  </header>
 
-  <div class="banner-text">Explore Egypt with Us</div>
-  <div class="home-buttons">
-    <a href="tours.html">Explore Our Tours</a>
-    <br>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScLqB4OtAM15j0HXTmliztJ7uRObmFHc9xQausCTv6HbGmbbw/viewform?usp=dialog">Review Us</a>
+<div class="container">
+  <!-- Tabs -->
+  <div class="tab-btn" data-popup="aswanPopup">Aswan</div>
+  <div class="tab-btn" data-popup="memphisPopup">Memphis</div>
+  <div class="tab-btn" data-popup="customPopup">Customize Your Tour</div>
+  <div class="tab-btn" data-popup="policyPopup">Processes & Policies</div>
+</div>
+
+<!-- === Popups === -->
+
+<!-- Aswan -->
+<div id="aswanPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-popup">&times;</span>
+    <h2>Discover Aswan, Egypt</h2>
+    <p>Experience the beauty and serenity of Aswan, the jewel of southern Egypt. Sail on a felucca, explore Nubian culture, and witness history, nature, and ancient charm meet in perfect harmony.</p>
+    <div class="images-grid">
+      <img src="Aswan1.jpg" alt="Aswan1">
+      <img src="Aswan2.jpg" alt="Aswan2">
+      <img src="Aswan3.jpg" alt="Aswan3">
+      <img src="Aswan4.jpg" alt="Aswan4">
+      <img src="Aswan5.jpg" alt="Aswan5">
+      <img src="Aswan6.jpg" alt="Aswan6">
+      <img src="Aswan7.jpg" alt="Aswan7">
+      <img src="Aswan8.jpg" alt="Aswan8">
+    </div>
+    <div style="text-align:center;">
+      <button class="book-btn">Book Your Tour</button>
+      <div class="social-links">
+        <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">WhatsApp</a>
+        <a href="https://www.facebook.com/M-MernaTourGuide" target="_blank" class="facebook">Facebook</a>
+        <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="instagram">Instagram</a>
+        <a href="https://www.tiktok.com/@mmernaguide" target="_blank" class="tiktok">TikTok</a>
+      </div>
+    </div>
   </div>
+</div>
 
-  <!-- Book Your Tour Section -->
-  <div class="book-tour-container">
-    <button id="book-tour-btn">Book Your Tour</button>
-    <div class="book-social-buttons" id="book-social-buttons">
-      <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> WhatsApp
-      </a>
-      <a href="https://www.facebook.com/share/17Q14LwbrG/" target="_blank" class="facebook">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"> Facebook
-      </a>
-      <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="instagram">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"> Instagram
-      </a>
-      <a href="https://www.tiktok.com/@mmernaguide" target="_blank" class="tiktok">
-        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"> TikTok
-      </a>
+<!-- Memphis -->
+<div id="memphisPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-popup">&times;</span>
+    <h2>Discover Memphis, Egypt</h2>
+    <p>Step into the cradle of ancient Egyptian civilization at Memphis. Explore legendary temples, statues, and enjoy the rich heritage of the Old Kingdom.</p>
+  </div>
+</div>
+
+<!-- Customize Your Tour -->
+<div id="customPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-popup">&times;</span>
+    <h2>Customize Your Tour</h2>
+    <p>You can select any tour you like and we will create a personalized itinerary that fits your preferences, ensuring an unforgettable experience.</p>
+    <div style="text-align:center;">
+      <button class="book-btn">Book Your Tour</button>
+      <div class="social-links">
+        <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">WhatsApp</a>
+        <a href="https://www.facebook.com/M-MernaTourGuide" target="_blank" class="facebook">Facebook</a>
+        <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="instagram">Instagram</a>
+        <a href="https://www.tiktok.com/@mmernaguide" target="_blank" class="tiktok">TikTok</a>
+      </div>
     </div>
   </div>
+</div>
 
-  <!-- Reviews Section -->
-  <section id="reviews-section">
-    <h2 id="review-title">🌟 Our Guest Reviews 🌟</h2>
-    <p class="mobile-only">👉 Swipe to see our guest's reviews</p>
-    <div id="review-box">
-      <p id="review-date"></p>
-      <h3 id="review-name"></h3>
-      <p id="review-country"></p>
-      <div id="review-stars"></div>
-      <p id="review-comment"></p>
-    </div>
-    <div style="margin-top:25px;">
-      <button id="prevBtn">⬅ Prev</button>
-      <span id="review-counter" style="color:#f5d142; font-size:16px; margin:0 12px; font-family:Georgia;"></span>
-      <button id="nextBtn">Next ➡</button>
-    </div>
-  </section>
+<!-- Processes & Policies -->
+<div id="policyPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-popup">&times;</span>
+    <h2>Processes & Policies</h2>
+    <p>We are committed to providing a professional, safe, and enjoyable experience. Our booking, safety, and cancellation policies ensure your tour is seamless and enjoyable.</p>
+  </div>
+</div>
 
-  <footer>&copy; 2025 M-Merna Tours. All rights reserved.</footer>
+<!-- Reviews Section -->
+<section id="reviews-section">
+  <h2>🌟 Our Guest Reviews 🌟</h2>
+  <div id="review-box">
+    <p id="review-date"></p>
+    <h3 id="review-name"></h3>
+    <p id="review-country"></p>
+    <div id="review-stars"></div>
+    <p id="review-comment"></p>
+  </div>
+  <div>
+    <button id="prevBtn">⬅ Prev</button>
+    <span id="review-counter"></span>
+    <button id="nextBtn">Next ➡</button>
+  </div>
+</section>
 
-  <!-- Scripts -->
-  <script>
-    // Menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-    menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+<footer>&copy; 2025 M-Merna Tours. All rights reserved.</footer>
 
-    // Book Tour button
-    const tourBtn = document.getElementById('book-tour-btn');
-    const socialBtns = document.getElementById('book-social-buttons');
-    tourBtn.addEventListener('click', () => {
-      socialBtns.style.display = socialBtns.style.display === "flex" ? "none" : "flex";
-    });
+<script>
+// === Popup functionality ===
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const popup = document.getElementById(btn.dataset.popup);
+    popup.style.display = 'flex';
+    popup.querySelector('.social-links')?.style.display = 'none';
+  });
+});
+document.querySelectorAll('.close-popup').forEach(span => {
+  span.addEventListener('click', e => { e.target.closest('.popup').style.display = 'none'; });
+});
+document.querySelectorAll('.popup').forEach(p => {
+  p.addEventListener('click', e => { if(e.target === p) p.style.display='none'; });
+});
+document.querySelectorAll('.book-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const socials = btn.nextElementSibling;
+    socials.style.display = socials.style.display === 'flex' ? 'none' : 'flex';
+  });
+});
 
-    // Reviews carousel
-    document.addEventListener("DOMContentLoaded", function() {
-      const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTpgx7xPbW_mR4nomNth-MBNP2MSL-OJXYpq0JoVaiTgZYgZv23Kbb8tdFyT9gzqCGbFqjP79vCUw03/pub?output=csv";
-      let reviews = [], current = 0, startX = 0;
+// === Reviews Section ===
+document.addEventListener("DOMContentLoaded", function() {
+  const sheetBaseURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTpgx7xPbW_mR4nomNth-MBNP2MSL-OJXYpq0JoVaiTgZYgZv23Kbb8tdFyT9gzqCGbFqjP79vCUw03/pub?output=csv&gid=694082955";
+  let reviews=[], current=0, startX=0;
 
-      function parseCSV(text) {
-        const rows = [];
-        const lines = text.split(/\r?\n/).filter(l => l.trim()!=="");
-        for(let line of lines.slice(1)){
-          const matches = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
-          if(matches) rows.push(matches.map(v=>v.replace(/^"|"$/g,'').trim()));
-        }
-        return rows;
-      }
-
-      async function loadReviews() {
-        try {
-          const response = await fetch(sheetURL);
-          const text = await response.text();
-          const data = parseCSV(text);
-          reviews = data.map(row => {
-            const [date,name,country,rating,comment] = row;
-            return {date,name,country,rating,comment};
-          }).filter(r => r.name && r.comment);
-          if(reviews.length===0){
-            document.getElementById("review-box").innerHTML="<p style='color:#ccc;'>No reviews available yet.</p>";
-            return;
-          }
-          showReview(current);
-        } catch(e){
-          console.error("Error loading reviews:", e);
-          document.getElementById("review-box").innerHTML="<p style='color:red;'>⚠️ Error loading reviews.</p>";
-        }
-      }
-
-      function showReview(index){
-        const r = reviews[index];
-        if(!r) return;
-        document.getElementById("review-date").textContent=r.date||"";
-        document.getElementById("review-name").textContent=r.name||"Anonymous";
-        document.getElementById("review-country").textContent=r.country||"";
-        document.getElementById("review-comment").textContent=r.comment||"";
-        document.getElementById("review-stars").textContent="⭐".repeat(parseInt(r.rating||5));
-        document.getElementById("review-counter").textContent=`${index+1} / ${reviews.length} Reviews`;
-      }
-
-      const prev = document.getElementById("prevBtn");
-      const next = document.getElementById("nextBtn");
-      prev?.addEventListener("click",()=>{current=(current-1+reviews.length)%reviews.length;showReview(current);});
-      next?.addEventListener("click",()=>{current=(current+1)%reviews.length;showReview(current);});
-
-      const box = document.getElementById("review-box");
-      box?.addEventListener("touchstart", e => startX = e.touches[0].clientX);
-      box?.addEventListener("touchend", e => {
-        const endX = e.changedTouches[0].clientX, diff = endX-startX;
-        if(Math.abs(diff)>50){ current = diff>0 ? (current-1+reviews.length)%reviews.length : (current+1)%reviews.length; showReview(current); }
-      });
-
-      loadReviews();
-    });
-
-    // Service Worker
-    if('serviceWorker' in navigator){
-      navigator.serviceWorker.register('/sw.js')
-      .then(reg=>console.log('Service Worker registered:', reg.scope))
-      .catch(err=>console.log('Service Worker registration failed:', err));
+  function parseCSV(text){
+    const rows=[], lines=text.split(/\r?\n/).filter(l=>l.trim()!=="");
+    for(let line of lines.slice(1)){
+      const matches=line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+      if(matches) rows.push(matches.map(v=>v.replace(/^"|"$/g,'').trim()));
     }
-  </script>
+    return rows;
+  }
+
+  async function loadReviews(){
+    try{
+      const sheetURL = sheetBaseURL+"&t="+new Date().getTime();
+      const res = await fetch(sheetURL);
+      const text = await res.text();
+      const data = parseCSV(text);
+      reviews = data.map(r=>({date:r[0],name:r[1],country:r[2],rating:r[3],comment:r[4]})).filter(r=>r.name && r.comment);
+      if(reviews.length===0){ document.getElementById("review-box").innerHTML="<p style='color:#ccc;'>No reviews yet.</p>"; return; }
+      showReview(current);
+    }catch(e){ console.error(e); document.getElementById("review-box").innerHTML="<p style='color:red;'>Error loading reviews.</p>"; }
+  }
+
+  function showReview(i){
+    const r=reviews[i]; if(!r) return;
+    document.getElementById("review-date").textContent=r.date||"";
+    document.getElementById("review-name").textContent=r.name||"Anonymous";
+    document.getElementById("review-country").textContent=r.country||"";
+    document.getElementById("review-comment").textContent=r.comment||"";
+    document.getElementById("review-stars").textContent="⭐".repeat(parseInt(r.rating||5));
+    document.getElementById("review-counter").textContent=`${i+1} / ${reviews.length} Reviews`;
+  }
+
+  document.getElementById("prevBtn").addEventListener("click", ()=>{ current=(current-1+reviews.length)%reviews.length; showReview(current); });
+  document.getElementById("nextBtn").addEventListener("click", ()=>{ current=(current+1)%reviews.length; showReview(current); });
+
+  const box=document.getElementById("review-box");
+  box.addEventListener("touchstart", e=>startX=e.touches[0].clientX);
+  box.addEventListener("touchend", e=>{ const endX=e.changedTouches[0].clientX, diff=endX-startX; if(Math.abs(diff)>50){ current=diff>0?(current-1+reviews.length)%reviews.length:(current+1)%reviews.length; showReview(current); } });
+
+  loadReviews();
+  setInterval(loadReviews,5*60*1000);
+});
+</script>
+
 </body>
 </html>
-
-
