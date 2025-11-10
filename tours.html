@@ -198,6 +198,75 @@ Tab -->
     if(e.target === gemPopup) gemPopup.style.display = 'none';
   });
 </script>
+<!-- Popup Overlay -->
+<div id="gemPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999; padding:20px; overflow:auto;">
+  <div style="background:#111; border-radius:12px; padding:25px; max-width:800px; width:100%; color:#fff; position:relative; max-height:90vh; overflow-y:auto;">
+    <span id="closeGemPopup" style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:24px; font-weight:bold;">&times;</span>
+    
+    <h2 style="color:#FFD700; margin-bottom:20px;">Discover the Egyptian Museum</h2>
+    
+    <p style="margin-bottom:20px; line-height:1.6;">
+      Step into the world of ancient Egypt at the Egyptian Museum in Cairo, home to over 5,000 years of history. Explore the treasures of King Tutankhamun, colossal statues, mummies, and countless artifacts that tell the story of one of the world’s greatest civilizations.
+      <br><br>
+      Experience the wonder of ancient rituals, pharaohs’ lives, and timeless art. Every room, every artifact, every display invites you to step back in time and witness the legacy of the Pharaohs.
+      <br><br>
+      Don’t just see history—live it. Make your visit unforgettable and immerse yourself in the magic of the Egyptian Museum!
+    </p>
+
+    <!-- Images -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px; margin-bottom:25px;">
+      <img src="GEM1.jpg" alt="GEM1" style="width:100%; border-radius:8px;">
+      <img src="GEM2.jpg" alt="GEM2" style="width:100%; border-radius:8px;">
+      <img src="GEM3.jpg" alt="GEM3" style="width:100%; border-radius:8px;">
+      <img src="GEM4.jpg" alt="GEM4" style="width:100%; border-radius:8px;">
+      <img src="GEM5.jpg" alt="GEM5" style="width:100%; border-radius:8px;">
+      <img src="GEM6.jpg" alt="GEM6" style="width:100%; border-radius:8px;">
+      <img src="GEM7.jpg" alt="GEM7" style="width:100%; border-radius:8px;">
+      <img src="GEM8.jpg" alt="GEM8" style="width:100%; border-radius:8px;">
+    </div>
+
+    <!-- Book Your Tour Button -->
+    <div style="text-align:center;">
+      <button id="bookTourBtn" style="padding:12px 35px; font-size:18px; font-weight:bold; border:none; border-radius:10px; background:#FFD700; color:#000; cursor:pointer; transition:0.3s;">Book Your Tour</button>
+    </div>
+
+    <!-- Social Media Links -->
+    <div id="socialLinks" style="display:none; margin-top:20px; text-align:center; gap:15px; flex-wrap:wrap; justify-content:center;">
+      <a href="https://www.instagram.com/mmerna.guide/" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#C13584; padding:10px 18px; border-radius:8px;">Instagram</a>
+      <a href="https://www.tiktok.com/@mmernaguide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#69C9D0; padding:10px 18px; border-radius:8px;">TikTok</a>
+      <a href="https://wa.me/201029545765" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#25D366; padding:10px 18px; border-radius:8px;">WhatsApp</a>
+      <a href="https://www.facebook.com/M-MernaTourGuide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#3b5998; padding:10px 18px; border-radius:8px;">Facebook</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const gemTab = document.getElementById('gemTab');
+  const gemPopup = document.getElementById('gemPopup');
+  const closeGem = document.getElementById('closeGemPopup');
+  const bookBtn = document.getElementById('bookTourBtn');
+  const socialLinks = document.getElementById('socialLinks');
+
+  gemTab.addEventListener('click', () => {
+    gemPopup.style.display = 'flex';
+    socialLinks.style.display = 'none'; // Hide social links initially
+  });
+
+  closeGem.addEventListener('click', () => {
+    gemPopup.style.display = 'none';
+  });
+
+  bookBtn.addEventListener('click', () => {
+    socialLinks.style.display = 'flex'; // Show social links when Book Your Tour is clicked
+  });
+
+  // Close popup if click outside content
+  gemPopup.addEventListener('click', e => {
+    if(e.target === gemPopup) gemPopup.style.display = 'none';
+  });
+</script>
+
 
 
 
