@@ -129,6 +129,76 @@
     <a href="Processes & Policies.html">Processes & Policies</a>
   </nav>
 </header>
+<!-- Processes & Policies Tab -->
+<div class="container">
+  <div id="processTab" style="display:inline-block; background:#FFD700; color:#000; padding:15px 25px; margin:20px 0; border-radius:10px; cursor:pointer; font-weight:bold; font-size:1.2rem; transition:0.3s;">
+    Processes & Policies
+  </div>
+</div>
+
+<!-- Popup Overlay -->
+<div id="processPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999; overflow-y:auto; padding:20px;">
+  <div style="background:#111; border-radius:12px; padding:25px; max-width:800px; width:100%; color:#fff; position:relative;">
+    <span id="closeProcessPopup" style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:24px; font-weight:bold;">&times;</span>
+    
+    <h2 style="color:#FFD700; margin-bottom:20px;">Processes & Policies</h2>
+    
+    <p style="margin-bottom:20px; line-height:1.6; font-size:1.05rem;">
+      <strong>1. Booking Process:</strong> Tours are booked through direct contact or via our website/WhatsApp. After selecting your tour, you will receive confirmation within 24 hours with all the details. All information is clear and transparent to ensure professionalism.<br><br>
+
+      <strong>2. Customization:</strong> Travelers can fully customize their journey: select attractions, schedule, transportation type, and any additional activities. Our team designs a personalized plan to guarantee the best experience while considering time and budget. Any changes before the tour are implemented quickly and smoothly.<br><br>
+
+      <strong>3. Payment & Confirmation:</strong> Payment arrangements are made directly with the client in a secure and flexible way. Confirmation of the booking is sent immediately after agreeing on the details to ensure clarity and professionalism.<br><br>
+
+      <strong>4. Cancellation & Refund Policy:</strong> Cancellation 72 hours prior to the tour: full refund or rescheduling available. Cancellation within 72 hours: partial refund according to pre-defined conditions. Any unforeseen circumstances (medical emergency or force majeure) are handled flexibly with compensation or rescheduling.<br><br>
+
+      <strong>5. Safety & Conduct:</strong> Safety and security are our top priorities on all tours. We provide reliable transportation and experienced, certified guides. Respect for landmarks, local culture, and the environment is mandatory for all participants. Clear instructions are given to ensure a safe and enjoyable experience.<br><br>
+
+      <strong>6. Professional Commitment:</strong> All tours are managed according to the highest quality and service standards. We strictly adhere to schedules and timings for all tour activities. Customer support is available throughout the tour for any inquiries or urgent assistance.
+    </p>
+
+    <!-- Book Your Tour Button -->
+    <div style="text-align:center;">
+      <button id="bookProcessBtn" style="padding:12px 35px; font-size:18px; font-weight:bold; border:none; border-radius:10px; background:#FFD700; color:#000; cursor:pointer; transition:0.3s;">Book Your Tour</button>
+    </div>
+
+    <!-- Social Media Links -->
+    <div id="processSocialLinks" style="display:none; margin-top:20px; text-align:center; gap:15px; flex-wrap:wrap; justify-content:center;">
+      <a href="https://www.instagram.com/mmerna.guide/" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#C13584; padding:10px 18px; border-radius:8px;">Instagram</a>
+      <a href="https://www.tiktok.com/@mmernaguide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#69C9D0; padding:10px 18px; border-radius:8px;">TikTok</a>
+      <a href="https://wa.me/201029545765" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#25D366; padding:10px 18px; border-radius:8px;">WhatsApp</a>
+      <a href="https://www.facebook.com/M-MernaTourGuide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#3b5998; padding:10px 18px; border-radius:8px;">Facebook</a>
+      <a href="https://mmernaguide.info" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#000; background:#FFD700; padding:10px 18px; border-radius:8px;">Website</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const processTab = document.getElementById('processTab');
+  const processPopup = document.getElementById('processPopup');
+  const closeProcess = document.getElementById('closeProcessPopup');
+  const bookProcessBtn = document.getElementById('bookProcessBtn');
+  const processSocialLinks = document.getElementById('processSocialLinks');
+
+  processTab.addEventListener('click', () => {
+    processPopup.style.display = 'flex';
+    processSocialLinks.style.display = 'none';
+  });
+
+  closeProcess.addEventListener('click', () => {
+    processPopup.style.display = 'none';
+  });
+
+  bookProcessBtn.addEventListener('click', () => {
+    processSocialLinks.style.display = 'flex';
+  });
+
+  processPopup.addEventListener('click', e => {
+    if(e.target === processPopup) processPopup.style.display = 'none';
+  });
+</script>
+
 
 
 
