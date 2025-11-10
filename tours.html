@@ -500,6 +500,75 @@
     if(e.target === saqqaraPopup) saqqaraPopup.style.display = 'none';
   });
 </script>
+<!-- Alexandria Tab -->
+<div class="container">
+  <div id="alexTab" style="display:inline-block; background:#FFD700; color:#000; padding:15px 25px; margin:20px 0; border-radius:10px; cursor:pointer; font-weight:bold; font-size:1.2rem; transition:0.3s;">
+    Alexandria
+  </div>
+</div>
+
+<!-- Popup Overlay -->
+<div id="alexPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999; overflow-y:auto; padding:20px;">
+  <div style="background:#111; border-radius:12px; padding:25px; max-width:800px; width:100%; color:#fff; position:relative;">
+    <span id="closeAlexPopup" style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:24px; font-weight:bold;">&times;</span>
+    
+    <h2 style="color:#FFD700; margin-bottom:20px;">Explore Alexandria, Egypt</h2>
+    
+    <p style="margin-bottom:20px; line-height:1.6;">
+      Discover the coastal gem of Egypt, Alexandria, where history meets the Mediterranean. Founded by Alexander the Great, the city is home to ancient treasures like the Catacombs of Kom El Shoqafa, Pompey’s Pillar, the Roman Amphitheatre, and Fort Qaitbay. Walk in the footsteps of pharaohs, Romans, and scholars, and explore the legendary heritage that has shaped this timeless city.
+    </p>
+
+    <!-- Images -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px; margin-bottom:25px;">
+      <img src="Alex1.jpg" alt="Alex1" style="width:100%; border-radius:8px;">
+      <img src="Alex2.jpg" alt="Alex2" style="width:100%; border-radius:8px;">
+      <img src="Alex3.jpg" alt="Alex3" style="width:100%; border-radius:8px;">
+      <img src="Alex4.jpg" alt="Alex4" style="width:100%; border-radius:8px;">
+      <img src="Alex5.jpg" alt="Alex5" style="width:100%; border-radius:8px;">
+      <img src="Alex6.jpg" alt="Alex6" style="width:100%; border-radius:8px;">
+    </div>
+
+    <!-- Book Your Tour Button -->
+    <div style="text-align:center;">
+      <button id="bookAlexBtn" style="padding:12px 35px; font-size:18px; font-weight:bold; border:none; border-radius:10px; background:#FFD700; color:#000; cursor:pointer; transition:0.3s;">Book Your Tour</button>
+    </div>
+
+    <!-- Social Media Links -->
+    <div id="alexSocialLinks" style="display:none; margin-top:20px; text-align:center; gap:15px; flex-wrap:wrap; justify-content:center;">
+      <a href="https://www.instagram.com/mmerna.guide/" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#C13584; padding:10px 18px; border-radius:8px;">Instagram</a>
+      <a href="https://www.tiktok.com/@mmernaguide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#69C9D0; padding:10px 18px; border-radius:8px;">TikTok</a>
+      <a href="https://wa.me/201029545765" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#25D366; padding:10px 18px; border-radius:8px;">WhatsApp</a>
+      <a href="https://www.facebook.com/M-MernaTourGuide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#3b5998; padding:10px 18px; border-radius:8px;">Facebook</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const alexTab = document.getElementById('alexTab');
+  const alexPopup = document.getElementById('alexPopup');
+  const closeAlex = document.getElementById('closeAlexPopup');
+  const bookAlexBtn = document.getElementById('bookAlexBtn');
+  const alexSocialLinks = document.getElementById('alexSocialLinks');
+
+  alexTab.addEventListener('click', () => {
+    alexPopup.style.display = 'flex';
+    alexSocialLinks.style.display = 'none';
+  });
+
+  closeAlex.addEventListener('click', () => {
+    alexPopup.style.display = 'none';
+  });
+
+  bookAlexBtn.addEventListener('click', () => {
+    alexSocialLinks.style.display = 'flex';
+  });
+
+  alexPopup.addEventListener('click', e => {
+    if(e.target === alexPopup) alexPopup.style.display = 'none';
+  });
+</script>
+
 
 
 
