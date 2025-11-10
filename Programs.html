@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2336401557195623"
-      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tours - M-Merna Tours</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  body{
+  body {
     font-family: Georgia, serif;
-    background: url('images/cover.jpg.jpg') center/cover fixed no-repeat;
+    background: url('images/cover.jpg') center/cover fixed no-repeat;
     color: #fff;
     min-height:100vh;
   }
+
   header{
     display:flex; justify-content:space-between; align-items:center;
     padding:15px 20px; background:rgba(0,0,0,0.7);
@@ -22,13 +21,14 @@
   nav{display:flex; gap:20px;}
   nav a{color:#FFD700; text-decoration:none; font-weight:bold;}
   nav a:hover{color:#FFC107;}
-  .banner{height:260px; background:url('images/home-banner.jpg.jpg') center/cover no-repeat; margin-bottom:40px;}
-  .container{max-width:1200px; margin:0 auto; padding:20px;}
+
+  .container{max-width:1200px; margin:20px auto; padding:0 20px;}
   .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
     gap:22px;
   }
+
   .card{
     background: rgba(0,0,0,0.65);
     border-radius:10px;
@@ -36,130 +36,127 @@
     display:flex;
     flex-direction:column;
     transition: transform .18s, box-shadow .18s;
+    position: relative;
   }
+
   .card:hover{transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,0,0,0.45);}
-  .card img{width:100%; height:160px; object-fit:cover; display:block;}
+  .card img{width:100%; height:180px; object-fit:cover; display:block;}
   .card .body{padding:14px;}
-  .card h3{color:#FFD700; margin-bottom:8px; font-size:1.1rem;}
+  .card h3{color:#FFD700; margin-bottom:8px; font-size:1.2rem;}
   .card p{color:#fff; opacity:.95; font-size:.95rem; line-height:1.4;}
-  footer{padding:18px; text-align:center; background:rgba(0,0,0,0.7); color:#FFD700; margin-top:36px;}
-  @media(max-width:600px){ .banner{height:160px;} }
+
+  .book-btn {
+    margin:15px auto;
+    display:block;
+    padding:12px 25px;
+    background: linear-gradient(135deg,#FFD700,#FFC107);
+    color:#000;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+  }
+  .book-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
+  }
+
+  .social-links {
+    display:none;
+    flex-direction:column;
+    gap:10px;
+    margin-top:10px;
+    text-align:center;
+  }
+  .social-links a {
+    text-decoration:none;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:bold;
+    display:inline-block;
+    transition:0.3s;
+  }
+  .social-links a.facebook{background:#3b5998;}
+  .social-links a.whatsapp{background:#25D366;}
+  .social-links a.instagram{background:#C13584;}
+  .social-links a.tiktok{background:#010101;}
+
+  @media(max-width:768px){
+    .grid{grid-template-columns:1fr;}
+  }
+
 </style>
 </head>
-
 <body>
-  
-  <header>
-    <img src="images/guidelogo.png" alt="logo">
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="tours.html">Tours</a>
-      <a href="Programs.html">Programs</a>
-    </nav>
-  </header>
 
-  <div class="guidelogo" style="box-sizing:border-box;">
-  
-    
-  <main class="container">
-    <div class="grid">
-      <article class="card">
-        
-        <img src="images/Pyramids.jpg" alt="Pyramids">
-        <img src="images/Giza pyramids.jpg" alt="Giza Pyramids">
-        <img src="images/Memphis.jpg" alt="Memphis">
-        <img src="images/Sakkara.jpg" alt="Sakkara">
-        <img src="/pYRAMIDS/PYRAMIDSSWWW.jpg" alt="Pyramids">
-        <img src="/pYRAMIDS/PYRAMIDSSSSSSSSS.jpg" alt=" Pyramids">
-        <img src="/pYRAMIDS/PYRAMIDSSSSSSS1.jpg" alt="  Pyramids">
-        <img src="/pYRAMIDS/PYRAMIDSSSSSSS.jpg" alt=" Pyramids ">
-        <img src="/pYRAMIDS/PYRAMIDSS.jpg" alt="  Pyramids  ">
-        <div class="body">
-          <h3>The <span class="highlight">Pyramids</span>-Memphis-Sakkara</h3>
-          <p>Step into the land of the Pharaohs and embark on an unforgettable journey through Egypt’s most iconic sites. Marvel at the Pyramids of Giza, where the grandeur of ancient architecture meets the mysteries of the past. Feel the awe as you stand before these timeless monuments, symbols of power and ingenuity that have fascinated the world for millennia.
+<header>
+  <img src="images/guidelogo.png" alt="logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="tours.html">Tours</a>
+    <a href="Programs.html">Programs</a>
+  </nav>
+</header>
 
-Travel back in time to Memphis, the ancient capital of Egypt, where history comes alive among monumental statues and fascinating ruins. Explore the stories of kings and queens, and imagine life in the heart of one of the world’s oldest civilizations.
+<main class="container">
+  <div class="grid">
 
-Continue your adventure to Saqqara, home of the famous Step Pyramid, the world’s oldest stone pyramid. Wander through the vast necropolis and discover the secrets of Egypt’s early dynasties. Every stone tells a story, and every corner offers a glimpse into a civilization that shaped human history.
-
-Experience these extraordinary sites on a journey filled with wonder, culture, and unforgettable memories. Let the magic of Egypt inspire your spirit and take you on a once-in-a-lifetime adventure!</p>
+    <!-- Tour Card Example -->
+    <article class="card">
+      <img src="images/Pyramids.jpg" alt="Pyramids">
+      <div class="body">
+        <h3>The Pyramids of Giza</h3>
+        <p>Explore the iconic Pyramids, the Sphinx, and the ancient wonders of Giza plateau with a guided tour full of history and stories.</p>
+        <button class="book-btn">Book Your Tour</button>
+        <div class="social-links">
+          <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">WhatsApp</a>
+          <a href="https://www.facebook.com/M-MernaTourGuide/" target="_blank" class="facebook">Facebook</a>
+          <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="instagram">Instagram</a>
+          <a href="https://www.tiktok.com/@mmernaguide" target="_blank" class="tiktok">TikTok</a>
         </div>
-        
-      </article>
+      </div>
+    </article>
 
-<article class="card">
-        <img src="images/Sakkara.jpg" alt="Sakkara">
-        <img src="images/Memphis.jpg" alt="Memphis">
-        <img src="images/Dahshur.jpg" alt="Dahshur">
-        <img src="/images22/Memphis3.jpg"  alt="Memphis">
-
-        <img src="/images22/MEMPHIS23333.jpg" alt=" Memphis">
-        <div class="body">
-          <h3>Sakkara - Memphis - Dahshur</h3>
-          <p>Step back in time and uncover the secrets of Egypt’s legendary past. Begin your journey at Saqqara, home of the famous Step Pyramid—the world’s oldest stone pyramid. Wander through this vast necropolis, where every tomb and monument tells the story of early Egyptian dynasties.
-
-Continue to Memphis, the ancient capital, where colossal statues and historic ruins transport you to the heart of one of the world’s greatest civilizations. Experience the grandeur of kings and queens and immerse yourself in the rich heritage of ancient Egypt.
-
-Finally, discover Dahshur, a site of architectural wonders including the Bent and Red Pyramids. Marvel at the ingenuity of the ancient builders and witness the timeless beauty of these monumental tombs.
-
-This journey through Saqqara, Memphis, and Dahshur offers an unforgettable adventure filled with history, culture, and awe-inspiring sights. Let the magic of these ancient wonders inspire your spirit and create memories that will last a lifetime..</p>
+    <article class="card">
+      <img src="images/Sakkara.jpg" alt="Sakkara">
+      <div class="body">
+        <h3>Saqqara</h3>
+        <p>Discover the Step Pyramid of Djoser and the ancient necropolis of Saqqara, home to early pharaohs and fascinating history.</p>
+        <button class="book-btn">Book Your Tour</button>
+        <div class="social-links">
+          <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">WhatsApp</a>
+          <a href="https://www.facebook.com/M-MernaTourGuide/" target="_blank" class="facebook">Facebook</a>
+          <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="instagram">Instagram</a>
+          <a href="https://www.tiktok.com/@mmernaguide" target="_blank" class="tiktok">TikTok</a>
         </div>
-      </article>
-      <article class="card">
-        <img src=/gem/SSSAAA.png alt="National Museum of Egyptian Civilization">
-        <img src="images/Grand Egyptian Museum.jpg" alt="Grand Egyptian Museum">
+      </div>
+    </article>
 
+    <!-- يمكن إضافة المزيد بنفس الطريقة لكل جولة -->
+  </div>
+</main>
 
-        <div class="body">
-          <h3>The Grand Egyptian Museum G.E.M</h3>
-          <p>🌍 Discover Egypt’s New Wonder — The Grand Egyptian Museum!
+<footer style="padding:18px; text-align:center; background:rgba(0,0,0,0.7); color:#FFD700; margin-top:36px;">
+  &copy; 2025 M-Merna Tours. All rights reserved.
+</footer>
 
-Step into 5,000 years of history and witness the greatest treasures ever discovered!
-The Grand Egyptian Museum (GEM) — the largest archaeological museum in the world — is finally open near the majestic Pyramids of Giza.
+<script>
+  // Show social links on button click
+  const buttons = document.querySelectorAll('.book-btn');
+  buttons.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const links = btn.nextElementSibling;
+      if(links.style.display==='flex'){
+        links.style.display='none';
+      }else{
+        links.style.display='flex';
+      }
+    });
+  });
+</script>
 
-✨ Highlights You Can’t Miss:
-
-Over 100,000 ancient artifacts, including the full Tutankhamun collection displayed together for the first time ever.
-
-The colossal Statue of Ramses II, greeting you at the grand entrance.
-
-Stunning modern architecture that blends the past and the future.
-
-Immersive digital experiences and interactive exhibits that bring ancient Egypt to life!
-
-🎯 Why Visit with Us:
-
-Skip-the-line tickets & private guided tours.
-
-Professional Egyptologist guide who brings history to life.
-
-Air-conditioned private transport from your hotel.
-
-Free photo stops by the Pyramids and panoramic viewpoints.
-
-📸 Capture timeless memories in front of the world’s newest cultural icon — and explore Egypt like never before!
-
-👉 Book Your Grand Egyptian Museum Tour Now and be among the first to experience the magic of Egypt’s new treasure.
-</p>
-
-          <!-- WhatsApp Buttons (Small Elegant Version) -->
-<div style="position:fixed; bottom:30px; left:50%; transform:translateX(-50%); display:flex; gap:12px; z-index:9999;">
-
-  <a href="https://wa.me/201029545765" target="_blank" 
-     style="background:#25D366; color:white; padding:10px 22px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:all 0.3s;">
-     💬 Merna
-  </a>
-
-  <a href="https://wa.me/201009008819" target="_blank" 
-     style="background:#128C7E; color:white; padding:10px 22px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:all 0.3s;">
-     📱 Office
-  </a>
-
-</div>
-
-
-
-
-
-
+</body>
+</html>
