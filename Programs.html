@@ -6,9 +6,9 @@
 <title>Tours - M-Merna Tours</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  body {
+  body{
     font-family: Georgia, serif;
-    background: url('images/cover.jpg') center/cover fixed no-repeat;
+    background: url('images/cover.jpg.jpg') center/cover fixed no-repeat;
     color: #fff;
     min-height:100vh;
   }
@@ -86,7 +86,6 @@
   @media(max-width:768px){
     .grid{grid-template-columns:1fr;}
   }
-
 </style>
 </head>
 <body>
@@ -104,27 +103,22 @@
 <main class="container">
   <div class="grid">
 
-    <!-- Tour Card Example -->
+    <!-- مثال لكارد واحد من المحتوى القديم -->
     <article class="card">
       <img src="images/Pyramids.jpg" alt="Pyramids">
-      <div class="body">
-        <h3>The Pyramids of Giza</h3>
-        <p>Explore the iconic Pyramids, the Sphinx, and the ancient wonders of Giza plateau with a guided tour full of history and stories.</p>
-        <button class="book-btn">Book Your Tour</button>
-        <div class="social-links">
-          <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">WhatsApp</a>
-          <a href="https://www.facebook.com/M-MernaTourGuide/" target="_blank" class="facebook">Facebook</a>
-          <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="instagram">Instagram</a>
-          <a href="https://www.tiktok.com/@mmernaguide" target="_blank" class="tiktok">TikTok</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="card">
+      <img src="images/Giza pyramids.jpg" alt="Giza Pyramids">
+      <img src="images/Memphis.jpg" alt="Memphis">
       <img src="images/Sakkara.jpg" alt="Sakkara">
       <div class="body">
-        <h3>Saqqara</h3>
-        <p>Discover the Step Pyramid of Djoser and the ancient necropolis of Saqqara, home to early pharaohs and fascinating history.</p>
+        <h3>The <span class="highlight">Pyramids</span>-Memphis-Sakkara</h3>
+        <p>Step into the land of the Pharaohs and embark on an unforgettable journey through Egypt’s most iconic sites. Marvel at the Pyramids of Giza, where the grandeur of ancient architecture meets the mysteries of the past. Feel the awe as you stand before these timeless monuments, symbols of power and ingenuity that have fascinated the world for millennia.
+
+Travel back in time to Memphis, the ancient capital of Egypt, where history comes alive among monumental statues and fascinating ruins. Explore the stories of kings and queens, and imagine life in the heart of one of the world’s oldest civilizations.
+
+Continue your adventure to Saqqara, home of the famous Step Pyramid, the world’s oldest stone pyramid. Wander through the vast necropolis and discover the secrets of Egypt’s early dynasties. Every stone tells a story, and every corner offers a glimpse into a civilization that shaped human history.
+
+Experience these extraordinary sites on a journey filled with wonder, culture, and unforgettable memories. Let the magic of Egypt inspire your spirit and take you on a once-in-a-lifetime adventure!</p>
+
         <button class="book-btn">Book Your Tour</button>
         <div class="social-links">
           <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">WhatsApp</a>
@@ -135,7 +129,33 @@
       </div>
     </article>
 
-    <!-- يمكن إضافة المزيد بنفس الطريقة لكل جولة -->
+    <!-- كارد آخر من المحتوى القديم -->
+    <article class="card">
+      <img src="images/Sakkara.jpg" alt="Sakkara">
+      <img src="images/Memphis.jpg" alt="Memphis">
+      <img src="images/Dahshur.jpg" alt="Dahshur">
+      <div class="body">
+        <h3>Sakkara - Memphis - Dahshur</h3>
+        <p>Step back in time and uncover the secrets of Egypt’s legendary past. Begin your journey at Saqqara, home of the famous Step Pyramid—the world’s oldest stone pyramid. Wander through this vast necropolis, where every tomb and monument tells the story of early Egyptian dynasties.
+
+Continue to Memphis, the ancient capital, where colossal statues and historic ruins transport you to the heart of one of the world’s greatest civilizations. Experience the grandeur of kings and queens and immerse yourself in the rich heritage of ancient Egypt.
+
+Finally, discover Dahshur, a site of architectural wonders including the Bent and Red Pyramids. Marvel at the ingenuity of the ancient builders and witness the timeless beauty of these monumental tombs.
+
+This journey through Saqqara, Memphis, and Dahshur offers an unforgettable adventure filled with history, culture, and awe-inspiring sights. Let the magic of these ancient wonders inspire your spirit and create memories that will last a lifetime.</p>
+
+        <button class="book-btn">Book Your Tour</button>
+        <div class="social-links">
+          <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">WhatsApp</a>
+          <a href="https://www.facebook.com/M-MernaTourGuide/" target="_blank" class="facebook">Facebook</a>
+          <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="instagram">Instagram</a>
+          <a href="https://www.tiktok.com/@mmernaguide" target="_blank" class="tiktok">TikTok</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- استمر بنفس الطريقة لكل كارد موجود في الصفحة القديمة -->
+
   </div>
 </main>
 
@@ -144,7 +164,6 @@
 </footer>
 
 <script>
-  // Show social links on button click
   const buttons = document.querySelectorAll('.book-btn');
   buttons.forEach(btn=>{
     btn.addEventListener('click', ()=>{
