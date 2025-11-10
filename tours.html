@@ -37,73 +37,59 @@
     .menu-toggle { display:none; flex-direction:column; cursor:pointer; gap:5px; }
     .menu-toggle span { width:25px; height:3px; background-color:#FFD700; display:block; }
     .banner-text { font-size:3rem; font-weight:bold; text-shadow:2px 2px 5px #000; margin-bottom:50px; }
-    .home-buttons a {
-      display:inline-block; text-decoration:none; color:#000;
-      background-color:#FFD700; padding:15px 30px; font-weight:bold;
-      margin:15px 0; border-radius:8px; transition:0.3s;
+
+    /* G.E.M Tab */
+    #gemTab {
+      display:inline-block; background:#FFD700; color:#000;
+      padding:15px 25px; margin:20px 0; border-radius:10px;
+      cursor:pointer; font-weight:bold; font-size:1.2rem; transition:0.3s;
     }
-    .home-buttons a:hover { background-color:#FFC107; }
-    footer {
-      width:100%; text-align:center; padding:15px;
-      background-color: rgba(0,0,0,0.7); color:#FFD700;
+
+    /* Popup Overlay */
+    #gemPopup {
+      display:none; 
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.9); justify-content:center; align-items:center;
+      z-index:9999; overflow-y:auto; padding:20px;
     }
+    #gemPopupContent {
+      background:#111; border-radius:12px; padding:25px;
+      max-width:800px; width:100%; color:#fff; position:relative;
+      max-height:90vh; overflow-y:auto;
+    }
+    #gemPopupContent h2 { color:#FFD700; margin-bottom:20px; }
+    #gemPopupContent p { margin-bottom:20px; line-height:1.6; }
+    #gemPopupContent img { width:100%; border-radius:8px; }
 
     /* Book Your Tour Button */
-    .book-tour-container { margin:30px 0; text-align:center; position:relative; }
-    #book-tour-btn {
-      padding:15px 40px; border:none; border-radius:12px;
-      background: linear-gradient(135deg, #FFD700, #FFC107);
-      font-weight:bold; font-size:18px; cursor:pointer; transition:0.3s;
+    #bookTourBtn {
+      padding:12px 35px; font-size:18px; font-weight:bold;
+      border:none; border-radius:10px; background:#FFD700; color:#000;
+      cursor:pointer; transition:0.3s;
     }
-    #book-tour-btn:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.4); }
-    .book-social-buttons {
-      display:none; margin-top:15px; justify-content:center; gap:20px; flex-wrap:wrap;
-    }
-    .book-social-buttons a {
-      display:inline-flex; align-items:center; padding:12px 20px;
-      border-radius:12px; font-weight:bold; font-size:16px; color:#fff;
-      text-decoration:none; transition:0.3s; box-shadow:0 5px 15px rgba(0,0,0,0.3);
-    }
-    .book-social-buttons a img { width:24px; vertical-align:middle; margin-right:8px; }
-    .book-social-buttons a:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.4); opacity:0.95; }
-    .book-social-buttons .whatsapp { background: linear-gradient(135deg,#25D366,#1DA851); }
-    .book-social-buttons .facebook { background: linear-gradient(135deg,#3b5998,#2d4373); }
-    .book-social-buttons .instagram { background: linear-gradient(135deg,#E1306C,#C13584); }
-    .book-social-buttons .tiktok { background: linear-gradient(135deg,#010101,#69C9D0); }
+    #bookTourBtn:hover { transform:translateY(-2px); }
 
-    /* Reviews Section */
-    #reviews-section { text-align:center; margin:50px auto; max-width:800px; }
-    #reviews-section h2 { color:#f5d142; text-shadow:0 0 10px rgba(245,209,66,0.5); margin-bottom:10px; }
-    #review-box {
-      background:rgba(0,0,0,0.35); backdrop-filter:blur(10px);
-      border:1px solid rgba(245,209,66,0.3); border-radius:20px; padding:35px; margin:25px;
-      box-shadow:0 0 25px rgba(245,209,66,0.2), inset 0 0 10px rgba(245,209,66,0.05);
-      transition:0.5s; min-height:180px;
+    /* Social Media Links */
+    #socialLinks {
+      display:none; margin-top:20px; text-align:center; gap:15px;
+      flex-wrap:wrap; justify-content:center;
     }
-    #review-date { color:#e0d39b; font-size:14px; letter-spacing:0.5px; }
-    #review-name { color:#f5d142; font-size:24px; margin-bottom:8px; letter-spacing:1px; }
-    #review-country { color:#f1f1f1; font-style:italic; margin-bottom:12px; }
-    #review-stars { font-size:22px; color:#ffd86e; margin-bottom:18px; text-shadow:0 0 5px rgba(255,216,110,0.6); }
-    #review-comment { color:#fff; font-size:18px; line-height:1.7; white-space:pre-wrap; text-shadow:0 0 4px rgba(0,0,0,0.5); }
-
-    /* Review buttons */
-    #prevBtn, #nextBtn {
-      padding:10px 25px; margin:5px; border:none; border-radius:8px;
-      background:#f5d142; color:#1a1a1a; cursor:pointer; font-weight:bold; transition:0.3s;
+    #socialLinks a {
+      display:inline-block; margin:5px; text-decoration:none; color:#fff;
+      padding:10px 18px; border-radius:8px;
     }
+    #socialLinks a.instagram { background:#C13584; }
+    #socialLinks a.tiktok { background:#69C9D0; }
+    #socialLinks a.whatsapp { background:#25D366; }
+    #socialLinks a.facebook { background:#3b5998; }
 
     /* Responsive */
     @media(max-width:768px) {
       .banner-text { font-size:2rem; padding:0 15px; }
-      .home-buttons a { padding:12px 25px; }
       nav { position:absolute; top:70px; left:0; width:100%; flex-direction:column; background-color: rgba(0,0,0,0.9); align-items:center; display:none; }
       nav.show { display:flex; }
       .menu-toggle { display:flex; }
-      #prevBtn, #nextBtn { display:none !important; }
-      .mobile-only { display:block; margin-bottom:10px; color:#ccc; font-style:italic; }
-      .book-social-buttons { flex-direction:column; gap:15px; }
     }
-    @media(min-width:769px) { .mobile-only { display:none; } }
   </style>
 </head>
 <body>
@@ -121,153 +107,77 @@
   </header>
 
   <div class="banner-text">Explore Egypt with Us</div>
-<!-- The Grand Egyptian Museum G.E.M
-Tab -->
-<div class="container">
-  <div id="gemTab" style="display:inline-block; background:#FFD700; color:#000; padding:15px 25px; margin:20px 0; border-radius:10px; cursor:pointer; font-weight:bold; font-size:1.2rem; transition:0.3s;">
-    The Grand Egyptian Museum G.E.M
+
+  <!-- G.E.M Tab -->
+  <div class="container">
+    <div id="gemTab">The Grand Egyptian Museum G.E.M</div>
   </div>
-</div>
 
-<!-- Popup Overlay -->
-<div id="gemPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999; overflow-y:auto; padding:20px;">
-  <div style="background:#111; border-radius:12px; padding:25px; max-width:800px; width:100%; color:#fff; position:relative;">
-    <span id="closeGemPopup" style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:24px; font-weight:bold;">&times;</span>
-    
-    <h2 style="color:#FFD700; margin-bottom:20px;">Discover the Egyptian Museum</h2>
-    
-    <p style="margin-bottom:20px; line-height:1.6;">
-      Step into the world of ancient Egypt at the Egyptian Museum in Cairo, home to over 5,000 years of history. Explore the treasures of King Tutankhamun, colossal statues, mummies, and countless artifacts that tell the story of one of the world’s greatest civilizations.
-      <br><br>
-      Experience the wonder of ancient rituals, pharaohs’ lives, and timeless art. Every room, every artifact, every display invites you to step back in time and witness the legacy of the Pharaohs.
-      <br><br>
-      Don’t just see history—live it. Make your visit unforgettable and immerse yourself in the magic of the Egyptian Museum!
-    </p>
+  <!-- Popup Overlay -->
+  <div id="gemPopup">
+    <div id="gemPopupContent">
+      <span id="closeGemPopup" style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:24px; font-weight:bold;">&times;</span>
+      
+      <h2>Discover the Egyptian Museum</h2>
+      
+      <p>
+        Step into the world of ancient Egypt at the Egyptian Museum in Cairo, home to over 5,000 years of history. Explore the treasures of King Tutankhamun, colossal statues, mummies, and countless artifacts that tell the story of one of the world’s greatest civilizations.
+        <br><br>
+        Experience the wonder of ancient rituals, pharaohs’ lives, and timeless art. Every room, every artifact, every display invites you to step back in time and witness the legacy of the Pharaohs.
+        <br><br>
+        Don’t just see history—live it. Make your visit unforgettable and immerse yourself in the magic of the Egyptian Museum!
+      </p>
 
-    <!-- Images -->
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px; margin-bottom:25px;">
-      <img src="GEM1.jpg" alt="GEM1" style="width:100%; border-radius:8px;">
-      <img src="GEM2.jpg" alt="GEM2" style="width:100%; border-radius:8px;">
-      <img src="GEM3.jpg" alt="GEM3" style="width:100%; border-radius:8px;">
-      <img src="GEM4.jpg" alt="GEM4" style="width:100%; border-radius:8px;">
-      <img src="GEM5.jpg" alt="GEM5" style="width:100%; border-radius:8px;">
-      <img src="GEM6.jpg" alt="GEM6" style="width:100%; border-radius:8px;">
-      <img src="GEM7.jpg" alt="GEM7" style="width:100%; border-radius:8px;">
-      <img src="GEM8.jpg" alt="GEM8" style="width:100%; border-radius:8px;">
+      <!-- Images -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px; margin-bottom:25px;">
+        <img src="GEM1.jpg" alt="GEM1">
+        <img src="GEM2.jpg" alt="GEM2">
+        <img src="GEM3.jpg" alt="GEM3">
+        <img src="GEM4.jpg" alt="GEM4">
+        <img src="GEM5.jpg" alt="GEM5">
+        <img src="GEM6.jpg" alt="GEM6">
+        <img src="GEM7.jpg" alt="GEM7">
+        <img src="GEM8.jpg" alt="GEM8">
+      </div>
+
+      <div style="text-align:center;">
+        <button id="bookTourBtn">Book Your Tour</button>
+      </div>
+
+      <div id="socialLinks">
+        <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="instagram">Instagram</a>
+        <a href="https://www.tiktok.com/@mmernaguide" target="_blank" class="tiktok">TikTok</a>
+        <a href="https://wa.me/201029545765" target="_blank" class="whatsapp">WhatsApp</a>
+        <a href="https://www.facebook.com/M-MernaTourGuide" target="_blank" class="facebook">Facebook</a>
+      </div>
     </div>
-
-    <!-- Book Your Tour Button -->
-    <div style="text-align:center;">
-      <button id="bookTourBtn" style="padding:12px 35px; font-size:18px; font-weight:bold; border:none; border-radius:10px; background:#FFD700; color:#000; cursor:pointer; transition:0.3s;">Book Your Tour</button>
-    </div>
-
-    <!-- Social Media Links -->
-    <div id="socialLinks" style="display:none; margin-top:20px; text-align:center; gap:15px; flex-wrap:wrap; justify-content:center;">
-      <a href="https://www.instagram.com/mmerna.guide/" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#C13584; padding:10px 18px; border-radius:8px;">Instagram</a>
-      <a href="https://www.tiktok.com/@mmernaguide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#69C9D0; padding:10px 18px; border-radius:8px;">TikTok</a>
-      <a href="https://wa.me/201029545765" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#25D366; padding:10px 18px; border-radius:8px;">WhatsApp</a>
-      <a href="https://www.facebook.com/M-MernaTourGuide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#3b5998; padding:10px 18px; border-radius:8px;">Facebook</a>
-    </div>
-
   </div>
-</div>
 
-<!-- Scripts -->
-<script>
-  const gemTab = document.getElementById('gemTab');
-  const gemPopup = document.getElementById('gemPopup');
-  const closeGem = document.getElementById('closeGemPopup');
-  const bookBtn = document.getElementById('bookTourBtn');
-  const socialLinks = document.getElementById('socialLinks');
+  <!-- Scripts -->
+  <script>
+    const gemTab = document.getElementById('gemTab');
+    const gemPopup = document.getElementById('gemPopup');
+    const closeGem = document.getElementById('closeGemPopup');
+    const bookBtn = document.getElementById('bookTourBtn');
+    const socialLinks = document.getElementById('socialLinks');
 
-  gemTab.addEventListener('click', () => {
-    gemPopup.style.display = 'flex';
-    socialLinks.style.display = 'none';
-  });
+    gemTab.addEventListener('click', () => {
+      gemPopup.style.display = 'flex';
+      socialLinks.style.display = 'none';
+    });
 
-  closeGem.addEventListener('click', () => {
-    gemPopup.style.display = 'none';
-  });
+    closeGem.addEventListener('click', () => {
+      gemPopup.style.display = 'none';
+    });
 
-  bookBtn.addEventListener('click', () => {
-    socialLinks.style.display = 'flex';
-  });
+    bookBtn.addEventListener('click', () => {
+      socialLinks.style.display = 'flex';
+    });
 
-  // Close popup if click outside content
-  gemPopup.addEventListener('click', e => {
-    if(e.target === gemPopup) gemPopup.style.display = 'none';
-  });
-</script>
-<!-- Popup Overlay -->
-<div id="gemPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999; padding:20px; overflow:auto;">
-  <div style="background:#111; border-radius:12px; padding:25px; max-width:800px; width:100%; color:#fff; position:relative; max-height:90vh; overflow-y:auto;">
-    <span id="closeGemPopup" style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:24px; font-weight:bold;">&times;</span>
-    
-    <h2 style="color:#FFD700; margin-bottom:20px;">Discover the Egyptian Museum</h2>
-    
-    <p style="margin-bottom:20px; line-height:1.6;">
-      Step into the world of ancient Egypt at the Egyptian Museum in Cairo, home to over 5,000 years of history. Explore the treasures of King Tutankhamun, colossal statues, mummies, and countless artifacts that tell the story of one of the world’s greatest civilizations.
-      <br><br>
-      Experience the wonder of ancient rituals, pharaohs’ lives, and timeless art. Every room, every artifact, every display invites you to step back in time and witness the legacy of the Pharaohs.
-      <br><br>
-      Don’t just see history—live it. Make your visit unforgettable and immerse yourself in the magic of the Egyptian Museum!
-    </p>
-
-    <!-- Images -->
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px; margin-bottom:25px;">
-      <img src="GEM1.jpg" alt="GEM1" style="width:100%; border-radius:8px;">
-      <img src="GEM2.jpg" alt="GEM2" style="width:100%; border-radius:8px;">
-      <img src="GEM3.jpg" alt="GEM3" style="width:100%; border-radius:8px;">
-      <img src="GEM4.jpg" alt="GEM4" style="width:100%; border-radius:8px;">
-      <img src="GEM5.jpg" alt="GEM5" style="width:100%; border-radius:8px;">
-      <img src="GEM6.jpg" alt="GEM6" style="width:100%; border-radius:8px;">
-      <img src="GEM7.jpg" alt="GEM7" style="width:100%; border-radius:8px;">
-      <img src="GEM8.jpg" alt="GEM8" style="width:100%; border-radius:8px;">
-    </div>
-
-    <!-- Book Your Tour Button -->
-    <div style="text-align:center;">
-      <button id="bookTourBtn" style="padding:12px 35px; font-size:18px; font-weight:bold; border:none; border-radius:10px; background:#FFD700; color:#000; cursor:pointer; transition:0.3s;">Book Your Tour</button>
-    </div>
-
-    <!-- Social Media Links -->
-    <div id="socialLinks" style="display:none; margin-top:20px; text-align:center; gap:15px; flex-wrap:wrap; justify-content:center;">
-      <a href="https://www.instagram.com/mmerna.guide/" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#C13584; padding:10px 18px; border-radius:8px;">Instagram</a>
-      <a href="https://www.tiktok.com/@mmernaguide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#69C9D0; padding:10px 18px; border-radius:8px;">TikTok</a>
-      <a href="https://wa.me/201029545765" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#25D366; padding:10px 18px; border-radius:8px;">WhatsApp</a>
-      <a href="https://www.facebook.com/M-MernaTourGuide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#3b5998; padding:10px 18px; border-radius:8px;">Facebook</a>
-    </div>
-
-  </div>
-</div>
-
-<script>
-  const gemTab = document.getElementById('gemTab');
-  const gemPopup = document.getElementById('gemPopup');
-  const closeGem = document.getElementById('closeGemPopup');
-  const bookBtn = document.getElementById('bookTourBtn');
-  const socialLinks = document.getElementById('socialLinks');
-
-  gemTab.addEventListener('click', () => {
-    gemPopup.style.display = 'flex';
-    socialLinks.style.display = 'none'; // Hide social links initially
-  });
-
-  closeGem.addEventListener('click', () => {
-    gemPopup.style.display = 'none';
-  });
-
-  bookBtn.addEventListener('click', () => {
-    socialLinks.style.display = 'flex'; // Show social links when Book Your Tour is clicked
-  });
-
-  // Close popup if click outside content
-  gemPopup.addEventListener('click', e => {
-    if(e.target === gemPopup) gemPopup.style.display = 'none';
-  });
-</script>
-
-
-
-
-
+    // Close popup if click outside content
+    gemPopup.addEventListener('click', e => {
+      if(e.target === gemPopup) gemPopup.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
