@@ -23,6 +23,52 @@
     }
 
     header {
+      <header>
+  <img src="https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/guidelogo.png" alt="M-Merna Tours Logo">
+  
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span><span></span><span></span>
+  </div>
+  
+  <nav id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="tours.html">Tours</a>
+    <a href="processes.html">Processes & Policies</a>
+  </nav>
+</header>
+
+<script>
+  // Toggle menu for mobile
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  // Optional: Highlight current page
+  const currentPage = window.location.pathname.split("/").pop();
+  document.querySelectorAll('nav a').forEach(link => {
+    if(link.getAttribute('href') === currentPage) {
+      link.style.color = "#FFC107"; // Highlight current page
+    }
+  });
+</script>
+
+<style>
+  nav.show { display: flex !important; }
+
+  @media(max-width:768px) {
+    nav { 
+      position:absolute; top:70px; left:0; width:100%; 
+      flex-direction:column; background-color: rgba(0,0,0,0.9); 
+      align-items:center; display:none; 
+      gap:15px; padding:20px 0;
+    }
+  }
+</style>
+
       position: absolute; top:0; left:0; width:100%;
       display:flex; justify-content:space-between; align-items:center;
       padding:15px 20px; background-color: rgba(0,0,0,0.7);
@@ -729,6 +775,7 @@
 
 
   
+
 
 
 
