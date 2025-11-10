@@ -26,7 +26,6 @@
       position: absolute; top:0; left:0; width:100%;
       display:flex; justify-content:space-between; align-items:center;
       padding:15px 20px; background-color: rgba(0,0,0,0.7);
-      z-index: 1000;
     }
     header img { height:60px; }
     nav { display:flex; gap:25px; }
@@ -37,7 +36,6 @@
     nav a:hover { color:#FFC107; }
     .menu-toggle { display:none; flex-direction:column; cursor:pointer; gap:5px; }
     .menu-toggle span { width:25px; height:3px; background-color:#FFD700; display:block; }
-
     .banner-text { font-size:3rem; font-weight:bold; text-shadow:2px 2px 5px #000; margin-bottom:50px; }
     .home-buttons a {
       display:inline-block; text-decoration:none; color:#000;
@@ -45,11 +43,9 @@
       margin:15px 0; border-radius:8px; transition:0.3s;
     }
     .home-buttons a:hover { background-color:#FFC107; }
-
     footer {
       width:100%; text-align:center; padding:15px;
       background-color: rgba(0,0,0,0.7); color:#FFD700;
-      margin-top:auto;
     }
 
     /* Book Your Tour Button */
@@ -171,8 +167,6 @@
   <footer>&copy; 2025 M-Merna Tours. All rights reserved.</footer>
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-
   <script>
     // Menu toggle
     const menuToggle = document.getElementById('menu-toggle');
@@ -186,69 +180,65 @@
       socialBtns.style.display = socialBtns.style.display === "flex" ? "none" : "flex";
     });
 
-    // Reviews Section with PapaParse
+    // Reviews carousel
     document.addEventListener("DOMContentLoaded", function() {
       const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTpgx7xPbW_mR4nomNth-MBNP2MSL-OJXYpq0JoVaiTgZYgZv23Kbb8tdFyT9gzqCGbFqjP79vCUw03/pub?output=csv";
-      let reviews = [], current = 0;
+      let reviews = [], current = 0, startX = 0;
+
+      function parseCSV(text) {
+        const rows = [];
+        const lines = text.split(/\r?\n/).filter(l => l.trim()!=="");
+        for(let line of lines.slice(1)){
+          const matches = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+          if(matches) rows.push(matches.map(v=>v.replace(/^"|"$/g,'').trim()));
+        }
+        return rows;
+      }
+
+      async function loadReviews() {
+        try {
+          const response = await fetch(sheetURL);
+          const text = await response.text();
+          const data = parseCSV(text);
+          reviews = data.map(row => {
+            const [date,name,country,rating,comment] = row;
+            return {date,name,country,rating,comment};
+          }).filter(r => r.name && r.comment);
+          if(reviews.length===0){
+            document.getElementById("review-box").innerHTML="<p style='color:#ccc;'>No reviews available yet.</p>";
+            return;
+          }
+          showReview(current);
+        } catch(e){
+          console.error("Error loading reviews:", e);
+          document.getElementById("review-box").innerHTML="<p style='color:red;'>⚠️ Error loading reviews.</p>";
+        }
+      }
 
       function showReview(index){
-        if(!reviews.length) return;
         const r = reviews[index];
-        document.getElementById("review-date").textContent = r.date || "";
-        document.getElementById("review-name").textContent = r.name || "Anonymous";
-        document.getElementById("review-country").textContent = r.country || "";
-        document.getElementById("review-comment").textContent = r.comment || "";
-        document.getElementById("review-stars").textContent = "⭐".repeat(parseInt(r.rating || 5));
-        document.getElementById("review-counter").textContent = `${index+1} / ${reviews.length} Reviews`;
+        if(!r) return;
+        document.getElementById("review-date").textContent=r.date||"";
+        document.getElementById("review-name").textContent=r.name||"Anonymous";
+        document.getElementById("review-country").textContent=r.country||"";
+        document.getElementById("review-comment").textContent=r.comment||"";
+        document.getElementById("review-stars").textContent="⭐".repeat(parseInt(r.rating||5));
+        document.getElementById("review-counter").textContent=`${index+1} / ${reviews.length} Reviews`;
       }
 
-      function loadReviews(){
-        const url = sheetURL + "&t=" + new Date().getTime(); // prevent caching
-        Papa.parse(url, {
-          download: true,
-          header: true,
-          skipEmptyLines: true,
-          complete: function(results){
-            reviews = results.data.filter(r => r.comment && r.comment.trim()!=="");
-            if(!reviews.length){
-              document.getElementById("review-box").innerHTML = "<p style='color:#ccc;'>No reviews available yet.</p>";
-              return;
-            }
-            current = 0;
-            showReview(current);
-          },
-          error: function(err){
-            console.error("Error loading reviews:", err);
-            document.getElementById("review-box").innerHTML = "<p style='color:red;'>⚠️ Error loading reviews.</p>";
-          }
-        });
-      }
+      const prev = document.getElementById("prevBtn");
+      const next = document.getElementById("nextBtn");
+      prev?.addEventListener("click",()=>{current=(current-1+reviews.length)%reviews.length;showReview(current);});
+      next?.addEventListener("click",()=>{current=(current+1)%reviews.length;showReview(current);});
 
-      // Prev / Next buttons
-      document.getElementById("prevBtn")?.addEventListener("click", ()=>{
-        current = (current - 1 + reviews.length) % reviews.length;
-        showReview(current);
-      });
-      document.getElementById("nextBtn")?.addEventListener("click", ()=>{
-        current = (current + 1) % reviews.length;
-        showReview(current);
-      });
-
-      // Swipe support
-      let startX = 0;
       const box = document.getElementById("review-box");
       box?.addEventListener("touchstart", e => startX = e.touches[0].clientX);
       box?.addEventListener("touchend", e => {
-        const diff = e.changedTouches[0].clientX - startX;
-        if(Math.abs(diff) > 50){
-          current = diff > 0 ? (current - 1 + reviews.length) % reviews.length
-                             : (current + 1) % reviews.length;
-          showReview(current);
-        }
+        const endX = e.changedTouches[0].clientX, diff = endX-startX;
+        if(Math.abs(diff)>50){ current = diff>0 ? (current-1+reviews.length)%reviews.length : (current+1)%reviews.length; showReview(current); }
       });
 
       loadReviews();
-      setInterval(loadReviews, 60000); // auto refresh every 60s
     });
 
     // Service Worker
