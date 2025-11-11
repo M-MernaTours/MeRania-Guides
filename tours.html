@@ -36,7 +36,6 @@
   </nav>
 </header>
 <script>
-  // Toggle menu for mobile
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
 
@@ -44,14 +43,14 @@
     navLinks.classList.toggle('show');
   });
 
-  // Optional: Highlight current page
-  const currentPage = window.location.pathname.split("/").pop();
-  document.querySelectorAll('nav a').forEach(link => {
-    if(link.getAttribute('href') === currentPage) {
-      link.style.color = "#FFC107"; // Highlight current page
-    }
+  // اغلاق القائمة لو ضغط المستخدم على أي رابط
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+    });
   });
 </script>
+
       position: absolute; top:0; left:0; width:100%;
       display:flex; justify-content:space-between; align-items:center;
       padding:15px 20px; background-color: rgba(0,0,0,0.7);
@@ -758,6 +757,7 @@
 
 
   
+
 
 
 
