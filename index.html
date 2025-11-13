@@ -248,13 +248,15 @@
       .catch(err=>console.log('Service Worker registration failed:', err));
     }
   </script>
+<!-- Google Translate Button -->
 <div id="google_translate_element" style="text-align:center; margin: 20px 0;"></div>
 
+<!-- Google Translate Scripts -->
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'en',
-    includedLanguages: 'en,ar,fr,de,it,es,ru,zh-CN,ja', 
+    includedLanguages: 'en,ar,fr,de,it,es,ru,zh-CN,ja',
     layout: google.translate.TranslateElement.InlineLayout.SIMPLE
   }, 'google_translate_element');
 }
@@ -263,8 +265,30 @@ function googleTranslateElementInit() {
 <script type="text/javascript" 
 src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+<style>
+#google_translate_element {
+  background-color: black;
+  padding: 10px;
+  border-radius: 12px;
+  display: inline-block;
+  color: gold;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+.goog-logo-link, .goog-te-gadget span {
+  display: none !important;
+}
+.goog-te-gadget {
+  color: gold !important;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+</style>
+
 </body>
 </html>
+
 
 
 
