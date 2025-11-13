@@ -198,8 +198,58 @@
     if(e.target === processPopup) processPopup.style.display = 'none';
   });
 </script>
+ <!-- Google Translate Button مع توضيح -->
+<div style="text-align:center; margin: 20px 0; display:flex; flex-direction:column; align-items:center;">
+  
+  <!-- الزرار -->
+  <div id="google_translate_element" style="padding: 10px 15px; border-radius: 12px; background-color:black; color:gold; font-weight:bold; box-shadow:0 0 8px rgba(255,215,0,0.4);"></div>
+
+  <!-- الجملة التوضيحية -->
+  <span style="color: gold; font-size: 14px; margin-top:5px; font-family:'Poppins', sans-serif;">
+    Translation Available
+  </span>
+</div>
+
+<!-- Google Translate Scripts -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'en,ar,fr,de,it,es,ru,zh-CN,ja',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" 
+src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<style>
+/* إخفاء شعار Google */
+.goog-logo-link, .goog-te-gadget span {
+  display: none !important;
+}
+/* تعديل شكل القائمة */
+.goog-te-gadget {
+  color: gold !important;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+/* Responsive للعرض على الموبايل */
+@media (max-width:768px) {
+  #google_translate_element {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  span {
+    font-size: 13px;
+  }
+}
+</style>
+
 <!-- Footer صغير باللون الذهبي -->
-<div class="popup-footer">
+ <div class="popup-footer">
   © 2025 M-Merna Tours. All rights reserved.
 </div>
 
@@ -226,6 +276,7 @@
   }
 }
 </style>
+
 
 
 
