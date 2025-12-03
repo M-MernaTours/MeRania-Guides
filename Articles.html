@@ -96,12 +96,9 @@ footer{
 
 <div class="container">
   <h1 style="text-align:center; color:#FFD700; margin-bottom:25px;">Articles</h1>
-  <div class="grid" id="articlesGrid">
-    <!-- Articles will be added via JS -->
-  </div>
+  <div class="grid" id="articlesGrid"></div>
 </div>
 
-<!-- Modal -->
 <div id="articleModal" class="modal">
   <div class="modal-content">
     <span class="close-modal">&times;</span>
@@ -115,48 +112,47 @@ footer{
 </footer>
 
 <script>
-// 10 English articles, 500-1000 words each (summaries truncated for card)
 const articlesContent = [
-  {
-    title: "Exploring the Great Pyramids of Giza",
-    content: `Welcome to the heart of Egyptian history, where the Great Pyramids of Giza stand tall as an enduring symbol...`
-  },
-  {
-    title: "A Journey Through the Egyptian Museum",
-    content: `The Egyptian Museum in Cairo is a treasure trove of ancient wonders, offering a deep dive into the rich history of Egypt...`
-  },
-  {
-    title: "Cruising the Nile River",
-    content: `A cruise along the Nile River is one of the most enchanting ways to experience Egypt. Stretching over 4,000 miles...`
-  },
-  {
-    title: "Discovering Luxor's Temples",
-    content: `Luxor, often called the world’s greatest open-air museum, is home to some of Egypt’s most magnificent temples...`
-  },
-  {
-    title: "The Mysteries of Abu Simbel",
-    content: `Abu Simbel, located in southern Egypt, is a monumental testament to the ingenuity of the ancient Egyptians...`
-  },
-  {
-    title: "Exploring Alexandria’s Coastal Charm",
-    content: `Alexandria, Egypt’s pearl on the Mediterranean coast, offers a unique blend of history, culture, and stunning seaside views...`
-  },
-  {
-    title: "The Magic of Aswan",
-    content: `Aswan, located in southern Egypt, is a peaceful and scenic city along the Nile. Known for its beautiful river views, Nubian culture...`
-  },
-  {
-    title: "Unveiling the Valley of the Kings",
-    content: `The Valley of the Kings in Luxor is the burial ground of ancient Egyptian pharaohs, including Tutankhamun and Ramses II...`
-  },
-  {
-    title: "Sailing the Nile on a Felucca",
-    content: `Experiencing the Nile aboard a traditional felucca is one of Egypt’s most serene adventures. These wooden sailboats...`
-  },
-  {
-    title: "The Wonders of Saqqara and Step Pyramid",
-    content: `Saqqara, the necropolis of ancient Memphis, is home to the world’s first pyramid – the Step Pyramid of Djoser...`
-  }
+{
+title: "Exploring the Great Pyramids of Giza",
+content: `The Great Pyramids of Giza are one of the most remarkable structures in human history... [500-1000 words full text here]`
+},
+{
+title: "A Journey Through the Egyptian Museum",
+content: `The Egyptian Museum in Cairo offers an unparalleled experience for history enthusiasts... [500-1000 words full text here]`
+},
+{
+title: "Cruising the Nile River",
+content: `Sailing along the Nile River is a serene and magical experience... [500-1000 words full text here]`
+},
+{
+title: "Discovering Luxor's Temples",
+content: `Luxor is often described as the world's greatest open-air museum... [500-1000 words full text here]`
+},
+{
+title: "The Mysteries of Abu Simbel",
+content: `Abu Simbel, located in southern Egypt, is a monumental testament to the ingenuity and vision of Pharaoh Ramses II... [500-1000 words full text here]`
+},
+{
+title: "Exploring Alexandria’s Coastal Charm",
+content: `Alexandria, Egypt’s pearl on the Mediterranean coast, combines rich history with modern vibrancy... [500-1000 words full text here]`
+},
+{
+title: "The Magic of Aswan",
+content: `Aswan, located in southern Egypt, is a peaceful and scenic city along the Nile River... [500-1000 words full text here]`
+},
+{
+title: "Unveiling the Valley of the Kings",
+content: `The Valley of the Kings in Luxor is the legendary burial site of ancient Egyptian pharaohs... [500-1000 words full text here]`
+},
+{
+title: "Sailing the Nile on a Felucca",
+content: `Sailing the Nile on a traditional felucca is one of Egypt’s most serene and authentic experiences... [500-1000 words full text here]`
+},
+{
+title: "The Wonders of Saqqara and Step Pyramid",
+content: `Saqqara, the ancient burial ground near Memphis, is home to the world’s first pyramid – the Step Pyramid of Djoser... [500-1000 words full text here]`
+}
 ];
 
 const grid = document.getElementById('articlesGrid');
