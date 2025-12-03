@@ -1,8 +1,7 @@
+<!-- Updated HTML with Processes & Policies visible directly on page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6396100085101686"
-     crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Processes & Policies - M-Merna Tours</title>
@@ -25,98 +24,38 @@
   nav a:hover{color:#FFC107;}
 
   .container{max-width:1200px; margin:20px auto; padding:0 20px;}
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
-    gap:22px;
-  }
 
-  .card{
-    background: rgba(0,0,0,0.65);
-    border-radius:10px;
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-    transition: transform .18s, box-shadow .18s;
-    position: relative;
-  }
-
-  .card:hover{transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,0,0,0.45);}
-  .card img{width:100%; height:180px; object-fit:cover; display:block;}
-  .card .body{padding:14px;}
-  .card h3{color:#FFD700; margin-bottom:8px; font-size:1.2rem;}
-  .card p{color:#fff; opacity:.95; font-size:.95rem; line-height:1.4;}
-
-  .book-btn {
-    margin:15px auto;
-    display:block;
-    padding:12px 25px;
-    background: linear-gradient(135deg,#FFD700,#FFC107);
-    color:#000;
-    border:none;
-    border-radius:8px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
-  }
-  .book-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 6px 15px rgba(0,0,0,0.3);
-  }
-
-  /* Modal styles */
-  .modal {
-    display:none;
-    position: fixed;
-    z-index: 999;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.7);
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-  }
-  .modal-content {
-    background: rgba(0,0,0,0.95);
-    padding:30px;
+  .content-box{
+    background: rgba(0,0,0,0.75);
+    padding:25px;
     border-radius:12px;
-    max-width:400px;
-    width:100%;
-    text-align:center;
-    color:#fff;
-    position: relative;
-  }
-  .modal-content h3{
-    margin-bottom:20px;
-    color:#FFD700;
-  }
-  .modal-content a{
-    display:block;
-    margin:10px 0;
-    padding:12px;
-    border-radius:8px;
-    text-decoration:none;
-    color:#fff;
-    font-weight:bold;
-    transition:0.3s;
-  }
-  .modal-content a.facebook{background:#3b5998;}
-  .modal-content a.whatsapp{background:#25D366;}
-  .modal-content a.instagram{background:#C13584;}
-  .modal-content a.tiktok{background:#010101;}
-  .close-modal{
-    position:absolute;
-    top:10px;
-    right:15px;
-    font-size:20px;
-    cursor:pointer;
-    color:#FFD700;
+    margin-bottom:40px;
   }
 
-  @media(max-width:768px){
-    .grid{grid-template-columns:1fr;}
+  h2{color:#FFD700; margin-bottom:20px;}
+  p{line-height:1.6; font-size:1.05rem; margin-bottom:10px;}
+
+  .social-links a{
+    display:inline-block; margin:5px; text-decoration:none; color:#fff;
+    padding:10px 18px; border-radius:8px; font-weight:bold;
+  }
+  .instagram{background:#C13584;}
+  .tiktok{background:#69C9D0;}
+  .whatsapp{background:#25D366;}
+  .facebook{background:#3b5998;}
+  .website{background:#FFD700; color:#000 !important;}
+
+  /* Footer */
+  .popup-footer {
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    color: #FFD700;
+    text-align: center;
+    background-color: #000;
+    width: 100%;
+    border-top: 1px solid #555;
+    border-radius: 5px;
   }
 </style>
 </head>
@@ -132,163 +71,47 @@
     <a href="Processes & Policies.html">Processes & Policies</a>
   </nav>
 </header>
-<!-- Processes & Policies Tab -->
+
 <div class="container">
-  <div id="processTab" style="display:inline-block; background:#FFD700; color:#000; padding:15px 25px; margin:20px 0; border-radius:10px; cursor:pointer; font-weight:bold; font-size:1.2rem; transition:0.3s;">
-    Processes & Policies
+
+  <div class="content-box">
+    <h2>Processes & Policies</h2>
+
+    <p><strong>1. Booking Process:</strong> Tours are booked through direct contact or via our website/WhatsApp. After selecting your tour, you will receive confirmation within 24 hours with all the details.</p>
+
+    <p><strong>2. Customization:</strong> Travelers can customize their journey (locations, schedule, transportation, activities). Any changes before the tour are applied smoothly.</p>
+
+    <p><strong>3. Payment & Confirmation:</strong> Payments are arranged securely and flexibly. Confirmation is sent immediately after agreeing on details.</p>
+
+    <p><strong>4. Cancellation & Refund Policy:</strong> Cancellation 72 hours before the tour: full refund/reschedule. Within 72 hours: partial refund based on conditions.</p>
+
+    <p><strong>5. Safety & Conduct:</strong> Safety is a priority. We provide professional guides and reliable transportation. Respect for sites and culture is mandatory.</p>
+
+    <p><strong>6. Professional Commitment:</strong> We follow high service standards, respect timing, and provide support for all clients throughout the tour.</p>
   </div>
-</div>
 
-<!-- Popup Overlay -->
-<div id="processPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999; overflow-y:auto; padding:20px;">
-  <div style="background:#111; border-radius:12px; padding:25px; max-width:800px; width:100%; color:#fff; position:relative;">
-    <span id="closeProcessPopup" style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:24px; font-weight:bold;">&times;</span>
-    
-    <h2 style="color:#FFD700; margin-bottom:20px;">Processes & Policies</h2>
-    
-    <p style="margin-bottom:20px; line-height:1.6; font-size:1.05rem;">
-      <strong>1. Booking Process:</strong> Tours are booked through direct contact or via our website/WhatsApp. After selecting your tour, you will receive confirmation within 24 hours with all the details. All information is clear and transparent to ensure professionalism.<br><br>
-
-      <strong>2. Customization:</strong> Travelers can fully customize their journey: select attractions, schedule, transportation type, and any additional activities. Our team designs a personalized plan to guarantee the best experience while considering time and budget. Any changes before the tour are implemented quickly and smoothly.<br><br>
-
-      <strong>3. Payment & Confirmation:</strong> Payment arrangements are made directly with the client in a secure and flexible way. Confirmation of the booking is sent immediately after agreeing on the details to ensure clarity and professionalism.<br><br>
-
-      <strong>4. Cancellation & Refund Policy:</strong> Cancellation 72 hours prior to the tour: full refund or rescheduling available. Cancellation within 72 hours: partial refund according to pre-defined conditions. Any unforeseen circumstances (medical emergency or force majeure) are handled flexibly with compensation or rescheduling.<br><br>
-
-      <strong>5. Safety & Conduct:</strong> Safety and security are our top priorities on all tours. We provide reliable transportation and experienced, certified guides. Respect for landmarks, local culture, and the environment is mandatory for all participants. Clear instructions are given to ensure a safe and enjoyable experience.<br><br>
-
-      <strong>6. Professional Commitment:</strong> All tours are managed according to the highest quality and service standards. We strictly adhere to schedules and timings for all tour activities. Customer support is available throughout the tour for any inquiries or urgent assistance.
-    </p>
-
-    <!-- Book Your Tour Button -->
-    <div style="text-align:center;">
-      <button id="bookProcessBtn" style="padding:12px 35px; font-size:18px; font-weight:bold; border:none; border-radius:10px; background:#FFD700; color:#000; cursor:pointer; transition:0.3s;">Book Your Tour</button>
+  <!-- Social Links -->
+  <div class="content-box" style="text-align:center;">
+    <h2>Contact & Booking</h2>
+    <div class="social-links">
+      <a class="instagram" href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a>
+      <a class="tiktok" href="https://www.tiktok.com/@mmernaguide" target="_blank">TikTok</a>
+      <a class="whatsapp" href="https://wa.me/201029545765" target="_blank">WhatsApp</a>
+      <a class="facebook" href="https://www.facebook.com/M-MernaTourGuide" target="_blank">Facebook</a>
+      <a class="website" href="https://mmernaguide.info" target="_blank">Website</a>
     </div>
-
-    <!-- Social Media Links -->
-    <div id="processSocialLinks" style="display:none; margin-top:20px; text-align:center; gap:15px; flex-wrap:wrap; justify-content:center;">
-      <a href="https://www.instagram.com/mmerna.guide/" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#C13584; padding:10px 18px; border-radius:8px;">Instagram</a>
-      <a href="https://www.tiktok.com/@mmernaguide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#69C9D0; padding:10px 18px; border-radius:8px;">TikTok</a>
-      <a href="https://wa.me/201029545765" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#25D366; padding:10px 18px; border-radius:8px;">WhatsApp</a>
-      <a href="https://www.facebook.com/M-MernaTourGuide" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#fff; background:#3b5998; padding:10px 18px; border-radius:8px;">Facebook</a>
-      <a href="https://mmernaguide.info" target="_blank" style="display:inline-block; margin:5px; text-decoration:none; color:#000; background:#FFD700; padding:10px 18px; border-radius:8px;">Website</a>
-    </div>
-
   </div>
+
+  <!-- Google Translate -->
+  <div style="text-align:center; margin:20px 0; display:flex; flex-direction:column; align-items:center;">
+    <div id="google_translate_element" style="padding: 10px 15px; border-radius: 12px; background-color:black; color:gold; font-weight:bold; box-shadow:0 0 8px rgba(255,215,0,0.4);"></div>
+    <span style="color: gold; font-size: 14px; margin-top:5px;">Translation Available</span>
+  </div>
+
 </div>
 
-<script>
-  const processTab = document.getElementById('processTab');
-  const processPopup = document.getElementById('processPopup');
-  const closeProcess = document.getElementById('closeProcessPopup');
-  const bookProcessBtn = document.getElementById('bookProcessBtn');
-  const processSocialLinks = document.getElementById('processSocialLinks');
+<!-- Footer -->
+<div class="popup-footer">© 2025 M-Merna Tours. All rights reserved.</div>
 
-  processTab.addEventListener('click', () => {
-    processPopup.style.display = 'flex';
-    processSocialLinks.style.display = 'none';
-  });
-
-  closeProcess.addEventListener('click', () => {
-    processPopup.style.display = 'none';
-  });
-
-  bookProcessBtn.addEventListener('click', () => {
-    processSocialLinks.style.display = 'flex';
-  });
-
-  processPopup.addEventListener('click', e => {
-    if(e.target === processPopup) processPopup.style.display = 'none';
-  });
-</script>
- <!-- Google Translate Button مع توضيح -->
-<div style="text-align:center; margin: 20px 0; display:flex; flex-direction:column; align-items:center;">
-  
-  <!-- الزرار -->
-  <div id="google_translate_element" style="padding: 10px 15px; border-radius: 12px; background-color:black; color:gold; font-weight:bold; box-shadow:0 0 8px rgba(255,215,0,0.4);"></div>
-
-  <!-- الجملة التوضيحية -->
-  <span style="color: gold; font-size: 14px; margin-top:5px; font-family:'Poppins', sans-serif;">
-    Translation Available
-  </span>
-</div>
-
-<!-- Google Translate Scripts -->
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'en',
-    includedLanguages: 'en,ar,fr,de,it,es,ru,zh-CN,ja',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-  }, 'google_translate_element');
-}
-</script>
-
-<script type="text/javascript" 
-src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-<style>
-/* إخفاء شعار Google */
-.goog-logo-link, .goog-te-gadget span {
-  display: none !important;
-}
-/* تعديل شكل القائمة */
-.goog-te-gadget {
-  color: gold !important;
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  text-transform: uppercase;
-}
-/* Responsive للعرض على الموبايل */
-@media (max-width:768px) {
-  #google_translate_element {
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-  span {
-    font-size: 13px;
-  }
-}
-</style>
-
-<!-- Footer صغير باللون الذهبي -->
- <div class="popup-footer">
-  © 2025 M-Merna Tours. All rights reserved.
-</div>
-
-<style>
-/* تصميم الفوتر */
-.popup-footer {
-  margin-top: 20px;
-  padding: 10px 15px;
-  font-size: 0.9rem;
-  color: #FFD700; /* اللون الذهبي */
-  text-align: center;
-  background-color: #000; /* خلفية سوداء */
-  width: 100%;
-  box-sizing: border-box;
-  border-top: 1px solid #555; /* خط فاصل بسيط */
-  border-radius: 5px; /* حواف دائرية بسيطة */
-}
-
-/* متجاوب على الموبايل */
-@media (max-width: 768px) {
-  .popup-footer {
-    font-size: 0.8rem;
-    padding: 8px 10px;
-  }
-}
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
