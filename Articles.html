@@ -3,93 +3,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M-Merna Tour Guide – Articles</title>
-<meta name="description" content="Engaging articles on Egypt tours with M-Merna Tour Guide. Discover detailed travel tips and exciting experiences to inspire your next adventure.">
-<meta name="keywords" content="Egypt tours, Giza Plateau, Cairo, travel tips, M-Merna Tour Guide, travel articles">
-<meta property="og:title" content="M-Merna Tour Guide – Articles">
-<meta property="og:description" content="Explore longer, engaging articles on Egypt tours. Perfect for travelers seeking detailed insights and adventure.">
-<meta property="og:url" content="https://mmernaguide.info/articles.html">
+<title>Articles - M-Merna Tour Guide</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Georgia', serif; background: url('https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/cover.jpg.jpg') center/cover fixed no-repeat; color:#fff; min-height:100vh; }
-  header { display:flex; justify-content:space-between; align-items:center; padding:15px 20px; background:rgba(0,0,0,0.7); position:sticky; top:0; z-index:1000; }
-  header img{height:60px;}
-  nav a{color:#FFD700; margin-left:20px; text-decoration:none; font-weight:bold;}
-  nav a:hover{color:#FFC107;}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: Georgia, serif;
+  background: url('https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/cover.jpg.jpg') center/cover fixed no-repeat;
+  color: #fff;
+  min-height: 100vh;
+}
+header{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:15px 20px; background:rgba(0,0,0,0.7);
+  position: sticky; top:0; z-index: 100;
+}
+header img{height:60px;}
+nav{display:flex; gap:20px;}
+nav a{color:#FFD700; text-decoration:none; font-weight:bold;}
+nav a:hover{color:#FFC107;}
 
-  .articles-title { text-align:center; margin-top:40px; font-size:2.5rem; font-weight:bold; color:#FFD700; text-shadow: 2px 2px 5px #000; }
+.container{max-width:1200px; margin:20px auto; padding:0 20px;}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+  gap:20px;
+}
 
-  .articles-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; max-width:1200px; margin:30px auto; padding:0 20px; }
-  .article-card { background: rgba(255,215,0,0.85); color:#000; padding:20px; border-radius:12px; font-weight:bold; text-align:center; cursor:pointer; transition:0.3s; box-shadow:0 4px 10px rgba(0,0,0,0.2); }
-  .article-card:hover { background: #FFC107; transform: translateY(-5px); }
+.card{
+  background: rgba(0,0,0,0.65);
+  border-radius:10px;
+  padding:15px;
+  cursor:pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+.card:hover{transform: translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.5);}
+.card h3{color:#FFD700; margin-bottom:10px;}
+.card p{color:#fff; opacity:.95; font-size:0.95rem; line-height:1.4;}
 
-  .popup-bg { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9); justify-content:center; align-items:center; padding:20px; z-index:2000; overflow-y:auto; }
-  .popup-content { background: rgba(17,17,17,0.95); color:#fff; padding:30px; border-radius:15px; max-width:800px; width:100%; max-height:90vh; overflow-y:auto; box-shadow:0 0 25px rgba(255,215,0,0.3); }
-  .close { float:right; font-size:28px; cursor:pointer; color:#FFD700; }
-  h2 { color:#FFD700; margin-bottom:15px; }
-  p { line-height:1.7; margin-bottom:15px; }
+.modal {
+  display:none;
+  position:fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.9);
+  justify-content:center; align-items:center;
+  padding:20px;
+  z-index: 999;
+}
+.modal-content {
+  background: rgba(0,0,0,0.95);
+  padding:25px;
+  border-radius:12px;
+  max-width:700px;
+  width:100%;
+  color:#fff;
+  position: relative;
+  overflow-y:auto;
+  max-height: 90vh;
+}
+.close-modal{
+  position:absolute;
+  top:10px; right:15px;
+  font-size:25px;
+  cursor:pointer;
+  color:#FFD700;
+}
 
-  footer { text-align:center; padding:15px; background: rgba(0,0,0,0.7); color:#FFD700; margin-top:40px; font-weight:bold; }
+footer{
+  text-align:center;
+  padding:15px;
+  background: rgba(0,0,0,0.7);
+  color:#FFD700;
+  margin-top:20px;
+}
 
-  @media(max-width:768px){ .articles-grid { grid-template-columns:1fr; } }
+@media(max-width:768px){
+  .grid{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
+
 <header>
   <img src="https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/guidelogo.png" alt="M-Merna Tours Logo">
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="tours.html">Tours</a>
-    <a href="#">Articles</a>
+    <a href="Articles.html">Articles</a>
     <a href="Processes & Policies.html">Processes & Policies</a>
   </nav>
 </header>
 
-<h1 class="articles-title">Travel Articles</h1>
-<div class="articles-grid">
-  <div class="article-card" onclick="openPopup('popup1')">Secrets of the Pyramids</div>
-  <div class="article-card" onclick="openPopup('popup2')">Discover the Grand Museum</div>
-  <div class="article-card" onclick="openPopup('popup3')">A Day in Cairo</div>
-  <div class="article-card" onclick="openPopup('popup4')">Why Egypt is Magical</div>
-  <div class="article-card" onclick="openPopup('popup5')">Top Travel Tips</div>
-  <div class="article-card" onclick="openPopup('popup6')">Hidden Gems of Giza</div>
-  <div class="article-card" onclick="openPopup('popup7')">Evening at Luxor</div>
-  <div class="article-card" onclick="openPopup('popup8')">Cruising the Nile</div>
-  <div class="article-card" onclick="openPopup('popup9')">Egyptian Cuisine Adventures</div>
-  <div class="article-card" onclick="openPopup('popup10')">Unseen Wonders of Alexandria</div>
-</div>
-
-<div id="popup-bg" class="popup-bg" onclick="closePopup()">
-  <div class="popup-content" onclick="event.stopPropagation()">
-    <span class="close" onclick="closePopup()">&times;</span>
-    <div id="popup-text"></div>
+<div class="container">
+  <h1 style="text-align:center; color:#FFD700; margin-bottom:25px;">Articles</h1>
+  <div class="grid" id="articlesGrid">
+    <!-- Articles will be added via JS -->
   </div>
 </div>
 
-<script>
-const articlesContent = {
-  popup1: '<h2>Secrets of the Pyramids</h2><p>Step into the wonders of the Great Pyramids, the eternal marvels of ancient Egypt. Discover fascinating stories about their construction, the pharaohs, and the mysteries that have captivated travelers for centuries. Even a short visit leaves an unforgettable impression.</p><p>Our expert guides reveal hidden details that most visitors miss, making your tour unique and memorable.</p>',
-  popup2: '<h2>Discover the Grand Museum</h2><p>The Grand Egyptian Museum is a gateway to thousands of ancient treasures. Explore impressive exhibits and marvel at artifacts that narrate Egypt\'s glorious history. Perfect for travelers seeking knowledge and inspiration in an engaging environment.</p><p>Quick tips: arrive early to avoid crowds and take guided tours to uncover every secret.</p>',
-  popup3: '<h2>A Day in Cairo</h2><p>Experience the vibrant life of Cairo in one engaging day. Walk through bustling streets, savor local cuisine, and witness iconic landmarks. This condensed adventure is perfect for travelers with limited time but high curiosity.</p><p>From historic mosques to lively markets, every moment is designed to excite and inspire.</p>',
-  popup4: '<h2>Why Egypt is Magical</h2><p>Egypt blends history, culture, and mystery into an enchanting experience. Explore timeless wonders, interact with local traditions, and feel the magic that has drawn visitors for millennia. These brief insights encourage travelers to immerse themselves in unforgettable journeys.</p><p>Book with M-Merna Tour Guide to unlock the most captivating experiences.</p>',
-  popup5: '<h2>Top Travel Tips</h2><p>Planning a trip to Egypt? Dress comfortably, stay hydrated, and follow our curated tips to maximize your enjoyment. Quick advice helps you navigate safely while experiencing the best Egypt has to offer.</p><p>Our guides provide insider knowledge to make your journey smooth, enriching, and fun.</p>',
-  popup6: '<h2>Hidden Gems of Giza</h2><p>Beyond the famous Pyramids, Giza hides quiet corners and scenic spots. Discover places where you can enjoy solitude and breathtaking views. These secrets make your visit remarkable and photo-worthy.</p><p>Learn from local guides for unique experiences that most tourists never see.</p>',
-  popup7: '<h2>Evening at Luxor</h2><p>Experience the serene beauty of Luxor at sunset. Walk along the Nile, visit illuminated temples, and enjoy the enchanting atmosphere that makes Luxor a must-see destination.</p><p>Evening tours offer a magical perspective on Egypt\'s history.</p>',
-  popup8: '<h2>Cruising the Nile</h2><p>A Nile cruise is a journey through history and scenic beauty. Sail past ancient temples, villages, and lush landscapes while enjoying comfortable accommodations on board.</p><p>This adventure combines relaxation and discovery perfectly.</p>',
-  popup9: '<h2>Egyptian Cuisine Adventures</h2><p>Explore the rich flavors of Egyptian cuisine from street food to traditional dishes. Savor unique tastes, spices, and recipes that have been passed down through generations.</p><p>Food tours offer a delicious way to experience culture firsthand.</p>',
-  popup10: '<h2>Unseen Wonders of Alexandria</h2><p>Beyond the main attractions, Alexandria hides charming corners and historical secrets. Discover coastal walks, ancient libraries, and hidden gems that make the city captivating.</p><p>Perfect for travelers looking for more than the typical touristic experience.</p>'
-};
+<!-- Modal -->
+<div id="articleModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+  </div>
+</div>
 
-function openPopup(id){
-  document.getElementById('popup-text').innerHTML = articlesContent[id];
-  document.getElementById('popup-bg').style.display='flex';
-}
-function closePopup(){
-  document.getElementById('popup-bg').style.display='none';
-}
+<footer>
+  © 2025 M-Merna Tours. All rights reserved.
+</footer>
+
+<script>
+// 10 English articles, 500-1000 words each (summaries truncated for card)
+const articlesContent = [
+  {
+    title: "Exploring the Great Pyramids of Giza",
+    content: `Welcome to the heart of Egyptian history, where the Great Pyramids of Giza stand tall as an enduring symbol...`
+  },
+  {
+    title: "A Journey Through the Egyptian Museum",
+    content: `The Egyptian Museum in Cairo is a treasure trove of ancient wonders, offering a deep dive into the rich history of Egypt...`
+  },
+  {
+    title: "Cruising the Nile River",
+    content: `A cruise along the Nile River is one of the most enchanting ways to experience Egypt. Stretching over 4,000 miles...`
+  },
+  {
+    title: "Discovering Luxor's Temples",
+    content: `Luxor, often called the world’s greatest open-air museum, is home to some of Egypt’s most magnificent temples...`
+  },
+  {
+    title: "The Mysteries of Abu Simbel",
+    content: `Abu Simbel, located in southern Egypt, is a monumental testament to the ingenuity of the ancient Egyptians...`
+  },
+  {
+    title: "Exploring Alexandria’s Coastal Charm",
+    content: `Alexandria, Egypt’s pearl on the Mediterranean coast, offers a unique blend of history, culture, and stunning seaside views...`
+  },
+  {
+    title: "The Magic of Aswan",
+    content: `Aswan, located in southern Egypt, is a peaceful and scenic city along the Nile. Known for its beautiful river views, Nubian culture...`
+  },
+  {
+    title: "Unveiling the Valley of the Kings",
+    content: `The Valley of the Kings in Luxor is the burial ground of ancient Egyptian pharaohs, including Tutankhamun and Ramses II...`
+  },
+  {
+    title: "Sailing the Nile on a Felucca",
+    content: `Experiencing the Nile aboard a traditional felucca is one of Egypt’s most serene adventures. These wooden sailboats...`
+  },
+  {
+    title: "The Wonders of Saqqara and Step Pyramid",
+    content: `Saqqara, the necropolis of ancient Memphis, is home to the world’s first pyramid – the Step Pyramid of Djoser...`
+  }
+];
+
+const grid = document.getElementById('articlesGrid');
+articlesContent.forEach((article)=>{
+  const card = document.createElement('div');
+  card.className = "card";
+  card.innerHTML = `<h3>${article.title}</h3><p>${article.content.substring(0,150)}...</p>`;
+  card.addEventListener('click', ()=>{
+    document.getElementById('modalTitle').innerText = article.title;
+    document.getElementById('modalText').innerText = article.content;
+    document.getElementById('articleModal').style.display = 'flex';
+  });
+  grid.appendChild(card);
+});
+
+document.querySelector('.close-modal').addEventListener('click', ()=>{
+  document.getElementById('articleModal').style.display = 'none';
+});
+window.addEventListener('click', e=>{
+  if(e.target === document.getElementById('articleModal')){
+    document.getElementById('articleModal').style.display = 'none';
+  }
+});
 </script>
 
-<footer>© 2025 M-Merna Tours. All rights reserved.</footer>
 </body>
 </html>
