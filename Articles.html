@@ -3,185 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Articles - M-Merna Tours</title>
-
+<title>M-Merna Tour Guide – Articles</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-
-  body {
-    font-family: 'Georgia', serif;
-    background: url('https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/cover.jpg.jpg') center/cover fixed no-repeat;
-    color:#fff;
-    padding-top:100px;
-  }
-
-  /* Header – نفس الموجود عندك */
-  header {
-    position: fixed; top:0; left:0; width:100%;
-    display:flex; justify-content:space-between; align-items:center;
-    padding:15px 20px; background-color: rgba(0,0,0,0.7);
-    z-index:999;
-  }
-  header img { height:60px; }
-
-  nav { display:flex; gap:25px; }
-  nav a {
-    color:#FFD700; text-decoration:none; font-weight:bold; font-size:1.2rem;
-  }
+  body { font-family: 'Arial', sans-serif; background:#f0f0f0; margin:0; padding:0; }
+  header { background: #000; color: #FFD700; padding: 15px 20px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:1000; }
+  header img { height:50px; }
+  nav a { color:#FFD700; margin-left:20px; text-decoration:none; font-weight:bold; }
   nav a:hover { color:#FFC107; }
 
-  .menu-toggle { display:none; flex-direction:column; cursor:pointer; gap:5px; }
-  .menu-toggle span { width:25px; height:3px; background:#FFD700; display:block; }
+  .articles-title { text-align:center; color:#000; margin-top:40px; font-size:2.5rem; font-weight:bold; }
 
-  /* Articles Section */
-  .articles-container {
-    max-width:1200px;
-    margin:40px auto;
-    padding:20px;
-  }
+  .articles-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; max-width:1200px; margin:30px auto; padding:0 20px; }
 
-  .articles-title {
-    text-align:center;
-    font-size:2.5rem;
-    color:#FFD700;
-    margin-bottom:35px;
-    text-shadow:2px 2px 8px #000;
-  }
+  .article-card { background:#FFD700; color:#000; padding:20px; border-radius:12px; cursor:pointer; font-weight:bold; text-align:center; transition:0.3s; box-shadow:0 4px 10px rgba(0,0,0,0.2); }
+  .article-card:hover { background:#FFC107; transform:translateY(-5px); }
 
-  .articles-grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-    gap:25px;
-  }
+  .popup-bg { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; padding:20px; z-index:2000; }
+  .popup-content { background:#111; color:#fff; padding:30px; border-radius:15px; max-width:700px; width:100%; max-height:90vh; overflow-y:auto; box-shadow:0 0 15px rgba(255,215,0,0.3); }
+  .close { float:right; font-size:28px; cursor:pointer; }
 
-  .article-card {
-    background:rgba(0,0,0,0.65);
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 8px 20px rgba(0,0,0,0.4);
-    transition:0.3s;
-  }
-
-  .article-card:hover {
-    transform:translateY(-6px);
-    box-shadow:0 12px 25px rgba(0,0,0,0.5);
-  }
-
-  .article-card img {
-    width:100%;
-    height:180px;
-    object-fit:cover;
-  }
-
-  .article-content {
-    padding:18px;
-  }
-
-  .article-content h3 {
-    color:#FFD700;
-    margin-bottom:10px;
-    font-size:1.3rem;
-  }
-
-  .article-content p {
-    font-size:1rem;
-    color:#fff;
-    opacity:0.9;
-    margin-bottom:15px;
-  }
-
-  .read-more {
-    display:inline-block;
-    padding:10px 18px;
-    background:#FFD700;
-    color:#000;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:8px;
-    transition:0.3s;
-  }
-
-  .read-more:hover {
-    background:#FFC107;
-  }
-
-  /* Responsive Nav */
-  @media(max-width:768px) {
-    nav {
-      position:absolute; top:70px; left:0; width:100%;
-      background:rgba(0,0,0,0.95);
-      flex-direction:column; text-align:center;
-      padding:15px 0; display:none;
-    }
-    nav.show { display:flex; }
-    .menu-toggle { display:flex; }
-  }
+  @media(max-width:768px){ .articles-grid { grid-template-columns:1fr; } }
 </style>
-
 </head>
 <body>
-
 <header>
-  <img src="https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/guidelogo.png" alt="Logo">
-
-  <div class="menu-toggle" id="menu-toggle">
-    <span></span><span></span><span></span>
-  </div>
-
-  <nav id="nav-links">
+  <img src="https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/guidelogo.png" alt="M-Merna Tours Logo">
+  <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="tours.html">Tours</a>
-    <a href="Articles.html">Articles</a>
-    <a href="Processes & Policies.html">Processes & Policies</a>
+    <a href="#">Articles</a>
   </nav>
 </header>
 
+<h1 class="articles-title">Latest Articles</h1>
+<div class="articles-grid">
+  <div class="article-card" onclick="openPopup('popup1')">Secrets of the Giza Plateau</div>
+  <div class="article-card" onclick="openPopup('popup2')">Inside the Grand Egyptian Museum</div>
+  <div class="article-card" onclick="openPopup('popup3')">A Perfect Day in Cairo</div>
+  <div class="article-card" onclick="openPopup('popup4')">Why Egypt Captures Every Traveler</div>
+  <div class="article-card" onclick="openPopup('popup5')">Top 10 Tips for Visiting Egypt</div>
+  <div class="article-card" onclick="openPopup('popup6')">Spiritual Energy of the Pyramids</div>
+  <div class="article-card" onclick="openPopup('popup7')">The Golden Age of Pharaohs</div>
+  <div class="article-card" onclick="openPopup('popup8')">Hidden Gems in Giza You Must See</div>
+  <div class="article-card" onclick="openPopup('popup9')">Why Travelers Love Egyptian Culture</div>
+  <div class="article-card" onclick="openPopup('popup10')">Is Egypt Safe to Visit in 2025?</div>
+</div>
 
-<!-- ARTICLES SECTION -->
-<div class="articles-container">
-  <h2 class="articles-title">Latest Travel Articles</h2>
-
-  <div class="articles-grid">
-
-    <!-- Article 1 -->
-    <div class="article-card">
-      <img src="https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/article1.jpg" alt="">
-      <div class="article-content">
-        <h3>Best Things to Do in Cairo</h3>
-        <p>Explore the top attractions in Cairo, from the Pyramids of Giza to Khan El Khalili...</p>
-        <a href="#" class="read-more">Read More</a>
-      </div>
-    </div>
-
-    <!-- Article 2 -->
-    <div class="article-card">
-      <img src="https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/article2.jpg" alt="">
-      <div class="article-content">
-        <h3>Is Egypt Safe for Tourists?</h3>
-        <p>A complete guide about safety, tips, and what travelers need to know.</p>
-        <a href="#" class="read-more">Read More</a>
-      </div>
-    </div>
-
-    <!-- Article 3 -->
-    <div class="article-card">
-      <img src="https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/article3.jpg" alt="">
-      <div class="article-content">
-        <h3>How to Choose the Best Nile Cruise</h3>
-        <p>Learn how to pick the perfect Nile Cruise that fits your budget and style.</p>
-        <a href="#" class="read-more">Read More</a>
-      </div>
-    </div>
-
+<!-- Popups -->
+<div id="popup-bg" class="popup-bg" onclick="closePopup()">
+  <div class="popup-content" onclick="event.stopPropagation()">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <div id="popup-text"></div>
   </div>
 </div>
 
 <script>
-  document.getElementById('menu-toggle').addEventListener('click', () => {
-    document.getElementById('nav-links').classList.toggle('show');
-  });
-</script>
+const articlesContent = {
+  popup1: 'Explore the secrets of the Giza Plateau — each stone tells a story older than history itself...',
+  popup2: 'The Grand Egyptian Museum is a masterpiece of culture and architecture, hosting treasures never seen before...',
+  popup3: 'Your perfect Cairo day starts with the Nile breeze and ends with glowing pyramids under a desert sunset...',
+  popup4: 'Egypt holds a charm that captivates every traveler — ancient wonders, warm people, and unmatched stories...',
+  popup5: 'Plan your trip right with our top 10 expert tips for traveling Egypt safely and smartly...',
+  popup6: 'Many visitors feel a unique spiritual energy around the pyramids — a mystery that continues today...',
+  popup7: 'Walk through the Golden Age of Pharaohs — a time of power, beauty, and legendary rulers...',
+  popup8: 'There are hidden gems in Giza beyond the Pyramids — secret tombs, viewpoints, and untouched history...',
+  popup9: 'Egyptian culture mixes ancient traditions with modern warmth, making every visit unforgettable...',
+  popup10: 'Egypt remains one of the world’s safest destinations thanks to strong tourism support and protection...'
+};
 
+function openPopup(id){
+  document.getElementById('popup-text').innerText = articlesContent[id];
+  document.getElementById('popup-bg').style.display='flex';
+}
+function closePopup(){
+  document.getElementById('popup-bg').style.display='none';
+}
+</script>
 </body>
 </html>
