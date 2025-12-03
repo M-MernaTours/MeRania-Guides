@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>M-Merna Tour Guide – Articles</title>
+<meta name="description" content="Explore our latest articles on Egypt tours, the Giza Plateau, Cairo, and more with M-Merna Tour Guide. Discover tips, secrets, and travel insights.">
+<meta name="keywords" content="Egypt tours, Giza Plateau, Cairo travel, Egyptian history, Grand Egyptian Museum, travel tips, M-Merna Tour Guide">
+
+<!-- Open Graph Tags -->
+<meta property="og:title" content="M-Merna Tour Guide – Articles">
+<meta property="og:description" content="Explore our latest articles on Egypt tours, secrets of Giza, and travel tips with M-Merna Tour Guide.">
+<meta property="og:image" content="https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/cover.jpg.jpg">
+<meta property="og:url" content="https://mmernaguide.info/articles.html">
+
 <style>
   body { font-family: 'Arial', sans-serif; background:#f0f0f0; margin:0; padding:0; }
   header { background: #000; color: #FFD700; padding: 15px 20px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:1000; }
@@ -12,15 +21,16 @@
   nav a:hover { color:#FFC107; }
 
   .articles-title { text-align:center; color:#000; margin-top:40px; font-size:2.5rem; font-weight:bold; }
-
   .articles-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; max-width:1200px; margin:30px auto; padding:0 20px; }
-
   .article-card { background:#FFD700; color:#000; padding:20px; border-radius:12px; cursor:pointer; font-weight:bold; text-align:center; transition:0.3s; box-shadow:0 4px 10px rgba(0,0,0,0.2); }
   .article-card:hover { background:#FFC107; transform:translateY(-5px); }
 
   .popup-bg { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; padding:20px; z-index:2000; }
   .popup-content { background:#111; color:#fff; padding:30px; border-radius:15px; max-width:700px; width:100%; max-height:90vh; overflow-y:auto; box-shadow:0 0 15px rgba(255,215,0,0.3); }
   .close { float:right; font-size:28px; cursor:pointer; }
+
+  h2 { color:#FFD700; margin-bottom:15px; }
+  p { line-height:1.6; margin-bottom:15px; }
 
   @media(max-width:768px){ .articles-grid { grid-template-columns:1fr; } }
 </style>
@@ -60,20 +70,20 @@
 
 <script>
 const articlesContent = {
-  popup1: 'Explore the secrets of the Giza Plateau — each stone tells a story older than history itself...',
-  popup2: 'The Grand Egyptian Museum is a masterpiece of culture and architecture, hosting treasures never seen before...',
-  popup3: 'Your perfect Cairo day starts with the Nile breeze and ends with glowing pyramids under a desert sunset...',
-  popup4: 'Egypt holds a charm that captivates every traveler — ancient wonders, warm people, and unmatched stories...',
-  popup5: 'Plan your trip right with our top 10 expert tips for traveling Egypt safely and smartly...',
-  popup6: 'Many visitors feel a unique spiritual energy around the pyramids — a mystery that continues today...',
-  popup7: 'Walk through the Golden Age of Pharaohs — a time of power, beauty, and legendary rulers...',
-  popup8: 'There are hidden gems in Giza beyond the Pyramids — secret tombs, viewpoints, and untouched history...',
-  popup9: 'Egyptian culture mixes ancient traditions with modern warmth, making every visit unforgettable...',
-  popup10: 'Egypt remains one of the world’s safest destinations thanks to strong tourism support and protection...'
+  popup1: '<h2>Secrets of the Giza Plateau</h2><p>The Giza Plateau is home to the world-famous pyramids, each holding centuries of history and architectural mastery. The Great Pyramid, built for Pharaoh Khufu, remains a marvel of engineering, with precise alignment and hidden chambers that intrigue archaeologists and travelers alike.</p><p>Exploring the plateau provides breathtaking views of the desert and insight into ancient Egyptian civilization. Knowledgeable guides can reveal stories of the pharaohs, construction techniques, and lesser-known secrets behind the pyramids.</p>',
+  popup2: '<h2>Inside the Grand Egyptian Museum</h2><p>The Grand Egyptian Museum (GEM) is the largest archaeological museum in the world, hosting over 100,000 artifacts. It is home to the complete collection of Tutankhamun and features interactive exhibits, immersive displays, and stunning architectural design.</p><p>Visitors can experience Egypt’s history in an innovative environment that combines ancient treasures with modern technology, making it an unmissable stop for any traveler.</p>',
+  popup3: '<h2>A Perfect Day in Cairo</h2><p>Cairo offers a rich blend of history, culture, and modern life. A perfect day starts with a visit to the Egyptian Museum, followed by exploring Old Cairo and Khan El Khalili bazaar. Enjoy a Nile dinner cruise as the sun sets behind the city skyline, capturing the essence of Egypt’s vibrant capital.</p>',
+  popup4: '<h2>Why Egypt Captures Every Traveler</h2><p>Egypt is a land of wonder, from the timeless pyramids to the bustling streets of Cairo. Every traveler is captivated by its ancient history, cultural richness, and warm hospitality. The combination of natural landscapes, historic monuments, and modern amenities creates unforgettable memories.</p>',
+  popup5: '<h2>Top 10 Tips for Visiting Egypt</h2><p>Plan your trip carefully: book tours with certified guides, dress appropriately for cultural sites, stay hydrated in the desert heat, and respect local customs. Arrive early at major attractions, and don’t miss local markets and authentic cuisine to enhance your experience.</p>',
+  popup6: '<h2>Spiritual Energy of the Pyramids</h2><p>Many visitors feel a unique energy around the pyramids. Beyond their architectural brilliance, the ancient monuments are believed to possess spiritual significance. Understanding the religious and cultural context adds depth to the visit and provides a richer experience.</p>',
+  popup7: '<h2>The Golden Age of Pharaohs</h2><p>The era of the Pharaohs represents a golden age of prosperity, art, and culture. Exploring ancient temples, tombs, and inscriptions offers insight into a civilization that shaped the course of human history.</p>',
+  popup8: '<h2>Hidden Gems in Giza You Must See</h2><p>Beyond the famous pyramids, Giza has hidden treasures such as lesser-known tombs, the Solar Boat Museum, and panoramic viewpoints. Discovering these sites offers a unique perspective of Egyptian history and provides quieter, more intimate experiences.</p>',
+  popup9: '<h2>Why Travelers Love Egyptian Culture</h2><p>Egyptian culture is a vibrant mix of tradition, art, and community. Festivals, music, and daily life offer authentic experiences for visitors. Engaging with local artisans, tasting traditional dishes, and observing ceremonies enrich the travel experience.</p>',
+  popup10: '<h2>Is Egypt Safe to Visit in 2025?</h2><p>Egypt is considered safe for tourists, with strong tourism support, well-trained guides, and security measures at major sites. Staying informed, following guidelines, and booking through reputable agencies ensures a smooth and enjoyable trip.</p>'
 };
 
 function openPopup(id){
-  document.getElementById('popup-text').innerText = articlesContent[id];
+  document.getElementById('popup-text').innerHTML = articlesContent[id];
   document.getElementById('popup-bg').style.display='flex';
 }
 function closePopup(){
