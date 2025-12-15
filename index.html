@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TouristGuide",
@@ -44,7 +44,6 @@
 }
 </script>
 
-
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPLZ6FQMWQ"></script>
 <script>
@@ -59,9 +58,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Egyptian Tour Guide – Merna & Rania
- Home</title>
+</title>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2336401557195623" crossorigin="anonymous"></script>
-
   <!-- Styles -->
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
@@ -79,35 +77,6 @@
     }
 
     header {
-
-  <div class="menu-toggle" id="menu-toggle">
-    <span></span><span></span><span></span>
-  </div>
-  
-  <nav id="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="tours.html">Tours</a>
-    <a href="Articles.html">Articles</a>
-    <a href="processes.html">Processes & Policies</a>
-  </nav>
-</header>
-<script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
-
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
-
-  // اغلاق القائمة لو ضغط المستخدم على أي رابط
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('show');
-    });
-  });
-</script>
-
       position: absolute; top:0; left:0; width:100%;
       display:flex; justify-content:space-between; align-items:center;
       padding:15px 20px; background-color: rgba(0,0,0,0.7);
@@ -121,5 +90,279 @@
     nav a:hover { color:#FFC107; }
     .menu-toggle { display:none; flex-direction:column; cursor:pointer; gap:5px; }
     .menu-toggle span { width:25px; height:3px; background-color:#FFD700; display:block; }
-    .banner-text { font-size:3rem; font-weight:bold; text-shadow:2px 2px 5px #000; margin-bottom:50px; }      
+    .banner-text { font-size:3rem; font-weight:bold; text-shadow:2px 2px 5px #000; margin-bottom:50px; }
+    .home-buttons a {
+      display:inline-block; text-decoration:none; color:#000;
+      background-color:#FFD700; padding:15px 30px; font-weight:bold;
+      margin:15px 0; border-radius:8px; transition:0.3s;
+    }
+    .home-buttons a:hover { background-color:#FFC107; }
+    footer {
+      width:100%; text-align:center; padding:15px;
+      background-color: rgba(0,0,0,0.7); color:#FFD700;
+    }
 
+    /* Book Your Tour Button */
+    .book-tour-container { margin:30px 0; text-align:center; position:relative; }
+    #book-tour-btn {
+      padding:15px 40px; border:none; border-radius:12px;
+      background: linear-gradient(135deg, #FFD700, #FFC107);
+      font-weight:bold; font-size:18px; cursor:pointer; transition:0.3s;
+    }
+    #book-tour-btn:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.4); }
+    .book-social-buttons {
+      display:none; margin-top:15px; justify-content:center; gap:20px; flex-wrap:wrap;
+    }
+    .book-social-buttons a {
+      display:inline-flex; align-items:center; padding:12px 20px;
+      border-radius:12px; font-weight:bold; font-size:16px; color:#fff;
+      text-decoration:none; transition:0.3s; box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    }
+    .book-social-buttons a img { width:24px; vertical-align:middle; margin-right:8px; }
+    .book-social-buttons a:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.4); opacity:0.95; }
+    .book-social-buttons .whatsapp { background: linear-gradient(135deg,#25D366,#1DA851); }
+    .book-social-buttons .facebook { background: linear-gradient(135deg,#3b5998,#2d4373); }
+    .book-social-buttons .instagram { background: linear-gradient(135deg,#E1306C,#C13584); }
+    .book-social-buttons .tiktok { background: linear-gradient(135deg,#010101,#69C9D0); }
+
+    /* Reviews Section */
+    #reviews-section { text-align:center; margin:50px auto; max-width:800px; }
+    #reviews-section h2 { color:#f5d142; text-shadow:0 0 10px rgba(245,209,66,0.5); margin-bottom:10px; }
+    #review-box {
+      background:rgba(0,0,0,0.35); backdrop-filter:blur(10px);
+      border:1px solid rgba(245,209,66,0.3); border-radius:20px; padding:35px; margin:25px;
+      box-shadow:0 0 25px rgba(245,209,66,0.2), inset 0 0 10px rgba(245,209,66,0.05);
+      transition:0.5s; min-height:180px;
+    }
+    #review-date { color:#e0d39b; font-size:14px; letter-spacing:0.5px; }
+    #review-name { color:#f5d142; font-size:24px; margin-bottom:8px; letter-spacing:1px; }
+    #review-country { color:#f1f1f1; font-style:italic; margin-bottom:12px; }
+    #review-stars { font-size:22px; color:#ffd86e; margin-bottom:18px; text-shadow:0 0 5px rgba(255,216,110,0.6); }
+    #review-comment { color:#fff; font-size:18px; line-height:1.7; white-space:pre-wrap; text-shadow:0 0 4px rgba(0,0,0,0.5); }
+
+    /* Review buttons */
+    #prevBtn, #nextBtn {
+      padding:10px 25px; margin:5px; border:none; border-radius:8px;
+      background:#f5d142; color:#1a1a1a; cursor:pointer; font-weight:bold; transition:0.3s;
+    }
+
+    /* Responsive */
+    @media(max-width:768px) {
+      .banner-text { font-size:2rem; padding:0 15px; }
+      .home-buttons a { padding:12px 25px; }
+      nav { position:absolute; top:70px; left:0; width:100%; flex-direction:column; background-color: rgba(0,0,0,0.9); align-items:center; display:none; }
+      nav.show { display:flex; }
+      .menu-toggle { display:flex; }
+      #prevBtn, #nextBtn { display:none !important; }
+      .mobile-only { display:block; margin-bottom:10px; color:#ccc; font-style:italic; }
+      .book-social-buttons { flex-direction:column; gap:15px; }
+    }
+    @media(min-width:769px) { .mobile-only { display:none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://raw.githubusercontent.com/M-MernaTours/MeRania-Guides/main/guidelogo.png" alt="M-Merna Tours Logo">
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+    <nav id="nav-links">
+      <a href="#">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="tours.html">Tours</a>
+      <a href="Articles.html">Articles</a>
+      <a href="Processes & Policies.html">Processes & Policies</a>
+    </nav>
+  </header>
+
+  <div class="banner-text">Explore Egypt with Us</div>
+  <div class="home-buttons">
+    <a href="tours.html">Explore Our Tours</a>
+    <br>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScLqB4OtAM15j0HXTmliztJ7uRObmFHc9xQausCTv6HbGmbbw/viewform?usp=dialog">Review Us</a>
+  </div>
+
+  <!-- Book Your Tour Section -->
+  <div class="book-tour-container">
+    <button id="book-tour-btn">Book Your Tour</button>
+    <div class="book-social-buttons" id="book-social-buttons">
+      <a href="https://wa.me/+201029545765" target="_blank" class="whatsapp">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> WhatsApp
+      </a>
+      <a href="https://www.facebook.com/share/17Q14LwbrG/" target="_blank" class="facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"> Facebook
+      </a>
+      <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"> Instagram
+      </a>
+      <a href="https://www.tiktok.com/@mmernaguide" target="_blank" class="tiktok">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"> TikTok
+      </a>
+    </div>
+  </div>
+
+  <!-- Reviews Section -->
+  <section id="reviews-section">
+    <h2 id="review-title">🌟 Our Guest Reviews 🌟</h2>
+    <p class="mobile-only">👉 Swipe to see our guest's reviews</p>
+    <div id="review-box">
+      <p id="review-date"></p>
+      <h3 id="review-name"></h3>
+      <p id="review-country"></p>
+      <div id="review-stars"></div>
+      <p id="review-comment"></p>
+    </div>
+    <div style="margin-top:25px;">
+      <button id="prevBtn">⬅ Prev</button>
+      <span id="review-counter" style="color:#f5d142; font-size:16px; margin:0 12px; font-family:Georgia;"></span>
+      <button id="nextBtn">Next ➡</button>
+    </div>
+  </section>
+  <div id="TA_rated84" class="TA_rated"><ul id="bjqTmZBs" class="TA_links uZjdYI2FkYKJ"><li id="Q62EE4qxe" class="rN9NfU9ciCEW"><a target="_blank" href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-M_Merna_Tours-Cairo_Cairo_Governorate.html"><img src="https://www.tripadvisor.com/img/cdsi/img2/badges/ollie-11424-2.gif" alt="TripAdvisor"/></a></li></ul></div><script async src="https://www.jscache.com/wejs?wtype=rated&amp;uniq=84&amp;locationId=34005106&amp;lang=en_US&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
+ <!-- Google Translate Button مع توضيح -->
+  <!-- الزرار -->
+  <div id="google_translate_element" style="padding: 10px 15px; border-radius: 12px; background-color:black; color:gold; font-weight:bold; box-shadow:0 0 8px rgba(255,215,0,0.4);"></div>
+
+  <!-- الجملة التوضيحية -->
+  <span style="color: gold; font-size: 14px; margin-top:5px; font-family:'Poppins', sans-serif;">
+    Translation Available
+  </span>
+</div>
+
+<!-- Google Translate Scripts -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'en,ar,fr,de,it,es,ru,zh-CN,ja',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" 
+src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<style>
+/* إخفاء شعار Google */
+.goog-logo-link, .goog-te-gadget span {
+  display: none !important;
+}
+/* تعديل شكل القائمة */
+.goog-te-gadget {
+  color: gold !important;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+/* Responsive للعرض على الموبايل */
+@media (max-width:768px) {
+  #google_translate_element {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  span {
+    font-size: 13px;
+  }
+}
+</style>
+
+  <footer>&copy; 2025 Egyptian Tour Guide – Merna & Rania
+. All rights reserved.</footer>
+   <!-- Scripts -->
+  <script>
+    // Menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+
+    // Book Tour button
+    const tourBtn = document.getElementById('book-tour-btn');
+    const socialBtns = document.getElementById('book-social-buttons');
+    tourBtn.addEventListener('click', () => {
+      socialBtns.style.display = socialBtns.style.display === "flex" ? "none" : "flex";
+    });
+
+    // Reviews carousel
+    document.addEventListener("DOMContentLoaded", function() {
+      const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTpgx7xPbW_mR4nomNth-MBNP2MSL-OJXYpq0JoVaiTgZYgZv23Kbb8tdFyT9gzqCGbFqjP79vCUw03/pub?output=csv";
+      let reviews = [], current = 0, startX = 0;
+
+      function parseCSV(text) {
+        const rows = [];
+        const lines = text.split(/\r?\n/).filter(l => l.trim()!=="");
+        for(let line of lines.slice(1)){
+          const matches = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+          if(matches) rows.push(matches.map(v=>v.replace(/^"|"$/g,'').trim()));
+        }
+        return rows;
+      }
+
+      async function loadReviews() {
+        try {
+          const response = await fetch(sheetURL);
+          const text = await response.text();
+          const data = parseCSV(text);
+          reviews = data.map(row => {
+            const [date,name,country,rating,comment] = row;
+            return {date,name,country,rating,comment};
+          }).filter(r => r.name && r.comment);
+          if(reviews.length===0){
+            document.getElementById("review-box").innerHTML="<p style='color:#ccc;'>No reviews available yet.</p>";
+            return;
+          }
+          showReview(current);
+        } catch(e){
+          console.error("Error loading reviews:", e);
+          document.getElementById("review-box").innerHTML="<p style='color:red;'>⚠️ Error loading reviews.</p>";
+        }
+      }
+
+      function showReview(index){
+        const r = reviews[index];
+        if(!r) return;
+        document.getElementById("review-date").textContent=r.date||"";
+        document.getElementById("review-name").textContent=r.name||"Anonymous";
+        document.getElementById("review-country").textContent=r.country||"";
+        document.getElementById("review-comment").textContent=r.comment||"";
+        document.getElementById("review-stars").textContent="⭐".repeat(parseInt(r.rating||5));
+        document.getElementById("review-counter").textContent=`${index+1} / ${reviews.length} Reviews`;
+      }
+
+      const prev = document.getElementById("prevBtn");
+      const next = document.getElementById("nextBtn");
+      prev?.addEventListener("click",()=>{current=(current-1+reviews.length)%reviews.length;showReview(current);});
+      next?.addEventListener("click",()=>{current=(current+1)%reviews.length;showReview(current);});
+
+      const box = document.getElementById("review-box");
+      box?.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+      box?.addEventListener("touchend", e => {
+        const endX = e.changedTouches[0].clientX, diff = endX-startX;
+        if(Math.abs(diff)>50){ current = diff>0 ? (current-1+reviews.length)%reviews.length : (current+1)%reviews.length; showReview(current); }
+      });
+
+      loadReviews();
+    });
+
+    // Service Worker
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.register('/sw.js')
+      .then(reg=>console.log('Service Worker registered:', reg.scope))
+      .catch(err=>console.log('Service Worker registration failed:', err));
+    }
+  </script>
+<!-- Google Translate Button -->
+<div id="google_translate_element" style="text-align:center; margin: 20px 0;"></div>
+
+<!-- Google Translate Scripts -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'en,ar,fr,de,it,es,ru,zh-CN,ja',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+</body>
+</html>
