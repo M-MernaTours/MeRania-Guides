@@ -92,4 +92,34 @@
     <a href="processes.html">Processes & Policies</a>
   </nav>
 </header>
-      
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  // اغلاق القائمة لو ضغط المستخدم على أي رابط
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+    });
+  });
+</script>
+
+      position: absolute; top:0; left:0; width:100%;
+      display:flex; justify-content:space-between; align-items:center;
+      padding:15px 20px; background-color: rgba(0,0,0,0.7);
+    }
+    header img { height:60px; }
+    nav { display:flex; gap:25px; }
+    nav a {
+      color: #FFD700; text-decoration:none; font-weight:bold; font-size:1.2rem;
+      transition:0.3s;
+    }
+    nav a:hover { color:#FFC107; }
+    .menu-toggle { display:none; flex-direction:column; cursor:pointer; gap:5px; }
+    .menu-toggle span { width:25px; height:3px; background-color:#FFD700; display:block; }
+    .banner-text { font-size:3rem; font-weight:bold; text-shadow:2px 2px 5px #000; margin-bottom:50px; }      
+
