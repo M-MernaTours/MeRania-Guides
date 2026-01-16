@@ -31,21 +31,109 @@
     </div>
   </header>
 
-  <!-- ===== Slider Section ===== -->
-  <section class="slider">
-    <div class="slides">
-      <img src="slide1.jpg" class="slide active" alt="Slide 1">
-      <img src="slide2.jpg" class="slide" alt="Slide 2">
-      <img src="slide3.jpg" class="slide" alt="Slide 3">
-      <img src="slide4.jpg" class="slide" alt="Slide 4">
-      <img src="slide5.jpg" class="slide" alt="Slide 5">
-      <img src="slide6.jpg" class="slide" alt="Slide 6">
+  </section>
+  <section class="process-policies container">
+<section class="process-policies container">
+  <h1>Our Process & Policies</h1>
+
+  <!-- ===== Tabs Navigation ===== -->
+  <div class="tabs">
+    <button class="tab-link active" data-tab="step1">Step 1</button>
+    <button class="tab-link" data-tab="step2">Step 2</button>
+    <button class="tab-link" data-tab="step3">Step 3</button>
+    <button class="tab-link" data-tab="step4">Step 4</button>
+    <button class="tab-link" data-tab="step5">Step 5</button>
+  </div>
+
+  <!-- ===== Tabs Content ===== -->
+  <div class="tab-content active" id="step1">
+    <h2>Choose Your Tour</h2>
+    <p>Browse our tours and select the one that fits your interests.</p>
+  </div>
+  <div class="tab-content" id="step2">
+    <h2>Contact Us</h2>
+    <p>Reach us via WhatsApp or email to confirm dates and pricing.</p>
+  </div>
+  <div class="tab-content" id="step3">
+    <h2>Confirm & Pay</h2>
+    <p>Pay the deposit to confirm your booking. Remaining amount due before tour starts.</p>
+  </div>
+  <div class="tab-content" id="step4">
+    <h2>Receive Confirmation</h2>
+    <p>Get your voucher including tour details, guide info, and transportation.</p>
+  </div>
+  <div class="tab-content" id="step5">
+    <h2>Enjoy Your Trip!</h2>
+    <p>Experience a safe and memorable journey with our professional guides.</p>
+  </div>
+
+</section>
+    <!-- ===== Floating WhatsApp ===== -->
+    <a href="https://wa.me/201029545765" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"></a>
+    
+    <!-- ===== JS for Tabs ===== -->
+    <script>
+        const tabLinks = document.querySelectorAll('.tab-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+    
+        tabLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            tabLinks.forEach(item => item.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+    
+            link.classList.add('active');
+            document.getElementById(link.getAttribute('data-tab')).classList.add('active');
+        });
+        });
+    </script>
+    <script>
+const tabs = document.querySelectorAll(".tab-link");
+const contents = document.querySelectorAll(".tab-content");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    tabs.forEach(t => t.classList.remove("active"));
+    contents.forEach(c => c.classList.remove("active"));
+
+    tab.classList.add("active");
+    document.getElementById(tab.getAttribute("data-tab")).classList.add("active");
+  });
+});
+</script>
+<footer>
+  <div class="footer-container">
+    <!-- Logo -->
+    <div class="footer-logo">
+      <a href="index.html">
+        <img src="logo.png" alt="Egyptian Tour Guide" />
+      </a>
     </div>
 
-    <!-- Site Name Overlay -->
-    <div class="site-name-overlay hero-message">
-      <h1>Egyptian Tour Guide</h1>
-      <p>- Merna & Rania -</p>
+    <!-- About -->
+    <div class="footer-about">
+      <h3>About Us</h3>
+      <p>Egyptian Tour Guide – Merna & Rania, providing licensed tours across Egypt with trusted experts.</p>
     </div>
-  </section>
-  
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>📧 mmernaguide@mmernaguide.info</p>
+      <p>📍 Egypt</p>
+      <p>💬 <a href="https://wa.me/201029545765" target="_blank">Chat on WhatsApp</a></p>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <a href="https://www.facebook.com/mmernaguide/" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank">TikTok</a>
+      <a href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-M_Merna_Tours-Cairo_Cairo_Governorate.html" target="_blank">TripAdvisor</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+<p style="color: gold;">© 2025 Egyptian Tour Guide – Merna & Rania. All rights reserved.</p>
+  </div>
+</footer>
