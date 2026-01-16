@@ -1,292 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Egyptian Tour Guide – Merna & Rania – Home</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Egyptian Tour Guide - Merna & Rania</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header & Navigation (ثابت) -->
-    <header>
-        <!-- Logo -->
-        <div class="logo-container">
-            <img src="logo.png" alt="Logo" class="logo">
-        </div>
 
-        <!-- Navigation Menu -->
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="tours.html">Tours</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="container">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="Egyptian Tour Guide">
+      </a>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Image Slider -->
-        <section class="slider-section">
-            <div class="slider-container">
-                <div class="slider">
-                    <div class="slide fade">
-                        <img src="slide1.jpg" alt="Cairo Pyramids">
-                        <div class="slide-text">
-                            <h3>Cairo Pyramids</h3>
-                            <p>Explore the Wonders of Ancient Egypt</p>
-                        </div>
-                    </div>
-                    <div class="slide fade">
-                        <img src="slide2.jpg" alt="Nile River">
-                        <div class="slide-text">
-                            <h3>Nile River Cruise</h3>
-                            <p>Experience Luxury on the Waters</p>
-                        </div>
-                    </div>
-                    <div class="slide fade">
-                        <img src="slide3.jpg" alt="Luxor Temples">
-                        <div class="slide-text">
-                            <h3>Luxor Temples</h3>
-                            <p>Journey Through Ancient History</p>
-                        </div>
-                    </div>
-                    <div class="slide fade">
-                        <img src="slide4.jpg" alt="Alexandria">
-                        <div class="slide-text">
-                            <h3>Alexandria Beach</h3>
-                            <p>Where History Meets the Sea</p>
-                        </div>
-                    </div>
-                    <div class="slide fade">
-                        <img src="slide5.jpg" alt="Desert Safari">
-                        <div class="slide-text">
-                            <h3>Desert Safari</h3>
-                            <p>Adventure in the Golden Sands</p>
-                        </div>
-                    </div>
-                    <div class="slide fade">
-                        <img src="slide6.jpg" alt="Egyptian Culture">
-                        <div class="slide-text">
-                            <h3>Egyptian Culture</h3>
-                            <p>Discover the Heart of Egypt</p>
-                        </div>
-                    </div>
-                </div>
+      <!-- Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="tours.html">Tours</a></li>
+          <li><a href="process-policies.html">Process & Policies</a></li>
+        </ul>
+      </nav>
 
-                <!-- Slider Controls -->
-                <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
-                <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
-
-                <!-- Slider Dots -->
-                <div class="slider-dots">
-                    <span class="dot" onclick="currentSlide(0)"></span>
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                    <span class="dot" onclick="currentSlide(5)"></span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Welcome Section -->
-        <section class="welcome-section">
-            <div class="welcome-content">
-                <h1>Welcome to Egyptian Tour Guide</h1>
-                <h2>– Merna & Rania –</h2>
-                <p class="intro-text">
-                    Experience the magic of Egypt with our professional, licensed tour guides. 
-                    We offer unforgettable adventures through ancient wonders and modern treasures.
-                </p>
-                <a href="#services" class="btn">Explore Our Services</a>
-            </div>
-        </section>
-
-        <!-- Why Choose Us Section -->
-        <section class="why-us-section" id="services">
-            <div class="section-header">
-                <h2>Why Choose Us?</h2>
-                <p>We deliver excellence in every tour</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3>Professional Guides</h3>
-                    <p>Certified and experienced tour guides with 10+ years expertise in Egyptian tourism</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Safety First</h3>
-                    <p>Your safety is our top priority with comprehensive insurance and emergency support</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⭐</div>
-                    <h3>5-Star Ratings</h3>
-                    <p>Trusted by thousands of satisfied travelers from around the world</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3>Best Prices</h3>
-                    <p>Competitive rates without compromising on quality and experience</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⏰</div>
-                    <h3>24/7 Support</h3>
-                    <p>Round-the-clock customer support for all your needs and queries</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
-                    <h3>Customized Tours</h3>
-                    <p>Personalized itineraries tailored to your interests and preferences</p>
-                </div>
-            </div>
-        </section>
-
-
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>About Us</h4>
-                <p>Egyptian Tour Guide – Merna & Rania – is your gateway to unforgettable Egyptian adventures with professional licensed guides.</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/mmernaguide" target="_blank" title="Facebook">f</a>
-                    <a href="https://www.instagram.com/mmerna.guide/" target="_blank" title="Instagram">📷</a>
-                    <a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank" title="TikTok">♪</a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#top">Back to Top</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Info</h4>
-                <p>📧 <a href="mailto:mmernaguide@mmernaguide.info">mmernaguide@mmernaguide.info</a></p>
-                <p>📱 <a href="https://wa.me/201029545765" target="_blank">+20 102 954 5765</a></p>
-                <p>⏰ Available 24/7</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Egyptian Tour Guide – Merna & Rania –. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/201029545765" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24" height="24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.325 0-2.651-.402-3.798-1.161L6.736 3.9l1.239-3.436C8.847.654 10.354 0 11.974 0c3.278 0 5.968 2.656 5.968 5.921 0 1.577-.577 3.055-1.628 4.206-1.052 1.15-2.587 1.8-4.191 1.8m10.216-9.271h-.004C21.888.276 20.318 0 18.708 0 13.349 0 8.969 3.798 6.955 9.227L3.829 8.625C2.215 8.366.719 9.16 0 10.355v10.618C0 23.121 1.121 24 2.5 24h19C22.879 24 24 23.121 24 21.973V2.027C24 .879 22.879 0 21.5 0"/>
-        </svg>
-    </a>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" title="Back to top">
-        <span>▲</span>
-    </button>
-
-    <script>
-        let currentSlideIndex = 0;
-        let slideTimer;
-
-        function showSlides() {
-            const slides = document.querySelectorAll('.slide');
-            const dots = document.querySelectorAll('.dot');
-            
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-            
-            if (slides[currentSlideIndex]) {
-                slides[currentSlideIndex].classList.add('active');
-                dots[currentSlideIndex].classList.add('active');
-            }
-        }
-
-        function changeSlide(n) {
-            currentSlideIndex += n;
-            const slides = document.querySelectorAll('.slide');
-            if (currentSlideIndex >= slides.length) {
-                currentSlideIndex = 0;
-            } else if (currentSlideIndex < 0) {
-                currentSlideIndex = slides.length - 1;
-            }
-            clearTimeout(slideTimer);
-            showSlides();
-            autoSlide();
-        }
-
-        function currentSlide(n) {
-            currentSlideIndex = n;
-            clearTimeout(slideTimer);
-            showSlides();
-            autoSlide();
-        }
-
-        function autoSlide() {
-            slideTimer = setTimeout(() => {
-                currentSlideIndex++;
-                const slides = document.querySelectorAll('.slide');
-                if (currentSlideIndex >= slides.length) {
-                    currentSlideIndex = 0;
-                }
-                showSlides();
-                autoSlide();
-            }, 5000);
-        }
-
-        // WhatsApp Button Show/Hide on Scroll
-        const whatsappBtn = document.querySelector('.whatsapp-btn');
-        const backToTopBtn = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                whatsappBtn.classList.add('show');
-                backToTopBtn.classList.add('show');
-            } else {
-                whatsappBtn.classList.remove('show');
-                backToTopBtn.classList.remove('show');
-            }
-        });
-
-        // Back to Top Click
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Handle form submission
-        const contactForm = document.querySelector('.contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const name = this.querySelector('input[type="text"]').value;
-                const email = this.querySelector('input[type="email"]').value;
-                const message = this.querySelector('textarea').value;
-                
-                // Create WhatsApp message
-                const whatsappMessage = `Hello Merna & Rania!%0A%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-                window.open(`https://wa.me/201029545765?text=${whatsappMessage}`, '_blank');
-                
-                this.reset();
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            showSlides();
-            autoSlide();
-        });
-    </script>
+      <!-- CTA Button -->
+      <a href="book-now.html" class="cta-button">Book Now</a>
+    </div>
+  </header>
 
 </body>
 </html>
