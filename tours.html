@@ -28,8 +28,168 @@
           <li><a href="process & policies.html">Process & Policies</a></li>
         </ul>
       </nav>
-
-      <!-- CTA Button -->
-      <a href="book-now.html" class="cta-button">Book Now</a>
     </div>
-  </header>
+<!-- Tabs Container (ممكن تضيف التاب الجديد هنا) -->
+<div class="tabs" style="text-align:center; margin-top:50px;">
+  <button class="tab-button" onclick="openTab('cairoTour')">Cairo Top Tour: Pyramids and GEM</button>
+</div>
+
+<!-- Cairo Top Tour Tab -->
+<div id="cairoTour" class="tab-content" style="display:none">
+  <h2>Cairo Top Tour: Pyramids and GEM</h2>
+  
+  <p style="font-size:18px; line-height:1.6;">
+    Unlock the Secrets of Ancient Egypt! 🏺✨<br>
+    Join us for an exclusive tour to the Grand Egyptian Museum and the Giza Pyramids!<br><br>
+    ✔ Explore priceless treasures, including Tutankhamun’s artifacts<br>
+    ✔ Stand in awe before the majestic Pyramids & the Great Sphinx<br>
+    ✔ Guided by professional English-speaking tour guides<br>
+    ✔ Comfortable transfers & hassle-free experience<br><br>
+    Don’t just visit Egypt — live its history! Book your adventure now!
+  </p>
+
+  <!-- Images Grid -->
+  <div class="images-grid">
+    <!-- GEM Images -->
+    <img src="gem1.jpg" alt="GEM 1">
+    <img src="gem2.jpg" alt="GEM 2">
+    <img src="gem3.jpg" alt="GEM 3">
+    <img src="gem4.jpg" alt="GEM 4">
+    <img src="gem5.jpg" alt="GEM 5">
+
+    <!-- Pyramids Images -->
+    <img src="pyr1.jpg" alt="Pyramids 1">
+    <img src="pyr2.jpg" alt="Pyramids 2">
+    <img src="pyr3.jpg" alt="Pyramids 3">
+    <img src="pyr4.jpg" alt="Pyramids 4">
+    <img src="pyr5.jpg" alt="Pyramids 5">
+    <img src="pyr6.jpg" alt="Pyramids 6">
+    <img src="pyr7.jpg" alt="Pyramids 7">
+    <img src="pyr8.jpg" alt="Pyramids 8">
+    <img src="pyr9.jpg" alt="Pyramids 9">
+    <img src="pyr10.jpg" alt="Pyramids 10">
+  </div>
+
+  <!-- Buttons Container -->
+  <div style="margin-top: 25px;">
+    <!-- Book Now Button -->
+    <a href="https://wa.me/+201029545765" target="_blank" class="book-now">Book Now</a>
+    
+    <!-- Copy Link Button -->
+    <button class="copy-link" onclick="copyLink()">Copy Link</button>
+  </div>
+</div>
+
+<script>
+function openTab(tabName) {
+  const tabs = document.querySelectorAll('.tab-content');
+  tabs.forEach(tab => tab.style.display = 'none');
+
+  const buttons = document.querySelectorAll('.tab-button');
+  buttons.forEach(btn => btn.classList.remove('active'));
+
+  document.getElementById(tabName).style.display = 'block';
+  document.querySelector(`[onclick="openTab('${tabName}')"]`).classList.add('active');
+}
+
+// Function to copy the current page URL to clipboard
+function copyLink() {
+  const url = window.location.href + "#cairoTour"; // يضيف التاب للينك
+  navigator.clipboard.writeText(url).then(() => {
+    alert("Link copied to clipboard! ✅");
+  }).catch(err => {
+    alert("Failed to copy the link 😢");
+  });
+}
+</script>
+
+<style>
+/* Tabs Buttons */
+.tab-button {
+  padding: 15px 40px;
+  background: #f0c040;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #000;
+  font-size: 24px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.tab-button.active {
+  background: #d4a017;
+  transform: scale(1.1);
+}
+
+.tab-button:hover {
+  background: #e6b800;
+  transform: scale(1.05);
+}
+
+/* Tab Contents */
+.tab-content {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px solid #f0c040;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Images Grid */
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.images-grid img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Book Now Button */
+.book-now {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #f0c040;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-right: 15px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.book-now:hover {
+  background: #d4a017;
+  transform: scale(1.05);
+}
+
+/* Copy Link Button */
+.copy-link {
+  display: inline-block;
+  padding: 15px 30px;
+  background: #ccc;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.copy-link:hover {
+  background: #bbb;
+  transform: scale(1.05);
+}
+</style>
