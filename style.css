@@ -632,4 +632,33 @@ footer {
     font-size: 0.95rem;
   }
 }
+/* Navbar responsive */
+header {
+  flex-wrap: wrap;
+}
+
+nav ul {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 15px;
+  }
+
+  nav ul {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+}
+
 
