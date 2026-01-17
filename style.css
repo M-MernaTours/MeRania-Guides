@@ -798,3 +798,162 @@ footer {
     align-items: center;
   }
 }
+/* ===== Reviews Banner Under Slider ===== */
+.reviews-banner {
+  background: #111;
+  padding: 30px 0;
+}
+
+.reviews-banner-content {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #333;
+  padding: 25px;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.5);
+}
+
+.reviews-banner-content h2 {
+  color: gold;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.reviews-banner-content p {
+  color: #fff;
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+.reviews-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 12px;
+  border: 1px solid gold;
+  color: gold;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.reviews-btn:hover {
+  background: gold;
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reviews-banner-content h2 {
+    font-size: 22px;
+  }
+}
+/* ===== Quick Facts ===== */
+.quick-facts {
+  background: #111;
+  padding: 60px 20px;
+}
+
+.quick-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.quick-container h2 {
+  color: #c8a45d;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.quick-container p {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.fact-card {
+  background: #222;
+  border-radius: 15px;
+  padding: 25px 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.fact-card:hover {
+  transform: translateY(-5px);
+}
+
+.fact-icon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.fact-card h3 {
+  color: #c8a45d;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.fact-card p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* ===== Map Section ===== */
+.map-section {
+  background: #111;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.map-section h2 {
+  color: #c8a45d;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.map-section p {
+  color: #ddd;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.map-container {
+  max-width: 1200px;
+  margin: auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 30px;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: #000;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.map-btn:hover {
+  transform: translateY(-3px);
+}
