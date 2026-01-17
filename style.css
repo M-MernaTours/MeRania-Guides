@@ -592,3 +592,44 @@ footer {
     font-size: 0.9rem;
   }
 }
+@media (max-width: 768px) {
+
+  .about-us {
+    padding: 40px 15px;
+  }
+
+  .about-us h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .about-us p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .about-images {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .about-card p {
+    font-size: 0.9rem;
+  }
+
+  .highlights li {
+    font-size: 0.95rem;
+  }
+
+  .cta .btn {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 0.95rem;
+  }
+}
+
