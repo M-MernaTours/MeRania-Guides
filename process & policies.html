@@ -1,94 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Egyptian Tour Guide - Merna & Rania</title>
-  <!-- Google Fonts -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Processes & Policies - Egyptian Tour Guide</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root{
+      --gold:#c8a45d;
+      --gold2:#ffd700;
+      --bg:#0b0b0b;
+      --card:#121212;
+      --text:#f1f1f1;
+      --muted:#b8b8b8;
+      --border:#2a2a2a;
+    }
+
+    *{ box-sizing:border-box; margin:0; padding:0; }
+
+    body{
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* ===== Header ===== */
+    header{
+      background: linear-gradient(90deg, #000000, #111, #1a1a1a, #222, #000);
+      position: sticky;
+      top:0;
+      z-index:1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding: 0 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      height:80px;
+    }
+
+    .logo img{
+      height:60px;
+    }
+
+    .nav-menu{
+      list-style:none;
+      display:flex;
+      align-items:center;
+      gap:25px;
+    }
+
+    .nav-menu a{
+      color: var(--gold);
+      text-decoration:none;
+      font-weight:600;
+      font-size:16px;
+    }
+
+    .nav-menu a:hover{
+      color: var(--gold2);
+    }
+
+    /* ===== Page Hero ===== */
+    .hero{
+      padding: 60px 20px 30px;
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size: 36px;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .hero p{
+      color: var(--muted);
+      font-size: 16px;
+      max-width:800px;
+      margin: auto;
+      line-height:1.6;
+    }
+
+    /* ===== Sections ===== */
+    section{
+      padding: 30px 20px;
+    }
+
+    .section-title{
+      font-size: 24px;
+      color: var(--gold);
+      margin-bottom: 15px;
+      text-align:center;
+    }
+
+    .card{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: 18px;
+      padding: 25px;
+      max-width: 1100px;
+      margin: auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:20px;
+    }
+
+    .item{
+      border:1px solid var(--border);
+      border-radius: 15px;
+      padding: 20px;
+      background: #0f0f0f;
+    }
+
+    .item h3{
+      color: var(--gold);
+      margin-bottom:10px;
+      font-size:18px;
+    }
+
+    .item p{
+      color: var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    /* ===== Buttons ===== */
+    .btn{
+      display:inline-block;
+      background: var(--gold);
+      color:#000;
+      padding: 12px 25px;
+      border-radius: 999px;
+      text-decoration:none;
+      font-weight:700;
+      margin-top: 15px;
+    }
+
+    .btn:hover{
+      background: var(--gold2);
+    }
+
+    /* ===== FAQ Accordion ===== */
+    .faq{
+      max-width: 1100px;
+      margin:auto;
+    }
+
+    .faq-item{
+      border:1px solid var(--border);
+      border-radius: 15px;
+      margin-bottom: 12px;
+      overflow:hidden;
+    }
+
+    .faq-item button{
+      width:100%;
+      background: #0f0f0f;
+      border:none;
+      color: var(--text);
+      padding: 18px;
+      text-align:left;
+      font-size:16px;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .faq-item button span{
+      color: var(--gold);
+      font-weight:700;
+    }
+
+    .faq-item .answer{
+      padding: 0 18px 18px;
+      color: var(--muted);
+      display:none;
+      line-height:1.6;
+    }
+
+    /* ===== Footer ===== */
+    footer{
+      background:#111;
+      padding:40px 20px;
+      color: var(--muted);
+    }
+
+    .footer-grid{
+      max-width:1200px;
+      margin:auto;
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:20px;
+      text-align:left;
+    }
+
+    .footer-grid h3{
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .footer-grid a{
+      color: var(--muted);
+      text-decoration:none;
+      display:block;
+      margin-bottom: 8px;
+      font-size:14px;
+    }
+
+    .footer-grid a:hover{
+      color: var(--gold);
+    }
+
+    .footer-bottom{
+      text-align:center;
+      margin-top: 25px;
+      color:#777;
+      font-size:13px;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      .footer-grid{ grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px){
+      .container{ height:70px; }
+      .nav-menu{ gap:12px; }
+      .nav-menu a{ font-size:14px; }
+
+      .hero h1{ font-size: 28px; }
+      .hero p{ font-size: 14px; }
+
+      .footer-grid{ grid-template-columns: 1fr; }
+    }
+
+  </style>
 </head>
+
 <body>
 
-  <!-- ===== Header ===== -->
+  <!-- Header -->
   <header>
     <div class="container">
-      <!-- Logo -->
       <a href="index.html" class="logo">
         <img src="logo.png" alt="Egyptian Tour Guide">
       </a>
 
-      <!-- Navigation Menu -->
       <nav>
         <ul class="nav-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="tours.html">Tours</a></li>
-          <li><a href="process & policies.html">Process & Policies</a></li>
+          <li><a href="process.html">Process & Policies</a></li>
         </ul>
       </nav>
     </div>
+  </header>
 
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Processes & Policies</h1>
+    <p>
+      Everything you need to know before booking your private tour with us.  
+      Clear, simple, and designed to give you confidence.
+    </p>
+  </div>
+
+  <!-- Booking Process -->
+  <section>
+    <div class="section-title">Booking Process</div>
+    <div class="card">
+      <div class="grid">
+        <div class="item">
+          <h3>Step 1: Send your date</h3>
+          <p>Send us your preferred tour date and number of travelers.</p>
+        </div>
+        <div class="item">
+          <h3>Step 2: Confirm details</h3>
+          <p>We confirm availability and send you a full itinerary.</p>
+        </div>
+        <div class="item">
+          <h3>Step 3: Payment</h3>
+          <p>Pay a deposit or full amount via WhatsApp (bank transfer / cash).</p>
+        </div>
+        <div class="item">
+          <h3>Step 4: Confirmation</h3>
+          <p>You receive a booking confirmation with all details.</p>
+        </div>
+      </div>
+      <a class="btn" href="https://wa.me/201029545765" target="_blank">Book Now on WhatsApp</a>
+    </div>
   </section>
-  <!-- ===== Floating WhatsApp ===== -->
-  <a href="https://wa.me/201029545765" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"></a>
 
-  <!-- ===== JS Slider ===== -->
-  <script src="script.js"></script>
-</body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Policies & Processes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #1a1a1a; /* خلفية داكنة عشان الذهب يطلع كويس */
-      margin: 0;
-      padding: 20px;
-      color: #FFD700; /* اللون الذهبي */
-    }
+  <!-- What's Included -->
+  <section>
+    <div class="section-title">What’s Included</div>
+    <div class="card">
+      <div class="grid">
+        <div class="item">
+          <h3>✔ Water Bottle</h3>
+          <p>One bottle per person to keep you refreshed during the tour.</p>
+        </div>
+        <div class="item">
+          <h3>✔ Entrance Tickets</h3>
+          <p>All tickets for the sightseeing sites are included.</p>
+        </div>
+        <div class="item">
+          <h3>✔ Licensed Tour Guide</h3>
+          <p>Professional speaking guide with official license.</p>
+        </div>
+        <div class="item">
+          <h3>✔ Private AC Car</h3>
+          <p>Comfortable air-conditioned private vehicle for the whole tour.</p>
+        </div>
+        <div class="item">
+          <h3>✔ 8 Hours Duration</h3>
+          <p>The tour lasts approximately 8 hours.</p>
+        </div>
+        <div class="item">
+          <h3>✔ Private Tour</h3>
+          <p>All tours are private (no mixing with other groups).</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    .policy-list {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+  <!-- Cancellation Policy -->
+  <section>
+    <div class="section-title">Cancellation Policy</div>
+    <div class="card">
+      <div class="item">
+        <h3>Free Cancellation</h3>
+        <p>Free cancellation up to 48 hours before the tour start time.</p>
+      </div>
+      <div class="item" style="margin-top:15px;">
+        <h3>Late Cancellation</h3>
+        <p>Late cancellations may incur partial charges.</p>
+      </div>
+    </div>
+  </section>
 
-    .policy-list li {
-      font-size: 1.2rem; /* حجم مناسب للموبايل واللاب */
-      line-height: 1.8;
-      margin-bottom: 15px;
-      list-style-type: decimal; /* يطلع ترقيم تلقائي */
-    }
+  <!-- Safety Guidelines -->
+  <section>
+    <div class="section-title">Safety Guidelines</div>
+    <div class="card">
+      <div class="grid">
+        <div class="item">
+          <h3>✔ Follow the guide</h3>
+          <p>Please follow the instructions of the guide for your safety.</p>
+        </div>
+        <div class="item">
+          <h3>✔ Respect the sites</h3>
+          <p>Do not touch or climb on monuments.</p>
+        </div>
+        <div class="item">
+          <h3>✔ Stay hydrated</h3>
+          <p>We provide water bottles, but bring extra if needed.</p>
+        </div>
+        <div class="item">
+          <h3>✔ Keep your belongings</h3>
+          <p>Keep valuables safe and close to you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    @media (max-width: 600px) {
-      .policy-list li {
-        font-size: 1rem; /* تصغير الخط على الموبايل */
+  <!-- FAQ -->
+  <section>
+    <div class="section-title">FAQ</div>
+    <div class="faq">
+      <div class="faq-item">
+        <button onclick="toggleFAQ(this)">
+          <span>Is the tour private?</span>
+          <span>+</span>
+        </button>
+        <div class="answer">
+          Yes, all tours are private and only for your group.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button onclick="toggleFAQ(this)">
+          <span>Are entrance tickets included?</span>
+          <span>+</span>
+        </button>
+        <div class="answer">
+          Yes, all entrance tickets to the archaeological sites are included.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button onclick="toggleFAQ(this)">
+          <span>How long is the tour?</span>
+          <span>+</span>
+        </button>
+        <div class="answer">
+          The tour duration is approximately 8 hours.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button onclick="toggleFAQ(this)">
+          <span>Can we change the date?</span>
+          <span>+</span>
+        </button>
+        <div class="answer">
+          Yes, as long as it is not within 48 hours of the tour start time.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3>About Us</h3>
+        <p>Egyptian Tour Guide – Merna & Rania, trusted licensed tour guides across Egypt.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:mmernaguide@mmernaguide.info">mmernaguide@mmernaguide.info</a>
+        <a href="https://wa.me/201029545765" target="_blank">WhatsApp</a>
+        <a href="tel:+201029545765">+20 102 954 5765</a>
+      </div>
+      <div>
+        <h3>Follow Us</h3>
+        <a href="https://www.facebook.com/mmernaguide/" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank">TikTok</a>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="tours.html">Tours</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 Egyptian Tour Guide – Merna & Rania. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function toggleFAQ(btn){
+      const answer = btn.nextElementSibling;
+      const sign = btn.querySelectorAll("span")[1];
+      if(answer.style.display === "block"){
+        answer.style.display = "none";
+        sign.innerText = "+";
+      } else {
+        answer.style.display = "block";
+        sign.innerText = "−";
       }
     }
-  </style>
-</head>
-<body>
+  </script>
 
-  <h1>Our Processes & Policies</h1>
-  <ul class="policy-list">
-    <li>Free cancellation is allowed up to 48 hours before the tour.</li>
-    <li>Refunds will be processed for valid cancellations according to our policy.</li>
-    <li>Guests must follow our safety guidelines during tours.</li>
-    <li>Last-minute cancellations may incur partial charges.</li>
-    <li>We respect privacy and data protection of all customers.</li>
-    <li>Special requests should be communicated at least 72 hours in advance.</li>
-    <li>We reserve the right to modify tour itineraries for safety or operational reasons.</li>
-    <li>Feedback is welcomed to improve our services.</li>
-    <li>Misbehavior or disregard for instructions may result in removal from the tour without refund.</li>
-    <li>Tours accommodate most mobility requirements, but please inform us of any special needs in advance.</li>
-    <li>We may take photos during tours for promotional purposes.</li>
-    <li>Guests who do not wish to be photographed should inform the guide.</li>
 </body>
 </html>
-
