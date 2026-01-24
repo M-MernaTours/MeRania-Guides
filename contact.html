@@ -1,35 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Egyptian Tour Guide - Merna & Rania",
-  "url": "https://mmernaguide.info/contact.html",
-  "telephone": "+201029545765",
-  "email": "mmernaguide@mmernaguide.info",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Cairo",
-    "addressCountry": "EG"
-  },
-  "openingHours": "Mo-Su 00:00-23:59",
-  "sameAs": [
-    "https://www.facebook.com/mmernaguide",
-    "https://www.instagram.com/mmerna.guide/",
-    "https://www.tiktok.com/@egyptiantour.guide"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "Customer Support",
-    "telephone": "+201029545765",
-    "email": "mmernaguide@mmernaguide.info",
-    "availableLanguage": ["English", "Arabic"]
-  }
-}
-</script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Egyptian Tour Guide - Merna & Rania</title>
@@ -79,6 +50,7 @@
       filter: drop-shadow(0 0 5px #c8a45d);
     }
 
+    /* ===== Nav ===== */
     nav ul {
       list-style: none;
       display: flex;
@@ -102,6 +74,64 @@
       color: #fff;
       text-decoration: underline;
       text-underline-offset: 6px;
+    }
+
+    /* ===== Booking Button ===== */
+    .booking-btn {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 25px;
+      background: #c8a45d;
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* ===== Hamburger ===== */
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* ===== Nav Menu (Mobile) ===== */
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #000;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      padding-top: 70px;
+      z-index: 998;
+    }
+
+    .nav-menu.open {
+      transform: translateX(0);
+    }
+
+    .nav-menu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .nav-close {
+      display: none;
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
     }
 
     /* ===== Contact Section ===== */
@@ -195,8 +225,35 @@
 
     /* ===== Responsive ===== */
     @media (max-width: 768px) {
-      nav ul {
-        gap: 15px;
+
+      .container {
+        height: 65px;
+      }
+
+      /* show hamburger */
+      .nav-toggle {
+        display: block;
+      }
+
+      /* show close button */
+      .nav-close {
+        display: block;
+      }
+
+      /* hide normal nav */
+      nav {
+        display: none;
+      }
+
+      /* move booking button */
+      .booking-btn {
+        position: fixed;
+        top: 12px;
+        left: 15px;
+        z-index: 1000;
+        padding: 10px 14px;
+        border-radius: 20px;
+        font-size: 14px;
       }
 
       .contact-grid {
@@ -215,8 +272,18 @@
         <img src="logo.png" alt="Egyptian Tour Guide">
       </a>
 
-      <nav>
-        <ul class="nav-menu">
+      <!-- Booking Button -->
+      <a href="booking.html" class="booking-btn">Booking</a>
+
+      <!-- Hamburger Toggle -->
+      <button class="nav-toggle" aria-label="Open menu">
+        ☰
+      </button>
+
+      <!-- Nav Menu -->
+      <nav class="nav-menu">
+        <button class="nav-close" aria-label="Close menu">✖</button>
+        <ul class="nav-menu-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="tours.html">Tours</a></li>
@@ -289,6 +356,36 @@
 
     </div>
   </section>
+
+  <footer>
+    <div class="footer-bottom">
+      © 2026 Egyptian Tour Guide – Merna & Rania. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navClose = document.querySelector('.nav-close');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      document.body.classList.toggle('nav-open');
+    });
+
+    navClose.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      document.body.classList.remove('nav-open');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        document.body.classList.remove('nav-open');
+      });
+    });
+  </script>
 
 </body>
 </html>
