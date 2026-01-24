@@ -91,6 +91,47 @@
       <p>- Merna & Rania -</p>
     </div>
   </section>
+  <button class="btn-book" onclick="openBooking()">
+  <span class="btn-text">Book Now</span>
+  <span class="btn-subtext">Fast & Easy Booking</span>
+</button>
+<button class="btn-book-fixed" onclick="openBooking()">
+  <span class="btn-text">BOOK NOW</span>
+</button>
+<!-- ===== Booking Popup ===== -->
+<div id="bookingForm" class="booking-form">
+  <div class="form-content">
+    <span class="close" onclick="closeBooking()">&times;</span>
+    <h2>Booking Form</h2>
+
+    <label>Name</label>
+    <input type="text" id="name" placeholder="Your Name" required>
+
+    <label>From</label>
+    <div class="input-icon">
+      <input type="date" id="dateFrom" required>
+      <span class="icon" onclick="openDate('dateFrom')">📅</span>
+    </div>
+
+    <label>To</label>
+    <div class="input-icon">
+      <input type="date" id="dateTo" required>
+      <span class="icon" onclick="openDate('dateTo')">📅</span>
+    </div>
+
+    <label>Number of Adults</label>
+    <input type="number" id="adults" min="1" value="1">
+
+    <label>Number of Children (Under 10)</label>
+    <input type="number" id="children" min="0" value="0">
+
+    <label>Select Tours</label>
+    <div id="tourList"></div>
+
+    <button onclick="sendBooking()">Send Booking</button>
+  </div>
+</div>
+
   <!-- ===== Quick Facts (Under Slider) ===== -->
   </div>
 </section>
@@ -250,7 +291,6 @@
   <script src="script.js"></script>
 </body>
 </html>
-
 
 
 
