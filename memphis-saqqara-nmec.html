@@ -10,18 +10,21 @@
   <link rel="canonical" href="https://mmernaguide.info/memphis-saqqara-nmec.html">
   <meta name="robots" content="index, follow">
 
-  <!-- ===== Schema ===== -->
+  <!-- ===== Schema (Agency + Trip) ===== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "TravelAgency",
+        "@id": "https://mmernaguide.info/#agency",
         "name": "Egyptian Tour Guide – Merna & Rania",
         "url": "https://mmernaguide.info",
         "telephone": "+201029545765",
+        "email": "mmernaguide@mmernaguide.info",
         "address": {
           "@type": "PostalAddress",
+          "addressLocality": "Cairo",
           "addressCountry": "EG"
         },
         "sameAs": [
@@ -33,15 +36,16 @@
       },
       {
         "@type": "TouristTrip",
+        "@id": "https://mmernaguide.info/memphis-saqqara-nmec.html#trip",
         "name": "Memphis, Saqqara & NMEC Day Tour",
         "description": "Private day tour to Memphis, Saqqara Step Pyramid and the National Museum of Egyptian Civilization with licensed tour guide and entrance tickets included.",
         "touristType": "Private",
         "touristActivity": "Sightseeing",
         "duration": "PT8H",
         "provider": {
-          "@type": "TravelAgency",
-          "name": "Egyptian Tour Guide – Merna & Rania"
-        }
+          "@id": "https://mmernaguide.info/#agency"
+        },
+        "url": "https://mmernaguide.info/memphis-saqqara-nmec.html"
       }
     ]
   }
@@ -58,6 +62,13 @@
     .logo img{height:60px}
     .nav-menu{list-style:none;display:flex;gap:30px}
     .nav-menu a{color:#c8a45d;text-decoration:none}
+    .nav-menu a:hover{color:#e6c200}
+
+    .breadcrumbs{
+      max-width:1000px;margin:20px auto 0;padding:0 20px;
+      font-size:13px;color:#aaa
+    }
+    .breadcrumbs a{color:#c8a45d;text-decoration:none}
 
     .hero{max-width:1000px;margin:80px auto 40px;padding:0 20px;text-align:center}
     .hero h1{color:#c8a45d;font-size:2.6rem;margin-bottom:15px}
@@ -65,14 +76,10 @@
     .hero img{width:100%;border-radius:18px;margin-top:30px}
 
     .gallery{
-      max-width:1000px;
-      margin:40px auto;
-      padding:0 20px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:15px
+      max-width:1000px;margin:40px auto;padding:0 20px;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px
     }
-    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid #222}
 
     .content{max-width:1000px;margin:60px auto;padding:0 20px}
     .content h2{color:#c8a45d;margin:40px 0 15px}
@@ -82,27 +89,37 @@
     .content ul li::before{content:"✔ ";color:#c8a45d;font-weight:700}
 
     .price-box{
-      background:#111;
-      border:2px solid #c8a45d;
-      border-radius:16px;
-      padding:30px;
-      margin-top:40px
+      background:#111;border:2px solid #c8a45d;border-radius:16px;
+      padding:30px;margin-top:40px
     }
 
-    .cta{text-align:center;margin-top:30px}
+    .cta{text-align:center;margin-top:22px}
     .cta a{
-      display:inline-block;
-      padding:14px 34px;
-      background:#c8a45d;
-      color:#000;
-      font-weight:700;
-      border-radius:10px;
-      text-decoration:none
+      display:inline-block;padding:14px 34px;background:#c8a45d;
+      color:#000;font-weight:700;border-radius:10px;text-decoration:none
     }
+    .cta a:hover{background:#e6c200}
+
+    /* Related */
+    .related{max-width:1000px;margin:60px auto;padding:0 20px}
+    .related h2{color:#c8a45d;text-align:center;margin-bottom:20px}
+    .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .rel-card{background:#111;border:1px solid #222;border-radius:14px;padding:18px}
+    .rel-card a{color:#c8a45d;font-weight:700;text-decoration:none}
+    .rel-card p{color:#bbb;font-size:13px;margin-top:8px}
+
+    /* FAQ */
+    .faq{max-width:1000px;margin:60px auto;padding:0 20px}
+    .faq h2{color:#c8a45d;text-align:center;margin-bottom:25px}
+    .faq-item{border-bottom:1px solid #222;padding:15px 0}
+    .faq-item p{color:#ddd;margin-top:8px}
 
     footer{border-top:1px solid #222;padding:40px 20px;text-align:center;font-size:13px;color:#777}
     footer a{color:#c8a45d;text-decoration:none}
 
+    @media(max-width:900px){
+      .related-grid{grid-template-columns:1fr}
+    }
     @media(max-width:768px){
       .hero h1{font-size:2.1rem}
     }
@@ -113,9 +130,7 @@
 
 <header>
   <div class="container">
-    <a href="index.html" class="logo">
-      <img src="logo.png" alt="Egyptian Tour Guide – Merna & Rania">
-    </a>
+    <a href="index.html" class="logo"><img src="logo.png" alt="Egyptian Tour Guide – Merna & Rania"></a>
     <nav>
       <ul class="nav-menu">
         <li><a href="index.html">Home</a></li>
@@ -128,33 +143,33 @@
   </div>
 </header>
 
+<div class="breadcrumbs">
+  <a href="tours.html">Tours</a> › <a href="day-tours.html">Day Tours</a> › Memphis – Saqqara – NMEC
+</div>
+
 <section class="hero">
   <h1>Memphis – Saqqara – NMEC Day Tour</h1>
-  <p>
-    Discover the roots of ancient Egypt in one private day tour,
-    guided by a licensed Egyptian tour guide.
-  </p>
+  <p>Explore the origins of ancient Egyptian civilization in one private day tour.</p>
   <img src="saqqara4.jpg" alt="Saqqara Step Pyramid">
 </section>
 
 <section class="gallery">
-  <img src="Memphis1.jpg">
-  <img src="Memphis2.jpg">
-  <img src="Memphis3.jpg">
-  <img src="saqqara1.jpg">
-  <img src="saqqara2.jpg">
-  <img src="saqqara3.jpg">
-  <img src="NMEC1.jpg">
-  <img src="NMEC2.jpg">
+  <img src="Memphis1.jpg" alt="Memphis Museum">
+  <img src="Memphis2.jpg" alt="Colossus of Ramses II">
+  <img src="Memphis3.jpg" alt="Ancient Memphis">
+  <img src="saqqara1.jpg" alt="Saqqara Pyramid">
+  <img src="saqqara2.jpg" alt="Saqqara Complex">
+  <img src="saqqara3.jpg" alt="Step Pyramid">
+  <img src="NMEC1.jpg" alt="NMEC Cairo">
+  <img src="NMEC2.jpg" alt="Royal Mummies Hall">
 </section>
 
 <section class="content">
 
   <h2>Tour Overview</h2>
   <p>
-    This private Cairo day tour takes you back to the very beginning of ancient Egyptian civilization.
-    Visit Memphis, the first capital of ancient Egypt, explore Saqqara and its Step Pyramid,
-    and finish your journey at the National Museum of Egyptian Civilization (NMEC).
+    Travel back to the roots of ancient Egypt by visiting Memphis, Saqqara and NMEC.
+    This tour is perfect for history lovers who want a deep cultural experience in one day.
   </p>
 
   <h2>What’s Included</h2>
@@ -162,24 +177,23 @@
     <li>Private licensed speaking tour guide</li>
     <li>Private air-conditioned vehicle</li>
     <li>Hotel pickup & drop-off</li>
-    <li>Bottled water during the tour</li>
-    <li><strong>All entrance tickets to Memphis, Saqqara & NMEC</strong></li>
+    <li>Bottled water</li>
+    <li><strong>All entrance tickets included</strong></li>
   </ul>
 
   <h2>What’s Excluded</h2>
   <p>
-    • Lunch and personal expenses<br>
-    • Drinks during lunch<br>
+    • Lunch & personal expenses<br>
+    • Drinks<br>
     • Tips (optional)
   </p>
 
   <h2>Detailed Itinerary</h2>
   <p>
-    • Pickup from your hotel in Cairo or Giza<br>
-    • Visit Memphis open-air museum<br>
-    • Explore Saqqara Step Pyramid complex<br>
-    • Transfer to NMEC (Royal Mummies Hall)<br>
-    • Guided museum visit<br>
+    • Pickup from hotel<br>
+    • Memphis open-air museum<br>
+    • Saqqara Step Pyramid complex<br>
+    • NMEC (Royal Mummies Hall)<br>
     • Return to hotel
   </p>
 
@@ -187,13 +201,13 @@
     <h2>Price & Notes</h2>
     <p>
       ✔ Entrance tickets included<br>
-      ✔ Private tour only (not shared)<br>
-      ✔ Flexible & customizable itinerary<br>
-      ✔ Ideal for history lovers
+      ✔ Fully private tour<br>
+      ✔ Flexible timing<br>
+      ✔ Ideal for culture & history lovers
     </p>
 
     <div class="cta">
-      <a href="https://wa.me/201029545765" target="_blank">
+      <a href="https://wa.me/201029545765?text=Hi%20Merna%20%26%20Rania%2C%20I%20want%20to%20book%20the%20Memphis%20Saqqara%20NMEC%20Day%20Tour." target="_blank">
         Book This Tour on WhatsApp
       </a>
     </div>
@@ -201,33 +215,90 @@
 
 </section>
 
+<!-- ===== Related Tours ===== -->
+<section class="related">
+  <h2>Related Day Tours</h2>
+  <div class="related-grid">
+    <div class="rel-card">
+      <a href="giza-gem.html">Giza Pyramids & GEM</a>
+      <p>Explore the Great Pyramids and the Grand Egyptian Museum.</p>
+    </div>
+    <div class="rel-card">
+      <a href="alexandria-day-tour.html">Alexandria Day Tour</a>
+      <p>Discover Egypt’s Mediterranean city in one day.</p>
+    </div>
+    <div class="rel-card">
+      <a href="islamic-coptic-cairo.html">Islamic & Coptic Cairo</a>
+      <p>Historic mosques, churches and Old Cairo streets.</p>
+    </div>
+    <div class="rel-card">
+      <a href="day-tours.html">All Day Tours</a>
+      <p>View all private day tours in Egypt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <strong>How long is the Memphis Saqqara NMEC tour?</strong>
+    <p>The tour lasts around 8 hours including transfers.</p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Are entrance tickets included?</strong>
+    <p>Yes, all entrance tickets are included.</p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Is the tour private?</strong>
+    <p>Yes, this is a fully private tour.</p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Does the tour include the Royal Mummies Hall?</strong>
+    <p>Yes, the NMEC visit includes the Royal Mummies Hall.</p>
+  </div>
+</section>
+
+<!-- ===== FAQ Schema ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long is the Memphis Saqqara NMEC tour?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The tour lasts around 8 hours including transfers." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are entrance tickets included?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, all entrance tickets are included." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the tour private?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, this is a fully private tour." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the tour include the Royal Mummies Hall?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, the NMEC visit includes the Royal Mummies Hall." }
+    }
+  ]
+}
+</script>
+
 <footer>
-
   <img src="logo.png" alt="Egyptian Tour Guide – Merna & Rania" style="width:90px;margin-bottom:15px">
-
-  <p style="font-size:14px;color:#aaa;max-width:650px;margin:0 auto 18px">
-    Licensed private tour guides in Egypt offering customized day tours,
-    itineraries, and authentic cultural experiences.
+  <p style="color:#aaa;max-width:650px;margin:0 auto 15px">
+    Licensed private tour guides in Egypt offering customized day tours and cultural experiences.
   </p>
-
-  <div style="margin-bottom:14px">
-    <a href="index.html">Home</a> ·
-    <a href="tours.html">Tours</a> ·
-    <a href="day-tours.html">Day Tours</a> ·
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <div style="margin-bottom:16px">
-    <a href="https://www.facebook.com/mmernaguide/" target="_blank">Facebook</a> ·
-    <a href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a> ·
-    <a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank">TikTok</a> ·
-    <a href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-M_Merna_Tours-Cairo_Cairo_Governorate.html" target="_blank">TripAdvisor</a>
-  </div>
-
-  <p style="font-size:12px;color:#666">
-    © 2025 Egyptian Tour Guide – Merna & Rania. All rights reserved.
-  </p>
-
+  <p style="font-size:12px;color:#666">© 2025 Egyptian Tour Guide – Merna & Rania</p>
 </footer>
 
 </body>
