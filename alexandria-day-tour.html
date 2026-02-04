@@ -10,18 +10,36 @@
   <link rel="canonical" href="https://mmernaguide.info/alexandria-day-tour.html">
   <meta name="robots" content="index, follow">
 
-  <!-- ===== Schema ===== -->
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alexandria Day Tour from Cairo | Private Guided Tour">
+  <meta property="og:description" content="Private Alexandria day tour from Cairo with licensed tour guide. Entrance tickets included.">
+  <meta property="og:url" content="https://mmernaguide.info/alexandria-day-tour.html">
+  <meta property="og:image" content="https://mmernaguide.info/alex5.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Alexandria Day Tour from Cairo">
+  <meta name="twitter:description" content="Private full-day Alexandria tour from Cairo with a licensed guide.">
+  <meta name="twitter:image" content="https://mmernaguide.info/alex5.jpg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ===== Schema (Agency + Trip) ===== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "TravelAgency",
+        "@id": "https://mmernaguide.info/#agency",
         "name": "Egyptian Tour Guide – Merna & Rania",
         "url": "https://mmernaguide.info",
         "telephone": "+201029545765",
+        "email": "mmernaguide@mmernaguide.info",
         "address": {
           "@type": "PostalAddress",
+          "addressLocality": "Cairo",
           "addressCountry": "EG"
         },
         "sameAs": [
@@ -33,21 +51,20 @@
       },
       {
         "@type": "TouristTrip",
+        "@id": "https://mmernaguide.info/alexandria-day-tour.html#trip",
         "name": "Alexandria Day Tour from Cairo",
-        "description": "Private Alexandria day tour from Cairo with licensed guide. Visit the Library of Alexandria, Citadel of Qaitbay and Alexandria highlights. Entrance tickets included.",
+        "description": "Private full-day tour from Cairo to Alexandria with licensed guide and entrance tickets included. Visit the Citadel of Qaitbay, the Library of Alexandria, the Corniche and key highlights.",
         "touristType": "Private",
         "touristActivity": "Sightseeing",
         "duration": "PT12H",
         "provider": {
-          "@type": "TravelAgency",
-          "name": "Egyptian Tour Guide – Merna & Rania"
-        }
+          "@id": "https://mmernaguide.info/#agency"
+        },
+        "url": "https://mmernaguide.info/alexandria-day-tour.html"
       }
     ]
   }
   </script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
@@ -58,21 +75,24 @@
     .logo img{height:60px}
     .nav-menu{list-style:none;display:flex;gap:30px}
     .nav-menu a{color:#c8a45d;text-decoration:none}
+    .nav-menu a:hover{color:#e6c200}
 
     .hero{max-width:1000px;margin:80px auto 40px;padding:0 20px;text-align:center}
     .hero h1{color:#c8a45d;font-size:2.6rem;margin-bottom:15px}
     .hero p{color:#ddd;line-height:1.7}
     .hero img{width:100%;border-radius:18px;margin-top:30px}
 
-    .gallery{
-      max-width:1000px;
-      margin:40px auto;
-      padding:0 20px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:15px
+    .breadcrumbs{
+      max-width:1000px;margin:20px auto 0;padding:0 20px;color:#aaa;font-size:13px
     }
-    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px}
+    .breadcrumbs a{color:#c8a45d;text-decoration:none}
+    .breadcrumbs a:hover{color:#e6c200}
+
+    .gallery{
+      max-width:1000px;margin:40px auto;padding:0 20px;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px
+    }
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid #222}
 
     .content{max-width:1000px;margin:60px auto;padding:0 20px}
     .content h2{color:#c8a45d;margin:40px 0 15px}
@@ -82,27 +102,48 @@
     .content ul li::before{content:"✔ ";color:#c8a45d;font-weight:700}
 
     .price-box{
-      background:#111;
-      border:2px solid #c8a45d;
-      border-radius:16px;
-      padding:30px;
-      margin-top:40px
+      background:#111;border:2px solid #c8a45d;border-radius:16px;
+      padding:30px;margin-top:40px
     }
 
-    .cta{text-align:center;margin-top:30px}
+    .cta{text-align:center;margin-top:22px}
     .cta a{
-      display:inline-block;
-      padding:14px 34px;
-      background:#c8a45d;
-      color:#000;
-      font-weight:700;
-      border-radius:10px;
-      text-decoration:none
+      display:inline-block;padding:14px 34px;background:#c8a45d;color:#000;
+      font-weight:700;border-radius:10px;text-decoration:none;transition:.2s
     }
+    .cta a:hover{background:#e6c200;transform:translateY(-1px)}
+
+    /* Related tours */
+    .related{
+      max-width:1000px;margin:60px auto;padding:0 20px
+    }
+    .related h2{color:#c8a45d;margin-bottom:18px;text-align:center}
+    .related-grid{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:18px
+    }
+    .rel-card{
+      background:#111;border:1px solid #222;border-radius:14px;padding:18px
+    }
+    .rel-card a{color:#c8a45d;text-decoration:none;font-weight:700}
+    .rel-card a:hover{color:#e6c200}
+    .rel-card p{color:#bbb;font-size:13px;line-height:1.6;margin-top:8px}
+
+    /* FAQ */
+    .faq{
+      max-width:1000px;margin:60px auto;padding:0 20px
+    }
+    .faq h2{color:#c8a45d;margin-bottom:25px;text-align:center}
+    .faq-item{border-bottom:1px solid #222;padding:15px 0}
+    .faq-item strong{display:block}
+    .faq-item p{color:#ddd;margin-top:8px;line-height:1.7}
 
     footer{border-top:1px solid #222;padding:40px 20px;text-align:center;font-size:13px;color:#777}
     footer a{color:#c8a45d;text-decoration:none}
+    footer a:hover{color:#e6c200}
 
+    @media(max-width:900px){
+      .related-grid{grid-template-columns:1fr}
+    }
     @media(max-width:768px){
       .hero h1{font-size:2.1rem}
     }
@@ -128,24 +169,28 @@
   </div>
 </header>
 
+<div class="breadcrumbs">
+  <a href="tours.html">Tours</a> › <a href="day-tours.html">Day Tours</a> › Alexandria Day Tour
+</div>
+
 <section class="hero">
   <h1>Alexandria Day Tour from Cairo</h1>
   <p>
     Discover Egypt’s Mediterranean city on a private full-day tour
     with a licensed Egyptian tour guide.
   </p>
-  <img src="alex5.jpg" alt="Alexandria Day Tour">
+  <img src="alex5.jpg" alt="Alexandria day tour from Cairo">
 </section>
 
 <section class="gallery">
-  <img src="alex1.jpg">
-  <img src="alex2.jpg">
-  <img src="alex3.jpg">
-  <img src="alex4.jpg">
-  <img src="alex5.jpg">
-  <img src="alex6.jpg">
-  <img src="alex7.jpg">
-  <img src="alex8.jpg">
+  <img src="alex1.jpg" alt="Alexandria tour photo 1">
+  <img src="alex2.jpg" alt="Alexandria tour photo 2">
+  <img src="alex3.jpg" alt="Alexandria tour photo 3">
+  <img src="alex4.jpg" alt="Alexandria tour photo 4">
+  <img src="alex5.jpg" alt="Alexandria tour photo 5">
+  <img src="alex6.jpg" alt="Alexandria tour photo 6">
+  <img src="alex7.jpg" alt="Alexandria tour photo 7">
+  <img src="alex8.jpg" alt="Alexandria tour photo 8">
 </section>
 
 <section class="content">
@@ -159,7 +204,7 @@
 
   <h2>What’s Included</h2>
   <ul>
-    <li>Private licensed English-speaking tour guide</li>
+    <li>Private licensed speaking tour guide</li>
     <li>Private air-conditioned vehicle</li>
     <li>Hotel pickup & drop-off from Cairo or Giza</li>
     <li>Bottled water during the tour</li>
@@ -193,7 +238,7 @@
     </p>
 
     <div class="cta">
-      <a href="https://wa.me/201029545765" target="_blank">
+      <a href="https://wa.me/201029545765?text=Hi%20Merna%20%26%20Rania%2C%20I%20want%20to%20book%20the%20Alexandria%20Day%20Tour%20from%20Cairo.%20Please%20send%20me%20the%20price%20and%20available%20times." target="_blank" rel="noopener">
         Book This Tour on WhatsApp
       </a>
     </div>
@@ -201,48 +246,61 @@
 
 </section>
 
+<!-- ===== Related Tours (Internal Linking) ===== -->
+<section class="related">
+  <h2>Related Day Tours</h2>
+
+  <div class="related-grid">
+    <div class="rel-card">
+      <a href="giza-gem.html">Giza Pyramids & GEM</a>
+      <p>Combine the Great Pyramids of Giza with the Grand Egyptian Museum in one private day tour.</p>
+    </div>
+
+    <div class="rel-card">
+      <a href="memphis-saqqara-nmec.html">Memphis – Saqqara – NMEC</a>
+      <p>Explore the Step Pyramid at Saqqara, ancient Memphis, and NMEC with a private guide.</p>
+    </div>
+
+    <div class="rel-card">
+      <a href="islamic-coptic-cairo.html">Islamic & Coptic Cairo</a>
+      <p>Old Cairo’s mosques, churches, and historic streets — a perfect cultural day tour.</p>
+    </div>
+
+    <div class="rel-card">
+      <a href="day-tours.html">Back to Day Tours</a>
+      <p>See all private day tours and choose the best option for your time in Egypt.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FAQ ===== -->
-<section style="max-width:1000px;margin:60px auto;padding:0 20px">
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
 
-  <h2 style="color:#c8a45d;margin-bottom:25px;text-align:center">
-    Frequently Asked Questions
-  </h2>
-
-  <div style="border-bottom:1px solid #222;padding:15px 0">
+  <div class="faq-item">
     <strong>How long does the Alexandria day tour take?</strong>
-    <p style="color:#ddd;margin-top:8px">
-      The tour lasts approximately 12 hours including round-trip transportation from Cairo.
-    </p>
+    <p>The tour lasts approximately 12 hours including round-trip transportation from Cairo or Giza.</p>
   </div>
 
-  <div style="border-bottom:1px solid #222;padding:15px 0">
+  <div class="faq-item">
     <strong>Are entrance tickets included?</strong>
-    <p style="color:#ddd;margin-top:8px">
-      Yes, all entrance tickets to the mentioned attractions are included.
-    </p>
+    <p>Yes — entrance tickets to the mentioned attractions are included in the tour price.</p>
   </div>
 
-  <div style="border-bottom:1px solid #222;padding:15px 0">
+  <div class="faq-item">
     <strong>Is this tour private?</strong>
-    <p style="color:#ddd;margin-top:8px">
-      Yes, this is a fully private tour with a licensed guide and vehicle.
-    </p>
+    <p>Yes, it’s a fully private tour with your own licensed guide and private vehicle.</p>
   </div>
 
-  <div style="border-bottom:1px solid #222;padding:15px 0">
+  <div class="faq-item">
     <strong>Is hotel pickup included?</strong>
-    <p style="color:#ddd;margin-top:8px">
-      Hotel pickup and drop-off from Cairo or Giza are included.
-    </p>
+    <p>Yes, hotel pickup and drop-off from Cairo or Giza are included.</p>
   </div>
 
-  <div style="padding:15px 0">
+  <div class="faq-item">
     <strong>Can the itinerary be customized?</strong>
-    <p style="color:#ddd;margin-top:8px">
-      Yes, the itinerary can be customized according to your preferences.
-    </p>
+    <p>Yes — we can adjust stops and timing based on your preferences and interests.</p>
   </div>
-
 </section>
 
 <!-- ===== FAQ Schema ===== -->
@@ -250,13 +308,14 @@
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "@id": "https://mmernaguide.info/alexandria-day-tour.html#faq",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "How long does the Alexandria day tour take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Alexandria day tour takes approximately 12 hours including transportation from Cairo."
+        "text": "The Alexandria day tour takes approximately 12 hours including round-trip transportation from Cairo or Giza."
       }
     },
     {
@@ -264,7 +323,7 @@
       "name": "Are entrance tickets included?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, all entrance tickets to the mentioned Alexandria attractions are included."
+        "text": "Yes. Entrance tickets to the mentioned Alexandria attractions are included in the tour price."
       }
     },
     {
@@ -272,7 +331,7 @@
       "name": "Is this tour private?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, this is a fully private tour with a licensed guide and private vehicle."
+        "text": "Yes. This is a fully private tour with a licensed guide and a private air-conditioned vehicle."
       }
     },
     {
@@ -280,7 +339,7 @@
       "name": "Is hotel pickup included?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Hotel pickup and drop-off from Cairo or Giza are included."
+        "text": "Yes. Hotel pickup and drop-off from Cairo or Giza are included."
       }
     },
     {
@@ -288,7 +347,7 @@
       "name": "Can the itinerary be customized?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, the itinerary can be customized according to your preferences."
+        "text": "Yes. The itinerary can be customized according to your preferences."
       }
     }
   ]
@@ -299,9 +358,13 @@
 
   <img src="logo.png" alt="Egyptian Tour Guide – Merna & Rania" style="width:90px;margin-bottom:15px">
 
-  <p style="font-size:14px;color:#aaa;max-width:650px;margin:0 auto 18px">
-    Licensed private tour guides in Egypt offering customized day tours,
-    itineraries, and private transportation services.
+  <p style="font-size:14px;color:#aaa;max-width:650px;margin:0 auto 10px">
+    Licensed private tour guides in Egypt offering customized day tours, itineraries, and private transportation services.
+  </p>
+
+  <p style="font-size:13px;color:#aaa;margin:0 0 16px">
+    Email: <a href="mailto:mmernaguide@mmernaguide.info">mmernaguide@mmernaguide.info</a> ·
+    WhatsApp: <a href="https://wa.me/201029545765" target="_blank" rel="noopener">+20 102 954 5765</a>
   </p>
 
   <div style="margin-bottom:14px">
@@ -312,10 +375,10 @@
   </div>
 
   <div style="margin-bottom:16px">
-    <a href="https://www.facebook.com/mmernaguide/" target="_blank">Facebook</a> ·
-    <a href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a> ·
-    <a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank">TikTok</a> ·
-    <a href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-M_Merna_Tours-Cairo_Cairo_Governorate.html" target="_blank">TripAdvisor</a>
+    <a href="https://www.facebook.com/mmernaguide/" target="_blank" rel="noopener">Facebook</a> ·
+    <a href="https://www.instagram.com/mmerna.guide/" target="_blank" rel="noopener">Instagram</a> ·
+    <a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank" rel="noopener">TikTok</a> ·
+    <a href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-M_Merna_Tours-Cairo_Cairo_Governorate.html" target="_blank" rel="noopener">TripAdvisor</a>
   </div>
 
   <p style="font-size:12px;color:#666">
