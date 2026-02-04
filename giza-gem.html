@@ -14,18 +14,39 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "TouristTrip",
-    "name": "Giza Pyramids & Grand Egyptian Museum Tour",
-    "description": "Private guided day tour to the Giza Pyramids and the Grand Egyptian Museum with entrance tickets included.",
-    "touristType": "Private",
-    "touristActivity": "Sightseeing",
-    "duration": "PT8H",
-    "provider": {
-      "@type": "TravelAgency",
-      "name": "Egyptian Tour Guide – Merna & Rania",
-      "url": "https://mmernaguide.info",
-      "telephone": "+201029545765"
-    }
+    "@graph": [
+      {
+        "@type": "TravelAgency",
+        "@id": "https://mmernaguide.info/#agency",
+        "name": "Egyptian Tour Guide – Merna & Rania",
+        "url": "https://mmernaguide.info",
+        "telephone": "+201029545765",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Cairo",
+          "addressCountry": "EG"
+        },
+        "sameAs": [
+          "https://www.facebook.com/mmernaguide",
+          "https://www.instagram.com/mmerna.guide",
+          "https://www.tiktok.com/@egyptiantour.guide",
+          "https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-M_Merna_Tours-Cairo_Cairo_Governorate.html"
+        ]
+      },
+      {
+        "@type": "TouristTrip",
+        "@id": "https://mmernaguide.info/giza-gem.html#trip",
+        "name": "Giza Pyramids & Grand Egyptian Museum Tour",
+        "description": "Private guided day tour to the Giza Pyramids and the Grand Egyptian Museum with entrance tickets included.",
+        "touristType": "Private",
+        "touristActivity": "Sightseeing",
+        "duration": "PT8H",
+        "provider": {
+          "@id": "https://mmernaguide.info/#agency"
+        },
+        "url": "https://mmernaguide.info/giza-gem.html"
+      }
+    ]
   }
   </script>
 
@@ -40,6 +61,10 @@
     .logo img{height:60px}
     .nav-menu{list-style:none;display:flex;gap:30px}
     .nav-menu a{color:#c8a45d;text-decoration:none}
+    .nav-menu a:hover{color:#e6c200}
+
+    .breadcrumbs{max-width:1000px;margin:20px auto 0;padding:0 20px;color:#aaa;font-size:13px}
+    .breadcrumbs a{color:#c8a45d;text-decoration:none}
 
     .hero{max-width:1000px;margin:80px auto 40px;padding:0 20px;text-align:center}
     .hero h1{color:#c8a45d;font-size:2.6rem;margin-bottom:15px}
@@ -47,14 +72,10 @@
     .hero img{width:100%;border-radius:18px;margin-top:30px}
 
     .gallery{
-      max-width:1000px;
-      margin:40px auto;
-      padding:0 20px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:15px
+      max-width:1000px;margin:40px auto;padding:0 20px;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px
     }
-    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid #222}
 
     .content{max-width:1000px;margin:60px auto;padding:0 20px}
     .content h2{color:#c8a45d;margin:40px 0 15px}
@@ -63,45 +84,37 @@
     .content ul{list-style:none;line-height:1.9;color:#ddd}
     .content ul li::before{content:"✔ ";color:#c8a45d;font-weight:700}
 
-    .excluded ul li::before{
-      content:"✖ ";
-      color:#e6c200;
-      font-weight:700
-    }
+    .excluded ul li::before{content:"✖ ";color:#e6c200;font-weight:700}
 
     .price-box{
-      background:#111;
-      border:2px solid #c8a45d;
-      border-radius:16px;
-      padding:30px;
-      margin-top:40px
+      background:#111;border:2px solid #c8a45d;border-radius:16px;
+      padding:30px;margin-top:40px
     }
 
-    .cta{text-align:center;margin-top:30px}
+    .cta{text-align:center;margin-top:22px}
     .cta a{
-      display:inline-block;
-      padding:14px 34px;
-      background:#c8a45d;
-      color:#000;
-      font-weight:700;
-      border-radius:10px;
-      text-decoration:none
+      display:inline-block;padding:14px 34px;background:#c8a45d;
+      color:#000;font-weight:700;border-radius:10px;text-decoration:none
     }
+    .cta a:hover{background:#e6c200}
 
-    footer{
-      border-top:1px solid #222;
-      padding:40px 20px;
-      text-align:center;
-      font-size:13px;
-      color:#aaa
-    }
+    .related{max-width:1000px;margin:60px auto;padding:0 20px}
+    .related h2{color:#c8a45d;text-align:center;margin-bottom:20px}
+    .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .rel-card{background:#111;border:1px solid #222;border-radius:14px;padding:18px}
+    .rel-card a{color:#c8a45d;font-weight:700;text-decoration:none}
+    .rel-card p{color:#bbb;font-size:13px;margin-top:8px}
 
-    footer a{color:#c8a45d;text-decoration:none;margin:0 6px}
-    footer a:hover{color:#e6c200}
+    .faq{max-width:1000px;margin:60px auto;padding:0 20px}
+    .faq h2{color:#c8a45d;text-align:center;margin-bottom:25px}
+    .faq-item{border-bottom:1px solid #222;padding:15px 0}
+    .faq-item p{color:#ddd;margin-top:8px}
 
-    @media(max-width:768px){
-      .hero h1{font-size:2.1rem}
-    }
+    footer{border-top:1px solid #222;padding:40px 20px;text-align:center;font-size:13px;color:#777}
+    footer a{color:#c8a45d;text-decoration:none}
+
+    @media(max-width:900px){.related-grid{grid-template-columns:1fr}}
+    @media(max-width:768px){.hero h1{font-size:2.1rem}}
   </style>
 </head>
 
@@ -109,45 +122,45 @@
 
 <header>
   <div class="container">
-    <a href="index.html" class="logo"><img src="logo.png" alt="Egyptian Tour Guide"></a>
+    <a href="index.html" class="logo"><img src="logo.png" alt="Egyptian Tour Guide – Merna & Rania"></a>
     <nav>
       <ul class="nav-menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="tours.html">Tours</a></li>
-        <li><a href="process & policies.html">Process & Policies</a></li>
+        <li><a href="day-tours.html">Day Tours</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
+<div class="breadcrumbs">
+  <a href="tours.html">Tours</a> › <a href="day-tours.html">Day Tours</a> › Giza Pyramids & GEM
+</div>
+
 <section class="hero">
   <h1>Giza Pyramids & Grand Egyptian Museum Tour</h1>
-  <p>
-    Explore Egypt’s most iconic landmarks in one private full-day tour
-    with a licensed Egyptian tour guide.
-  </p>
+  <p>Experience Egypt’s most iconic landmarks in one private day tour.</p>
   <img src="pyr4.jpg" alt="Giza Pyramids">
 </section>
 
 <section class="gallery">
-  <img src="pyr1.jpg">
-  <img src="pyr4.jpg">
-  <img src="pyr2.jpg">
-  <img src="gem1.jpg">
-  <img src="gem2.jpg">
-  <img src="gem3.jpg">
-  <img src="gem4.jpg">
+  <img src="pyr1.jpg" alt="Great Pyramid of Giza">
+  <img src="pyr2.jpg" alt="Sphinx of Giza">
+  <img src="pyr4.jpg" alt="Giza Plateau">
+  <img src="gem1.jpg" alt="Grand Egyptian Museum">
+  <img src="gem2.jpg" alt="GEM interior">
+  <img src="gem3.jpg" alt="GEM statues">
+  <img src="gem4.jpg" alt="GEM gallery">
 </section>
 
 <section class="content">
 
   <h2>Tour Overview</h2>
   <p>
-    This private day tour combines the Great Pyramids of Giza with the
-    Grand Egyptian Museum (GEM), offering a complete experience of ancient
-    and modern Egypt in one day.
+    Combine the Great Pyramids of Giza with the Grand Egyptian Museum in one
+    unforgettable private day tour guided by a licensed Egyptologist.
   </p>
 
   <h2>What’s Included</h2>
@@ -155,15 +168,15 @@
     <li>Private licensed speaking tour guide</li>
     <li>Private air-conditioned vehicle</li>
     <li>Hotel pickup & drop-off</li>
-    <li>Bottled water during the tour</li>
-    <li><strong>All entrance tickets to Giza Pyramids & GEM</strong></li>
+    <li>Bottled water</li>
+    <li><strong>All entrance tickets included</strong></li>
   </ul>
 
   <h2>What’s Excluded</h2>
   <div class="excluded">
     <ul>
       <li>Lunch & personal expenses</li>
-      <li>Drinks during meals</li>
+      <li>Drinks</li>
       <li>Tips (optional)</li>
     </ul>
   </div>
@@ -171,39 +184,103 @@
   <div class="price-box">
     <h2>Price & Notes</h2>
     <p>
-      ✔ Entrance tickets included<br>
       ✔ No hidden costs<br>
-      ✔ Private tour only (not shared)<br>
-      ✔ Customizable itinerary
+      ✔ Fully private tour<br>
+      ✔ Customizable itinerary<br>
+      ✔ Ideal for first-time visitors
     </p>
 
     <div class="cta">
-      <a href="https://wa.me/201029545765" target="_blank">
-        Ask for Price on WhatsApp
+      <a href="https://wa.me/201029545765?text=Hi%20Merna%20%26%20Rania%2C%20I%20want%20to%20book%20the%20Giza%20Pyramids%20%26%20GEM%20Day%20Tour." target="_blank">
+        Book This Tour on WhatsApp
       </a>
     </div>
   </div>
 
 </section>
 
+<section class="related">
+  <h2>Related Day Tours</h2>
+  <div class="related-grid">
+    <div class="rel-card">
+      <a href="memphis-saqqara-nmec.html">Memphis – Saqqara – NMEC</a>
+      <p>Explore ancient Egypt’s first capital and royal mummies.</p>
+    </div>
+    <div class="rel-card">
+      <a href="islamic-coptic-cairo.html">Islamic & Coptic Cairo</a>
+      <p>Historic mosques, churches and Old Cairo.</p>
+    </div>
+    <div class="rel-card">
+      <a href="alexandria-day-tour.html">Alexandria Day Tour</a>
+      <p>Discover Egypt’s Mediterranean city.</p>
+    </div>
+    <div class="rel-card">
+      <a href="day-tours.html">All Day Tours</a>
+      <p>View all private day tours.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <strong>How long is the Giza Pyramids & GEM tour?</strong>
+    <p>The tour lasts approximately 8 hours.</p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Are entrance tickets included?</strong>
+    <p>Yes, all entrance tickets are included.</p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Is this a private tour?</strong>
+    <p>Yes, this is a fully private tour.</p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Can the itinerary be customized?</strong>
+    <p>Yes, the itinerary can be adjusted to your preferences.</p>
+  </div>
+</section>
+
+<!-- ===== FAQ Schema ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long is the Giza Pyramids & GEM tour?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The tour lasts approximately 8 hours." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are entrance tickets included?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, all entrance tickets are included." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this a private tour?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, this is a fully private tour." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the itinerary be customized?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, the itinerary can be customized." }
+    }
+  ]
+}
+</script>
+
 <footer>
-  <img src="logo.png" alt="Egyptian Tour Guide" style="width:90px;margin-bottom:10px"><br>
-  <p>Private licensed tour guides in Egypt</p>
-  <p>
-    <a href="index.html">Home</a> ·
-    <a href="tours.html">Tours</a> ·
-    <a href="day-tours.html">Day Tours</a> ·
-    <a href="contact.html">Contact</a>
+  <img src="logo.png" alt="Egyptian Tour Guide – Merna & Rania" style="width:90px;margin-bottom:15px">
+  <p style="color:#aaa;max-width:650px;margin:0 auto 15px">
+    Licensed private tour guides in Egypt offering customized day tours and cultural experiences.
   </p>
-  <p>
-    <a href="https://www.facebook.com/mmernaguide/" target="_blank">Facebook</a> ·
-    <a href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a> ·
-    <a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank">TikTok</a> ·
-    <a href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-M_Merna_Tours-Cairo_Cairo_Governorate.html" target="_blank">TripAdvisor</a>
-  </p>
-  <p style="margin-top:10px;color:#666">
-    © 2025 Egyptian Tour Guide – Merna & Rania
-  </p>
+  <p style="font-size:12px;color:#666">© 2025 Egyptian Tour Guide – Merna & Rania</p>
 </footer>
 
 </body>
