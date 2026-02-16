@@ -20,16 +20,6 @@ header {
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-}
-
 /* Logo */
 .logo img {
   height: 65px;
@@ -533,15 +523,7 @@ header {
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-}
+
 
 /* Logo */
 .logo img {
@@ -1935,6 +1917,7 @@ footer {
     max-width: 100% !important;
   }
 }
+
 
 
 
