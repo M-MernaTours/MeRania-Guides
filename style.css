@@ -1502,5 +1502,7 @@ a {
 }
 body.lightbox-open {
   overflow: hidden;
+  height: 100vh;
 }
+
 
