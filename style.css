@@ -1504,3 +1504,27 @@ body.lightbox-open {
   overflow: hidden;
   height: 100vh;
 }
+/* ===== CLEAN REVIEWS HERO ===== */
+
+.reviews-hero {
+  background: #000;
+  color: #fff;
+  padding: 120px 20px 80px;
+  text-align: center;
+}
+
+.reviews-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.reviews-hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.reviews-hero p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
