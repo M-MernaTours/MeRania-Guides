@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showImage(index) {
     lightbox.style.display = "flex";
+    document.body.classList.add("lightbox-open");
     lightboxImg.src = images[index].src;
     currentIndex = index;
   }
