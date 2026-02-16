@@ -1120,65 +1120,74 @@ footer {
   color: #000;
 }
 .reviews-preview {
-  background: #f5f5f5;
-  padding: 70px 20px;
+  background: #0e0e0e;
+  padding: 80px 20px;
   text-align: center;
+  color: #fff;
 }
 
-.reviews-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.reviews-preview h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
+.reviews-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .review-stars {
-  font-size: 26px;
-  margin: 10px 0;
+  font-size: 28px;
+  color: #f5a623;
+  margin-bottom: 10px;
 }
 
 .reviews-subtext {
-  font-size: 16px;
-  margin-bottom: 30px;
-  color: #555;
+  color: #bbb;
+  margin-bottom: 40px;
 }
 
-.platform-ratings {
+.platform-grid {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-bottom: 30px;
+  gap: 30px;
   flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
-.platform-item {
-  font-size: 16px;
+.platform-card {
+  background: #1c1c1c;
+  padding: 20px 30px;
+  border-radius: 10px;
   text-decoration: none;
-  color: #000;
-  font-weight: 500;
+  color: #fff;
   transition: 0.3s ease;
+  min-width: 180px;
 }
 
-.platform-item:hover {
+.platform-card:hover {
+  transform: translateY(-5px);
+  background: #222;
+}
+
+.platform-name {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.platform-rating {
   color: #f5a623;
+  font-weight: bold;
 }
 
 .reviews-btn {
   display: inline-block;
-  padding: 12px 28px;
-  background: #000;
-  color: #fff;
+  padding: 12px 30px;
+  background: #f5a623;
+  color: #000;
   text-decoration: none;
   border-radius: 6px;
+  font-weight: 600;
   transition: 0.3s;
 }
 
 .reviews-btn:hover {
-  background: #333;
+  background: #e59400;
 }
-
-
-
