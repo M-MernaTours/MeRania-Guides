@@ -1852,5 +1852,45 @@ footer {
   .kpi-grid{ grid-template-columns: 1fr; }
   .verified-badge{ font-size: 11px; padding: 6px 10px; }
 }
+/* ===== Fix Reviews Layout on Laptop ===== */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.text-review-card {
+  background: #111;
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid rgba(212,175,55,0.15);
+  height: 100%;
+}
+
+.tr-body {
+  line-height: 1.7;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .text-reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .text-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
