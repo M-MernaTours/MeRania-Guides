@@ -33,10 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   closeBtn.onclick = () => lightbox.style.display = "none";
+  
 
   lightbox.onclick = e => {
     if (e.target === lightbox) {
       lightbox.style.display = "none";
+      document.body.classList.remove("lightbox-open");
+
     }
   };
 
