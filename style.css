@@ -1244,22 +1244,85 @@ footer {
     font-size: 16px;
   }
 }
+.reviews-hero {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.stars-big {
+  font-size: 30px;
+  color: #f5a623;
+  margin: 15px 0;
+}
+
+.reviews-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.stars {
+  color: #f5a623;
+  margin-bottom: 10px;
+}
+
+.reviews-sub {
+  margin-bottom: 40px;
+  color: #bbb;
+}
+
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
 }
 
-.reviews-grid img {
-  width: 100%;
-  border-radius: 12px;
+.review-card {
+  background: #1a1a1a;
+  padding: 12px;
+  border-radius: 14px;
   transition: 0.3s ease;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  cursor: pointer;
 }
 
-.reviews-grid img:hover {
-  transform: scale(1.02);
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(245,166,35,0.25);
 }
+
+.review-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.btn-center {
+  margin-top: 50px;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 12px;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
 
 
 
