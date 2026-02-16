@@ -1244,25 +1244,28 @@ footer {
     font-size: 16px;
   }
 }
+/* ===============================
+   REVIEWS HERO
+================================= */
+
 .reviews-hero {
   padding: 100px 20px;
   text-align: center;
 }
 
 .stars-big {
-  font-size: 30px;
+  font-size: 32px;
   color: #f5a623;
   margin: 15px 0;
 }
 
-.reviews-section {
-  padding: 80px 0;
-  text-align: center;
-}
+/* ===============================
+   REVIEWS SECTION
+================================= */
 
-.stars {
-  color: #f5a623;
-  margin-bottom: 10px;
+.reviews-section {
+  padding: 80px 20px;
+  text-align: center;
 }
 
 .reviews-sub {
@@ -1270,59 +1273,163 @@ footer {
   color: #bbb;
 }
 
+.stars {
+  color: #f5a623;
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   REVIEWS GRID (Small Cards)
+================================= */
+
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .review-card {
-  background: #1a1a1a;
-  padding: 12px;
+  position: relative;
   border-radius: 14px;
-  transition: 0.3s ease;
+  overflow: hidden;
   cursor: pointer;
-}
-
-.review-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(245,166,35,0.25);
+  background: #111;
+  transition: 0.3s ease;
 }
 
 .review-card img {
   width: 100%;
-  border-radius: 10px;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: 0.4s ease;
 }
+
+.review-card:hover img {
+  transform: scale(1.08);
+  opacity: 0.85;
+}
+
+.review-card::after {
+  content: "View Review";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+  font-size: 14px;
+  padding: 12px 0;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.review-card:hover::after {
+  opacity: 1;
+}
+
+/* ===============================
+   BUTTON CENTER
+================================= */
 
 .btn-center {
   margin-top: 50px;
 }
 
+/* ===============================
+   PREMIUM LIGHTBOX
+================================= */
+
 .lightbox {
   display: none;
   position: fixed;
   inset: 0;
+  backdrop-filter: blur(10px);
   background: rgba(0,0,0,0.9);
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  padding: 40px;
+  animation: fadeIn 0.3s ease;
 }
 
 .lightbox-content {
-  max-width: 90%;
-  max-height: 85%;
-  border-radius: 12px;
+  max-width: 95%;
+  max-height: 90%;
+  border-radius: 14px;
+  box-shadow: 0 0 60px rgba(0,0,0,0.9);
+  animation: zoomIn 0.3s ease;
 }
+
+/* Close Button */
 
 .close-lightbox {
   position: absolute;
-  top: 30px;
+  top: 25px;
   right: 40px;
-  font-size: 40px;
+  font-size: 45px;
   color: #fff;
   cursor: pointer;
+  transition: 0.3s;
 }
 
+.close-lightbox:hover {
+  color: #f5a623;
+}
 
+/* Navigation Arrows */
 
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 55px;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  user-select: none;
+  transition: 0.3s;
+}
 
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+.lightbox-nav:hover {
+  color: #f5a623;
+}
+
+/* ===============================
+   ANIMATIONS
+================================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); }
+  to { transform: scale(1); }
+}
+
+/* ===============================
+   MOBILE OPTIMIZATION
+================================= */
+
+@media (max-width: 768px) {
+
+  .review-card img {
+    height: 180px;
+  }
+
+  .lightbox-nav {
+    font-size: 40px;
+  }
+
+  .close-lightbox {
+    font-size: 35px;
+  }
+
+}
