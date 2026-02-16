@@ -12,22 +12,23 @@ document.addEventListener("DOMContentLoaded", function () {
   /* ===============================
      OPEN
   =============================== */
+function openLightbox(index) {
+  currentIndex = index;
+  lightboxImg.src = images[index].src;
+  lightbox.style.display = "flex";
 
-  function openLightbox(index) {
-    currentIndex = index;
-    lightboxImg.src = images[index].src;
-    lightbox.style.display = "flex";
-    document.body.classList.add("lightbox-open");
-  }
+  document.body.classList.add("lightbox-open");
+}
 
   /* ===============================
      CLOSE
   =============================== */
 
-  function closeLightbox() {
-    lightbox.style.display = "none";
-    document.body.classList.remove("lightbox-open");
-  }
+function closeLightbox() {
+  lightbox.style.display = "none";
+  document.body.classList.remove("lightbox-open");
+  document.body.style.top = "";
+}
 
   /* ===============================
      NAVIGATION
