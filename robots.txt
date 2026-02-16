@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mmernaguide.info/sitemap.xml
+Sitemap: https://mmernaguide.info/sitemap_index.xml
+
