@@ -9,44 +9,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentIndex = 0;
 
-  function showImage(index) {
+  /* ===============================
+     OPEN
+  =============================== */
+
+  function openLightbox(index) {
+    currentIndex = index;
+    lightboxImg.src = images[index].src;
     lightbox.style.display = "flex";
     document.body.classList.add("lightbox-open");
-    lightboxImg.src = images[index].src;
-    currentIndex = index;
   }
 
+  /* ===============================
+     CLOSE
+  =============================== */
+
+  function closeLightbox() {
+    lightbox.style.display = "none";
+    document.body.classList.remove("lightbox-open");
+  }
+
+  /* ===============================
+     NAVIGATION
+  =============================== */
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  /* ===============================
+     EVENTS
+  =============================== */
+
   images.forEach((img, index) => {
-    img.addEventListener("click", () => {
-      showImage(index);
-    });
+    img.addEventListener("click", () => openLightbox(index));
   });
 
-  nextBtn.onclick = () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-  };
+  closeBtn.addEventListener("click", closeLightbox);
 
-  prevBtn.onclick = () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
-  };
+  nextBtn.addEventListener("click", showNext);
+  prevBtn.addEventListener("click", showPrev);
 
-  closeBtn.onclick = () => lightbox.style.display = "none";
-  
-
-  lightbox.onclick = e => {
+  lightbox.addEventListener("click", function (e) {
     if (e.target === lightbox) {
-      lightbox.style.display = "none";
-      document.body.classList.remove("lightbox-open");
-
+      closeLightbox();
     }
-  };
+  });
 
-  document.addEventListener("keydown", e => {
-    if (e.key === "Escape") lightbox.style.display = "none";
-    if (e.key === "ArrowRight") nextBtn.click();
-    if (e.key === "ArrowLeft") prevBtn.click();
+  document.addEventListener("keydown", function (e) {
+    if (lightbox.style.display === "flex") {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") showNext();
+      if (e.key === "ArrowLeft") showPrev();
+    }
   });
 
 });
