@@ -1,110 +1,73 @@
-/* ===== Reviews Page Clean Layout ===== */
-
-.reviews-hero,
-.text-reviews,
-.reviews-section {
-  padding: 60px 0;
+.reviews-page {
+  padding: 80px 0;
+  background: #000;
+  color: #fff;
+  text-align: center;
 }
 
-.text-reviews-grid {
+.reviews-page h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.reviews-sub {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: #bbb;
+}
+
+.reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  max-width: 1200px;
-  margin: auto;
 }
 
-.text-review-card {
+.review-card {
   background: #111;
-  padding: 25px;
-  border-radius: 18px;
-  border: 1px solid rgba(212,175,55,0.15);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(212,175,55,0.2);
+  transition: 0.3s ease;
 }
 
-@media (max-width: 992px) {
-  .text-reviews-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.review-card:hover {
+  transform: translateY(-8px);
 }
 
-@media (max-width: 600px) {
-  .text-reviews-grid {
-    grid-template-columns: 1fr;
-  }
-}
-/* ===== Fix Overlapping Sections ===== */
-
-.reviews-hero,
-.text-reviews,
-.reviews-section,
-footer {
-  position: relative !important;
-  z-index: 1 !important;
+.stars {
+  color: #d4af37;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-.text-reviews {
-  margin-top: 40px !important;
-  margin-bottom: 80px !important;
+.review-card h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
 }
 
-.text-reviews-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 30px !important;
-  align-items: stretch !important;
+.review-card p {
+  color: #ddd;
+  line-height: 1.7;
 }
 
-.text-review-card {
-  background: #111 !important;
-  padding: 25px !important;
-  border-radius: 18px !important;
-  box-sizing: border-box !important;
+.cta-section {
+  margin-top: 60px;
 }
 
-/* Footer separation */
-footer {
-  margin-top: 120px !important;
-  clear: both !important;
+.btn-review {
+  background: #d4af37;
+  color: #000;
+  padding: 15px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-review:hover {
+  background: #fff;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
-  .text-reviews-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .text-reviews-grid {
-    grid-template-columns: 1fr !important;
-  }
-}
-/* ===== FIX LAYOUT STRUCTURE ===== */
-
-.text-reviews {
-  display: block !important;
-}
-
-.text-reviews h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.text-reviews-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 30px !important;
-  margin-top: 30px;
-}
-
-@media (max-width: 992px) {
-  .text-reviews-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .text-reviews-grid {
-    grid-template-columns: 1fr !important;
-  }
-}
+  .reviews-grid {
