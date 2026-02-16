@@ -1203,4 +1203,46 @@ footer {
 .reviews-main-btn:hover {
   background: #e59400;
 }
+/* ===== Desktop Optimization ===== */
+@media (min-width: 1024px) {
+
+  .reviews-section {
+    padding: 120px 20px;
+  }
+
+  .reviews-wrapper {
+    max-width: 1200px;
+  }
+
+  .reviews-heading {
+    font-size: 42px;
+  }
+
+  .stars-line {
+    font-size: 36px;
+  }
+
+  .reviews-counter-text {
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+
+  .reviews-platforms {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+  }
+
+  .platform-box {
+    flex: 1;
+    max-width: 300px;
+  }
+
+  .reviews-main-btn {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+}
+
 
