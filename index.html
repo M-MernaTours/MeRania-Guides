@@ -349,8 +349,34 @@
 
   <!-- ===== JS Slider ===== -->
   <script src="script.js"></script>
+   <script>
+fetch('reviews-data.json')
+  .then(response => response.json())
+  .then(data => {
+    const total = data.google + data.tripadvisor + data.facebook;
+    const counter = document.getElementById("review-counter");
+
+    let count = 0;
+    const speed = 15;
+
+    const animate = () => {
+      if (count < total) {
+        count++;
+        counter.textContent = count;
+        setTimeout(animate, speed);
+      } else {
+        counter.textContent = total;
+      }
+    };
+
+    animate();
+  })
+  .catch(err => console.error("Error loading reviews data:", err));
+</script>
+
 </body>
 </html>
+
 
 
 
