@@ -1,0 +1,34 @@
+/* ===== Reviews Page Clean Layout ===== */
+
+.reviews-hero,
+.text-reviews,
+.reviews-section {
+  padding: 60px 0;
+}
+
+.text-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.text-review-card {
+  background: #111;
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid rgba(212,175,55,0.15);
+}
+
+@media (max-width: 992px) {
+  .text-reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .text-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
