@@ -1891,6 +1891,51 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* ===== FORCE FIX REVIEWS SECTION ===== */
+
+.text-reviews {
+  padding: 60px 0;
+}
+
+.text-reviews-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 30px !important;
+  justify-content: center !important;
+}
+
+.text-review-card {
+  flex: 1 1 30% !important;
+  max-width: 30% !important;
+  background: #111 !important;
+  padding: 25px !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(212,175,55,0.15) !important;
+  box-sizing: border-box !important;
+  min-height: 250px !important;
+}
+
+.tr-body {
+  line-height: 1.7;
+  color: #ddd;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .text-review-card {
+    flex: 1 1 45% !important;
+    max-width: 45% !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .text-review-card {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+}
+
 
 
 
