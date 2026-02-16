@@ -71,3 +71,38 @@
 /* Responsive */
 @media (max-width: 992px) {
   .reviews-grid {
+/* ===== FIX HERO LAYOUT ===== */
+
+.reviews-page .container {
+  display: block;
+}
+
+.reviews-page h1 {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.reviews-sub {
+  text-align: left;
+  max-width: 600px;
+}
+
+/* لو عندك hero-box أو flex */
+.reviews-hero,
+.hero-box {
+  display: block !important;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+
+  .reviews-page h1 {
+    font-size: 28px;
+  }
+
+  .reviews-sub {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+}
