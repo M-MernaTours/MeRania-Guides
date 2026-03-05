@@ -17,6 +17,7 @@ const tours = [
   "Alexandria Top Tour",
   "Cairo Top Tour: Memphis - Saqqara - NMEC",
   "Cairo Top Tour: Islamic and Coptic Tour",
+  "Fayoum Day Tour – Wadi El Rayan, Lake Qarun, and Tunis Village",
   "2 Tours - Cairo Top Tours",
   "3 Day Tours – Cairo & Alexandria",
   "4 Tours Cairo and Alexandria",
