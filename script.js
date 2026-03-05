@@ -14,10 +14,14 @@ const companyNumber = "201029545765";
 
 const tours = [
   "Cairo Top Tour: Pyramids and GEM",
+  "Camel Ride in the Desert",
+  "nile felucca ride",
+  "khan el khalili bazaar tour",
   "Alexandria Top Tour",
   "Cairo Top Tour: Memphis - Saqqara - NMEC",
   "Cairo Top Tour: Islamic and Coptic Tour",
   "Fayoum Day Tour – Wadi El Rayan, Lake Qarun, and Tunis Village",
+  "safari in the desert",
   "2 Tours - Cairo Top Tours",
   "3 Day Tours – Cairo & Alexandria",
   "4 Tours Cairo and Alexandria",
