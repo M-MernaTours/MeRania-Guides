@@ -1,288 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Egyptian Tour Guide – Merna & Rania</title>
-  <meta name="description" content="Contact Merna & Rania, licensed Egyptian tour guides. Book private tours in Cairo, Giza, Luxor and Aswan via WhatsApp or email.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Contact Merna & Rania | Book Your Private Egypt Tour Guide</title>
+    <meta name="description" content="Contact Merna & Rania, licensed Egyptian tour guides. Quick WhatsApp booking for private Giza Pyramids, Cairo, and Luxor tours. Available 24/7 for global travelers.">
+    <meta name="keywords" content="contact tour guide egypt, merna and rania whatsapp, book private guide cairo, hire egyptologist, private egypt tour inquiries, egypt travel support, licensed guide giza">
+    <link rel="canonical" href="https://mmernaguide.info/contact.html">
 
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    /* ===== Reset ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TravelAgency",
+          "@id": "https://mmernaguide.info/#agency",
+          "name": "Egyptian Tour Guide - Merna & Rania",
+          "url": "https://mmernaguide.info/contact.html",
+          "image": "https://mmernaguide.info/logo.png",
+          "telephone": "+201029545765",
+          "email": "mmernaguide@mmernaguide.info",
+          "priceRange": "$$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cairo",
+            "addressCountry": "EG"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+201029545765",
+            "contactType": "customer service",
+            "areaServed": "World",
+            "availableLanguage": ["English", "Arabic"]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "59"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mmernaguide.info/" },
+            { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": "https://mmernaguide.info/contact.html" }
+          ]
+        }
+      ]
     }
+    </script>
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #000;
-      color: #fff;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #C5A059;
+            --bg-dark: #0F0F0F;
+            --card-bg: #1A1A1A;
+            --white: #FFFFFF;
+            --text-gray: #A0A0A0;
+            --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
 
-    /* ===== Header ===== */
-    header {
-      background: linear-gradient(90deg, #000000, #111, #1a1a1a, #222, #000);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: var(--bg-dark); color: var(--white); overflow-x: hidden; scroll-behavior: smooth; }
+        .playfair { font-family: 'Playfair Display', serif; }
+        .container { max-width: 1400px; margin: 0 auto; width: 92%; }
+        .gold-text { color: var(--gold); }
+        .text-center { text-align: center; }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 80px;
-    }
+        /* --- Header & Navigation (Unified) --- */
+        .main-header {
+            background: rgba(15, 15, 15, 0.98);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+            position: sticky; top: 0; z-index: 4000;
+        }
+        .header-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 50px; }
+        .nav-container { flex-grow: 1; display: flex; justify-content: center; }
+        .nav-menu { list-style: none; display: flex; gap: 40px; }
+        .nav-menu a { text-decoration: none; color: var(--white); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; transition: var(--transition); }
+        .nav-menu a:hover, .nav-menu a.active { color: var(--gold); }
 
-    .logo img {
-      height: 65px;
-      width: auto;
-      transition: filter 0.3s;
-    }
+        /* --- Mobile Navigation --- */
+        .hamburger { display: none; cursor: pointer; background: none; border: none; z-index: 5000; }
+        .hamburger span { display: block; width: 25px; height: 2px; background: var(--gold); margin: 6px 0; transition: 0.4s; }
+        
+        @media (max-width: 992px) {
+            .hamburger { display: block; }
+            .nav-container {
+                position: fixed; right: -100%; top: 0; width: 100%; height: 100vh;
+                background: rgba(15, 15, 15, 0.98); flex-direction: column; justify-content: center;
+                transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1); z-index: 4500;
+            }
+            .nav-container.active { right: 0; }
+            .nav-menu { flex-direction: column; align-items: center; gap: 30px; }
+            .nav-menu a { font-size: 1.5rem; }
+            .hamburger.open span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+            .hamburger.open span:nth-child(2) { opacity: 0; }
+            .hamburger.open span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+        }
 
-    .logo img:hover {
-      filter: drop-shadow(0 0 5px #c8a45d);
-    }
+        /* --- Contact Hero --- */
+        .contact-hero { padding: 120px 0 60px; text-align: center; }
+        .contact-hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 20px; }
+        .divider { width: 70px; height: 2px; background: var(--gold); margin: 25px auto; }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
+        /* --- Contact Grid --- */
+        .contact-grid-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 100px; }
+        .contact-card { 
+            background: var(--card-bg); padding: 60px 50px; 
+            border: 1px solid rgba(197, 160, 89, 0.05); 
+            transition: var(--transition);
+        }
+        .contact-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .contact-card h2 { font-family: 'Playfair Display'; color: var(--gold); font-size: 2.2rem; margin-bottom: 30px; }
+        
+        /* Interactive Contact Methods */
+        .method-item { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; text-decoration: none; color: var(--white); transition: 0.3s; }
+        .method-item:hover { color: var(--gold); padding-left: 10px; }
+        .method-icon { width: 50px; height: 50px; border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1.3rem; }
+        
+        /* Social Stack */
+        .social-link-item { 
+            display: flex; align-items: center; justify-content: space-between; 
+            padding: 25px; background: #080808; border: 1px solid rgba(197, 160, 89, 0.1); 
+            text-decoration: none; color: var(--white); transition: 0.4s ease; margin-bottom: 15px;
+        }
+        .social-link-item:hover { background: var(--gold); color: #000; border-color: var(--gold); }
+        .social-link-item h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; }
 
-    nav a {
-      color: #c8a45d;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 16px;
-      transition: color 0.3s;
-    }
+        /* --- Footer (Unified) --- */
+        .master-footer { background: #050505; padding: 100px 0 30px; border-top: 1px solid var(--gold); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 80px; }
+        .footer-brand img { height: 65px; margin-bottom: 35px; }
+        .footer-head { color: var(--gold); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 35px; font-weight: 700; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 18px; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-links a:hover { color: var(--gold); padding-left: 8px; }
 
-    nav a:hover {
-      color: #e6c200;
-    }
+        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.1); }
 
-    nav a.active {
-      color: #fff;
-      text-decoration: underline;
-      text-underline-offset: 6px;
-    }
-
-    /* ===== Contact Section ===== */
-    .contact-social {
-      padding: 90px 0 40px;
-      background: #000;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .card {
-      background: #111;
-      border: 1px solid #333;
-      border-radius: 14px;
-      padding: 20px;
-    }
-
-    .card h2 {
-      color: #c8a45d;
-      margin-bottom: 10px;
-    }
-
-    .contact-link {
-      color: #c8a45d;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .contact-link:hover {
-      color: #fff;
-    }
-
-    .social-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
-      margin-top: 15px;
-    }
-
-    .social-card {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      background: #000;
-      border: 1px solid #333;
-      border-radius: 14px;
-      padding: 15px;
-      text-decoration: none;
-    }
-
-    .social-icon {
-      width: 40px;
-      height: 40px;
-    }
-
-    .social-card h3 {
-      margin: 0;
-      color: #c8a45d;
-      font-size: 16px;
-    }
-
-    .social-card p {
-      margin: 2px 0 0 0;
-      color: #ddd;
-      font-size: 14px;
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      background-color: #111;
-      color: #fff;
-      padding: 40px 20px 20px 20px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 12px;
-      color: #777;
-      border-top: 1px solid #333;
-      padding-top: 15px;
-    }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 768px) {
-      nav ul {
-        gap: 15px;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+        @media (max-width: 992px) {
+            .contact-grid-wrapper { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .contact-card { padding: 40px 25px; }
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- ===== Header ===== -->
-  <header>
-    <div class="container">
-      <a href="https://mmernaguide.info/" class="logo">
-        <img src="logo.png" alt="Egyptian Tour Guide">
-      </a>
-
-        <nav class="navbar">
-        <ul class="nav-menu">
-          <li><a href="https://mmernaguide.info/">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="tours.html">Tours</a></li>
-          <li><a href="process-policies.html">Booking Process</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ===== Contact & Social Section ===== -->
-  <section class="contact-social">
-    <h1 style="text-align:center; margin-bottom:30px;">
-  Contact Merna & Rania – Egyptian Tour Guides
-</h1>
-
-    <div class="contact-grid">
-
-      <!-- Contact Info -->
-      <div class="card">
-        <h2>Contact Us</h2>
-        <p>
-  Contact <strong>Merna & Rania, licensed Egyptian tour guides</strong> to plan your private tour in Egypt.
-</p>
-
-        <a href="https://wa.me/201029545765" target="_blank" class="contact-link">+20 102 954 5765 (WhatsApp)</a><br>
-        <a href="tel:+201029545765" class="contact-link">+20 102 954 5765 (Call)</a>
-
-        <p style="margin-top: 15px;"><strong>Email:</strong></p>
-        <a href="mailto:mmernaguide@mmernaguide.info" class="contact-link">mmernaguide@mmernaguide.info</a>
-
-        <p style="margin-top: 15px;"><strong>Languages:</strong> English & Arabic</p>
-        <p><strong>Availability:</strong> 24/7</p>
-      </div>
-
-      <!-- Social Media -->
-      <div class="card">
-        <h2>Follow Us</h2>
-
-        <div class="social-grid">
-
-          <!-- Instagram -->
-          <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="social-card">
-            <svg class="social-icon" viewBox="0 0 24 24">
-              <path fill="#c8a45d" d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5ZM12 7.25a4.75 4.75 0 1 1 0 9.5a4.75 4.75 0 0 1 0-9.5Zm0 1.5a3.25 3.25 0 1 0 0 6.5a3.25 3.25 0 0 0 0-6.5ZM17.75 6.5a1.05 1.05 0 1 1 0 2.1a1.05 1.05 0 0 1 0-2.1Z"/>
-            </svg>
-            <div>
-              <h3>Instagram</h3>
-              <p>Egyptian Tour Guide – Merna & Rania</p>
-            </div>
-          </a>
-
-          <!-- Facebook -->
-          <a href="https://www.facebook.com/mmernaguide" target="_blank" class="social-card">
-            <svg class="social-icon" viewBox="0 0 24 24">
-              <path fill="#c8a45d" d="M13.5 22v-9h3l.5-4h-3.5V7.2c0-1.1.3-1.8 1.9-1.8h1.6V1.6A23.3 23.3 0 0 0 14.5 1C11.7 1 10 2.7 10 5.8V9H7v4h3v9h3.5Z"/>
-            </svg>
-            <div>
-              <h3>Facebook</h3>
-              <p>Egyptian Tour Guide Merna&Rania</p>
-            </div>
-          </a>
-
-          <!-- TikTok -->
-          <a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank" class="social-card">
-            <svg class="social-icon" viewBox="0 0 24 24">
-              <path fill="#c8a45d" d="M14.5 3.5h3.2v3.1c1.1.8 2 2 2.4 3.4c-.7-.2-1.4-.3-2.1-.3c-1.2 0-2.3.3-3.2.8V14c0 2.5-2 4.5-4.5 4.5A4.5 4.5 0 0 1 7 14V8.3H9.2v5.7c0 1.1.9 2 2 2s2-.9 2-2V7.5c1.3-.7 2.8-1.1 4.3-1.1V3.5Z"/>
-            </svg>
-            <div>
-              <h3>TikTok</h3>
-              <p>Egyptian Guides Merna & Rania</p>
-            </div>
-          </a>
-
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="https://mmernaguide.info/" class="logo">
+                <img src="logo.png" alt="Contact Merna & Rania - Licensed Egypt Tour Guides">
+            </a>
+            <nav class="nav-container" id="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="https://mmernaguide.info/">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="tours.html">Our Tours</a></li>
+                    <li><a href="process-policies.html">Booking Process</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-      </div>
-      <p style="margin-top:15px;">
-  👉 Looking for a guide in Cairo?
-  <a href="tours.html" class="contact-link">
-    Cairo Private Tour Guide
-  </a>
-</p>
+    </header>
 
-  <!-- ===== Footer ===== -->
-  <footer>
+    <main class="container">
+        <section class="contact-hero">
+            <h1 class="playfair gold-text">Start Your Adventure</h1>
+            <div class="divider"></div>
+            <p style="max-width: 750px; margin: 0 auto; color: var(--text-gray); line-height: 2; font-size: 1.1rem;">Ready for an unforgettable journey through history? Merna & Rania are here to help you design the perfect private tour in Egypt. Contact us today!</p>
+        </section>
 
-    <div class="footer-bottom">
-      <p>© 2025 Egyptian Tour Guide – Merna & Rania. All rights reserved.</p>
-    </div>
-  </footer>
+        <div class="contact-grid-wrapper">
+            <div class="contact-card">
+                <h2 class="playfair">Direct Support</h2>
+                <p>We provide 24/7 dedicated support for our guests in English and Arabic.</p>
+                
+                <a href="https://wa.me/201029545765" class="method-item" target="_blank">
+                    <div class="method-icon">WA</div>
+                    <div class="method-text">
+                        <span style="display:block; font-size: 0.8rem; color: var(--gold);">Instant Messaging</span>
+                        <strong>+20 102 954 5765</strong>
+                    </div>
+                </a>
+                
+                <a href="tel:+201029545765" class="method-item">
+                    <div class="method-icon">📞</div>
+                    <div class="method-text">
+                        <span style="display:block; font-size: 0.8rem; color: var(--gold);">Direct Call</span>
+                        <strong>Speak with your Guide</strong>
+                    </div>
+                </a>
+                
+                <a href="mailto:mmernaguide@mmernaguide.info" class="method-item">
+                    <div class="method-icon">✉️</div>
+                    <div class="method-text">
+                        <span style="display:block; font-size: 0.8rem; color: var(--gold);">Official Inquiry</span>
+                        <strong>mmernaguide@mmernaguide.info</strong>
+                    </div>
+                </a>
 
-    </div>
-  </section>
+                <div style="margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05);">
+                    <p style="font-size: 0.9rem; color: var(--text-gray);">Looking for customized day tours? <a href="tours.html" class="gold-text">Browse our programs →</a></p>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h2 class="playfair">Follow Our Work</h2>
+                <p>Stay connected and see real-time updates from our tours across Egypt.</p>
+                
+                <div class="social-stack">
+                    <a href="https://www.instagram.com/mmerna.guide/" target="_blank" class="social-link-item">
+                        <div><h3>Instagram</h3><p>Site views & daily stories</p></div>
+                        <span style="font-size: 1.5rem;">→</span>
+                    </a>
+
+                    <a href="https://www.facebook.com/mmernaguide" target="_blank" class="social-link-item">
+                        <div><h3>Facebook</h3><p>Guest feedback & updates</p></div>
+                        <span style="font-size: 1.5rem;">→</span>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank" class="social-link-item">
+                        <div><h3>TikTok</h3><p>Archaeological insights</p></div>
+                        <span style="font-size: 1.5rem;">→</span>
+                    </a>
+
+                    <a href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-Egyptian_Tour_Guide_Merna_Rania-Cairo_Cairo_Governorate.html" target="_blank" class="social-link-item" style="border-color: var(--gold);">
+                        <div><h3>TripAdvisor</h3><p>Verified 5-Star guest stories</p></div>
+                        <span style="font-size: 1.5rem;">★</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="master-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Merna & Rania">
+                    <p>Official Licensed Private Tour Guides. Dedicated to providing secure and luxury archaeological experiences across Egypt for global travelers.</p>
+                </div>
+                <div>
+                    <h4 class="footer-head">Navigate</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://mmernaguide.info/">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="tours.html">Our Premium Tours</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-head">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:mmernaguide@mmernaguide.info">Email Inquiries</a></li>
+                        <li><a href="https://wa.me/201029545765">WhatsApp Chat</a></li>
+                        <li><a href="process-policies.html">Booking Process</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-head">Follow</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.facebook.com/mmernaguide" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank">TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 40px; color: #555; font-size: 0.8rem; letter-spacing: 1px;">
+                © 2025 EGYPTIAN TOUR GUIDE – MERNA & RANIA. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/201029545765" class="wa-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Support" width="35">
+    </a>
+
+    <script>
+        const hb = document.getElementById('hamburger');
+        const nv = document.getElementById('nav-container');
+        hb.onclick = () => {
+            nv.classList.toggle('active');
+            hb.classList.toggle('open');
+            document.body.style.overflow = nv.classList.contains('active') ? 'hidden' : 'auto';
+        }
+    </script>
 
 </body>
 </html>
