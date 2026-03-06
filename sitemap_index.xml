@@ -1,29 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://mmernaguide.info/</loc></url>
-  <url><loc>https://mmernaguide.info/egypt-tour-reviews.html</loc></url>
+
   <url><loc>https://mmernaguide.info/about.html</loc></url>
+  <url><loc>https://mmernaguide.info/contact.html</loc></url>
+  <url><loc>https://mmernaguide.info/process-policies.html</loc></url>
+  <url><loc>https://mmernaguide.info/egypt-tour-reviews.html</loc></url>
+  <url><loc>https://mmernaguide.info/transportation.html</loc></url>
+
   <url><loc>https://mmernaguide.info/tours.html</loc></url>
   <url><loc>https://mmernaguide.info/day-tours.html</loc></url>
+  <url><loc>https://mmernaguide.info/itineraries.html</loc></url>
+  <url><loc>https://mmernaguide.info/things-to-do-in-cairo.html</loc></url>
+
   <url><loc>https://mmernaguide.info/giza-gem.html</loc></url>
   <url><loc>https://mmernaguide.info/alexandria-day-tour.html</loc></url>
   <url><loc>https://mmernaguide.info/memphis-saqqara-nmec.html</loc></url>
   <url><loc>https://mmernaguide.info/islamic-coptic-cairo.html</loc></url>
-  <url><loc>https://mmernaguide.info/itineraries.html</loc></url>
-  <url><loc>https://mmernaguide.info/itinerary-2-tours.html</loc></url>
-  <url><loc>https://mmernaguide.info/itinerary-3-days.html</loc></url>
-  <url><loc>https://mmernaguide.info/itinerary-4-tours.html</loc></url>
-  <url><loc>https://mmernaguide.info/itinerary-nile-cruise.html</loc></url>
-  <url><loc>https://mmernaguide.info/itinerary-8-days.html</loc></url>
-  <url><loc>https://mmernaguide.info/itinerary-10-days.html</loc></url>
-  <url><loc>https://mmernaguide.info/itinerary-12-days.html</loc></url>
-  <url><loc>https://mmernaguide.info/transportation.html</loc></url>
-  <url><loc>https://mmernaguide.info/process-policies.html</loc></url>
-  <url><loc>https://mmernaguide.info/contact.html</loc></url>
   <url><loc>https://mmernaguide.info/fayoum-day-tour.html</loc></url>
-  <url><loc>https://mmernaguide.info/things-to-do-in-cairo.html</loc></url>
+
   <url><loc>https://mmernaguide.info/camel-ride-pyramids.html</loc></url>
   <url><loc>https://mmernaguide.info/nile-felucca-ride.html</loc></url>
   <url><loc>https://mmernaguide.info/khan-el-khalili-bazaar-tour.html</loc></url>
   <url><loc>https://mmernaguide.info/desert-safari.html</loc></url>
+
+  <url><loc>https://mmernaguide.info/itinerary-2-tours.html</loc></url>
+  <url><loc>https://mmernaguide.info/itinerary-3-days.html</loc></url>
+  <url><loc>https://mmernaguide.info/itinerary-4-tours.html</loc></url>
+  <url><loc>https://mmernaguide.info/itinerary-8-days.html</loc></url>
+  <url><loc>https://mmernaguide.info/itinerary-10-days.html</loc></url>
+  <url><loc>https://mmernaguide.info/itinerary-12-days.html</loc></url>
+
+  <url><loc>https://mmernaguide.info/nile-cruise-4-days.html</loc></url>
 </urlset>
