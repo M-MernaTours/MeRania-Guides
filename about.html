@@ -1,163 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TravelAgency",
-  "name": "Egyptian Tour Guide - Merna & Rania",
-  "description": "We are Merna & Rania, expert Egyptian tour guides offering private tours in Cairo and Giza. We specialize in customized itineraries, small group tours, and personalized travel experiences for visitors from around the world.",
-  "url": "https://mmernaguide.info/about.html",
-  "telephone": "+201029545765",
-  "email": "mmernaguide@mmernaguide.info",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Cairo",
-    "addressCountry": "EG"
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ],
-    "opens": "00:00",
-    "closes": "23:59"
-  },
-  "sameAs": [
-    "https://www.facebook.com/mmernaguide",
-    "https://www.instagram.com/mmerna.guide/",
-    "https://www.tiktok.com/@egyptiantour.guide",
-    "https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-M_Merna_Tours-Cairo_Cairo_Governorate.html"
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "13"
-  }
-}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>About Us | Merna & Rania - Professional Licensed Egyptian Guides</title>
+    <meta name="description" content="Meet Merna & Rania, leading licensed female tour guides in Egypt. Expert archaeological tours, luxury transport, and safe travel for solo travelers.">
+    <meta name="keywords" content="licensed female tour guides egypt, private egypt tours, cairo private guide, merna and rania tours, luxury egypt tours, safe tours for solo female travelers egypt, licensed archaeologist guide egypt">
+    <link rel="canonical" href="https://mmernaguide.info/about.html">
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Licensed Egyptian Tour Guides – Merna & Rania</title>
-  <meta name="description" content="Meet Merna & Rania, licensed Egyptian tour guides offering private tours in Cairo, Giza, Luxor and Aswan with a real local experience.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Egyptian Tour Guide - Merna & Rania",
+      "description": "Official licensed private tour guides in Egypt specializing in archaeological and luxury customized tours.",
+      "url": "https://mmernaguide.info/about.html",
+      "telephone": "+201029545765",
+      "image": "https://mmernaguide.info/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Cairo",
+        "addressLocality": "Cairo",
+        "addressCountry": "EG"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "59"
+      },
+      "priceRange": "$$"
+    }
+    </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #C5A059;
+            --bg-dark: #0F0F0F;
+            --card-bg: #1A1A1A;
+            --white: #FFFFFF;
+            --text-gray: #A0A0A0;
+            --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: var(--bg-dark); color: var(--white); overflow-x: hidden; scroll-behavior: smooth; }
+        .playfair { font-family: 'Playfair Display', serif; }
+        .container { max-width: 1400px; margin: 0 auto; width: 92%; }
+        .gold-text { color: var(--gold); }
+        .text-center { text-align: center; }
+
+        /* --- Header & Nav (Centered Links) --- */
+        .main-header {
+            background: rgba(15, 15, 15, 0.98);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+            position: sticky; top: 0; z-index: 4000;
+        }
+        .header-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 50px; transition: 0.3s; }
+        .logo:hover img { transform: scale(1.05); }
+        
+        .nav-container { flex-grow: 1; display: flex; justify-content: center; }
+        .nav-menu { list-style: none; display: flex; gap: 40px; }
+        .nav-menu a { 
+            text-decoration: none; color: var(--white); font-size: 0.75rem; 
+            letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        .nav-menu a::after {
+            content: ''; position: absolute; width: 0; height: 1px; bottom: -5px; left: 0;
+            background-color: var(--gold); transition: 0.3s;
+        }
+        .nav-menu a:hover::after, .nav-menu a.active::after { width: 100%; }
+        .nav-menu a:hover, .nav-menu a.active { color: var(--gold); }
+
+        /* --- Mobile Navigation (Stacked Vertical) --- */
+        .hamburger { display: none; cursor: pointer; background: none; border: none; z-index: 5000; }
+        .hamburger span { display: block; width: 25px; height: 2px; background: var(--gold); margin: 6px 0; transition: 0.4s; }
+        
+        @media (max-width: 992px) {
+            .hamburger { display: block; }
+            .nav-container {
+                position: fixed; right: -100%; top: 0; width: 100%; height: 100vh;
+                background: rgba(15, 15, 15, 0.98); flex-direction: column; justify-content: center;
+                transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1); z-index: 4500;
+            }
+            .nav-container.active { right: 0; }
+            .nav-menu { flex-direction: column; align-items: center; gap: 35px; }
+            .nav-menu a { font-size: 1.4rem; font-weight: 600; letter-spacing: 4px; }
+            
+            .hamburger.open span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+            .hamburger.open span:nth-child(2) { opacity: 0; }
+            .hamburger.open span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+        }
+
+        /* --- Hero --- */
+        .about-hero { 
+            height: 400px; 
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('about1.jpg') center/cover no-repeat fixed; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; 
+            border-bottom: 2px solid var(--gold);
+        }
+        .about-hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 10px; }
+
+        /* --- Why Choose Us (Revealing on Scroll) --- */
+        .reveal { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        .why-section { padding: 120px 0; background: #080808; }
+        .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin: 60px 0; }
+        .why-card { 
+            background: var(--card-bg); padding: 45px 25px; 
+            border: 1px solid rgba(197, 160, 89, 0.05); text-align: center; 
+            transition: var(--transition);
+        }
+        .why-card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .why-card span { font-size: 3.2rem; display: block; margin-bottom: 25px; filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.3)); }
+        .why-card h3 { color: var(--gold); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
+        
+        .strong-quote { 
+            max-width: 950px; margin: 40px auto 0; font-size: 1.5rem; line-height: 2; 
+            color: var(--white); font-style: italic; border-left: 4px solid var(--gold); 
+            padding-left: 35px; position: relative;
+        }
+        .internal-link { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s; }
+        .internal-link:hover { border-color: var(--gold); }
+
+        /* --- Team --- */
+        .team-section { padding: 120px 0; }
+        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; }
+        .team-card { background: var(--card-bg); border: 1px solid rgba(197,160,89,0.05); padding: 15px; text-align: center; transition: 0.4s; }
+        .team-card:hover { border-color: var(--gold); }
+        .team-card img { 
+            width: 100%; height: 450px; object-fit: cover; 
+            border-bottom: 2px solid var(--gold); margin-bottom: 25px;
+            filter: grayscale(20%); transition: 0.5s;
+        }
+        .team-card:hover img { filter: grayscale(0%); }
+
+        /* --- Footer --- */
+        .master-footer { background: #050505; padding: 100px 0 30px; border-top: 1px solid var(--gold); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 80px; }
+        .footer-brand img { height: 60px; margin-bottom: 30px; }
+        .footer-head { color: var(--gold); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 35px; font-weight: 700; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 18px; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: 0.3s; }
+        .footer-links a:hover { color: var(--gold); padding-left: 8px; }
+        
+        @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; } .why-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 768px) { 
+            .footer-grid, .why-grid, .team-grid { grid-template-columns: 1fr; } 
+            .strong-quote { font-size: 1.1rem; padding-left: 20px; }
+        }
+
+        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.1); }
+    </style>
 </head>
 <body>
 
-  <!-- ===== Header ===== -->
-  <header>
-    <div class="container">
-      <a href="https://mmernaguide.info/" class="logo">
-        <img src="logo.png" alt="Egyptian Tour Guide">
-      </a>
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="https://mmernaguide.info" class="logo">
+                <img src="logo.png" alt="Merna & Rania Tours Logo">
+            </a>
+            <nav class="nav-container" id="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="https://mmernaguide.info">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="tours.html">Our Tours</a></li>
+                    <li><a href="process-policies.html">Booking Process</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
 
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="https://mmernaguide.info/">Home</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="tours.html">Tours</a></li>
-          <li><a href="process-policies.html">Bookig Process</a></li>
-         <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <main>
+        <section class="about-hero">
+            <div class="reveal visible">
+                <h1 class="playfair gold-text">Our Story</h1>
+                <p style="letter-spacing: 6px; text-transform: uppercase; font-size: 0.9rem; font-weight: 500;">Excellence in Egyptian Tourism</p>
+            </div>
+        </section>
 
-  <!-- ===== About Section ===== -->
-  <section class="about-us">
-    <h1>About Merna & Rania – Egyptian Tour Guides</h1>
+        <section class="why-section">
+            <div class="container reveal">
+                <div class="text-center">
+                    <h2 class="playfair gold-text" style="font-size: 3.2rem;">Why Choose Us?</h2>
+                    <div style="width: 70px; height: 2px; background: var(--gold); margin: 30px auto;"></div>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card"><span>🏺</span><h3>Licensed Experts</h3><p>Archaeological background for deep historical insights and storytelling.</p></div>
+                    <div class="why-card"><span>🛡️</span><h3>Safety First</h3><p>Professional private transport and secure female-led tours for complete peace of mind.</p></div>
+                    <div class="why-card"><span>✨</span><h3>Customized</h3><p>Tailor-made itineraries built around your specific interests, pace, and desires.</p></div>
+                    <div class="why-card"><span>🚙</span><h3>Luxury Fleet</h3><p>Modern air-conditioned private vehicles ensured for your ultimate comfort.</p></div>
+                </div>
+                <div class="strong-quote playfair">
+                    "We don't just guide you through ruins; we bridge the gap between thousands of years of history and your personal journey, ensuring every step you take in <a href="tours.html" class="internal-link">Egypt</a> is safe, authentic, and truly unforgettable."
+                </div>
+            </div>
+        </section>
 
-    <p>
-      Welcome to Egyptian Tour Guide – Merna & Rania. We are licensed Egyptian tour guides with years of experience guiding travelers through Egypt’s most iconic sites…
-      taking travelers through Egypt’s most iconic sites with safety, professionalism, and passion.
-    </p>
+        <section class="team-section">
+            <div class="container reveal">
+                <div class="team-grid">
+                    <div class="team-card">
+                        <img src="about2.jpg" alt="Merna - Licensed Egyptian Guide and Egyptologist">
+                        <h3 class="playfair">Merna</h3>
+                        <p class="gold-text">Licensed Tour Guide & Egyptologist</p>
+                    </div>
+                    <div class="team-card">
+                        <img src="about3.jpg" alt="Rania - Licensed Egyptian Guide and Egyptologist">
+                        <h3 class="playfair">Rania</h3>
+                        <p class="gold-text">Licensed Tour Guide & Egyptologist</p>
+                    </div>
+                    <div class="team-card">
+                        <img src="about1.jpg" alt="Merna and Rania Team - Trusted Professionalism">
+                        <h3 class="playfair">Our Core</h3>
+                        <p class="gold-text">Trusted Professional Expertise</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <h2>Why Choose Us?</h2>
-    <ul class="highlights">
-      <li>Licensed and professional tour guides</li>
-      <li>Customized tours based on your interests</li>
-      <li>Comfortable and safe transportation</li>
-      <li>Real local experience & insider knowledge</li>
-      <li>24/7 support for all our clients</li>
-    </ul>
-<h2>Where We Guide</h2>
-<ul class="highlights">
-  <li>Cairo & Giza private tours</li>
-  <li>Luxor historical tours</li>
-  <li>Aswan & Nile Cruise experiences</li>
-  <li>Customized multi-day itineraries</li>
-</ul>
+    <footer class="master-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Merna & Rania">
+                    <p>Official Licensed Private Tour Guides. Dedicated to providing secure and luxury archaeological experiences across Egypt for global travelers.</p>
+                </div>
+                <div>
+                    <h4 class="footer-head">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://mmernaguide.info">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="tours.html">Our Tours</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-head">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:mmernaguide@mmernaguide.info">✉️ mmernaguide@mmernaguide.info</a></li>
+                        <li><a href="https://wa.me/201029545765">📞 +20 102 954 5765</a></li>
+                        <li><a href="#">📍 Cairo, Egypt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-head">Social</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.facebook.com/mmernaguide" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank">TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 40px; color: #555; font-size: 0.8rem; letter-spacing: 1px;">
+                © 2025 EGYPTIAN TOUR GUIDE – MERNA & RANIA. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
 
-    <div class="cta">
-      <a class="btn" href="https://wa.me/201029545765" target="_blank">Book a Tour Now</a>
-    </div>
-  </section>
+    <a href="https://wa.me/201029545765" class="wa-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Contact" width="35">
+    </a>
 
-  <!-- ===== Our Team / Photos ===== -->
-  <section class="about-images">
-    <div class="about-card">
-      <img src="about2.jpg" alt="Merna Tour Guide">
-      <h3>Merna</h3>
-      <p>Licensed tour guide with years of experience across Egypt's historical sites.</p>
-    </div>
-    <div class="about-card">
-      <img src="about3.jpg" alt="Rania Tour Guide">
-      <h3>Rania</h3>
-      <p>Expert in cultural and Nile tours, making every journey memorable.</p>
-    </div>
-    <div class="about-card">
-      <img src="about1.jpg" alt="Merna & Rania Together">
-      <h3>Our Team</h3>
-      <p>Together, Merna & Rania create trusted, professional, and unforgettable travel experiences.</p>
-    </div>
-  </section>
+    <script>
+        // Hamburger Menu Toggle
+        const hb = document.getElementById('hamburger');
+        const nv = document.getElementById('nav-container');
+        hb.onclick = () => {
+            nv.classList.toggle('active');
+            hb.classList.toggle('open');
+            document.body.style.overflow = nv.classList.contains('active') ? 'hidden' : 'auto';
+        }
 
-  <!-- ===== Footer ===== -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-logo">
-        <a href="https://mmernaguide.info/">
-          <img src="logo.png" alt="Egyptian Tour Guide" />
-        </a>
-      </div>
+        // Close menu when clicking links (Mobile)
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.onclick = () => {
+                nv.classList.remove('active');
+                hb.classList.remove('open');
+                document.body.style.overflow = 'auto';
+            };
+        });
 
-      <div class="footer-about">
-        <h3>About Us</h3>
-        <p>Egyptian Tour Guide – Merna & Rania, providing licensed tours across Egypt with trusted experts.</p>
-      </div>
-
-      <div class="footer-contact">
-        <h3>Contact</h3>
-        <p>📧 mmernaguide@mmernaguide.info</p>
-        <p>📍 Egypt</p>
-        <p>💬 <a href="https://wa.me/201029545765" target="_blank">Chat on WhatsApp</a></p>
-      </div>
-
-      <div class="footer-social">
-        <h3>Follow Us</h3>
-        <a href="https://www.facebook.com/mmernaguide/" target="_blank">Facebook</a>
-        <a href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank">TikTok</a>
-        <a href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-M_Merna_Tours-Cairo_Cairo_Governorate.html" target="_blank">TripAdvisor</a>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2025 Egyptian Tour Guide – Merna & Rania. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- ===== Floating WhatsApp ===== -->
-  <a href="https://wa.me/201029545765" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"></a>
-
+        // Scroll Reveal Animation
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const revealTop = el.getBoundingClientRect().top;
+                const revealPoint = 150;
+                if (revealTop < windowHeight - revealPoint) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Trigger once on load
+    </script>
 </body>
 </html>
