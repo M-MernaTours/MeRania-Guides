@@ -131,10 +131,51 @@
             .safari-gallery img { height: 280px; }
         }
 
-        .info-box { background: var(--card-bg); border-left: 4px solid var(--gold); padding: 30px; margin: 35px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-        .feature-list { list-style: none; }
-        .feature-list li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; }
-        .feature-list li::before { content: "✦"; color: var(--gold); margin-right: 15px; }
+        /* --- Features Grid Style --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            transition: var(--transition);
+        }
+        .feature-card:hover {
+            border-color: var(--gold);
+            background: rgba(197, 160, 89, 0.05);
+            transform: translateY(-5px);
+        }
+        .feature-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        .feature-header span {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+        .feature-header h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .feature-card p {
+            font-size: 0.95rem !important;
+            line-height: 1.6 !important;
+            margin-bottom: 0 !important;
+            color: var(--text-gray) !important;
+        }
+
+        @media (max-width: 768px) {
+            .features-grid { grid-template-columns: 1fr; }
+        }
         
         .cta-button { 
             display: inline-block; padding: 18px 40px; 
@@ -201,28 +242,56 @@
         
         <p>With our <a href="https://mmernaguide.info/fayoum-day-tour.html" class="internal-link">Fayoum Private Day Tour</a>, you don't just see the desert; you feel it. We navigate the dunes in professional 4x4 vehicles, ensuring a safe yet thrilling ride for families and solo adventurers alike.</p>
 
-        <div class="info-box">
-            <h3 class="gold-text" style="margin-bottom:15px;">2026 Safari Highlights</h3>
-            <ul class="feature-list">
-                <li><strong>Professional Dune Bashing:</strong> Expert 4x4 drivers specializing in soft sand navigation.</li>
-                <li><strong>The Magic Lake:</strong> A serene lake in the heart of the dunes, perfect for swimming and sunset views.</li>
-                <li><strong>Sandboarding:</strong> High-quality boards provided for an exhilarating slide down the dunes.</li>
-                <li><strong>Traditional Bedouin Lunch:</strong> Freshly grilled chicken, Bedouin rice, and tea served in a desert camp.</li>
-            </ul>
+        <!-- Enhanced Features Grid -->
+        <h3 class="playfair gold-text" style="margin-top:60px; text-align: center;">2026 Safari Highlights</h3>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-header">
+                    <span>✦</span>
+                    <h4>Professional Dune Bashing</h4>
+                </div>
+                <p>Expert 4x4 drivers specializing in soft sand navigation, providing an adrenaline-packed journey through Fayoum's highest peaks.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-header">
+                    <span>✦</span>
+                    <h4>The Magic Lake</h4>
+                </div>
+                <p>A serene, hidden lake in the heart of the dunes. Perfect for a refreshing swim and capturing the world-famous golden hour photos.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-header">
+                    <span>✦</span>
+                    <h4>Sandboarding Adventure</h4>
+                </div>
+                <p>We provide high-quality boards and expert tips so you can slide down the golden dunes of Wadi El Rayan like a pro.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-header">
+                    <span>✦</span>
+                    <h4>Traditional Bedouin Lunch</h4>
+                </div>
+                <p>Enjoy freshly grilled chicken, Bedouin-style rice, and traditional tea served in an authentic desert camp setting.</p>
+            </div>
         </div>
 
         <h2>Mastering the Magic Lake</h2>
-        <p>The <strong>Magic Lake</strong> remains one of the most cinematic spots in Egypt. It gets its name from the way the water change colors based on the sun's position. It is the heart of our safari experience, where we set up a private area for our guests to relax and enjoy the "Golden Hour."</p>
+        <p>The <strong>Magic Lake</strong> remains one of the most cinematic spots in Egypt. It gets its name from the way the water changes colors based on the sun's position. It is the heart of our safari experience, where we set up a private area for our guests to relax and enjoy the silence of the desert.</p>
 
+        <!-- Safari Checklist -->
         <div class="warning-note" style="background: rgba(197, 160, 89, 0.05); border: 1px solid var(--gold); padding: 25px; border-radius: 8px; margin-top: 40px;">
             <h3 style="color:var(--gold); margin-bottom:15px; font-family: 'Playfair Display';">Safari Checklist:</h3>
             <ul style="padding-left: 20px; color: #ddd;">
-                <li><strong>Attire:</strong> Wear comfortable, light clothing and bring a warm layer for the evening—the desert cools down fast!</li>
-                <li><strong>Protection:</strong> High-SPF sunscreen and polarized sunglasses are essential for the sand glare.</li>
-                <li><strong>Footwear:</strong> Sandals are best for the sand, but bring sneakers if you plan to hike the Fossil valley.</li>
+                <li style="margin-bottom: 10px;"><strong>Attire:</strong> Wear comfortable, light clothing and bring a warm layer for the evening—the desert cools down fast!</li>
+                <li style="margin-bottom: 10px;"><strong>Protection:</strong> High-SPF sunscreen and polarized sunglasses are essential for the intense sand glare.</li>
+                <li style="margin-bottom: 10px;"><strong>Footwear:</strong> Sandals are best for the dunes, but bring sneakers if you plan to hike the Fossil valley.</li>
             </ul>
         </div>
 
+        <!-- Call to Action Section -->
         <div style="text-align: center; margin-top: 60px; padding: 40px; background: rgba(197, 160, 89, 0.05); border-radius: 12px; border: 1px solid rgba(197, 160, 89, 0.1);">
             <h3 class="playfair gold-text">Trade the City for the Dunes</h3>
             <p>Experience the ultimate balance of luxury and adventure on our private Fayoum tour.</p>
