@@ -3,11 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Booking Process & Cancellation Policies | Merna & Rania Egypt Tours</title>
     <meta name="description" content="Transparent booking process, secure payments, and flexible cancellation policies for your private Egypt tours. Read our FAQs and safety guidelines.">
     <meta name="keywords" content="how to book egypt tour, egypt tour cancellation policy, private guide cairo faq, safe travel egypt, secure payment egypt tours, licensed guides egypt process">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="author" content="Merna & Rania">
+    <meta name="geo.region" content="EG-C">
+    <meta name="geo.placename" content="Cairo, Egypt">
+    <meta name="geo.position" content="30.00500695131799;31.222095705214368">
+    <meta name="ICBM" content="30.00500695131799, 31.222095705214368">
     <link rel="canonical" href="https://mmernaguide.info/process-policies.html">
+
+    <meta property="og:title" content="Booking Process & Cancellation Policies | Merna & Rania Egypt Tours">
+    <meta property="og:description" content="Transparent booking process, secure payments, and flexible cancellation policies for your private Egypt tours. Read our FAQs and safety guidelines.">
+    <meta property="og:image" content="https://mmernaguide.info/logo.png">
+    <meta property="og:image:alt" content="Merna & Rania Egyptian Tour Guide Logo">
+    <meta property="og:url" content="https://mmernaguide.info/process-policies.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Egyptian Tour Guide - Merna & Rania">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Booking Process & Cancellation Policies | Merna & Rania Egypt Tours">
+    <meta name="twitter:description" content="Transparent booking process, secure payments, and flexible cancellation policies for your private Egypt tours. Read our FAQs and safety guidelines.">
+    <meta name="twitter:image" content="https://mmernaguide.info/logo.png">
 
     <script type="application/ld+json">
     {
@@ -20,16 +41,32 @@
           "url": "https://mmernaguide.info/process-policies.html",
           "telephone": "+201029545765",
           "image": "https://mmernaguide.info/logo.png",
+          "logo": "https://mmernaguide.info/logo.png",
+          "priceRange": "$$",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Cairo",
+            "addressRegion": "Giza",
             "addressCountry": "EG"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "30.00500695131799",
+            "longitude": "31.222095705214368"
           },
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5",
-            "reviewCount": "68"
-          }
+            "reviewCount": "75",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "sameAs": [
+            "https://www.facebook.com/mmernaguide",
+            "https://www.instagram.com/mmerna.guide/",
+            "https://www.tiktok.com/@egyptiantour.guide",
+            "https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-Egyptian_Tour_Guide_Merna_Rania-Cairo_Cairo_Governorate.html"
+          ]
         },
         {
           "@type": "FAQPage",
@@ -63,11 +100,32 @@
       ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mmernaguide.info/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Booking Process",
+          "item": "https://mmernaguide.info/process-policies.html"
+        }
+      ]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preload" as="image" href="slide3.jpg">
+
     <style>
         :root {
             --gold: #C5A059;
@@ -102,13 +160,14 @@
         /* --- Mobile Navigation --- */
         .hamburger { display: none; cursor: pointer; background: none; border: none; z-index: 5000; }
         .hamburger span { display: block; width: 25px; height: 2px; background: var(--gold); margin: 6px 0; transition: 0.4s; }
-        
+
         @media (max-width: 992px) {
             .hamburger { display: block; }
             .nav-container {
                 position: fixed; right: -100%; top: 0; width: 100%; height: 100vh;
                 background: rgba(15, 15, 15, 0.98); flex-direction: column; justify-content: center;
                 transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1); z-index: 4500;
+                display: flex;
             }
             .nav-container.active { right: 0; }
             .nav-menu { flex-direction: column; align-items: center; gap: 30px; }
@@ -126,14 +185,19 @@
         }
         .hero-banner h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 20px; }
 
+        /* Fixed backgrounds are unreliable/janky on mobile browsers (esp. iOS Safari) */
+        @media (max-width: 992px) {
+            .hero-banner { background-attachment: scroll; }
+        }
+
         /* --- Section Titles --- */
         .section-title { font-family: 'Playfair Display'; font-size: 2.8rem; color: var(--gold); margin-bottom: 50px; text-align: center; }
 
         /* --- Steps & Cards Styling --- */
         .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 100px; }
-        .policy-card { 
-            background: var(--card-bg); padding: 50px 35px; 
-            border: 1px solid rgba(197, 160, 89, 0.05); 
+        .policy-card {
+            background: var(--card-bg); padding: 50px 35px;
+            border: 1px solid rgba(197, 160, 89, 0.05);
             transition: var(--transition);
         }
         .policy-card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
@@ -145,9 +209,9 @@
         .faq-container { max-width: 1000px; margin: 0 auto 120px; }
         .faq-item { border-bottom: 1px solid rgba(197, 160, 89, 0.1); background: transparent; transition: 0.3s; }
         .faq-item:hover { background: rgba(255, 255, 255, 0.02); }
-        .faq-question { 
-            width: 100%; padding: 30px; background: none; border: none; 
-            color: var(--white); text-align: left; font-size: 1.2rem; 
+        .faq-question {
+            width: 100%; padding: 30px; background: none; border: none;
+            color: var(--white); text-align: left; font-size: 1.2rem;
             display: flex; justify-content: space-between; align-items: center; cursor: pointer;
             transition: 0.3s;
         }
@@ -163,7 +227,7 @@
         .footer-head { color: var(--gold); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 35px; font-weight: 700; }
         .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 18px; }
-        .footer-links a { color: #888; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-links a, .footer-links span { color: #888; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
         .footer-links a:hover { color: var(--gold); padding-left: 8px; }
 
         .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
@@ -175,6 +239,16 @@
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .section-title { font-size: 2.2rem; }
             .faq-question { font-size: 1rem; padding: 20px; }
+        }
+
+        /* Accessibility: visible keyboard focus */
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
         }
     </style>
 </head>
@@ -194,7 +268,7 @@
                     <li><a href="Blogs.html">Travel Guide</a></li>
                 </ul>
             </nav>
-            <button class="hamburger" id="hamburger" aria-label="Menu Toggle">
+            <button class="hamburger" id="hamburger" type="button" aria-label="Menu Toggle" aria-expanded="false" aria-controls="nav-container">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -214,7 +288,7 @@
                 <div class="policy-card">
                     <span class="icon-step">01</span>
                     <h3>Inquiry</h3>
-                    <p>Send your preferred date and travelers count via <a href="https://wa.me/201029545765" style="color:var(--gold); font-weight:600;">WhatsApp</a> or our contact form.</p>
+                    <p>Send your preferred date and travelers count via <a href="https://wa.me/201029545765" target="_blank" rel="noopener noreferrer" style="color:var(--gold); font-weight:600;">WhatsApp</a> or our contact form.</p>
                 </div>
                 <div class="policy-card">
                     <span class="icon-step">02</span>
@@ -256,19 +330,19 @@
             <h2 class="section-title">Frequently Asked Questions</h2>
             <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question">Are the tours shared with other travelers? <span>+</span></button>
+                    <button class="faq-question" type="button">Are the tours shared with other travelers? <span>+</span></button>
                     <div class="faq-answer">No. All our tours are 100% private. The licensed guide and the luxury vehicle are exclusively for your party to ensure a personalized experience.</div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">What is the standard duration of a day tour? <span>+</span></button>
+                    <button class="faq-question" type="button">What is the standard duration of a day tour? <span>+</span></button>
                     <div class="faq-answer">Most of our private day tours in Cairo and Luxor last approximately 8 hours, though we can customize this to fit your schedule.</div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Is it safe for solo female travelers? <span>+</span></button>
+                    <button class="faq-question" type="button">Is it safe for solo female travelers? <span>+</span></button>
                     <div class="faq-answer">Absolutely. As female guides ourselves, we specialize in providing a safe, comfortable, and welcoming environment for solo female travelers.</div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Can we customize our itinerary on the day? <span>+</span></button>
+                    <button class="faq-question" type="button">Can we customize our itinerary on the day? <span>+</span></button>
                     <div class="faq-answer">One of the best parts of a private tour is flexibility. If you'd like to spend more time at one site or skip another, your guide will accommodate you.</div>
                 </div>
             </div>
@@ -295,16 +369,17 @@
                     <h4 class="footer-head">Direct Contact</h4>
                     <ul class="footer-links">
                         <li><a href="mailto:mmernaguide@mmernaguide.info">✉️ Email Us</a></li>
-                        <li><a href="https://wa.me/201029545765">📞 +20 102 954 5765</a></li>
-                        <li><a href="#">📍 Egypt HQ</a></li>
+                        <li><a href="https://wa.me/201029545765" target="_blank" rel="noopener noreferrer">📞 +20 102 954 5765</a></li>
+                        <li><span>📍 Egypt HQ</span></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="footer-head">Follow</h4>
                     <ul class="footer-links">
-                        <li><a href="https://www.facebook.com/mmernaguide" target="_blank">Facebook</a></li>
-                        <li><a href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a></li>
-                        <li><a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank">TikTok</a></li>
+                        <li><a href="https://www.facebook.com/mmernaguide" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/mmerna.guide/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+                        <li><a href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-Egyptian_Tour_Guide_Merna_Rania-Cairo_Cairo_Governorate.html" target="_blank" rel="noopener noreferrer">TripAdvisor</a></li>
                     </ul>
                 </div>
             </div>
@@ -314,34 +389,38 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/201029545765" class="wa-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat" width="35">
+    <a href="https://wa.me/201029545765" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="35" aria-hidden="true">
     </a>
 
     <script>
         // Hamburger Menu
         const hb = document.getElementById('hamburger');
         const nv = document.getElementById('nav-container');
-        hb.onclick = () => {
-            nv.classList.toggle('active');
-            hb.classList.toggle('open');
-            document.body.style.overflow = nv.classList.contains('active') ? 'hidden' : 'auto';
-        }
+        hb.addEventListener('click', () => {
+            const isOpen = nv.classList.toggle('active');
+            hb.classList.toggle('open', isOpen);
+            hb.setAttribute('aria-expanded', String(isOpen));
+            document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+        });
 
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(button => {
+            button.setAttribute('aria-expanded', 'false');
             button.addEventListener('click', () => {
                 const answer = button.nextElementSibling;
                 const span = button.querySelector('span');
                 const isOpen = answer.style.display === 'block';
-                
+
                 // Close all others
                 document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
                 document.querySelectorAll('.faq-question span').forEach(s => s.style.transform = 'rotate(0deg)');
+                document.querySelectorAll('.faq-question').forEach(b => b.setAttribute('aria-expanded', 'false'));
 
                 if (!isOpen) {
                     answer.style.display = 'block';
                     span.style.transform = 'rotate(45deg)';
+                    button.setAttribute('aria-expanded', 'true');
                 } else {
                     answer.style.display = 'none';
                     span.style.transform = 'rotate(0deg)';
