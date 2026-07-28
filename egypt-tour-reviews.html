@@ -3,11 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Guest Experience & 5-Star Reviews | Merna & Rania Egypt Tours</title>
     <meta name="description" content="Read verified 5-star reviews from international travelers. Authentic experiences on TripAdvisor, Google, and Facebook with Merna & Rania, licensed Egyptian guides.">
     <meta name="keywords" content="egypt tour reviews, merna and rania reviews, tripadvisor egypt tour guide, cairo private guide feedback, best tour guide giza reviews">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="author" content="Merna & Rania">
+    <meta name="geo.region" content="EG-C">
+    <meta name="geo.placename" content="Cairo, Egypt">
+    <meta name="geo.position" content="30.00500695131799;31.222095705214368">
+    <meta name="ICBM" content="30.00500695131799, 31.222095705214368">
     <link rel="canonical" href="https://mmernaguide.info/egypt-tour-reviews.html">
+
+    <meta property="og:title" content="Guest Experience & 5-Star Reviews | Merna & Rania Egypt Tours">
+    <meta property="og:description" content="Read verified 5-star reviews from international travelers. Authentic experiences on TripAdvisor, Google, and Facebook with Merna & Rania, licensed Egyptian guides.">
+    <meta property="og:image" content="https://mmernaguide.info/logo.png">
+    <meta property="og:image:alt" content="Merna & Rania Egyptian Tour Guide Logo">
+    <meta property="og:url" content="https://mmernaguide.info/egypt-tour-reviews.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Egyptian Tour Guide - Merna & Rania">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Guest Experience & 5-Star Reviews | Merna & Rania Egypt Tours">
+    <meta name="twitter:description" content="Read verified 5-star reviews from international travelers. Authentic experiences on TripAdvisor, Google, and Facebook with Merna & Rania, licensed Egyptian guides.">
+    <meta name="twitter:image" content="https://mmernaguide.info/logo.png">
 
     <script type="application/ld+json">
     {
@@ -16,12 +37,26 @@
       "name": "Egyptian Tour Guide – Merna & Rania",
       "url": "https://mmernaguide.info/egypt-tour-reviews.html",
       "image": "https://mmernaguide.info/logo.png",
+      "logo": "https://mmernaguide.info/logo.png",
       "telephone": "+201029545765",
       "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cairo",
+        "addressRegion": "Giza",
+        "addressCountry": "EG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "30.00500695131799",
+        "longitude": "31.222095705214368"
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": "68"
+        "reviewCount": "75",
+        "bestRating": "5",
+        "worstRating": "1"
       },
       "sameAs": [
         "https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-Egyptian_Tour_Guide_Merna_Rania-Cairo_Cairo_Governorate.html",
@@ -31,11 +66,32 @@
       ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mmernaguide.info/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Reviews",
+          "item": "https://mmernaguide.info/egypt-tour-reviews.html"
+        }
+      ]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preload" as="image" href="slide1.jpg">
+
     <style>
         :root {
             --gold: #C5A059;
@@ -70,13 +126,14 @@
         /* --- Burger Menu (Stacked Vertical) --- */
         .hamburger { display: none; cursor: pointer; background: none; border: none; z-index: 5000; }
         .hamburger span { display: block; width: 25px; height: 2px; background: var(--gold); margin: 6px 0; transition: 0.4s; }
-        
+
         @media (max-width: 992px) {
             .hamburger { display: block; }
             .nav-container {
                 position: fixed; right: -100%; top: 0; width: 100%; height: 100vh;
                 background: rgba(10, 10, 10, 0.98); flex-direction: column; justify-content: center;
                 transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1); z-index: 4500;
+                display: flex;
             }
             .nav-container.active { right: 0; }
             .nav-menu { flex-direction: column; align-items: center; gap: 30px; }
@@ -89,6 +146,11 @@
         /* --- Hero & KPI Section --- */
         .rv-hero { padding: 100px 0 60px; text-align: center; background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('slide1.jpg') center/cover fixed; border-bottom: 2px solid var(--gold); }
         .rv-hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 20px; }
+
+        /* Fixed backgrounds are unreliable/janky on mobile browsers (esp. iOS Safari) */
+        @media (max-width: 992px) {
+            .rv-hero { background-attachment: scroll; }
+        }
 
         .kpi-section { margin-top: -60px; margin-bottom: 80px; position: relative; z-index: 10; }
         .kpi-card { background: var(--card-bg); border: 1px solid var(--gold); padding: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
@@ -103,7 +165,7 @@
         /* --- Gallery Grid --- */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-bottom: 100px; }
         .rv-shot { background: #111; border: 1px solid rgba(197, 160, 89, 0.1); padding: 10px; cursor: pointer; transition: var(--transition); position: relative; overflow: hidden; }
-        .rv-shot:hover { border-color: var(--gold); transform: translateY(-10px); }
+        .rv-shot:hover, .rv-shot:focus-visible { border-color: var(--gold); transform: translateY(-10px); }
         .rv-shot img { width: 100%; height: auto; display: block; filter: brightness(0.9); }
         .verified-badge { position: absolute; top: 20px; right: 20px; background: var(--gold); color: #000; padding: 4px 12px; font-size: 0.7rem; font-weight: 700; border-radius: 4px; }
 
@@ -111,7 +173,7 @@
         .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.96); display: none; justify-content: center; align-items: center; z-index: 9999; padding: 20px; }
         .lightbox.active { display: flex; }
         .lightbox img { max-width: 100%; max-height: 90vh; border: 2px solid var(--gold); box-shadow: 0 0 50px rgba(197, 160, 89, 0.3); }
-        .close-lb { position: absolute; top: 30px; right: 40px; color: var(--white); font-size: 50px; cursor: pointer; line-height: 1; }
+        .close-lb { position: absolute; top: 30px; right: 40px; color: var(--white); font-size: 50px; cursor: pointer; line-height: 1; background: none; border: none; }
 
         /* --- Footer (Unified) --- */
         .master-footer { background: #050505; padding: 100px 0 30px; border-top: 1px solid var(--gold); }
@@ -132,6 +194,16 @@
         @media (max-width: 768px) {
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
         }
+
+        /* Accessibility: visible keyboard focus */
+        a:focus-visible, button:focus-visible, .rv-shot:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+        }
     </style>
 </head>
 <body>
@@ -150,7 +222,7 @@
                     <li><a href="Blogs.html">Travel Guide</a></li>
                 </ul>
             </nav>
-            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            <button class="hamburger" id="hamburger" type="button" aria-label="Menu Toggle" aria-expanded="false" aria-controls="nav-container"><span></span><span></span><span></span></button>
         </div>
     </header>
 
@@ -162,55 +234,63 @@
 
         <section class="kpi-section">
             <div class="kpi-card text-center">
-                <div class="kpi-item"><div class="kpi-num" data-target="5">0</div><p>Average Rating</p></div>
-                <div class="kpi-item"><div class="kpi-num" data-target="68">0</div><p>Verified Reviews</p></div>
-                <div class="kpi-item"><div class="kpi-num" data-target="100">0</div><p>Satisfaction %</p></div>
+                <div class="kpi-item"><div class="kpi-num" data-target="5" data-format="decimal">0</div><p>Average Rating</p></div>
+                <div class="kpi-item"><div class="kpi-num" data-target="75" data-format="integer">0</div><p>Verified Reviews</p></div>
+                <div class="kpi-item"><div class="kpi-num" data-target="100" data-format="percent">0</div><p>Satisfaction %</p></div>
             </div>
         </section>
 
         <div class="platform-ctas">
-            <a href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-Egyptian_Tour_Guide_Merna_Rania-Cairo_Cairo_Governorate.html" target="_blank" class="btn-platform">TripAdvisor Profile</a>
-            <a href="https://www.google.com/maps?cid=0x145839715e259693:0x4fb96052d7da875b" target="_blank" class="btn-platform">Google Reviews</a>
-            <a href="https://www.facebook.com/mmernaguide/reviews/" target="_blank" class="btn-platform">Facebook Page</a>
+            <a href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-Egyptian_Tour_Guide_Merna_Rania-Cairo_Cairo_Governorate.html" target="_blank" rel="noopener noreferrer" class="btn-platform">TripAdvisor Profile</a>
+            <a href="https://www.google.com/maps?cid=0x145839715e259693:0x4fb96052d7da875b" target="_blank" rel="noopener noreferrer" class="btn-platform">Google Reviews</a>
+            <a href="https://www.facebook.com/mmernaguide/reviews/" target="_blank" rel="noopener noreferrer" class="btn-platform">Facebook Page</a>
         </div>
 
         <section class="gallery-grid">
-            <div class="rv-shot" onclick="openLightbox(this)"><img src="google-review-egypt-tour-guide-1.png" alt="Google Review"><span class="verified-badge">Google</span></div>
-            <div class="rv-shot" onclick="openLightbox(this)"><img src="google-review-egypt-tour-guide-2.png" alt="Google Review"><span class="verified-badge">Google</span></div>
-            <div class="rv-shot" onclick="openLightbox(this)"><img src="google-review-egypt-tour-guide-3.png" alt="Google Review"><span class="verified-badge">Google</span></div>
-            <div class="rv-shot" onclick="openLightbox(this)"><img src="google-review-egypt-tour-guide-4.png" alt="Google Review"><span class="verified-badge">Google</span></div>
-            <div class="rv-shot" onclick="openLightbox(this)"><img src="tripadvisor-review-egypt-tour-1.png" alt="TripAdvisor Review"><span class="verified-badge">TripAdvisor</span></div>
-            <div class="rv-shot" onclick="openLightbox(this)"><img src="tripadvisor-review-egypt-tour-2.png" alt="TripAdvisor Review"><span class="verified-badge">TripAdvisor</span></div>
-            <div class="rv-shot" onclick="openLightbox(this)"><img src="tripadvisor-review-egypt-tour-3.png" alt="TripAdvisor Review"><span class="verified-badge">TripAdvisor</span></div>
-            <div class="rv-shot" onclick="openLightbox(this)"><img src="tripadvisor-review-egypt-tour-4.png" alt="TripAdvisor Review"><span class="verified-badge">TripAdvisor</span></div>
-            <div class="rv-shot" onclick="openLightbox(this)"><img src="tripadvisor-review-egypt-tour-5.png" alt="TripAdvisor Review"><span class="verified-badge">TripAdvisor</span></div>
-            <div class="rv-shot" onclick="openLightbox(this)"><img src="facebook-review-egypt-tour-1.png" alt="Facebook Review"><span class="verified-badge">Facebook</span></div>
-            <div class="rv-shot" onclick="openLightbox(this)"><img src="facebook-review-egypt-tour-2.png" alt="Facebook Review"><span class="verified-badge">Facebook</span></div>
-            <div class="rv-shot" onclick="openLightbox(this)"><img src="facebook-review-egypt-tour-3.png" alt="Facebook Review"><span class="verified-badge">Facebook</span></div>
+            <div class="rv-shot" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this);}"><img src="google-review-egypt-tour-guide-1.png" alt="Google review 1 for Merna & Rania Egypt tours"><span class="verified-badge">Google</span></div>
+            <div class="rv-shot" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this);}"><img src="google-review-egypt-tour-guide-2.png" alt="Google review 2 for Merna & Rania Egypt tours"><span class="verified-badge">Google</span></div>
+            <div class="rv-shot" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this);}"><img src="google-review-egypt-tour-guide-3.png" alt="Google review 3 for Merna & Rania Egypt tours"><span class="verified-badge">Google</span></div>
+            <div class="rv-shot" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this);}"><img src="google-review-egypt-tour-guide-4.png" alt="Google review 4 for Merna & Rania Egypt tours"><span class="verified-badge">Google</span></div>
+            <div class="rv-shot" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this);}"><img src="tripadvisor-review-egypt-tour-1.png" alt="TripAdvisor review 1 for Merna & Rania Egypt tours"><span class="verified-badge">TripAdvisor</span></div>
+            <div class="rv-shot" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this);}"><img src="tripadvisor-review-egypt-tour-2.png" alt="TripAdvisor review 2 for Merna & Rania Egypt tours"><span class="verified-badge">TripAdvisor</span></div>
+            <div class="rv-shot" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this);}"><img src="tripadvisor-review-egypt-tour-3.png" alt="TripAdvisor review 3 for Merna & Rania Egypt tours"><span class="verified-badge">TripAdvisor</span></div>
+            <div class="rv-shot" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this);}"><img src="tripadvisor-review-egypt-tour-4.png" alt="TripAdvisor review 4 for Merna & Rania Egypt tours"><span class="verified-badge">TripAdvisor</span></div>
+            <div class="rv-shot" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this);}"><img src="tripadvisor-review-egypt-tour-5.png" alt="TripAdvisor review 5 for Merna & Rania Egypt tours"><span class="verified-badge">TripAdvisor</span></div>
+            <div class="rv-shot" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this);}"><img src="facebook-review-egypt-tour-1.png" alt="Facebook review 1 for Merna & Rania Egypt tours"><span class="verified-badge">Facebook</span></div>
+            <div class="rv-shot" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this);}"><img src="facebook-review-egypt-tour-2.png" alt="Facebook review 2 for Merna & Rania Egypt tours"><span class="verified-badge">Facebook</span></div>
+            <div class="rv-shot" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(this);}"><img src="facebook-review-egypt-tour-3.png" alt="Facebook review 3 for Merna & Rania Egypt tours"><span class="verified-badge">Facebook</span></div>
         </section>
     </main>
 
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()"><span class="close-lb">×</span><img id="lightbox-img" src="" alt="Enlarged Review Screenshot"></div>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <button type="button" class="close-lb" aria-label="Close enlarged review image" onclick="closeLightbox()">×</button>
+        <img id="lightbox-img" src="" alt="Enlarged review screenshot">
+    </div>
 
     <footer class="master-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand"><img src="logo.png" alt="Merna & Rania Logo"><p>Official Licensed Private Tour Guides providing high-end archaeological experiences across Egypt.</p></div>
                 <div><h4 class="footer-head">Explore</h4><ul class="footer-links"><li><a href="https://mmernaguide.info/">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="tours.html">Our Tours</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
-                <div><h4 class="footer-head">Support</h4><ul class="footer-links"><li><a href="mailto:mmernaguide@mmernaguide.info">Email Support</a></li><li><a href="https://wa.me/201029545765">WhatsApp Chat</a></li><li><a href="process-policies.html">Booking Process</a></li></ul></div>
-                <div><h4 class="footer-head">Follow</h4><ul class="footer-links"><li><a href="https://www.facebook.com/mmernaguide" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a></li><li><a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank">TikTok</a></li></ul></div>
+                <div><h4 class="footer-head">Support</h4><ul class="footer-links"><li><a href="mailto:mmernaguide@mmernaguide.info">Email Support</a></li><li><a href="https://wa.me/201029545765" target="_blank" rel="noopener noreferrer">WhatsApp Chat</a></li><li><a href="process-policies.html">Booking Process</a></li></ul></div>
+                <div><h4 class="footer-head">Follow</h4><ul class="footer-links"><li><a href="https://www.facebook.com/mmernaguide" target="_blank" rel="noopener noreferrer">Facebook</a></li><li><a href="https://www.instagram.com/mmerna.guide/" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank" rel="noopener noreferrer">TikTok</a></li><li><a href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-Egyptian_Tour_Guide_Merna_Rania-Cairo_Cairo_Governorate.html" target="_blank" rel="noopener noreferrer">TripAdvisor</a></li></ul></div>
             </div>
             <p class="text-center" style="margin-top: 50px; color: #444; font-size: 0.8rem; letter-spacing: 1px;">© 2025 EGYPTIAN TOUR GUIDE – MERNA & RANIA. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/201029545765" class="wa-float" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="35"></a>
+    <a href="https://wa.me/201029545765" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="35" aria-hidden="true"></a>
 
     <script>
         // Hamburger Toggle
         const hb = document.getElementById('hamburger');
         const nv = document.getElementById('nav-container');
-        hb.onclick = () => { nv.classList.toggle('active'); hb.classList.toggle('open'); document.body.style.overflow = nv.classList.contains('active') ? 'hidden' : 'auto'; }
+        hb.addEventListener('click', () => {
+            const isOpen = nv.classList.toggle('active');
+            hb.classList.toggle('open', isOpen);
+            hb.setAttribute('aria-expanded', String(isOpen));
+            document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+        });
 
         // KPI Counter Animation
         const counters = document.querySelectorAll('.kpi-num');
@@ -219,14 +299,29 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const target = +entry.target.getAttribute('data-target');
+                    const format = entry.target.getAttribute('data-format');
                     let count = 0;
                     const update = () => {
                         const speed = target / 50;
                         if (count < target) {
                             count += speed;
-                            entry.target.innerText = target === 100 ? Math.ceil(count) + "%" : (count).toFixed(1);
+                            if (format === 'percent') {
+                                entry.target.innerText = Math.ceil(count) + "%";
+                            } else if (format === 'decimal') {
+                                entry.target.innerText = count.toFixed(1);
+                            } else {
+                                entry.target.innerText = Math.ceil(count);
+                            }
                             setTimeout(update, 20);
-                        } else { entry.target.innerText = target === 100 ? target + "%" : target + ".0"; }
+                        } else {
+                            if (format === 'percent') {
+                                entry.target.innerText = target + "%";
+                            } else if (format === 'decimal') {
+                                entry.target.innerText = target.toFixed(1);
+                            } else {
+                                entry.target.innerText = target;
+                            }
+                        }
                     };
                     update();
                     observer.unobserve(entry.target);
@@ -238,6 +333,7 @@
         // Lightbox Functions
         function openLightbox(el) {
             document.getElementById('lightbox-img').src = el.querySelector('img').src;
+            document.getElementById('lightbox-img').alt = el.querySelector('img').alt;
             document.getElementById('lightbox').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -245,6 +341,9 @@
             document.getElementById('lightbox').classList.remove('active');
             document.body.style.overflow = 'auto';
         }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
     </script>
 </body>
 </html>
