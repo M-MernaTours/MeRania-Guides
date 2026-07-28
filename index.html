@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPLZ6FQMWQ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-JPLZ6FQMWQ');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Private Egyptian Tour Guide | Merna & Rania - Luxury Custom Tours</title>
     <meta name="description" content="Explore Egypt with licensed private tour guides Merna & Rania. Specialized in Pyramids, Saqqara & Luxor. Expert archaeological tours with luxury private transport.">
     <meta name="keywords" content="private tour guide egypt, licensed tour guide cairo, merna and rania tours, luxury egypt tours, female tour guide egypt, giza pyramids private tour">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="author" content="Merna & Rania">
+    <meta name="geo.region" content="EG-C">
+    <meta name="geo.placename" content="Cairo, Egypt">
+    <meta name="geo.position" content="30.00500695131799;31.222095705214368">
+    <meta name="ICBM" content="30.00500695131799, 31.222095705214368">
     <link rel="canonical" href="https://mmernaguide.info/">
 
     <meta property="og:title" content="Merna & Rania | Private Egyptian Tour Guides">
     <meta property="og:description" content="Discover Ancient Egypt with professional licensed experts. Tailor-made itineraries and luxury transport.">
-    <meta property="og:image" content="logo.png">
+    <meta property="og:image" content="https://mmernaguide.info/logo.png">
+    <meta property="og:image:alt" content="Merna & Rania Egyptian Tour Guide Logo">
     <meta property="og:url" content="https://mmernaguide.info/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Egyptian Tour Guide - Merna & Rania">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Merna & Rania | Private Egyptian Tour Guides">
+    <meta name="twitter:description" content="Discover Ancient Egypt with professional licensed experts. Tailor-made itineraries and luxury transport.">
+    <meta name="twitter:image" content="https://mmernaguide.info/logo.png">
 
     <script type="application/ld+json">
     {
@@ -29,17 +37,32 @@
       "name": "Egyptian Tour Guide - Merna & Rania",
       "description": "Licensed private Egyptian tour guide services in Cairo, Giza, and across Egypt.",
       "url": "https://mmernaguide.info/",
+      "image": "https://mmernaguide.info/logo.png",
+      "logo": "https://mmernaguide.info/logo.png",
       "telephone": "+201029545765",
       "email": "mmernaguide@mmernaguide.info",
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Egypt"
+      },
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Cairo",
+        "addressRegion": "Giza",
         "addressCountry": "EG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "30.00500695131799",
+        "longitude": "31.222095705214368"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5",
-        "reviewCount": "68"
+        "reviewCount": "68",
+        "bestRating": "5",
+        "worstRating": "1"
       },
       "sameAs": [
         "https://www.facebook.com/mmernaguide",
@@ -49,11 +72,34 @@
       ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mmernaguide.info/"
+        }
+      ]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preload" as="image" href="slide1.webp">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPLZ6FQMWQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JPLZ6FQMWQ');
+    </script>
+
     <style>
         :root {
             --gold: #C5A059;
@@ -81,15 +127,15 @@
         }
         .header-container { display: flex; justify-content: space-between; align-items: center; }
         .logo img { height: 55px; width: auto; }
-        
+
         .nav-container { flex-grow: 1; display: flex; justify-content: center; }
         .nav-menu { list-style: none; display: flex; gap: 30px; }
-        .nav-menu a { 
-            text-decoration: none; color: var(--white); font-size: 0.75rem; 
+        .nav-menu a {
+            text-decoration: none; color: var(--white); font-size: 0.75rem;
             letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
-            transition: var(--transition); 
+            transition: var(--transition);
         }
-        .nav-menu a:hover { color: var(--gold); }
+        .nav-menu a:hover, .nav-menu a.active { color: var(--gold); }
 
         .hamburger { display: none; cursor: pointer; background: none; border: none; z-index: 2200; width: 30px; height: 20px; position: relative; }
         .hamburger span { display: block; width: 100%; height: 2px; background: var(--gold); position: absolute; transition: 0.4s; }
@@ -99,19 +145,19 @@
 
         @media (max-width: 992px) {
             .hamburger { display: block; }
-            .nav-container { 
-                position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; 
-                background: #080808; flex-direction: column; justify-content: center; 
+            .nav-container {
+                position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+                background: #080808; flex-direction: column; justify-content: center;
                 align-items: center; transition: 0.5s; z-index: 2100;
                 display: flex;
             }
             .nav-container.active { right: 0; }
-            .nav-menu { 
-                flex-direction: column; align-items: center; justify-content: center; gap: 40px; 
+            .nav-menu {
+                flex-direction: column; align-items: center; justify-content: center; gap: 40px;
                 width: 100%; height: auto;
             }
             .nav-menu a { font-size: 1.3rem; letter-spacing: 4px; }
-            
+
             .hamburger.open span:nth-child(1) { transform: rotate(45deg); top: 9px; }
             .hamburger.open span:nth-child(2) { opacity: 0; }
             .hamburger.open span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
@@ -127,8 +173,8 @@
 
         /* --- Services Section --- */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px; }
-        .service-item { 
-            text-align: center; padding: 50px 30px; transition: var(--transition); 
+        .service-item {
+            text-align: center; padding: 50px 30px; transition: var(--transition);
             text-decoration: none; color: inherit; display: block;
             background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(197, 160, 89, 0.05);
         }
@@ -143,7 +189,7 @@
         .counter-box { font-size: 3.5rem; font-weight: 700; color: var(--gold); }
         .stars { color: #f1c40f; font-size: 1.2rem; margin: 10px 0; }
         .trust-item p { color: #888; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; }
-        
+
         .reviews-link-btn {
             display: inline-block; margin-top: 20px; color: var(--gold); text-decoration: none;
             border: 1px solid var(--gold); padding: 12px 25px; font-size: 0.75rem;
@@ -159,20 +205,20 @@
         .footer-list li { margin-bottom: 12px; color: #ccc; font-size: 0.9rem; }
         .footer-list a { color: #ccc; text-decoration: none; transition: 0.3s; }
         .footer-list a:hover { color: var(--gold); padding-left: 5px; }
-        
+
         /* Map Box Responsive Adjustment */
-        .map-box { 
-            width: 100%; 
-            max-width: 100%; 
-            height: 250px; 
-            border: 1px solid var(--gold); 
-            border-radius: 4px; 
-            overflow: hidden; 
+        .map-box {
+            width: 100%;
+            max-width: 100%;
+            height: 250px;
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            overflow: hidden;
         }
-        .map-box iframe { 
-            width: 100% !important; 
-            height: 100% !important; 
-            border: 0; 
+        .map-box iframe {
+            width: 100% !important;
+            height: 100% !important;
+            border: 0;
         }
 
         @media (max-width: 992px) {
@@ -183,6 +229,17 @@
         /* Fixed Buttons */
         .wa-float { position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.4); transition: 0.3s; }
         .wa-float:hover { transform: scale(1.1); }
+
+        /* Accessibility: visible keyboard focus */
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .slide { transition: none; }
+            *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+        }
     </style>
 </head>
 <body>
@@ -192,28 +249,28 @@
             <a href="https://mmernaguide.info/" class="logo"><img src="logo.png" alt="Merna & Rania Logo"></a>
             <nav class="nav-container" id="nav-container">
                 <ul class="nav-menu">
-                <li><a href="https://mmernaguide.info/">Home</a></li>
+                <li><a href="https://mmernaguide.info/" class="active">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="tours.html" class="active">Our Tours</a></li>
+                <li><a href="tours.html">Our Tours</a></li>
                 <li><a href="process-policies.html">Booking Process</a></li>
                 <li><a href="egypt-tour-reviews.html">Reviews</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="Blogs.html">Travel Guide</a></li>    
+                <li><a href="Blogs.html">Travel Guide</a></li>
                 </ul>
             </nav>
-            <button class="hamburger" id="hamburger" aria-label="Menu Toggle"><span></span><span></span><span></span></button>
+            <button class="hamburger" id="hamburger" type="button" aria-label="Menu Toggle" aria-expanded="false" aria-controls="nav-container"><span></span><span></span><span></span></button>
         </div>
     </header>
 
     <main>
         <section class="slider-container">
             <div class="slides">
-                <img src="slide1.webp" class="slide active" alt="Pyramids of Giza Tour">
-                <img src="slide2.webp" class="slide" alt="Luxor Temple Private Tour">
-                <img src="slide3.webp" class="slide" alt="Saqqara Step Pyramid">
-                <img src="slide4.webp" class="slide" alt="Egyptian Museum Guided Tour">
-                <img src="slide5.webp" class="slide" alt="Abu Simbel Excursion">
-                <img src="slide6.webp" class="slide" alt="Nile Cruise Journey">
+                <img src="slide1.webp" class="slide active" alt="Pyramids of Giza Tour" loading="eager" fetchpriority="high">
+                <img src="slide2.webp" class="slide" alt="Luxor Temple Private Tour" loading="lazy">
+                <img src="slide3.webp" class="slide" alt="Saqqara Step Pyramid" loading="lazy">
+                <img src="slide4.webp" class="slide" alt="Egyptian Museum Guided Tour" loading="lazy">
+                <img src="slide5.webp" class="slide" alt="Abu Simbel Excursion" loading="lazy">
+                <img src="slide6.webp" class="slide" alt="Nile Cruise Journey" loading="lazy">
             </div>
             <div class="hero-overlay">
                 <p>Licensed Private Guides</p>
@@ -221,19 +278,20 @@
                 <p style="letter-spacing: 2px;">- Merna & Rania -</p>
             </div>
         </section>
-        
+
         <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
-    <div id="TA_rated839" class="TA_rated">
-        <ul id="L1Vt1yQnN" class="TA_links 33uJQXC0">
-            <li id="k73nOS" class="KAiZlkEP4kq">
-                <a target="_blank" href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-Egyptian_Tour_Guide_Merna_Rania-Cairo_Cairo_Governorate.html">
-                    <img src="https://www.tripadvisor.com/img/cdsi/img2/badges/ollie-11424-2.gif" alt="TripAdvisor"/>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
-<script async src="https://www.jscache.com/wejs?wtype=rated&amp;uniq=839&amp;locationId=34005106&amp;lang=en_US&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
+            <div id="TA_rated839" class="TA_rated">
+                <ul id="L1Vt1yQnN" class="TA_links 33uJQXC0">
+                    <li id="k73nOS" class="KAiZlkEP4kq">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-Egyptian_Tour_Guide_Merna_Rania-Cairo_Cairo_Governorate.html">
+                            <img src="https://www.tripadvisor.com/img/cdsi/img2/badges/ollie-11424-2.gif" alt="TripAdvisor Rating"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script async src="https://www.jscache.com/wejs?wtype=rated&amp;uniq=839&amp;locationId=34005106&amp;lang=en_US&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
+
         <section class="services-clean section-padding">
             <div class="container text-center">
                 <h2 class="gold-text playfair" style="font-size: 3.5rem;">The Art of Discovery</h2>
@@ -287,23 +345,23 @@
                     <p>Egyptian Tour Guide – Merna & Rania, providing licensed tours across Egypt with trusted experts.</p>
                     <ul class="footer-list">
                         <li>📍 Egypt</li>
-                        <li>📞 +20 102 954 5765</li>
-                        <li>✉️ mmernaguide@mmernaguide.info</li>
+                        <li>📞 <a href="tel:+201029545765">+20 102 954 5765</a></li>
+                        <li>✉️ <a href="mailto:mmernaguide@mmernaguide.info">mmernaguide@mmernaguide.info</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">
                     <h4 class="gold-text" style="font-size: 0.9rem; letter-spacing: 2px;">Social Media</h4>
                     <ul class="footer-list">
-                        <li><a href="https://www.facebook.com/mmernaguide" target="_blank">Facebook</a></li>
-                        <li><a href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a></li>
-                        <li><a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank">TikTok</a></li>
-                        <li><a href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-Egyptian_Tour_Guide_Merna_Rania-Cairo_Cairo_Governorate.html" target="_blank">TripAdvisor</a></li>
+                        <li><a href="https://www.facebook.com/mmernaguide" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/mmerna.guide/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+                        <li><a href="https://www.tripadvisor.com/Attraction_Review-g294201-d34005106-Reviews-Egyptian_Tour_Guide_Merna_Rania-Cairo_Cairo_Governorate.html" target="_blank" rel="noopener noreferrer">TripAdvisor</a></li>
                     </ul>
                 </div>
                 <div class="footer-map">
                     <h4 class="gold-text" style="font-size: 0.9rem; letter-spacing: 2px;">Find Us</h4>
                     <div class="map-box">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27640.877424110746!2d31.222095705214368!3d30.00500695131799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145839715e259693%3A0x4fb96052d7da875b!2sEgyptian%20Tour%20Guide%20%E2%80%93%20Merna%20%26%20Rania!5e0!3m2!1sen!2seg!4v1772812687006!5m2!1sen!2seg" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe title="Merna & Rania office location map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27640.877424110746!2d31.222095705214368!3d30.00500695131799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145839715e259693%3A0x4fb96052d7da875b!2sEgyptian%20Tour%20Guide%20%E2%80%93%20Merna%20%26%20Rania!5e0!3m2!1sen!2seg!4v1772812687006!5m2!1sen!2seg" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -313,53 +371,72 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/201029545765" class="wa-float" target="_blank" aria-label="WhatsApp Contact">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" width="30">
+    <a href="https://wa.me/201029545765" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="30" aria-hidden="true">
     </a>
 
     <script>
         // Menu Toggle
         const hb = document.getElementById('hamburger');
         const nv = document.getElementById('nav-container');
-        hb.onclick = () => { 
-            nv.classList.toggle('active'); 
-            hb.classList.toggle('open');
-            if(nv.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
+        hb.addEventListener('click', () => {
+            const isOpen = nv.classList.toggle('active');
+            hb.classList.toggle('open', isOpen);
+            hb.setAttribute('aria-expanded', String(isOpen));
+            document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+        });
+
+        // Close mobile menu when a nav link is clicked
+        nv.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nv.classList.remove('active');
+                hb.classList.remove('open');
+                hb.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = 'auto';
-            }
-        }
+            });
+        });
 
         // Slider Animation
-        let cur = 0; const sld = document.querySelectorAll('.slide');
-        setInterval(() => { 
-            if(sld.length > 0) {
-                sld[cur].classList.remove('active'); 
-                cur = (cur + 1) % sld.length; 
-                sld[cur].classList.add('active'); 
-            }
-        }, 4500);
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        if (slides.length > 0) {
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, 4500);
+        }
 
-        // Optimized Counter Logic
+        // Counter animation: reaches the exact target in a fixed number of steps,
+        // scaled correctly regardless of how large the target number is.
         const counters = document.querySelectorAll('.counter-box');
-        const runCounters = () => {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const inc = target / 80; 
-                if (count < target) { 
-                    counter.innerText = Math.ceil(count + inc); 
-                    setTimeout(runCounters, 25); 
-                } else { 
-                    counter.innerText = target; 
+        const animateCounter = (el) => {
+            const target = +el.getAttribute('data-target');
+            const steps = 60;
+            const stepTime = 20;
+            let current = 0;
+            const increment = target / steps;
+            const tick = () => {
+                current += increment;
+                if (current >= target) {
+                    el.innerText = target;
+                } else {
+                    el.innerText = Math.ceil(current);
+                    setTimeout(tick, stepTime);
                 }
-            });
+            };
+            tick();
         };
-        const observer = new IntersectionObserver((entries) => {
-            if(entries[0].isIntersecting) runCounters();
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            if (entries[0].isIntersecting) {
+                counters.forEach(animateCounter);
+                obs.disconnect();
+            }
         }, { threshold: 0.5 });
-        observer.observe(document.querySelector('.trust-section'));
+
+        const trustSection = document.querySelector('.trust-section');
+        if (trustSection) observer.observe(trustSection);
     </script>
 </body>
 </html>
