@@ -69,6 +69,21 @@
             "offeredBy": { "@id": "https://mmernaguide.info/#agency" }
           },
           "provider": { "@id": "https://mmernaguide.info/#agency" }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How long does the Luxor East Bank private tour take?",
+              "acceptedAnswer": { "@type": "Answer", "text": "This private tour lasts approximately 8 hours, covering Karnak Temple, Luxor Temple, and the Avenue of Sphinxes at a comfortable, unhurried pace with your licensed Egyptologist guide." }
+            },
+            {
+              "@type": "Question",
+              "name": "What is included in the Luxor East Bank tour?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Your private tour includes a licensed Egyptologist guide, a private air-conditioned vehicle, hotel pickup and drop-off, chilled bottled water, and all site entrance tickets. Lunch, beverages, gratuities, and personal expenses are not included." }
+            }
+          ]
         }
       ]
     }
@@ -168,6 +183,12 @@
         .booking-sidebar h3 { font-family: 'Playfair Display'; color: var(--gold); margin-bottom: 20px; font-size: 1.8rem; }
         .sidebar-btn { display: block; width: 100%; padding: 18px; background: var(--gold); color: #000; text-align: center; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
         .sidebar-btn:hover { background: #fff; }
+
+        /* FAQ Section */
+        .faq-wrap { padding: 80px 0; border-top: 1px solid #222; }
+        .faq-item { border-bottom: 1px solid #222; padding: 25px 0; }
+        .faq-item strong { color: var(--gold); display: block; margin-bottom: 10px; font-size: 1.1rem; }
+        .faq-item p { color: #888; font-size: 0.95rem; line-height: 1.8; }
 
         .master-footer { background: #050505; padding: 100px 0 30px; border-top: 1px solid var(--gold); }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; }
@@ -276,6 +297,18 @@
             </div>
         </aside>
     </div>
+
+    <section class="faq-wrap">
+        <h2 class="playfair gold-text" style="text-align: center; margin-bottom: 50px;">Luxor East Bank Tour FAQ</h2>
+        <div class="faq-item">
+            <strong>How long does the Luxor East Bank private tour take?</strong>
+            <p>This private tour lasts approximately 8 hours, covering Karnak Temple, Luxor Temple, and the Avenue of Sphinxes at a comfortable, unhurried pace with your licensed Egyptologist guide.</p>
+        </div>
+        <div class="faq-item">
+            <strong>What is included in the Luxor East Bank tour?</strong>
+            <p>Your private tour includes a licensed Egyptologist guide, a private air-conditioned vehicle, hotel pickup and drop-off, chilled bottled water, and all site entrance tickets. Lunch, beverages, gratuities, and personal expenses are not included.</p>
+        </div>
+    </section>
 </main>
 
 <footer class="master-footer">

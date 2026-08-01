@@ -69,6 +69,21 @@
             "offeredBy": { "@id": "https://mmernaguide.info/#agency" }
           },
           "provider": { "@id": "https://mmernaguide.info/#agency" }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How long does the Giza Pyramids & GEM private tour take?",
+              "acceptedAnswer": { "@type": "Answer", "text": "This private tour runs approximately 8 hours, giving you a relaxed pace to explore the Great Pyramids, the Sphinx, and the Grand Egyptian Museum with your licensed Egyptologist guide." }
+            },
+            {
+              "@type": "Question",
+              "name": "What is included, and is entry inside the pyramids included?",
+              "acceptedAnswer": { "@type": "Answer", "text": "The tour includes your licensed guide, private air-conditioned vehicle, hotel pickup and drop-off, chilled water, and all site entrance tickets. Entry inside the pyramid burial chambers is optional and not included, along with lunch, beverages, and gratuities." }
+            }
+          ]
         }
       ]
     }
@@ -169,6 +184,12 @@
         .sidebar-btn { display: block; width: 100%; padding: 18px; background: var(--gold); color: #000; text-align: center; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
         .sidebar-btn:hover { background: #fff; }
 
+        /* FAQ Section */
+        .faq-wrap { padding: 80px 0; border-top: 1px solid #222; }
+        .faq-item { border-bottom: 1px solid #222; padding: 25px 0; }
+        .faq-item strong { color: var(--gold); display: block; margin-bottom: 10px; font-size: 1.1rem; }
+        .faq-item p { color: #888; font-size: 0.95rem; line-height: 1.8; }
+
         .master-footer { background: #050505; padding: 100px 0 30px; border-top: 1px solid var(--gold); }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; }
         .footer-head { color: var(--gold); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px; font-weight: 700; }
@@ -259,6 +280,18 @@
             </div>
         </aside>
     </div>
+
+    <section class="faq-wrap">
+        <h2 class="playfair gold-text" style="text-align: center; margin-bottom: 50px;">Giza Pyramids & GEM Tour FAQ</h2>
+        <div class="faq-item">
+            <strong>How long does the Giza Pyramids & GEM private tour take?</strong>
+            <p>This private tour runs approximately 8 hours, giving you a relaxed pace to explore the Great Pyramids, the Sphinx, and the Grand Egyptian Museum with your licensed Egyptologist guide.</p>
+        </div>
+        <div class="faq-item">
+            <strong>What is included, and is entry inside the pyramids included?</strong>
+            <p>The tour includes your licensed guide, private air-conditioned vehicle, hotel pickup and drop-off, chilled water, and all site entrance tickets. Entry inside the pyramid burial chambers is optional and not included, along with lunch, beverages, and gratuities.</p>
+        </div>
+    </section>
 </main>
 
 <footer class="master-footer">
