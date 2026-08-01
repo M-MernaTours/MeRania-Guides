@@ -384,8 +384,8 @@
             document.body.style.overflow = isOpen ? 'hidden' : 'auto';
         });
 
-        // Close menu when clicking links (Mobile)
-        document.querySelectorAll('.nav-menu a').forEach(link => {
+        // Close mobile menu when a nav link is clicked
+        nv.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 nv.classList.remove('active');
                 hb.classList.remove('open');
