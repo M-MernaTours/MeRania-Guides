@@ -14,7 +14,7 @@ Professional tourism website for Egyptian Tour Guide - Merna & Rania.
 
 # Current Status
 
-✅ Full project analysis completed (Phase 1). Phase 2 (Bug Fixes) is now in progress, one client-approved task at a time. 4 of 5 high-priority bugs fixed so far — see Session Notes below for details.
+✅ Full project analysis completed (Phase 1). ✅ Phase 2 (Bug Fixes) high-priority items complete — all 5 of 5 fixed. See Session Notes below for details. Medium-priority Phase 2 items (nav consistency, meta description length, `background-attachment: fixed`, WhatsApp alt text) remain pending client approval, as do Phases 3–7.
 
 ---
 
@@ -98,7 +98,7 @@ See DEVELOPMENT_ROADMAP.md, Phases 2–7, for the full prioritized backlog gener
 2. ~~**Broken canonical URLs:** `itinerary-10-days.html` canonicalizes to `https://mmernaguide.info/10-days-full-egypt-tour.html` (doesn't exist) instead of itself; `itinerary-nile-cruise.html` canonicalizes to `https://mmernaguide.info/nile-cruise-4-days.html` (doesn't exist). Same wrong URLs are duplicated in each page's JSON-LD. This actively tells Google to index a 404 as the canonical version.~~ **✅ FIXED — Session 3 (see below).**
 3. ~~**Missing Google Analytics on 3 real pages:** about.html, egypt-tour-reviews.html, process-policies.html have no `gtag(...)` — traffic to two trust-critical pages (About, Booking/Policies) is invisible in GA4.~~ **✅ FIXED — Session 4 (see below).**
 4. ~~**Two pages load full-resolution JPGs instead of the optimized .webp** as hero backgrounds: `egypt-tour-reviews.html` uses `slide1.jpg` (6.3 MB, preloaded) instead of `slide1.webp` (329 KB — a 19x difference); `process-policies.html` uses `slide3.jpg` (5.7 MB, preloaded) instead of `slide3.webp` (305 KB). This will badly hurt LCP/Core Web Vitals on exactly those two pages.~~ **✅ FIXED — Session 5 (see below).**
-5. **No favicon** anywhere on the site (checked all 38 pages).
+5. ~~**No favicon** anywhere on the site (checked all 38 pages).~~ **✅ FIXED — Session 6 (see below).**
 
 **Medium priority:**
 6. Nav inconsistency across 5 page-family variants (see Navigation section above) — some pages are unreachable from others without going through Home.
@@ -228,6 +228,43 @@ See DEVELOPMENT_ROADMAP.md, Phases 2–7, for the full prioritized backlog gener
 5. Missing favicon site-wide
 
 **Next priority:** Task 5 — add a favicon to all 36 real pages, pending approval and pending the client supplying (or approving the use of an existing asset as) a favicon file, since none currently exists in the project.
+
+## Session 6 — Phase 2 Bug Fixes, Task 5 (this session) — Phase 2 now complete
+
+**Completed work:**
+- Generated favicon assets from the site's existing `logo.png` (1228×819, already used sitewide as the nav logo and `og:image`/JSON-LD logo) — no new brand asset was introduced. Center-cropped to a square (819×819) to avoid distorting the circular badge, then rendered at each target size with no other resizing artifacts introduced:
+  - `favicon.ico` — multi-resolution (16×16, 32×32, 48×48) for legacy browser support
+  - `favicon-32x32.png`, `favicon-16x16.png` — standard modern browser icons
+  - `apple-touch-icon.png` (180×180) — iOS home-screen icon
+- Verified legibility at target sizes before committing: the circular badge shape and pyramid/camel silhouette remain recognizable at 32×32; fine text in the wordmark is not legible below that, which is expected and normal for a wordmark-style source logo used as a favicon.
+- Added the following 4 lines to the `<head>` of all **36 real pages**, inserted immediately after each page's `<link rel="canonical">` line, matching that line's existing indentation:
+  ```html
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  ```
+- Correctly skipped `googlef86a829b05d516d4.html` (Search Console verification file) and `process & policies.html` (legacy meta-refresh redirect stub) — consistent with how the canonical/GA fixes in prior sessions were scoped to the 36 real pages only.
+- Preserved each file's original line-ending convention: `index.html` kept CRLF, all other 35 pages kept LF — no mixed line endings introduced.
+- Verified every one of the 36 real pages now contains exactly 4/4 favicon-related `<link>` tags, and that neither skipped file was touched.
+- Diffed all 36 modified pages against the original upload — confirmed every page changed by exactly +4/−0 lines, nothing else altered.
+- Diffed the full repo file listing against the original — confirmed the only new files added are the 4 favicon assets listed above; no existing file (image, CSS, JS, or otherwise) was modified, renamed, or deleted.
+
+**Files added:** `favicon.ico`, `favicon-32x32.png`, `favicon-16x16.png`, `apple-touch-icon.png` (all derived from existing `logo.png`, no client asset supplied)
+
+**Files modified:** All 36 real HTML pages (4 lines inserted in each, nothing else changed) — `Blogs.html`, `about.html`, `alexandria-day-tour.html`, `camel-ride-pyramids.html`, `contact.html`, `day-tours.html`, `desert-safari.html`, `egypt-tour-reviews.html`, `fayoum-day-tour.html`, `giza-gem.html`, `giza-pyramids-quad-bike-tour.html`, `index.html`, `islamic-coptic-cairo.html`, `itineraries.html`, `itinerary-10-days.html`, `itinerary-12-days.html`, `itinerary-2-tours.html`, `itinerary-3-days.html`, `itinerary-4-tours.html`, `itinerary-8-days.html`, `itinerary-nile-cruise.html`, `khan-el-khalili-bazaar-tour.html`, `luxor-east-bank-tour.html`, `luxor-west-bank-tour.html`, `memphis-saqqara-nmec.html`, `nile-felucca-ride.html`, `post-alexandria-day.html`, `post-cairo-activities.html`, `post-fayoum-safari.html`, `post-luxor-express.html`, `post-pyramids-gem.html`, `post-safety-tips.html`, `process-policies.html`, `things-to-do-in-cairo.html`, `tours.html`, `transportation.html`
+
+**Bugs found:** None new. This closes bug #5 from the Known Bugs list — **all 5 high-priority Phase 2 bugs are now fixed. Phase 2 high-priority work is complete.**
+
+**Remaining tasks:** Phase 2 medium-priority items (not yet approved/started):
+6. Nav inconsistency across 5 page-family variants
+7. Oversized meta description on `giza-pyramids-quad-bike-tour.html` (+11 other pages modestly over)
+8. `background-attachment: fixed` on hero sections (4+ pages, mobile Safari jank)
+9. Empty WhatsApp button `alt` text on 7 pages
+
+Phases 3–7 remain fully pending per DEVELOPMENT_ROADMAP.md.
+
+**Next priority:** Await client direction on which Phase 2 medium-priority item (or which Phase 3+ initiative) to tackle next.
 
 ---
 
