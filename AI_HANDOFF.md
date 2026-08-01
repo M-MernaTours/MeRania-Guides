@@ -14,7 +14,7 @@ Professional tourism website for Egyptian Tour Guide - Merna & Rania.
 
 # Current Status
 
-✅ Full project analysis completed (Phase 1). ✅ Phase 2 (Bug Fixes) high-priority items complete — all 5 of 5 fixed. See Session Notes below for details. Medium-priority Phase 2 items (nav consistency, meta description length, `background-attachment: fixed`, WhatsApp alt text) remain pending client approval, as do Phases 3–7.
+✅ Full project analysis completed (Phase 1). ✅ Phase 2 (Bug Fixes) high-priority items complete — all 5 of 5 fixed. ✅ Phase 2 medium-priority Task 6 (Navigation Consistency) is now complete — CSS, hamburger markup, nav links, active states, and hamburger JavaScript behavior are all standardized across all 36 real pages (see Session 7 in Session Notes). One new CSS gap was found during Session 7 verification (13 pages missing `.hamburger.open` styling) and is flagged below, pending approval to fix. Remaining medium-priority Phase 2 items (meta description length, `background-attachment: fixed`, WhatsApp alt text) remain pending client approval, as do Phases 3–7.
 
 ---
 
@@ -52,17 +52,11 @@ All 38 pages have exactly one `<h1>`, a `<title>`, a meta description, and (with
 
 # Navigation
 
-**Not consistent.** There are **five different nav-menu variants** in use across the site depending on which page "family" a page belongs to:
+**Status: standardized (Phase 2, Task 6 — completed across Sessions [prior] and 7).** Mobile nav CSS, hamburger markup, nav link sets, active-state mapping, and hamburger JavaScript behavior (open/close toggle, `aria-expanded` tracking, close-on-link-click) are now consistent across all 36 real pages. The per-page-family link-set differences described in earlier drafts of this section have been resolved.
 
-1. Core pages + blog posts: Home / About / Tours / Booking Process / Reviews / Contact / Travel Guide (7 links)
-2. Tour detail pages (12 pages): Home / About / Tours / Day Tours / Contact (5 links — **missing Booking Process, Reviews, Travel Guide**)
-3. Itinerary pages + itineraries.html + transportation.html (9 pages): Home / Day Tours / Itineraries / Transportation / Contact (5 links — **missing About, Tours, Reviews, Travel Guide entirely**)
-4. day-tours.html: Home / About / Tours / Booking Process / Contact / Travel Guide (6 links — missing Reviews)
-5. things-to-do-in-cairo.html: Home / About / Tours / Booking Process / Contact (5 links — missing Reviews, Travel Guide)
+**Known remaining gap (found in Session 7, not yet fixed):** the header-logo trailing-slash fix from the prior session covered the logo image link, but the nav-menu "Home" text link on the 6 blog post pages (`post-alexandria-day.html`, `post-cairo-activities.html`, `post-fayoum-safari.html`, `post-luxor-express.html`, `post-pyramids-gem.html`, `post-safety-tips.html`) still points to `https://mmernaguide.info` without the trailing slash, while every other page's nav Home link uses `https://mmernaguide.info/`. Flagged for approval, not fixed yet (out of scope for Session 7, which was JS-behavior-only).
 
-Net effect: a visitor who lands on any itinerary page or transportation.html cannot reach About Us, Reviews, or the Travel Guide/Blog without going back to the homepage first. This is the single biggest UX/navigation issue on the site.
-
-Home-link URL is also inconsistent: most pages use `https://mmernaguide.info/` (trailing slash), the 6 blog post pages use `https://mmernaguide.info` (no trailing slash).
+Also see the `.hamburger.open` CSS gap on 13 pages, documented in Session 7 notes below and in Known Bugs.
 
 ---
 
@@ -101,10 +95,12 @@ See DEVELOPMENT_ROADMAP.md, Phases 2–7, for the full prioritized backlog gener
 5. ~~**No favicon** anywhere on the site (checked all 38 pages).~~ **✅ FIXED — Session 6 (see below).**
 
 **Medium priority:**
-6. Nav inconsistency across 5 page-family variants (see Navigation section above) — some pages are unreachable from others without going through Home.
+6. ~~Nav inconsistency across 5 page-family variants (see Navigation section above) — some pages are unreachable from others without going through Home.~~ **✅ FIXED — nav links/CSS/markup/active-states in a prior session, JS behavior in Session 7 (see below).**
 7. `giza-pyramids-quad-bike-tour.html` meta description is 236 characters — Google will truncate it; 11 other pages are modestly over the ~160 char guideline.
 8. `background-attachment: fixed` used for hero sections on at least 4 pages — known to cause jank/repaint issues on mobile Safari.
 9. WhatsApp floating-button icon (`alt=""`) is empty on 7 pages — it's a functional link, not decorative, so it should have descriptive alt text for screen readers.
+10. **[Found Session 7] 13 pages have no `.hamburger.open` CSS rule**, so the hamburger icon never visually animates into an "X" on open (menu itself still works correctly): `itinerary-2-tours.html`, `itinerary-3-days.html`, `itinerary-4-tours.html`, `itinerary-8-days.html`, `itinerary-10-days.html`, `itinerary-12-days.html`, `itinerary-nile-cruise.html`, `post-alexandria-day.html`, `post-cairo-activities.html`, `post-fayoum-safari.html`, `post-luxor-express.html`, `post-pyramids-gem.html`, `post-safety-tips.html`.
+11. **[Found Session 7] Nav "Home" link missing trailing slash on 6 blog post pages** — `https://mmernaguide.info` instead of `https://mmernaguide.info/` on `post-alexandria-day.html`, `post-cairo-activities.html`, `post-fayoum-safari.html`, `post-luxor-express.html`, `post-pyramids-gem.html`, `post-safety-tips.html` (the header-logo link on these pages was already fixed; the nav-menu text link was missed).
 
 **Low priority / housekeeping:**
 10. `style.css`, `reviews.css`, `script.js`, `reviews.js`, `reviews-data.json` are dead code — not linked from any page. `reviews.js`/`reviews.css`/`reviews-data.json` appear to be an earlier version of the reviews page (uses `.rv-kpi-num`/`.rv-bar` classes that don't exist in the current `egypt-tour-reviews.html`).
@@ -266,6 +262,59 @@ Phases 3–7 remain fully pending per DEVELOPMENT_ROADMAP.md.
 
 **Next priority:** Await client direction on which Phase 2 medium-priority item (or which Phase 3+ initiative) to tackle next.
 
+## Session 7 — Phase 2 Medium Priority, Task 6 (Nav Consistency) — Navigation JS Standardization + Verification (this session)
+
+Continued Task 6 (Navigation Consistency) from a prior session that had completed the nav audit, mobile-nav CSS standardization, hamburger markup standardization (icon spans), nav link standardization, active-state mapping, and the header-logo trailing-slash fix, but stopped before standardizing the hamburger's JavaScript behavior. This session completed that remaining piece plus full verification and packaging.
+
+**Completed work:**
+- **Audited hamburger toggle JavaScript across all 36 real pages** and found 8 distinct behavioral variants:
+  - `index.html`, `about.html`, `tours.html`, `contact.html`, `Blogs.html`, `egypt-tour-reviews.html`, `process-policies.html` used `addEventListener` with `aria-expanded` state tracking, but only `index.html`, `about.html`, and `Blogs.html` also closed the mobile menu automatically when a nav link was clicked.
+  - 19 pages used a legacy one-line `hb.onclick = ...` handler with no `aria-expanded` tracking and no close-on-link-click.
+  - 7 pages used a multi-line variant of the same legacy `onclick` pattern (same missing features).
+  - **Real bug found:** 3 pages (`post-safety-tips.html`, `post-cairo-activities.html`, `itinerary-4-tours.html`) never toggled the `.open` class on the hamburger button at all — the icon would never visually animate into an "X" when the menu opened, even though the menu itself worked.
+- **Standardized all 36 pages to one canonical behavior**, based on the most complete existing implementation (`index.html`'s pattern):
+  ```js
+  const hb = document.getElementById('hamburger');
+  const nv = document.getElementById('nav-container');
+  hb.addEventListener('click', () => {
+      const isOpen = nv.classList.toggle('active');
+      hb.classList.toggle('open', isOpen);
+      hb.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+  });
+
+  // Close mobile menu when a nav link is clicked
+  nv.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+          nv.classList.remove('active');
+          hb.classList.remove('open');
+          hb.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = 'auto';
+      });
+  });
+  ```
+  Applied at each page's own existing indentation depth (4-space or 8-space, matching its surrounding `<script>` block) and its own existing line-ending convention (LF everywhere except `index.html`, which kept CRLF). All other script content on each page (homepage slider/counters, reviews-page KPI counters, policies-page FAQ accordion, about-page scroll-reveal, etc.) was left untouched — only the hamburger-toggle logic itself was replaced.
+- **Standardized the hamburger `<button>`'s own attributes** to match the accessible state the JS now manages: `type="button" aria-label="Toggle Menu" aria-expanded="false" aria-controls="nav-container"` on all 36 pages (previously present in full on only 9 pages, partially on 2, and absent on the remaining 25). This was included because the JS standardization directly manipulates `aria-expanded`, so the button's baseline markup needed to match; the icon-span markup/formatting itself (already standardized in the prior session) was left exactly as-is.
+- Verified `Blogs.html` needed no JS changes (already matched the canonical pattern exactly) and no button-attribute changes (already fully attributed).
+
+**Verification performed:**
+- Confirmed zero remaining `hb.onclick` legacy handlers site-wide; all 36 pages now use `hb.addEventListener('click', ...)`.
+- Confirmed all 36 pages now include the close-on-link-click block.
+- Confirmed all 36 hamburger buttons now share identical attributes.
+- Ran `node --check` against every inline `<script>` block on every page (36/36 pass — no JS syntax errors introduced).
+- Confirmed exactly one `id="hamburger"` and one `id="nav-container"` per page (no duplicate IDs).
+- Diffed all 36 real pages against the original upload: exactly 34 pages changed (the intended JS + button-attribute edits only); `Blogs.html` and the non-real files were correctly left untouched; confirmed via `diff -rq` that **no image, CSS, JS, or other non-HTML asset was touched**, and no files were added or removed.
+- Confirmed line-ending conventions preserved exactly (`index.html` still CRLF, all 35 other modified pages still LF).
+
+**New issue found (not fixed — outside this session's scope, flagged for approval):**
+- **13 pages have no `.hamburger.open` CSS rule at all:** `itinerary-2-tours.html`, `itinerary-3-days.html`, `itinerary-4-tours.html`, `itinerary-8-days.html`, `itinerary-10-days.html`, `itinerary-12-days.html`, `itinerary-nile-cruise.html`, `post-alexandria-day.html`, `post-cairo-activities.html`, `post-fayoum-safari.html`, `post-luxor-express.html`, `post-pyramids-gem.html`, `post-safety-tips.html`. The JS now correctly toggles the `.open` class on the hamburger button on every page (that's what this session standardized), but on these 13 pages there's no matching CSS to animate the icon into an "X" — so the mobile menu itself opens/closes correctly, but the icon stays as three static lines instead of morphing, unlike the other 23 pages. Confirmed via diff against the original upload that this gap pre-dates this session (it was not introduced by today's work). This is a CSS gap, not a JS gap, so it was left as-is per the "JavaScript behavior only" scope of this session — flagging for the next approved task.
+
+**Files modified:** 34 of the 36 real HTML pages (JS hamburger-toggle block + button attributes) — every real page except `Blogs.html` (already canonical). No other files touched.
+
+**Bugs found:** 1 new (the 13-page `.hamburger.open` CSS gap above, not yet fixed). This completes the JavaScript-behavior portion of Task 6 (Navigation Consistency); Task 6 as a whole (CSS, markup, links, active states, JS) is now fully standardized across all 36 pages, modulo the newly-flagged CSS gap.
+
+**Next priority:** Await client direction on: (a) fixing the newly-found `.hamburger.open` CSS gap on the 13 pages listed above, (b) the remaining Phase 2 medium-priority items (7–9 above), or (c) Phase 3+.
+
 ---
 
 # Mandatory Workflow
@@ -286,6 +335,8 @@ Every AI working on this project MUST follow these steps:
 
 # Next AI Instructions
 
-Phase 1 analysis is complete — read the "Known Bugs" and "Session Notes" sections above before doing anything else.
+Phase 1 analysis is complete, all 5 Phase 2 high-priority bugs are fixed, and Phase 2 Task 6 (Navigation Consistency) is now fully complete — read the "Known Bugs" and "Session Notes" (especially Session 7) sections above before doing anything else.
 
-Do NOT start coding immediately. Confirm with the client which items from DEVELOPMENT_ROADMAP.md Phase 2 they want fixed first, then implement only those, one at a time, explaining each change before making it.
+Two new items were found during Session 7's verification pass and are **not yet fixed** (bugs #10 and #11 in Known Bugs above) — surface these to the client for approval before touching them, same as every other item on this list.
+
+Do NOT start coding immediately. Confirm with the client which items from DEVELOPMENT_ROADMAP.md Phase 2 they want fixed next (remaining medium-priority items 7–11), then implement only those, one at a time, explaining each change before making it.
