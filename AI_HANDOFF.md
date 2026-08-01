@@ -14,7 +14,7 @@ Professional tourism website for Egyptian Tour Guide - Merna & Rania.
 
 # Current Status
 
-✅ Full project analysis completed (Phase 1). ✅ Phase 2 (Bug Fixes) high-priority items complete — all 5 of 5 fixed. ✅ Phase 2 medium-priority Task 6 (Navigation Consistency) is now complete — CSS, hamburger markup, nav links, active states, and hamburger JavaScript behavior are all standardized across all 36 real pages (see Session 7 in Session Notes). One new CSS gap was found during Session 7 verification (13 pages missing `.hamburger.open` styling) and is flagged below, pending approval to fix. Remaining medium-priority Phase 2 items (meta description length, `background-attachment: fixed`, WhatsApp alt text) remain pending client approval. ✅ **SEO Implementation — Critical Fixes are now complete (Session 8):** AggregateRating reviewCount unified to 77 site-wide, missing Open Graph tags added to all pages that lacked them, Twitter Card (`twitter:card`) added site-wide, and the two broken `og:image` references fixed. See Session 8 below for full detail. Remaining Phases 3–7 (and the still-pending medium-priority items) remain untouched.
+✅ Full project analysis completed (Phase 1). ✅ Phase 2 (Bug Fixes) high-priority items complete — all 5 of 5 fixed. ✅ Phase 2 medium-priority Task 6 (Navigation Consistency) is now complete — CSS, hamburger markup, nav links, active states, and hamburger JavaScript behavior are all standardized across all 36 real pages (see Session 7 in Session Notes). One new CSS gap was found during Session 7 verification (13 pages missing `.hamburger.open` styling) and is flagged below, pending approval to fix. Remaining medium-priority Phase 2 items (meta description length, `background-attachment: fixed`, WhatsApp alt text) remain pending client approval. ✅ **SEO Implementation — Critical Fixes are now complete (Session 8):** AggregateRating reviewCount unified to 77 site-wide, missing Open Graph tags added to all pages that lacked them, Twitter Card (`twitter:card`) added site-wide, and the two broken `og:image` references fixed. See Session 8 below for full detail. ✅ **SEO Medium Priority — Task 1 (meta description length) is now complete (Session 9):** 20 of 36 real pages had a meta description over the ~160-character guideline (ranging from 161 to 236 characters); all 20 have been shortened to 141–157 characters while preserving each page's primary keyword and search intent. See Session 9 below for full detail. ✅ **SEO Medium Priority — Task 2 (title tag length) is now complete (Session 10):** 26 of 36 real pages had a `<title>` over ~60 characters (ranging from 61 to 78 characters); all 26 have been shortened to 46–59 characters while preserving each page's primary keyword, search intent, and site-wide title uniqueness. See Session 10 below for full detail. Remaining medium-priority Phase 2 items (`background-attachment: fixed`, WhatsApp alt text) and Phases 3–7 remain untouched.
 
 ---
 
@@ -96,7 +96,7 @@ See DEVELOPMENT_ROADMAP.md, Phases 2–7, for the full prioritized backlog gener
 
 **Medium priority:**
 6. ~~Nav inconsistency across 5 page-family variants (see Navigation section above) — some pages are unreachable from others without going through Home.~~ **✅ FIXED — nav links/CSS/markup/active-states in a prior session, JS behavior in Session 7 (see below).**
-7. `giza-pyramids-quad-bike-tour.html` meta description is 236 characters — Google will truncate it; 11 other pages are modestly over the ~160 char guideline.
+7. ~~`giza-pyramids-quad-bike-tour.html` meta description is 236 characters — Google will truncate it; 11 other pages are modestly over the ~160 char guideline.~~ **✅ FIXED — Session 9 (see below). Actual audit found 20 pages over 160 chars, not 11 — all 20 shortened.**
 8. `background-attachment: fixed` used for hero sections on at least 4 pages — known to cause jank/repaint issues on mobile Safari.
 9. WhatsApp floating-button icon (`alt=""`) is empty on 7 pages — it's a functional link, not decorative, so it should have descriptive alt text for screen readers.
 10. **[Found Session 7] 13 pages have no `.hamburger.open` CSS rule**, so the hamburger icon never visually animates into an "X" on open (menu itself still works correctly): `itinerary-2-tours.html`, `itinerary-3-days.html`, `itinerary-4-tours.html`, `itinerary-8-days.html`, `itinerary-10-days.html`, `itinerary-12-days.html`, `itinerary-nile-cruise.html`, `post-alexandria-day.html`, `post-cairo-activities.html`, `post-fayoum-safari.html`, `post-luxor-express.html`, `post-pyramids-gem.html`, `post-safety-tips.html`.
@@ -357,6 +357,69 @@ A separate SEO Audit was completed in a prior session (analysis only, no files m
 
 **Next priority:** Await client direction on which SEO Medium/Low priority item, which remaining Phase 2 item, or which Phase 3+ initiative to tackle next.
 
+## Session 9 — SEO Medium Priority, Task 1 (Meta Description Length) — this session
+
+Client approved exactly one item for this session: shorten overlong meta descriptions to approximately 150–160 characters while preserving each page's primary keyword and search intent. Explicitly out of scope: title tags, schema/JSON-LD, internal linking, FAQ content, Open Graph/Twitter tags, CSS, JavaScript, and any other SEO or Phase 2/3+ item.
+
+**Completed work:**
+- Audited `<meta name="description">` length on all 36 real pages (`googlef86a829b05d516d4.html` and `process & policies.html` correctly excluded — both have empty/no description and are non-real files per prior-session convention).
+- Found 20 pages over the ~160-character guideline, ranging from 161 to 236 characters (the roadmap's original estimate of "~11 other pages" undercounted this — the actual audit found 20): `giza-pyramids-quad-bike-tour.html` (236), `khan-el-khalili-bazaar-tour.html` (176), `alexandria-day-tour.html` (174), `post-alexandria-day.html` (172), `transportation.html` (171), `nile-felucca-ride.html` (171), `itinerary-10-days.html` (171), `tours.html` (170), `itinerary-8-days.html` (170), `islamic-coptic-cairo.html` (168), `desert-safari.html` (168), `fayoum-day-tour.html` (167), `memphis-saqqara-nmec.html` (165), `contact.html` (164), `index.html` (163), `egypt-tour-reviews.html` (163), `itinerary-3-days.html` (162), `post-safety-tips.html` (161), `itinerary-4-tours.html` (161), `camel-ride-pyramids.html` (161).
+- Rewrote each of the 20 descriptions to land between 141 and 157 characters (all now under the 160-char ceiling), by trimming redundant adjectives, secondary details, and trailing calls-to-action while keeping each page's primary keyword/topic (e.g. "quad bike tour at the Giza Pyramids", "Khan El Khalili Bazaar ... walking tour", "Fayoum day tour ... Wadi El Hitan") and overall search intent intact. No new keywords were introduced; wording was drawn from each page's own existing description.
+- The 3 pages already sitting exactly at 160 (`things-to-do-in-cairo.html`, `itinerary-nile-cruise.html`, `itinerary-2-tours.html`) were left unchanged — already within the approved 150–160 range, no action needed.
+- All other 13 real pages were already under 160 characters and were left untouched.
+
+**Verification performed:**
+- Re-measured all 36 real pages' meta description lengths post-edit: the 20 edited pages now range 141–157 characters; combined with the pages already compliant, every real page's meta description is now ≤160 characters.
+- Diffed all 41 files against the Session-8 baseline (`diff -rq`): exactly 20 files differ, all HTML pages — no CSS, JS, image, or non-HTML file touched, no files added or removed.
+- Confirmed each of the 20 changed files has exactly one changed line (the `<meta name="description">` tag) and nothing else — verified via line-level diff count (2 lines changed per file: 1 removed, 1 added) on every page.
+- Confirmed via spot-check that `<title>`, `rel="canonical"`, JSON-LD schema, and internal `<a href>` links are byte-identical to the Session-8 baseline on edited pages.
+- Confirmed `og:description` was intentionally left untouched on all pages, per the approved scope (meta description only) — on pages where `og:description` previously mirrored the meta description verbatim (e.g. `alexandria-day-tour.html`, `contact.html`), it now differs slightly from the shortened meta description. This is a side effect of the narrow scope, not an error; flagged below for a future OG-tag alignment pass if desired.
+- Ran `node --check` against every real `<script>` block (JS, excluding JSON-LD) on all 20 edited pages — all pass, confirming the edit didn't disturb any inline script.
+- Confirmed exactly one `<meta name="description">` tag remains per real page (no duplicates introduced).
+- Confirmed line-ending conventions preserved exactly (`index.html` still CRLF, all 19 other edited pages still LF).
+
+**Files modified:** 20 of 36 real pages, 1 line each — `giza-pyramids-quad-bike-tour.html`, `khan-el-khalili-bazaar-tour.html`, `alexandria-day-tour.html`, `post-alexandria-day.html`, `transportation.html`, `nile-felucca-ride.html`, `itinerary-10-days.html`, `tours.html`, `itinerary-8-days.html`, `islamic-coptic-cairo.html`, `desert-safari.html`, `fayoum-day-tour.html`, `memphis-saqqara-nmec.html`, `contact.html`, `index.html`, `egypt-tour-reviews.html`, `itinerary-3-days.html`, `post-safety-tips.html`, `itinerary-4-tours.html`, `camel-ride-pyramids.html`. No other file (CSS, JS, image, or non-HTML) was added, removed, or modified.
+
+**Bugs found:** None new. This closes bug #7 from the Known Bugs list.
+
+**Side effect noted (not a bug, not fixed — flagging for approval):** On pages where `og:description` previously duplicated the (now-shortened) meta description verbatim, the two tags no longer match exactly. This was intentional given this session's narrow scope (meta description only), but the client may want a follow-up pass to re-sync `og:description` with the new shorter copy for consistency — not started, as OG tags were explicitly out of scope for this session.
+
+**Remaining tasks:** Phase 2 medium-priority items 8–9 (`background-attachment: fixed`, empty WhatsApp `alt` text), the 13-page `.hamburger.open` CSS gap, the 6-page blog-post nav trailing-slash issue, the SEO Audit's remaining Medium/Low priority findings, the `og:description` sync side effect noted above, and Phases 3–7 in full all remain untouched.
+
+**Next priority:** Await client direction on which item to tackle next.
+
+## Session 10 — SEO Medium Priority, Task 2 (Title Tag Length) — this session
+
+Client approved exactly one item for this session: shorten overlong `<title>` tags to approximately 50–60 characters where appropriate, preserving each page's primary keyword and search intent, and keeping every title unique. Explicitly out of scope: meta descriptions, schema/JSON-LD, Open Graph tags, Twitter tags, internal linking, FAQ content, CSS, JavaScript, and any other SEO or Phase 2/3+ item.
+
+**Completed work:**
+- Audited `<title>` length on all 36 real pages (`googlef86a829b05d516d4.html` and `process & policies.html` correctly excluded, same convention as prior sessions).
+- Found 26 pages over the ~60-character guideline, ranging from 61 to 78 characters: `itinerary-10-days.html` (78), `itineraries.html` (77), `itinerary-4-tours.html` (73), `things-to-do-in-cairo.html` (72), `post-cairo-activities.html` (71), `itinerary-nile-cruise.html` (71), `post-pyramids-gem.html` (70), `khan-el-khalili-bazaar-tour.html` (70), `itinerary-12-days.html` (70), `day-tours.html` (69), `transportation.html` (68), `process-policies.html` (67), `post-safety-tips.html` (67), `post-alexandria-day.html` (67), `itinerary-3-days.html` (66), `giza-gem.html` (66), `fayoum-day-tour.html` (66), `post-luxor-express.html` (65), `index.html` (65), `itinerary-2-tours.html` (64), `camel-ride-pyramids.html` (64), `about.html` (64), `itinerary-8-days.html` (63), `giza-pyramids-quad-bike-tour.html` (61), `egypt-tour-reviews.html` (61), `alexandria-day-tour.html` (61).
+- Rewrote each of the 26 titles to land between 46 and 59 characters, by trimming redundant adjectives ("Ultimate", "Comprehensive", "Bespoke", "Luxury"), secondary/duplicate brand mentions, and less-essential trailing detail, while keeping each page's primary keyword and topic intact (e.g. "10-Day Egypt Tour ... Nile Cruise & Abu Simbel", "Khan El Khalili Bazaar Walking Tour", "Fayoum Day Tour from Cairo ... Desert Safari"). No new keywords were introduced; wording was drawn from each page's own existing title.
+- 2 pages already sitting exactly at 60 (`post-fayoum-safari.html`, `nile-felucca-ride.html`) were left unchanged — already within the approved range. `memphis-saqqara-nmec.html` and `islamic-coptic-cairo.html` (60 and 59) were also left untouched as already compliant.
+- All other 8 real pages were already at or under 60 characters and were left untouched, including `luxor-east-bank-tour.html` and `luxor-west-bank-tour.html` (43 chars each — noticeably short; both also contain a pre-existing "PrivateTour" missing-space typo, not touched, as text-content corrections beyond length were out of scope for this session).
+
+**Verification performed:**
+- Re-measured all 36 real pages' `<title>` lengths post-edit: the 26 edited pages now range 46–59 characters; combined with the pages already compliant, every real page's title is now ≤60 characters.
+- Confirmed all 36 real-page titles remain globally unique (no duplicates introduced or pre-existing) via a full site-wide uniqueness check.
+- Diffed all 41 files against the Session-9 baseline (`diff -rq`): exactly 26 files differ, all HTML pages — no CSS, JS, image, or non-HTML file touched, no files added or removed.
+- Confirmed each of the 26 changed files has exactly one changed line (the `<title>` tag) and nothing else — verified via line-level diff count (2 lines changed per file: 1 removed, 1 added) on every page.
+- Confirmed via spot-check that `<meta name="description">`, `rel="canonical"`, and `og:title` are byte-identical to the Session-9 baseline on edited pages (title tags were changed in isolation; the same tag text elsewhere on the page was not touched).
+- Ran `node --check` against every real `<script>` block (JS, excluding JSON-LD) on all 26 edited pages — all pass, confirming the edit didn't disturb any inline script.
+- Confirmed exactly one `<title>` tag remains per real page (no duplicates introduced).
+- **Caught and corrected a line-ending regression during this session's own verification:** the batch-edit script used for 25 of the 26 pages opened files in Python text mode, which silently normalizes line endings on write; this flattened `index.html`'s CRLF endings to LF (the file's line-ending convention has been CRLF since it was first uploaded, per Session 7's verification notes). Caught via the standard line-ending check before finalizing, corrected by restoring `index.html` from the Session-9 baseline and re-applying only the title edit with an exact byte-level replacement (preserving CRLF). Re-verified `index.html` is back to CRLF and its diff against baseline is a clean 1-line change, same as every other edited page. No other file was affected by this — all 25 others were already LF and remained LF.
+- Confirmed line-ending conventions preserved exactly (`index.html` CRLF, all 25 other edited pages LF).
+
+**Files modified:** 26 of 36 real pages, 1 line each — `itinerary-10-days.html`, `itineraries.html`, `itinerary-4-tours.html`, `things-to-do-in-cairo.html`, `post-cairo-activities.html`, `itinerary-nile-cruise.html`, `post-pyramids-gem.html`, `khan-el-khalili-bazaar-tour.html`, `itinerary-12-days.html`, `day-tours.html`, `transportation.html`, `process-policies.html`, `post-safety-tips.html`, `post-alexandria-day.html`, `itinerary-3-days.html`, `giza-gem.html`, `fayoum-day-tour.html`, `post-luxor-express.html`, `index.html`, `itinerary-2-tours.html`, `camel-ride-pyramids.html`, `about.html`, `itinerary-8-days.html`, `giza-pyramids-quad-bike-tour.html`, `egypt-tour-reviews.html`, `alexandria-day-tour.html`. No other file (CSS, JS, image, or non-HTML) was added, removed, or modified.
+
+**Bugs found:** None new in the content itself. One process issue (the text-mode line-ending flattening on `index.html`) was caught and corrected during this session's own verification pass before delivery — see above.
+
+**Side effect noted (not a bug, not fixed — flagging for approval):** On the 17 pages where `og:title` previously duplicated the (now-shortened) `<title>` verbatim — `alexandria-day-tour.html`, `camel-ride-pyramids.html`, `day-tours.html`, `fayoum-day-tour.html`, `giza-pyramids-quad-bike-tour.html`, `itineraries.html`, `itinerary-10-days.html`, `itinerary-12-days.html`, `itinerary-2-tours.html`, `itinerary-3-days.html`, `itinerary-4-tours.html`, `itinerary-8-days.html`, `itinerary-nile-cruise.html`, `khan-el-khalili-bazaar-tour.html`, `about.html`, `egypt-tour-reviews.html`, `index.html`, `process-policies.html` — the two tags no longer match exactly, for the same reason as the Session 9 `og:description` side effect: `og:title`/`og:description` were explicitly out of scope for both the meta-description and title-tag sessions. The client may want a single follow-up pass to re-sync `og:title` and `og:description` with the current (shorter) `<title>`/meta description copy site-wide — not started, as OG tags remain out of scope until separately approved.
+
+**Remaining tasks:** Phase 2 medium-priority items 8–9 (`background-attachment: fixed`, empty WhatsApp `alt` text), the 13-page `.hamburger.open` CSS gap, the 6-page blog-post nav trailing-slash issue, the SEO Audit's remaining Medium/Low priority findings, the combined `og:title`/`og:description` sync side effect (Sessions 9 and 10), the `luxor-east-bank-tour.html`/`luxor-west-bank-tour.html` "PrivateTour" typo (noted above, not a length issue so not touched), and Phases 3–7 in full all remain untouched.
+
+**Next priority:** Await client direction on which item to tackle next.
+
 ---
 
 # Mandatory Workflow
@@ -377,10 +440,14 @@ Every AI working on this project MUST follow these steps:
 
 # Next AI Instructions
 
-Phase 1 analysis is complete, all 5 Phase 2 high-priority bugs are fixed, Phase 2 Task 6 (Navigation Consistency) is fully complete, and the SEO Audit's four critical-priority fixes (AggregateRating consistency, missing Open Graph tags, Twitter Card tags, broken og:image references) are now fully implemented and verified — read the "Known Bugs" and "Session Notes" (especially Sessions 7 and 8) sections above before doing anything else.
+Phase 1 analysis is complete, all 5 Phase 2 high-priority bugs are fixed, Phase 2 Task 6 (Navigation Consistency) is fully complete, the SEO Audit's four critical-priority fixes (AggregateRating consistency, missing Open Graph tags, Twitter Card tags, broken og:image references) are fully implemented, SEO Medium Priority Task 1 (meta description length, bug #7) is fixed, and SEO Medium Priority Task 2 (title tag length) is now fixed — read the "Known Bugs" and "Session Notes" (especially Sessions 7, 8, 9, and 10) sections above before doing anything else.
 
 Two items were found during Session 7's verification pass and are **still not fixed** (bugs #10 and #11 in Known Bugs above) — surface these to the client for approval before touching them, same as every other item on this list.
 
-The SEO Audit's Medium/Low priority findings (beyond the four critical items closed in Session 8) have not yet been scoped or implemented — do not start on them without explicit client approval and prioritization.
+A combined side effect was noted across Sessions 9 and 10: on pages where `og:description`/`og:title` used to mirror the meta description/title verbatim, they now differ slightly since only the on-page tags were shortened (OG tags were out of scope both times). Flag this to the client as an optional follow-up — a single pass could re-sync both — not an urgent fix.
 
-Do NOT start coding immediately. Confirm with the client which items they want fixed next — remaining Phase 2 medium-priority items 7–11, the SEO Audit's Medium/Low priority backlog, or Phase 3+ — then implement only those, one at a time, explaining each change before making it.
+Also noted but not touched (out of scope, length-only sessions): `luxor-east-bank-tour.html` and `luxor-west-bank-tour.html` both have a "PrivateTour" missing-space typo in their `<title>`. Not a length issue, so left alone — flag for approval if the client wants text-content fixes as a separate task.
+
+The SEO Audit's remaining Medium/Low priority findings (beyond meta description and title length, now both closed) have not yet been scoped or implemented — do not start on them without explicit client approval and prioritization.
+
+Do NOT start coding immediately. Confirm with the client which items they want fixed next — remaining Phase 2 medium-priority items 8–11, the SEO Audit's remaining Medium/Low priority backlog, or Phase 3+ — then implement only those, one at a time, explaining each change before making it.
