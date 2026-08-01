@@ -381,6 +381,16 @@
             hb.setAttribute('aria-expanded', String(isOpen));
             document.body.style.overflow = isOpen ? 'hidden' : 'auto';
         });
+
+        // Close mobile menu when a nav link is clicked
+        nv.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nv.classList.remove('active');
+                hb.classList.remove('open');
+                hb.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = 'auto';
+            });
+        });
     </script>
 
 </body>
