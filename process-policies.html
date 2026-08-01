@@ -282,7 +282,7 @@
                     <li><a href="Blogs.html">Travel Guide</a></li>
                 </ul>
             </nav>
-            <button class="hamburger" id="hamburger" type="button" aria-label="Menu Toggle" aria-expanded="false" aria-controls="nav-container">
+            <button class="hamburger" id="hamburger" type="button" aria-label="Toggle Menu" aria-expanded="false" aria-controls="nav-container">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -416,6 +416,16 @@
             hb.classList.toggle('open', isOpen);
             hb.setAttribute('aria-expanded', String(isOpen));
             document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+        });
+
+        // Close mobile menu when a nav link is clicked
+        nv.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nv.classList.remove('active');
+                hb.classList.remove('open');
+                hb.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = 'auto';
+            });
         });
 
         // FAQ Accordion
