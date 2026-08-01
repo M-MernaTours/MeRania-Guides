@@ -195,7 +195,7 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Toggle Menu" aria-expanded="false" aria-controls="nav-container"><span></span><span></span><span></span></button>
     </div>
 </header>
 
@@ -289,7 +289,22 @@
 <script>
     const hb = document.getElementById('hamburger');
     const nv = document.getElementById('nav-container');
-    hb.onclick = () => { nv.classList.toggle('active'); hb.classList.toggle('open'); document.body.style.overflow = nv.classList.contains('active') ? 'hidden' : 'auto'; }
+    hb.addEventListener('click', () => {
+        const isOpen = nv.classList.toggle('active');
+        hb.classList.toggle('open', isOpen);
+        hb.setAttribute('aria-expanded', String(isOpen));
+        document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+    });
+
+    // Close mobile menu when a nav link is clicked
+    nv.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            nv.classList.remove('active');
+            hb.classList.remove('open');
+            hb.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = 'auto';
+        });
+    });
 </script>
 
 </body>
