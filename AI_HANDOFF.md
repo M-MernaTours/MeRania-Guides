@@ -14,7 +14,7 @@ Professional tourism website for Egyptian Tour Guide - Merna & Rania.
 
 # Current Status
 
-✅ Full project analysis completed (Phase 1). ✅ Phase 2 (Bug Fixes) high-priority items complete — all 5 of 5 fixed. ✅ Phase 2 medium-priority Task 6 (Navigation Consistency) is now complete — CSS, hamburger markup, nav links, active states, and hamburger JavaScript behavior are all standardized across all 36 real pages (see Session 7 in Session Notes). One new CSS gap was found during Session 7 verification (13 pages missing `.hamburger.open` styling) and is flagged below, pending approval to fix. Remaining medium-priority Phase 2 items (meta description length, `background-attachment: fixed`, WhatsApp alt text) remain pending client approval. ✅ **SEO Implementation — Critical Fixes are now complete (Session 8):** AggregateRating reviewCount unified to 77 site-wide, missing Open Graph tags added to all pages that lacked them, Twitter Card (`twitter:card`) added site-wide, and the two broken `og:image` references fixed. See Session 8 below for full detail. ✅ **SEO Medium Priority — Task 1 (meta description length) is now complete (Session 9):** 20 of 36 real pages had a meta description over the ~160-character guideline (ranging from 161 to 236 characters); all 20 have been shortened to 141–157 characters while preserving each page's primary keyword and search intent. See Session 9 below for full detail. ✅ **SEO Medium Priority — Task 2 (title tag length) is now complete (Session 10):** 26 of 36 real pages had a `<title>` over ~60 characters (ranging from 61 to 78 characters); all 26 have been shortened to 46–59 characters while preserving each page's primary keyword, search intent, and site-wide title uniqueness. See Session 10 below for full detail. Remaining medium-priority Phase 2 items (`background-attachment: fixed`, WhatsApp alt text) and Phases 3–7 remain untouched.
+✅ Full project analysis completed (Phase 1). ✅ Phase 2 (Bug Fixes) high-priority items complete — all 5 of 5 fixed. ✅ Phase 2 medium-priority Task 6 (Navigation Consistency) is now complete — CSS, hamburger markup, nav links, active states, and hamburger JavaScript behavior are all standardized across all 36 real pages (see Session 7 in Session Notes). One new CSS gap was found during Session 7 verification (13 pages missing `.hamburger.open` styling) and is flagged below, pending approval to fix. Remaining medium-priority Phase 2 items (meta description length, `background-attachment: fixed`, WhatsApp alt text) remain pending client approval. ✅ **SEO Implementation — Critical Fixes are now complete (Session 8):** AggregateRating reviewCount unified to 77 site-wide, missing Open Graph tags added to all pages that lacked them, Twitter Card (`twitter:card`) added site-wide, and the two broken `og:image` references fixed. See Session 8 below for full detail. ✅ **SEO Medium Priority — Task 1 (meta description length) is now complete (Session 9):** 20 of 36 real pages had a meta description over the ~160-character guideline (ranging from 161 to 236 characters); all 20 have been shortened to 141–157 characters while preserving each page's primary keyword and search intent. See Session 9 below for full detail. ✅ **SEO Medium Priority — Task 2 (title tag length) is now complete (Session 10):** 26 of 36 real pages had a `<title>` over ~60 characters (ranging from 61 to 78 characters); all 26 have been shortened to 46–59 characters while preserving each page's primary keyword, search intent, and site-wide title uniqueness. See Session 10 below for full detail. ✅ **SEO Medium Priority — Task 3 (Internal Linking) is now complete (Session 11):** an internal-link audit found 4 of the 6 blog posts already had adequate contextual tour links; the 2 remaining posts (`post-pyramids-gem.html`, `post-safety-tips.html`) were each given one approved contextual internal link/sentence using the existing `.internal-link` class pattern. See Session 11 below for full detail. Remaining medium-priority Phase 2 items (`background-attachment: fixed`, WhatsApp alt text) and Phases 3–7 remain untouched.
 
 ---
 
@@ -422,6 +422,34 @@ Client approved exactly one item for this session: shorten overlong `<title>` ta
 
 ---
 
+## Session 11 — SEO Medium Priority, Task 3 (Internal Linking) — this session
+
+Client approved an internal-linking audit and fix limited to the 6 blog posts, using the existing `.internal-link` class pattern already present on most pages. Explicitly out of scope: meta descriptions, title tags, schema/JSON-LD, Open Graph/Twitter tags, FAQ content, CSS, JavaScript, and any other SEO or Phase 2/3+ item.
+
+**Completed work:**
+- Audited all 6 blog posts for contextual internal tour links. 4 already had adequate contextual links and needed no change: `post-alexandria-day.html`, `post-cairo-activities.html`, `post-fayoum-safari.html`, `post-luxor-express.html`.
+- `post-pyramids-gem.html`: in the "Eternal Giza Pyramids" section, wrapped the existing phrase "Panorama point" in a contextual internal link to `giza-gem.html`, using the page's existing `.internal-link` class and absolute-URL pattern (`https://mmernaguide.info/giza-gem.html`). No other wording changed.
+- `post-safety-tips.html`: added one natural introductory sentence immediately after the existing `alex1.webp` image and before the "Your Agency is Your Shield" heading, referencing the Camel Ride, Felucca ride, Luxor East Bank, Luxor West Bank, and Fayoum tour pages, each linked with the same `.internal-link` class/absolute-URL pattern (`camel-ride-pyramids.html`, `nile-felucca-ride.html`, `luxor-east-bank-tour.html`, `luxor-west-bank-tour.html`, `fayoum-day-tour.html`).
+
+**Verification performed:**
+- Diffed both edited files against the Session-10 baseline: exactly 2 files differ, no other file (CSS, JS, image, or non-HTML) touched, no files added or removed.
+- Confirmed `post-pyramids-gem.html`'s diff is a single changed line (the "Panorama point" sentence) with no other text altered.
+- Confirmed `post-safety-tips.html`'s diff is a single added line (the new introductory sentence) with no existing text altered.
+- Verified all 6 linked target pages (`giza-gem.html`, `camel-ride-pyramids.html`, `nile-felucca-ride.html`, `luxor-east-bank-tour.html`, `luxor-west-bank-tour.html`, `fayoum-day-tour.html`) exist in the project.
+- Parsed both edited files with an HTML parser (no errors) and confirmed balanced `<p>`, `<a>`, and `<strong>` tag counts.
+- Ran `node --check` against every real `<script>` block on both edited files — all pass, confirming the edits didn't disturb any inline script.
+- Confirmed no CSS or JS was added/changed — the edits reuse each page's pre-existing `.internal-link` class only.
+
+**Files modified:** 2 of 36 real pages — `post-pyramids-gem.html` (1 line changed), `post-safety-tips.html` (1 line added). No other file (CSS, JS, image, or non-HTML) was added, removed, or modified.
+
+**Bugs found:** None.
+
+**Remaining tasks:** Phase 2 medium-priority items 8–9 (`background-attachment: fixed`, empty WhatsApp `alt` text), the 13-page `.hamburger.open` CSS gap, the 6-page blog-post nav trailing-slash issue, the SEO Audit's remaining Medium/Low priority findings (beyond internal linking, meta description, and title length, now all closed), the combined `og:title`/`og:description` sync side effect (Sessions 9 and 10), the `luxor-east-bank-tour.html`/`luxor-west-bank-tour.html` "PrivateTour" typo, and Phases 3–7 in full all remain untouched.
+
+**Next priority:** Await client direction on which item to tackle next.
+
+---
+
 # Mandatory Workflow
 
 Every AI working on this project MUST follow these steps:
@@ -440,7 +468,7 @@ Every AI working on this project MUST follow these steps:
 
 # Next AI Instructions
 
-Phase 1 analysis is complete, all 5 Phase 2 high-priority bugs are fixed, Phase 2 Task 6 (Navigation Consistency) is fully complete, the SEO Audit's four critical-priority fixes (AggregateRating consistency, missing Open Graph tags, Twitter Card tags, broken og:image references) are fully implemented, SEO Medium Priority Task 1 (meta description length, bug #7) is fixed, and SEO Medium Priority Task 2 (title tag length) is now fixed — read the "Known Bugs" and "Session Notes" (especially Sessions 7, 8, 9, and 10) sections above before doing anything else.
+Phase 1 analysis is complete, all 5 Phase 2 high-priority bugs are fixed, Phase 2 Task 6 (Navigation Consistency) is fully complete, the SEO Audit's four critical-priority fixes (AggregateRating consistency, missing Open Graph tags, Twitter Card tags, broken og:image references) are fully implemented, SEO Medium Priority Task 1 (meta description length, bug #7) is fixed, SEO Medium Priority Task 2 (title tag length) is fixed, and SEO Medium Priority Task 3 (internal linking) is now fixed — read the "Known Bugs" and "Session Notes" (especially Sessions 7, 8, 9, 10, and 11) sections above before doing anything else.
 
 Two items were found during Session 7's verification pass and are **still not fixed** (bugs #10 and #11 in Known Bugs above) — surface these to the client for approval before touching them, same as every other item on this list.
 
@@ -448,6 +476,6 @@ A combined side effect was noted across Sessions 9 and 10: on pages where `og:de
 
 Also noted but not touched (out of scope, length-only sessions): `luxor-east-bank-tour.html` and `luxor-west-bank-tour.html` both have a "PrivateTour" missing-space typo in their `<title>`. Not a length issue, so left alone — flag for approval if the client wants text-content fixes as a separate task.
 
-The SEO Audit's remaining Medium/Low priority findings (beyond meta description and title length, now both closed) have not yet been scoped or implemented — do not start on them without explicit client approval and prioritization.
+The SEO Audit's remaining Medium/Low priority findings (beyond meta description length, title length, and internal linking, now all closed) have not yet been scoped or implemented — do not start on them without explicit client approval and prioritization.
 
 Do NOT start coding immediately. Confirm with the client which items they want fixed next — remaining Phase 2 medium-priority items 8–11, the SEO Audit's remaining Medium/Low priority backlog, or Phase 3+ — then implement only those, one at a time, explaining each change before making it.
