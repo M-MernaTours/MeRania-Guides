@@ -136,8 +136,8 @@
         .header-container { display: flex; justify-content: space-between; align-items: center; }
         .logo img { height: 50px; }
         .nav-container { flex-grow: 1; display: flex; justify-content: center; }
-        .nav-menu { list-style: none; display: flex; gap: 40px; }
-        .nav-menu a { text-decoration: none; color: var(--white); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; transition: var(--transition); }
+        .nav-menu { list-style: none; display: flex; gap: 30px; }
+        .nav-menu a { text-decoration: none; color: var(--white); font-size: 0.75rem; white-space: nowrap; letter-spacing: 2px; text-transform: uppercase; transition: var(--transition); }
         .nav-menu a:hover, .nav-menu a.active { color: var(--gold); }
 
         /* --- Burger Menu --- */
@@ -212,9 +212,11 @@
             <ul class="nav-menu">
                 <li><a href="https://mmernaguide.info/">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="tours.html">Our Tours</a></li>
-                <li><a href="day-tours.html">Day Tours</a></li>
+                <li><a href="tours.html" class="active">Our Tours</a></li>
+                <li><a href="process-policies.html">Booking Process</a></li>
+                <li><a href="egypt-tour-reviews.html">Reviews</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="Blogs.html">Travel Guide</a></li>
             </ul>
         </nav>
         <button class="hamburger" id="hamburger" type="button" aria-label="Toggle Menu" aria-expanded="false" aria-controls="nav-container"><span></span><span></span><span></span></button>
