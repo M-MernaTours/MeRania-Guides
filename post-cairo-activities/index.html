@@ -198,6 +198,13 @@
         .footer-links li { margin-bottom: 18px; }
         .footer-links a { color: #888; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
         .footer-links a:hover { color: var(--gold); padding-left: 8px; }
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+        }
 
         .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
         .wa-float:hover { transform: scale(1.1); }
