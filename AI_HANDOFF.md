@@ -625,7 +625,51 @@ Client approved a full BreadcrumbList JSON-LD audit followed by implementation a
 - Confirmed 36/36 real pages have standardized `.wa-float` CSS and accessible HTML markup.
 - Performed desktop (`1280×900`), tablet (`768×1024`), and mobile (`375×812`) visual verification in browser.
 
-**Next priority:** Await client review and approval for P3 (`.hamburger.open` CSS on 13 pages + blog nav trailing slash on 6 pages) or next selected backlog item.
+**Next priority:** Phase P3 implemented in Session 17 (approved and completed locally; not yet uploaded to GitHub).
+
+---
+
+## Session 17 — Phase P3 Implementation (UI/UX Polish, `404.html` & `apple-touch-icon.png` — Approved & Completed Locally)
+
+**Scope & Audit Discrepancy Resolution:**
+0. **Resolved `og:title` vs `<title>` Audit Discrepancy:** Verified across all 36 real HTML pages that **5 pages match** (`og:title` == `<title>`: `contact.html`, `desert-safari.html`, `islamic-coptic-cairo.html`, `memphis-saqqara-nmec.html`, `nile-felucca-ride.html`) and **31 pages mismatch** (the earlier "29" count was a carryover from Session 14's `og:description` sync where `luxor-east-bank-tour.html` and `luxor-west-bank-tour.html` had matching descriptions but mismatched `og:title`s).
+1. **Added Missing `.hamburger.open` CSS (13 Pages):** Added the 3-line `.hamburger.open span:nth-child(...)` `"X"` transform rules to all 7 itinerary pages (`itinerary-2-tours.html`, `itinerary-3-days.html`, `itinerary-4-tours.html`, `itinerary-8-days.html`, `itinerary-10-days.html`, `itinerary-12-days.html`, `itinerary-nile-cruise.html`) and all 6 blog post pages (`post-alexandria-day.html`, `post-cairo-activities.html`, `post-fayoum-safari.html`, `post-luxor-express.html`, `post-pyramids-gem.html`, `post-safety-tips.html`). All 36 real pages + `404.html` now have working mobile hamburger `"X"` animations.
+2. **Fixed Missing Trailing Slash on Blog Nav "Home" Links (6 Pages):** Updated `<a href="https://mmernaguide.info">Home</a>` → `<a href="https://mmernaguide.info/">Home</a>` in `<ul class="nav-menu">` on all 6 blog post pages (`post-alexandria-day.html`, `post-cairo-activities.html`, `post-fayoum-safari.html`, `post-luxor-express.html`, `post-pyramids-gem.html`, `post-safety-tips.html`).
+3. **Added Gold `.internal-link` Styling (2 Pages):** Added `.internal-link { color: var(--gold); text-decoration: underline; font-weight: 600; }` to `giza-gem.html` and `alexandria-day-tour.html`, eliminating default browser blue/purple inline links on dark backgrounds.
+4. **Removed Duplicate Hero Image from `giza-gem.html` Gallery:** Removed the duplicated `<img src="pyramids1.webp">` from slot 1 of `.gallery-grid` in `giza-gem.html` while preserving `pyramids1.webp` as `.hero-img` and preserving all 9 unique gallery images (`pyramids2.webp`–`pyramids6.webp`, `gem1.webp`–`gem4.webp`) in a clean 3×3 desktop grid.
+5. **Added Missing `.faq-item p` Gray Answer Styling (6 Pages):** Added `.faq-item p { color: #888; font-size: 0.95rem; line-height: 1.8; }` to `itinerary-4-tours.html`, `itinerary-8-days.html`, `itinerary-10-days.html`, `itinerary-12-days.html`, `itinerary-nile-cruise.html`, and `process-policies.html`.
+6. **Generated Missing `apple-touch-icon.png`:** Generated a proper `180×180` PNG (`38,303` bytes) at root `apple-touch-icon.png` from `logo.png` (preserving the original circular gold emblem and brand typography), resolving the broken `<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">` reference across all 36 real pages + `404.html`.
+7. **Created Branded `404.html`:** Created root `404.html` matching the dark-and-gold visual identity (`contact.html` architecture) with `noindex, follow`, GA4 tracking (`G-JPLZ6FQMWQ`), root-relative (`/`) local asset paths and internal links so it renders properly from any nested missing URL path, sticky 7-link navigation + working mobile hamburger menu, primary/secondary recovery CTAs, 4 destination recovery cards, unified footer, and accessible floating WhatsApp button (`.wa-float`).
+
+**Files modified (16 HTML files + 2 docs):** `alexandria-day-tour.html`, `giza-gem.html`, `itinerary-2-tours.html`, `itinerary-3-days.html`, `itinerary-4-tours.html`, `itinerary-8-days.html`, `itinerary-10-days.html`, `itinerary-12-days.html`, `itinerary-nile-cruise.html`, `post-alexandria-day.html`, `post-cairo-activities.html`, `post-fayoum-safari.html`, `post-luxor-express.html`, `post-pyramids-gem.html`, `post-safety-tips.html`, `process-policies.html`, plus `AI_HANDOFF.md` and `DEVELOPMENT_ROADMAP.md`.
+**Files added (2 new files):** `apple-touch-icon.png` (`180×180` PNG), `404.html`.
+
+**Status:** Approved and completed locally (not yet uploaded to GitHub).
+
+---
+
+## Session 18 — Phase P4 Implementation (Performance, Image Optimization & Mobile Safari Hero Fixes — Approved & Completed Locally)
+
+**Scope:**
+1. **4A — JPG-to-WebP Replacements (3 Pages, 6 Assets):**
+   - `about.html`: Replaced `about1.jpg` with existing `about1.webp` in `<link rel="preload">` and `.about-hero` background.
+   - `itineraries.html`: Replaced `slide2.jpg` with existing `slide2.webp` in `.cta` background.
+   - `things-to-do-in-cairo.html`: Replaced `ca1.jpg` → `camel.webp`, `ka4.jpg` → `Khan-4.webp`, `fel.jpg` → `Nile-Felluca.webp`, and `FA.jpg` → `Fayoum.webp`.
+2. **4B — Mobile Safari / iPadOS Background Fixes (4 Pages):**
+   - Removed `background-attachment: fixed` (and redundant `@media (max-width: 992px)` `background-attachment: scroll` overrides) on `about.html` (`.about-hero`), `egypt-tour-reviews.html` (`.rv-hero`), `itineraries.html` (`.cta`), and `process-policies.html` (`.hero-banner`) so all four sections use normal scrolling across all viewports.
+   - On `itineraries.html`, updated `@media (max-width: 1100px)` `.grid` margin from `margin: auto;` to `margin: 0 auto 100px;` to restore the `100px` bottom gap above `.cta`.
+3. **4C — Native Lazy Loading (22 Pages):**
+   - Added `loading="lazy" decoding="async"` strictly to below-the-fold gallery, review, card, and blog-content images across 22 pages (never on site logos, above-the-fold hero images, or the active first homepage slide).
+4. **4D — Mobile Hero Height Adjustments & Final 5-Page Correction (8 Pages):**
+   - Added `@media (max-width: 992px)` mobile hero height overrides while preserving desktop `550px` hero heights and preserving all duplicate gallery images untouched:
+     - **5 pages set to `height: auto`** (final approved correction so images and corner brand watermarks render uncropped at `375×812`): `camel-ride-pyramids.html`, `fayoum-day-tour.html`, `giza-pyramids-quad-bike-tour.html`, `khan-el-khalili-bazaar-tour.html`, `nile-felucca-ride.html`.
+     - **3 pages set to `height: 350px`** (`.main-hero-img` / `.hero-img`): `desert-safari.html`, `islamic-coptic-cairo.html`, `memphis-saqqara-nmec.html`.
+
+**Files modified (25 HTML files):** `about.html`, `alexandria-day-tour.html`, `camel-ride-pyramids.html`, `day-tours.html`, `desert-safari.html`, `egypt-tour-reviews.html`, `fayoum-day-tour.html`, `giza-gem.html`, `giza-pyramids-quad-bike-tour.html`, `islamic-coptic-cairo.html`, `itineraries.html`, `khan-el-khalili-bazaar-tour.html`, `luxor-east-bank-tour.html`, `luxor-west-bank-tour.html`, `memphis-saqqara-nmec.html`, `nile-felucca-ride.html`, `post-alexandria-day.html`, `post-cairo-activities.html`, `post-fayoum-safari.html`, `post-luxor-express.html`, `post-pyramids-gem.html`, `post-safety-tips.html`, `process-policies.html`, `things-to-do-in-cairo.html`, `transportation.html` (plus `AI_HANDOFF.md` and `DEVELOPMENT_ROADMAP.md` documentation updates).
+
+**Git / GitHub Status:** P3 and P4 are implemented locally only and have **not** been uploaded, committed, pushed, or merged to GitHub (`main` remains at `1ef1dff3cb2ee391c90fe81927dbc3ebfc5ad5bc`; `p2-review-and-testing` remains at `a7397b7aae080433a187a8028be493740392c4ce`).
+
+**Next priority:** Await client approval before starting Phase P5.
 
 ---
 
@@ -647,20 +691,22 @@ Every AI working on this project MUST follow these steps:
 
 # Next AI Instructions
 
-Phase 1 analysis is complete, all 5 Phase 2 high-priority bugs are fixed, Phase 2 Task 6 (Navigation Consistency JS/CSS) is complete, Sessions 8–15 SEO/indexing tasks are complete, and Session 16 (P1 Content/Title/FAQ Parity + P1-Visual Fixes + P2 Trust Metrics, Schema Compliance & Site-Wide WhatsApp CTA Standardization) is now complete — read the "Known Bugs" and "Session Notes" (especially Sessions 7–16) sections above before doing anything else.
+Phase 1 analysis is complete, all 5 Phase 2 high-priority bugs are fixed, Phase 2 Task 6 (Navigation Consistency JS/CSS) is complete, Sessions 8–15 SEO/indexing tasks are complete, Session 16 (P1 + P1-Visual + P2) is approved and complete, Session 17 (Phase P3) is approved and completed locally, and Session 18 (Phase P4) is implemented and completed locally (not yet uploaded to GitHub) — read the "Known Bugs" and "Session Notes" (especially Sessions 7–18) sections above before doing anything else.
 
-Resolved in Session 16 (no longer open):
+Resolved and approved in Sessions 16–18 (implemented locally; P3 & P4 not yet uploaded to GitHub):
 - Unrendered `**markdown**` on 10 pages and `"besar-scale"` typo on `memphis-saqqara-nmec.html`.
 - `luxor-east-bank-tour.html` and `luxor-west-bank-tour.html` `"PrivateTour"` `<title>` typo, intro `. and` copy issue, gallery `alt` mismatches, duplicate gallery hero images, image cropping, `.internal-link` color, and `<h3>`/`<ul>` styling.
 - `itinerary-2-tours.html` `FAQPage` schema vs. visible FAQ content mismatch, plus `.gold-text`/`.text-center`/`.faq-wrap` heading styling across all 7 itinerary pages.
-- P2: Removed ineligible `AggregateRating` from all 30 `TravelAgency` JSON-LD entities; updated visible trust counters to `300+ Tours Completed`, `84 Verified Reviews`, and `5.0 Average Rating` on `index.html` and `egypt-tour-reviews.html`; added `.wa-float` to the 3 missing tour pages and standardized `.wa-float` CSS and accessibility attributes (`aria-label="Contact us on WhatsApp"` + `alt="" aria-hidden="true"`) across all 36 real pages.
+- **P2:** Removed ineligible `AggregateRating` from all 30 `TravelAgency` JSON-LD entities; updated visible trust counters to `300+ Tours Completed`, `84 Verified Reviews`, and `5.0 Average Rating` on `index.html` and `egypt-tour-reviews.html`; added `.wa-float` to the 3 missing tour pages and standardized `.wa-float` CSS and accessibility attributes (`aria-label="Contact us on WhatsApp"` + `alt="" aria-hidden="true"`) across all 36 real pages. *(Uploaded to GitHub branch `p2-review-and-testing`.)*
+Completed local phases (P3 and P4 — approved/implemented locally; not yet uploaded to GitHub):
+- **P3:** UI/UX polish, 404, Apple Touch Icon — `.hamburger.open` CSS on 13 pages, blog nav "Home" link trailing slash on 6 pages, gold `.internal-link` CSS on `giza-gem.html` & `alexandria-day-tour.html`, duplicate `pyramids1.webp` gallery removal on `giza-gem.html`, `.faq-item p` gray styling on 6 pages, `180×180` `apple-touch-icon.png`, and root-relative `404.html`. *(Approved and completed locally; not yet uploaded to GitHub.)*
+- **P4:** Performance, image optimization, mobile Safari hero fixes — 6 JPG-to-WebP replacements on 3 pages, normal-scroll background fix on 4 pages + `itineraries.html` `.grid` spacing fix, `loading="lazy" decoding="async"` on below-the-fold images across 22 pages, and mobile hero height adjustments on 8 pages (`height: auto` on `camel-ride-pyramids.html`, `fayoum-day-tour.html`, `giza-pyramids-quad-bike-tour.html`, `khan-el-khalili-bazaar-tour.html`, `nile-felucca-ride.html`; `height: 350px` on `desert-safari.html`, `islamic-coptic-cairo.html`, `memphis-saqqara-nmec.html`; duplicate gallery images preserved untouched). *(Approved and completed locally; not yet uploaded to GitHub.)*
 
-Still open and awaiting explicit client approval before touching:
-- **P3:** Missing `.hamburger.open` CSS rule on 13 pages (7 itinerary pages + 6 blog post pages) and missing trailing slash on nav "Home" link (`https://mmernaguide.info`) on 6 blog post pages.
-- **P4:** `background-attachment: fixed` on 4 hero sections (`about.html`, `egypt-tour-reviews.html`, `itineraries.html`, `process-policies.html`) and remaining `.jpg` → `.webp` upgrades (`about1.jpg` on `about.html`, `slide2.jpg` on `itineraries.html`).
-- **P5:** Unifying `<ul class="nav-menu">` link sets across the 23 pages that currently use 5- or 6-link menus.
-- **P6:** `og:title` synchronization (29 pages) and `Fayoum1 (1).webp` URL encoding in JSON-LD on `post-fayoum-safari.html`. Note also that `giza-gem.html` and `alexandria-day-tour.html` lack `.internal-link` CSS styling (same issue fixed on the two Luxor pages in Session 16), and 5 itinerary pages (`itinerary-4-tours.html`, `itinerary-8-days.html`, `itinerary-10-days.html`, `itinerary-12-days.html`, `itinerary-nile-cruise.html`) lack `.faq-item p` gray color styling.
+Remaining phases (P5–P9, in exact agreed order — do not move, merge, or renumber):
+- **P5:** Metadata, schema accuracy, copied keywords, and itinerary content corrections, including the 31 OG title mismatches (`og:title` vs `<title>` on 31 pages, `Fayoum1 (1).webp` URL encoding in JSON-LD on `post-fayoum-safari.html`, copied `<meta name="keywords">`, and `itinerary-3-days.html` / `itinerary-8-days.html` content fixes).
+- **P6:** Site-wide navigation unification (unifying `<ul class="nav-menu">` across the 23 pages that currently use 5- or 6-link menus).
 - **P7:** Itinerary content de-templatization (Session 15 Priority 2).
-- **P8:** Sitemap `<lastmod>` hygiene, unused image cleanup (86 files), and orphaned CSS/JS cleanup.
+- **P8:** Clean URL migration (replacing public `.html` URLs with trailing-slash `/slug/` URLs, redirect stubs, canonicals, JSON-LD, Open Graph, sitemap, and internal links).
+- **P9:** Repository and asset housekeeping (sitemap `<lastmod>` hygiene, 86 unused image files, and orphaned CSS/JS files).
 
 Do NOT start coding immediately. Confirm with the client which item they want fixed next, explain each change before making it, and wait for explicit approval.

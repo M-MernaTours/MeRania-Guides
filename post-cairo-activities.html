@@ -131,6 +131,9 @@
             }
             .nav-container.active { right: 0; }
             .nav-menu { flex-direction: column; align-items: center; gap: 30px; }
+            .hamburger.open span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+            .hamburger.open span:nth-child(2) { opacity: 0; }
+            .hamburger.open span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
         }
 
         /* --- Article Layout --- */
@@ -208,7 +211,7 @@
         <a href="https://mmernaguide.info" class="logo"><img src="logo.png" alt="Merna & Rania Logo"></a>
         <nav class="nav-container" id="nav-container">
             <ul class="nav-menu">
-                <li><a href="https://mmernaguide.info">Home</a></li>
+                <li><a href="https://mmernaguide.info/">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="tours.html">Our Tours</a></li>
                 <li><a href="process-policies.html">Booking Process</a></li>
@@ -235,9 +238,9 @@
         <p>A true classic. Riding a camel across the Sahara sands with the Great Pyramids in the background is the ultimate Egyptian photo op.</p>
         
         <div class="img-grid">
-            <img src="Camel5.webp" alt="Camel ride at the Pyramids" class="article-img">
-            <img src="Camel1.webp" alt="Giza Camel Tour" class="article-img">
-            <img src="Camel3.webp" alt="Camel riding in Sahara" class="article-img">
+            <img src="Camel5.webp" alt="Camel ride at the Pyramids" class="article-img" loading="lazy" decoding="async">
+            <img src="Camel1.webp" alt="Giza Camel Tour" class="article-img" loading="lazy" decoding="async">
+            <img src="Camel3.webp" alt="Camel riding in Sahara" class="article-img" loading="lazy" decoding="async">
         </div>
 
         <div class="highlight-box">
@@ -251,17 +254,17 @@
         <p>Want even more adrenaline? Combine this with a full <a href="https://mmernaguide.info/desert-safari.html" class="internal-link">Desert Safari 4x4 Adventure</a> deep into the Fayoum dunes for the ultimate desert day.</p>
         
         <div class="img-grid">
-            <img src="atv.webp" alt="ATV Quad Bike Cairo" class="article-img">
-            <img src="quadbike.webp" alt="Quad biking desert safari" class="article-img">
-            <img src="quadbikeatv.webp" alt="Giza Quad Tour" class="article-img">
+            <img src="atv.webp" alt="ATV Quad Bike Cairo" class="article-img" loading="lazy" decoding="async">
+            <img src="quadbike.webp" alt="Quad biking desert safari" class="article-img" loading="lazy" decoding="async">
+            <img src="quadbikeatv.webp" alt="Giza Quad Tour" class="article-img" loading="lazy" decoding="async">
         </div>
 
         <h2>Serenity on the Nile</h2>
         <p>After the heat of the desert, nothing beats the coolness of the river. A <a href="https://mmernaguide.info/nile-felucca-ride.html" class="internal-link">Nile Felucca Ride</a> is a traditional Egyptian experience that lets you drift peacefully past Cairo's modern skyline.</p>
         
         <div class="img-grid two-cols">
-            <img src="Nile-Felluca.webp" alt="Traditional Nile Felucca" class="article-img">
-            <img src="Nile-Felluca2.webp" alt="Sunset sailing on the Nile" class="article-img">
+            <img src="Nile-Felluca.webp" alt="Traditional Nile Felucca" class="article-img" loading="lazy" decoding="async">
+            <img src="Nile-Felluca2.webp" alt="Sunset sailing on the Nile" class="article-img" loading="lazy" decoding="async">
         </div>
 
         <h2>Old Cairo: Khan El Khalili Bazaar</h2>
@@ -270,8 +273,8 @@
         <p>Pair your bazaar visit with our <a href="https://mmernaguide.info/islamic-coptic-cairo.html" class="internal-link">Islamic & Coptic Cairo Tour</a> to explore the historic mosques, churches, and citadels that surround this legendary market.</p>
 
         <div class="img-grid two-cols">
-            <img src="Khan-4.webp" alt="Khan El Khalili Bazaar" class="article-img">
-            <img src="Khan-2.webp" alt="Old Cairo Streets" class="article-img">
+            <img src="Khan-4.webp" alt="Khan El Khalili Bazaar" class="article-img" loading="lazy" decoding="async">
+            <img src="Khan-2.webp" alt="Old Cairo Streets" class="article-img" loading="lazy" decoding="async">
         </div>
 
         <!-- Tips Section -->

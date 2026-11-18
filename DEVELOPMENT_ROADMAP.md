@@ -50,16 +50,31 @@ Status: ⏳ Pending approval
 These are isolated, low-risk, high-value fixes — none require touching shared layout or design.
 
 **High priority:**
-- [ ] Fix broken image references on `post-safety-tips.html` (`Nile-felluca.webp` → `Nile-Felluca.webp`; `Fatoum1 (1).webp` → `Fayoum1 (1).webp`).
-- [ ] Fix incorrect canonical URLs and matching JSON-LD `url` fields on `itinerary-10-days.html` and `itinerary-nile-cruise.html` so they point to themselves, not nonexistent pages.
-- [ ] Add the Google Analytics (`gtag.js`) snippet to `about.html`, `egypt-tour-reviews.html`, and `process-policies.html` so those pages are tracked.
-- [ ] Replace the full-resolution `slide1.jpg`/`slide3.jpg` hero backgrounds on `egypt-tour-reviews.html` and `process-policies.html` with the existing `slide1.webp`/`slide3.webp` (same image, ~19x smaller).
-- [ ] Add a favicon (`<link rel="icon">`) to all 36 real pages.
+- [x] Fix broken image references on `post-safety-tips.html` (`Nile-felluca.webp` → `Nile-Felluca.webp`; `Fatoum1 (1).webp` → `Fayoum1 (1).webp`). (Completed Session 2.)
+- [x] Fix incorrect canonical URLs and matching JSON-LD `url` fields on `itinerary-10-days.html` and `itinerary-nile-cruise.html` so they point to themselves, not nonexistent pages. (Completed Session 3.)
+- [x] Add the Google Analytics (`gtag.js`) snippet to `about.html`, `egypt-tour-reviews.html`, and `process-policies.html` so those pages are tracked. (Completed Session 4.)
+- [x] Replace the full-resolution `slide1.jpg`/`slide3.jpg` hero backgrounds on `egypt-tour-reviews.html` and `process-policies.html` with the existing `slide1.webp`/`slide3.webp` (same image, ~19x smaller). (Completed Session 5.)
+- [x] Add a favicon (`<link rel="icon">`) to all 36 real pages. (Completed Session 6; `apple-touch-icon.png` generated in Session 17 / P3 — approved and completed locally.)
 
 **Medium priority:**
 - [x] Trim `giza-pyramids-quad-bike-tour.html`'s meta description from 236 to under ~160 characters; tighten the ~11 other pages that are modestly over. (Completed Session 9 — all 20 pages over 160 chars shortened.)
-- [x] Standardize the floating WhatsApp CTA button (`.wa-float`) across all 36 real pages: added missing `.wa-float` to `giza-gem.html`, `luxor-east-bank-tour.html`, and `luxor-west-bank-tour.html`, and standardized `aria-label="Contact us on WhatsApp"` on `<a>` with decorative `alt="" aria-hidden="true"` on `<img>` across all 36 pages. (Completed Session 16.)
-- [ ] Standardize the homepage link URL site-wide (`https://mmernaguide.info/` with trailing slash — 6 blog posts currently omit it).
+- [x] Standardize the floating WhatsApp CTA button (`.wa-float`) across all 36 real pages: added missing `.wa-float` to `giza-gem.html`, `luxor-east-bank-tour.html`, and `luxor-west-bank-tour.html`, and standardized `aria-label="Contact us on WhatsApp"` on `<a>` with decorative `alt="" aria-hidden="true"` on `<img>` across all 36 pages. (Completed Session 16 / P2.)
+- [x] Standardize the homepage link URL site-wide (`https://mmernaguide.info/` with trailing slash — implemented on all 6 blog posts in Session 17 / P3, approved and completed locally).
+
+---
+
+# Completed Local Final Completion Phases (Not Yet Uploaded to GitHub)
+
+- **P3:** UI/UX polish, 404, Apple Touch Icon. *(Approved and completed locally in Session 17; not yet uploaded to GitHub.)*
+- **P4:** Performance, image optimization, mobile Safari hero fixes. *(Implemented and completed locally in Session 18 across 25 HTML files — 6 JPG-to-WebP replacements, normal-scroll backgrounds on 4 pages + `itineraries.html` `.grid` spacing, below-the-fold lazy loading on 22 pages, and mobile hero heights on 8 pages: `height: auto` on 5 pages and `height: 350px` on 3 pages; not yet uploaded to GitHub.)*
+
+# Remaining Final Completion Phases (P5–P9, Exact Agreed Order — Do Not Move, Merge, or Renumber)
+
+- **P5:** Metadata, schema accuracy, copied keywords, and itinerary content corrections, including the 31 OG title mismatches.
+- **P6:** Site-wide navigation unification.
+- **P7:** Itinerary content de-templatization.
+- **P8:** Clean URL migration.
+- **P9:** Repository and asset housekeeping.
 
 ---
 

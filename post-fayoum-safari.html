@@ -136,6 +136,9 @@
             }
             .nav-container.active { right: 0; }
             .nav-menu { flex-direction: column; align-items: center; gap: 30px; }
+            .hamburger.open span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+            .hamburger.open span:nth-child(2) { opacity: 0; }
+            .hamburger.open span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
         }
 
         /* --- Article Layout --- */
@@ -239,7 +242,7 @@
         <a href="https://mmernaguide.info" class="logo"><img src="logo.png" alt="Merna & Rania Logo"></a>
         <nav class="nav-container" id="nav-container">
             <ul class="nav-menu">
-                <li><a href="https://mmernaguide.info">Home</a></li>
+                <li><a href="https://mmernaguide.info/">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="tours.html">Our Tours</a></li>
                 <li><a href="process-policies.html">Booking Process</a></li>
@@ -263,10 +266,10 @@
 
         <!-- Gallery Grid -->
         <div class="safari-gallery">
-            <img src="Fayoum1 (1).webp" alt="Dune bashing adventure in Fayoum">
-            <img src="Fayoum1 (2).webp" alt="Sandboarding at the Magic Lake">
-            <img src="Fayoum1 (3).webp" alt="Wadi El Hitan whale fossils site">
-            <img src="Fayoum1 (4).webp" alt="Luxury desert setup in Fayoum">
+            <img src="Fayoum1 (1).webp" alt="Dune bashing adventure in Fayoum" loading="lazy" decoding="async">
+            <img src="Fayoum1 (2).webp" alt="Sandboarding at the Magic Lake" loading="lazy" decoding="async">
+            <img src="Fayoum1 (3).webp" alt="Wadi El Hitan whale fossils site" loading="lazy" decoding="async">
+            <img src="Fayoum1 (4).webp" alt="Luxury desert setup in Fayoum" loading="lazy" decoding="async">
         </div>
 
         <h2>Why Fayoum Safari is Unique</h2>

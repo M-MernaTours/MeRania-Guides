@@ -119,6 +119,9 @@
             }
             .nav-container.active { right: 0; }
             .nav-menu { flex-direction: column; align-items: center; gap: 30px; }
+            .hamburger.open span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+            .hamburger.open span:nth-child(2) { opacity: 0; }
+            .hamburger.open span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
         }
 
         /* --- Article Layout --- */
@@ -194,7 +197,7 @@
         <a href="https://mmernaguide.info" class="logo"><img src="logo.png" alt="Merna & Rania Logo"></a>
         <nav class="nav-container" id="nav-container">
             <ul class="nav-menu">
-                <li><a href="https://mmernaguide.info">Home</a></li>
+                <li><a href="https://mmernaguide.info/">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="tours.html">Our Tours</a></li>
                 <li><a href="process-policies.html">Booking Process</a></li>
@@ -226,7 +229,7 @@
             <p>While on tour, you can safely leave your belongings and personal items in our private, air-conditioned vehicles. This allows you to explore the sites hands-free and completely relaxed.</p>
         </div>
 
-        <img src="Hatshebsut.webp" alt="Hatshebsut Temple Tour" class="article-img">
+        <img src="Hatshebsut.webp" alt="Hatshebsut Temple Tour" class="article-img" loading="lazy" decoding="async">
 
         <h2>Money & Scams: What to Avoid</h2>
         <p>To ensure a smooth experience, we advise you to follow these essential financial guidelines:</p>
@@ -241,8 +244,8 @@
         </div>
 
         <div class="img-grid">
-            <img src="Camel.webp" alt="Camel Riding Giza" class="article-img">
-            <img src="Karnak.webp" alt="Karnak Temple Luxor" class="article-img">
+            <img src="Camel.webp" alt="Camel Riding Giza" class="article-img" loading="lazy" decoding="async">
+            <img src="Karnak.webp" alt="Karnak Temple Luxor" class="article-img" loading="lazy" decoding="async">
         </div>
 
         <h2>The Art of Tipping (Baksheesh)</h2>
@@ -258,7 +261,7 @@
             </ul>
         </div>
 
-        <img src="Nile-Felluca.webp" alt="Felucca on the Nile" class="article-img">
+        <img src="Nile-Felluca.webp" alt="Felucca on the Nile" class="article-img" loading="lazy" decoding="async">
 
         <h2>Personal Security Checklist</h2>
         <p>A few small habits can make a big difference in your travel experience:</p>
@@ -271,7 +274,7 @@
             </ul>
         </div>
 
-        <img src="Fayoum1 (1).webp" alt="Travel with Merna and Rania" class="article-img">
+        <img src="Fayoum1 (1).webp" alt="Travel with Merna and Rania" class="article-img" loading="lazy" decoding="async">
 
         <!-- CTA Section -->
         <div style="text-align: center; margin-top: 60px; padding: 50px 40px; background: rgba(197, 160, 89, 0.05); border-radius: 12px; border: 1px solid rgba(197, 160, 89, 0.1);">

@@ -131,6 +131,9 @@
             }
             .nav-container.active { right: 0; }
             .nav-menu { flex-direction: column; align-items: center; gap: 30px; }
+            .hamburger.open span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+            .hamburger.open span:nth-child(2) { opacity: 0; }
+            .hamburger.open span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
         }
 
         /* --- Article Layout --- */
@@ -207,7 +210,7 @@
         <a href="https://mmernaguide.info" class="logo"><img src="logo.png" alt="Merna & Rania Logo"></a>
         <nav class="nav-container" id="nav-container">
             <ul class="nav-menu">
-                <li><a href="https://mmernaguide.info">Home</a></li>
+                <li><a href="https://mmernaguide.info/">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="tours.html">Our Tours</a></li>
                 <li><a href="process-policies.html">Booking Process</a></li>
@@ -237,13 +240,13 @@
         <h2>The Morning: Shadows of the West Bank</h2>
         <p>Start as early as 6:00 AM. The West Bank gets hot quickly, and beating the big tour buses is essential for a peaceful experience at the <strong>Valley of the Kings</strong>.</p>
         
-        <img src="Valleyofthekings.webp" alt="Entrance to the Valley of the Kings" class="article-img">
+        <img src="Valleyofthekings.webp" alt="Entrance to the Valley of the Kings" class="article-img" loading="lazy" decoding="async">
 
         <p>Next, visit the mortuary temple of the most powerful woman in ancient Egypt. The architecture of <strong>Hatshebsut Temple</strong> is unlike anything else in the country, carved directly into the limestone cliffs.</p>
 
         <div class="img-grid">
-            <img src="Hatshebsut.webp" alt="Temple of Queen Hatshebsut" class="article-img">
-            <img src="Hatshebsutt.webp" alt="Details of Hatshebsut Temple" class="article-img">
+            <img src="Hatshebsut.webp" alt="Temple of Queen Hatshebsut" class="article-img" loading="lazy" decoding="async">
+            <img src="Hatshebsutt.webp" alt="Details of Hatshebsut Temple" class="article-img" loading="lazy" decoding="async">
         </div>
 
         <div class="highlight-box">
@@ -255,8 +258,8 @@
         <p>After a quick lunch, cross the Nile to the East Bank. The <strong>Karnak Temple Complex</strong> is so vast you could get lost for hours. Focus on the Hypostyle Hall—it's where the scale of ancient Egypt truly hits you.</p>
 
         <div class="img-grid">
-            <img src="Karnak2.webp" alt="Great Hypostyle Hall at Karnak" class="article-img">
-            <img src="Karnak5.webp" alt="Obelisks at Karnak Temple" class="article-img">
+            <img src="Karnak2.webp" alt="Great Hypostyle Hall at Karnak" class="article-img" loading="lazy" decoding="async">
+            <img src="Karnak5.webp" alt="Obelisks at Karnak Temple" class="article-img" loading="lazy" decoding="async">
         </div>
 
         <!-- Tips Section -->

@@ -146,6 +146,9 @@
             .nav-container { position: fixed; right: -100%; top: 0; width: 100%; height: 100vh; background: #0A0A0A; flex-direction: column; justify-content: center; transition: 0.5s; z-index: 4500; }
             .nav-container.active { right: 0; }
             .nav-menu { flex-direction: column; align-items: center; gap: 30px; }
+            .hamburger.open span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+            .hamburger.open span:nth-child(2) { opacity: 0; }
+            .hamburger.open span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
         }
 
         /* Hero */
@@ -179,6 +182,7 @@
         .faq-wrap h2 { margin-bottom: 30px; }
         .faq-item { border-bottom: 1px solid #222; padding: 25px 0; }
         .faq-item strong { color: var(--gold); display: block; margin-bottom: 10px; font-size: 1.1rem; }
+        .faq-item p { color: #888; font-size: 0.95rem; line-height: 1.8; }
 
         /* Footer & Copyright Center */
         .master-footer { background: #050505; padding: 100px 0 40px; border-top: 1px solid var(--gold); }

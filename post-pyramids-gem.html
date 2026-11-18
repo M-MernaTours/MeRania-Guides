@@ -131,6 +131,9 @@
             }
             .nav-container.active { right: 0; }
             .nav-menu { flex-direction: column; align-items: center; gap: 30px; }
+            .hamburger.open span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+            .hamburger.open span:nth-child(2) { opacity: 0; }
+            .hamburger.open span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
         }
 
         /* --- Article Layout --- */
@@ -218,7 +221,7 @@
         <a href="https://mmernaguide.info" class="logo"><img src="logo.png" alt="Merna & Rania Logo"></a>
         <nav class="nav-container" id="nav-container">
             <ul class="nav-menu">
-                <li><a href="https://mmernaguide.info">Home</a></li>
+                <li><a href="https://mmernaguide.info/">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="tours.html">Our Tours</a></li>
                 <li><a href="process-policies.html">Booking Process</a></li>
@@ -268,11 +271,11 @@
         <h2>The Grand Egyptian Museum (GEM)</h2>
         <p>The GEM is finally redefining the museum experience globally. From the <strong>Hanging Obelisk</strong> to the <strong>Grand Staircase</strong>, every corner is a masterpiece of modern architecture meeting ancient heritage.</p>
         
-        <img src="gem4.webp" alt="The magnificent Grand Egyptian Museum exterior" class="article-img">
+        <img src="gem4.webp" alt="The magnificent Grand Egyptian Museum exterior" class="article-img" loading="lazy" decoding="async">
         
         <div class="img-grid">
-            <img src="gem1.webp" alt="Grand Staircase at GEM" class="article-img">
-            <img src="gem3.webp" alt="Ancient Artifacts in GEM" class="article-img">
+            <img src="gem1.webp" alt="Grand Staircase at GEM" class="article-img" loading="lazy" decoding="async">
+            <img src="gem3.webp" alt="Ancient Artifacts in GEM" class="article-img" loading="lazy" decoding="async">
         </div>
 
         <!-- GEM Pricing Card -->

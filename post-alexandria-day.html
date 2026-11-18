@@ -136,6 +136,9 @@
             }
             .nav-container.active { right: 0; }
             .nav-menu { flex-direction: column; align-items: center; gap: 30px; }
+            .hamburger.open span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+            .hamburger.open span:nth-child(2) { opacity: 0; }
+            .hamburger.open span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
         }
 
         /* --- Article Layout --- */
@@ -239,7 +242,7 @@
         <a href="https://mmernaguide.info" class="logo"><img src="logo.png" alt="Merna & Rania Logo"></a>
         <nav class="nav-container" id="nav-container">
             <ul class="nav-menu">
-                <li><a href="https://mmernaguide.info">Home</a></li>
+                <li><a href="https://mmernaguide.info/">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="tours.html">Our Tours</a></li>
                 <li><a href="process-policies.html">Booking Process</a></li>
@@ -263,10 +266,10 @@
 
         <!-- Gallery Grid -->
         <div class="safari-gallery">
-            <img src="alex1.webp" alt="The Citadel of Qaitbay in Alexandria">
-            <img src="alex4.webp" alt="Bathysphere at the Alexandria Marine Museum">
-            <img src="alex8.webp" alt="The Bibliotheca Alexandrina's modern architecture">
-            <img src="alex10.webp" alt="The vibrant Alexandria Corniche at sunset">
+            <img src="alex1.webp" alt="The Citadel of Qaitbay in Alexandria" loading="lazy" decoding="async">
+            <img src="alex4.webp" alt="Bathysphere at the Alexandria Marine Museum" loading="lazy" decoding="async">
+            <img src="alex8.webp" alt="The Bibliotheca Alexandrina's modern architecture" loading="lazy" decoding="async">
+            <img src="alex10.webp" alt="The vibrant Alexandria Corniche at sunset" loading="lazy" decoding="async">
         </div>
 
         <h2>Why Alexandria is Different</h2>
