@@ -63,17 +63,17 @@ These are isolated, low-risk, high-value fixes — none require touching shared 
 
 ---
 
-# Completed Local Final Completion Phases (Not Yet Uploaded to GitHub)
+# Completed Local / Review-Branch Final Completion Phases
 
-- **P3:** UI/UX polish, 404, Apple Touch Icon. *(Approved and completed locally in Session 17; not yet uploaded to GitHub.)*
-- **P4:** Performance, image optimization, mobile Safari hero fixes. *(Implemented and completed locally in Session 18 across 25 HTML files — 6 JPG-to-WebP replacements, normal-scroll backgrounds on 4 pages + `itineraries.html` `.grid` spacing, below-the-fold lazy loading on 22 pages, and mobile hero heights on 8 pages: `height: auto` on 5 pages and `height: 350px` on 3 pages; not yet uploaded to GitHub.)*
+- **P3:** UI/UX polish, 404, Apple Touch Icon. *(Uploaded to `p3-p4-review` at `b1f7e60`; not merged to `main`.)*
+- **P4:** Performance, image optimization, mobile Safari hero fixes. *(Uploaded to `p3-p4-review` at `b1f7e60`; not merged to `main`.)*
+- **P5:** Metadata, schema accuracy, copied keywords, and itinerary content corrections, including the 31 OG title mismatches, `post-fayoum-safari.html` JSON-LD URL encoding, Luxor keywords, and `itinerary-3-days.html` / `itinerary-8-days.html` fixes. *(Completed locally in Session 19; not uploaded or deployed.)*
 
-# Remaining Final Completion Phases (P5–P9, Exact Agreed Order — Do Not Move, Merge, or Renumber)
+# Remaining Final Completion Phases (P6–P9, Exact Agreed Order — Do Not Move, Merge, or Renumber)
 
-- **P5:** Metadata, schema accuracy, copied keywords, and itinerary content corrections, including the 31 OG title mismatches.
 - **P6:** Site-wide navigation unification.
 - **P7:** Itinerary content de-templatization.
-- **P8:** Clean URL migration.
+- **P8:** Clean URL migration — **must cover the entire website, not just selected pages or blog posts**: all HTML pages and trailing-slash URLs (`/about/` instead of `/about.html`), internal links (navigation, text, buttons, images, etc.), canonical URLs, Open Graph URLs, JSON-LD URLs/references, XML sitemap entries, and old `.html` URLs with a technically valid, GitHub Pages-compatible redirect strategy (do not assume `.htaccess`/server-side 301s, and do not claim meta-refresh/JS redirects equal HTTP 301).
 - **P9:** Repository and asset housekeeping.
 
 ---
