@@ -71,11 +71,12 @@ These are isolated, low-risk, high-value fixes — none require touching shared 
 - **P6:** Site-wide navigation unification — standardized all 23 non-standard `<ul class="nav-menu">` pages to the 7-link Pattern 1 with single-line desktop CSS (`gap: 30px`, `font-size: 0.75rem; white-space: nowrap;`) and fixed logo trailing slash on all 6 `post-*.html` pages. *(Uploaded to `p3-p4-review` at `d7a53c4`; not merged to `main`.)*
 - **P7:** Itinerary content de-templatization — rewrote all 8 itinerary pages (`itineraries.html` + 7 detail pages) with distinct, Egyptologist-voiced copy, resolved 8-day/10-day/12-day factual & pacing contradictions, preserved 3-day/4-tour airport-transfer commitments, and synchronized `FAQPage` JSON-LD with visible FAQs. *(Uploaded to `p3-p4-review` at `2e8b92b`; not merged to `main`.)*
 - **P8:** Clean URL migration — migrated all 35 non-home real pages to `/<slug>/index.html` (normalizing `Blogs.html` → `/blogs/`), updated internal links, canonicals, `og:url`, JSON-LD URLs, `404.html`, and `sitemap_index.xml` (`36` clean URLs), converted relative assets on moved pages to root-relative paths, and replaced all 36 legacy redirect stubs (the 35 root `.html` files + `process & policies.html`) with GitHub Pages-compatible client-side redirect stubs using `noindex, follow`, immediate meta refresh, JavaScript `location.replace()`, and a visible fallback link (no `rel="canonical"` on the stubs; client-side redirects, NOT HTTP 301 redirects). *(Uploaded to `p3-p4-review` at `42d9668c6a071f47e3dd3072ade4f0b3e08ddfcf`; not merged to `main` or deployed.)*
-- **P8.1:** Corrective maintenance — added responsive `@media (max-width: 992px)` `.footer-grid` stacking on all 6 `post-*/index.html` blog post pages to eliminate mobile horizontal overflow, aligned `FAQPage` JSON-LD verbatim with visible FAQs on `alexandria-day-tour/index.html` (`3/3`) and `process-policies/index.html` (`4/4`), and synced P8 upload status in documentation. *(Implemented locally and awaiting review; not uploaded, merged, or deployed.)*
+- **P8.1:** Corrective maintenance — added responsive `@media (max-width: 992px)` `.footer-grid` stacking on all 6 `post-*/index.html` blog post pages to eliminate mobile horizontal overflow, aligned `FAQPage` JSON-LD verbatim with visible FAQs on `alexandria-day-tour/index.html` (`3/3`) and `process-policies/index.html` (`4/4`), and synced P8 upload status in documentation. *(Uploaded to `p3-p4-review` at `e31d52af0762c280689414312d57f8bf87375e9f`; not merged to `main` or deployed.)*
+- **P9 (Group 1 — Orphaned Files Cleanup):** Removed the 5 orphaned root files (`style.css`, `reviews.css`, `script.js`, `reviews.js`, `reviews-data.json`) after confirming zero active dependencies across all 36 live pages, `404.html`, and project files. *(Local work pending review; not uploaded, merged, or deployed.)*
 
-# Remaining Final Completion Phases (P9)
+# Remaining Final Completion Phases (P9 Remaining)
 
-- **P9:** Repository and asset housekeeping.
+- **P9 (Remaining):** Unused image assets cleanup and optional repository housekeeping.
 
 ---
 
