@@ -68,11 +68,11 @@ These are isolated, low-risk, high-value fixes — none require touching shared 
 - **P3:** UI/UX polish, 404, Apple Touch Icon. *(Uploaded to `p3-p4-review` at `b1f7e60`; not merged to `main`.)*
 - **P4:** Performance, image optimization, mobile Safari hero fixes. *(Uploaded to `p3-p4-review` at `b1f7e60`; not merged to `main`.)*
 - **P5:** Metadata, schema accuracy, copied keywords, and itinerary content corrections, including the 31 OG title mismatches, `post-fayoum-safari.html` JSON-LD URL encoding, Luxor keywords, and `itinerary-3-days.html` / `itinerary-8-days.html` fixes. *(Uploaded to `p3-p4-review` at `caf598a`; not merged to `main`.)*
-- **P6:** Site-wide navigation unification — standardized all 23 non-standard `<ul class="nav-menu">` pages to the 7-link Pattern 1 with single-line desktop CSS (`gap: 30px`, `font-size: 0.75rem; white-space: nowrap;`) and fixed logo trailing slash on all 6 `post-*.html` pages. *(Completed locally in Session 20; not uploaded or deployed.)*
+- **P6:** Site-wide navigation unification — standardized all 23 non-standard `<ul class="nav-menu">` pages to the 7-link Pattern 1 with single-line desktop CSS (`gap: 30px`, `font-size: 0.75rem; white-space: nowrap;`) and fixed logo trailing slash on all 6 `post-*.html` pages. *(Uploaded to `p3-p4-review` at `d7a53c4`; not merged to `main`.)*
+- **P7:** Itinerary content de-templatization — rewrote all 8 itinerary pages (`itineraries.html` + 7 detail pages) with distinct, Egyptologist-voiced copy, resolved 8-day/10-day/12-day factual & pacing contradictions, preserved 3-day/4-tour airport-transfer commitments, and synchronized `FAQPage` JSON-LD with visible FAQs. *(Implemented locally and awaiting review; not uploaded, merged, or deployed.)*
 
-# Remaining Final Completion Phases (P7–P9, Exact Agreed Order — Do Not Move, Merge, or Renumber)
+# Remaining Final Completion Phases (P8–P9, Exact Agreed Order — Do Not Move, Merge, or Renumber)
 
-- **P7:** Itinerary content de-templatization.
 - **P8:** Clean URL migration — **must cover the entire website, not just selected pages or blog posts**: all HTML pages and trailing-slash URLs (`/about/` instead of `/about.html`), internal links (navigation, text, buttons, images, etc.), canonical URLs, Open Graph URLs, JSON-LD URLs/references, XML sitemap entries, and old `.html` URLs with a technically valid, GitHub Pages-compatible redirect strategy (do not assume `.htaccess`/server-side 301s, and do not claim meta-refresh/JS redirects equal HTTP 301).
 - **P9:** Repository and asset housekeeping.
 
