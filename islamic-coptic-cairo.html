@@ -39,8 +39,7 @@
           "url": "https://mmernaguide.info",
           "image": "https://mmernaguide.info/logo.png",
           "telephone": "+201029545765",
-          "priceRange": "$$$",
-          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "77" }
+          "priceRange": "$$$"
         },
         {
           "@type": "TouristTrip",
@@ -205,7 +204,8 @@
             .tour-content-grid, .details-flex, .footer-grid { grid-template-columns: 1fr; text-align: center; } 
             .booking-sidebar { position: static; margin-top: 40px; }
         }
-        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
@@ -252,9 +252,9 @@
     <div class="tour-content-grid">
         <div class="info-block">
             <h2 class="playfair">The Soul of Egypt</h2>
-            <p>Step into the living history of Cairo. Our private tour takes you through the multi-layered heritage of the city. We begin in **Islamic Cairo**, exploring the Saladin Citadel and the architectural majesty of the Sultan Hassan Mosque. This is the perfect companion to our <a href="memphis-saqqara-nmec.html" class="internal-link">Memphis & Saqqara tour</a> for those wanting to see how Cairo evolved through the ages.</p>
+            <p>Step into the living history of Cairo. Our private tour takes you through the multi-layered heritage of the city. We begin in <strong>Islamic Cairo</strong>, exploring the Saladin Citadel and the architectural majesty of the Sultan Hassan Mosque. This is the perfect companion to our <a href="memphis-saqqara-nmec.html" class="internal-link">Memphis & Saqqara tour</a> for those wanting to see how Cairo evolved through the ages.</p>
             
-            <p>We then transition to **Coptic Cairo**, where we visit the famous Hanging Church and the cavern church of St. Sergius, which sheltered the Holy Family. To truly experience the city's pulse, we walk through the vibrant alleys of the old city, a highlight of our <a href="things-to-do-in-cairo.html" class="internal-link">Cairo cultural experiences</a>.</p>
+            <p>We then transition to <strong>Coptic Cairo</strong>, where we visit the famous Hanging Church and the cavern church of St. Sergius, which sheltered the Holy Family. To truly experience the city's pulse, we walk through the vibrant alleys of the old city, a highlight of our <a href="things-to-do-in-cairo.html" class="internal-link">Cairo cultural experiences</a>.</p>
 
             <div class="details-flex">
                 <div class="list-box">
@@ -338,7 +338,7 @@
     </div>
 </footer>
 
-<a href="https://wa.me/201029545765" class="wa-float" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="35"></a>
+<a href="https://wa.me/201029545765" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="35" aria-hidden="true"></a>
 
 <script>
     const hb = document.getElementById('hamburger');

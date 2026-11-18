@@ -57,8 +57,8 @@ These are isolated, low-risk, high-value fixes — none require touching shared 
 - [ ] Add a favicon (`<link rel="icon">`) to all 36 real pages.
 
 **Medium priority:**
-- [ ] Trim `giza-pyramids-quad-bike-tour.html`'s meta description from 236 to under ~160 characters; tighten the ~11 other pages that are modestly over.
-- [ ] Give the WhatsApp floating-button icon real `alt` text (e.g. "Chat on WhatsApp") on the 7 pages where it's currently empty.
+- [x] Trim `giza-pyramids-quad-bike-tour.html`'s meta description from 236 to under ~160 characters; tighten the ~11 other pages that are modestly over. (Completed Session 9 — all 20 pages over 160 chars shortened.)
+- [x] Standardize the floating WhatsApp CTA button (`.wa-float`) across all 36 real pages: added missing `.wa-float` to `giza-gem.html`, `luxor-east-bank-tour.html`, and `luxor-west-bank-tour.html`, and standardized `aria-label="Contact us on WhatsApp"` on `<a>` with decorative `alt="" aria-hidden="true"` on `<img>` across all 36 pages. (Completed Session 16.)
 - [ ] Standardize the homepage link URL site-wide (`https://mmernaguide.info/` with trailing slash — 6 blog posts currently omit it).
 
 ---

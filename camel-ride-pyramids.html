@@ -39,8 +39,7 @@
           "url": "https://mmernaguide.info",
           "image": "https://mmernaguide.info/logo.png",
           "telephone": "+201029545765",
-          "priceRange": "$$",
-          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "77" }
+          "priceRange": "$$"
         },
         {
           "@type": "TouristTrip",
@@ -195,7 +194,8 @@
             .tour-content-grid, .details-flex, .footer-grid { grid-template-columns: 1fr; text-align: center; } 
             .booking-sidebar { position: static; margin-top: 40px; }
         }
-        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
@@ -325,7 +325,7 @@
     </div>
 </footer>
 
-<a href="https://wa.me/201029545765" class="wa-float" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Support" width="35"></a>
+<a href="https://wa.me/201029545765" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="35" aria-hidden="true"></a>
 
 <script>
     const hb = document.getElementById('hamburger');

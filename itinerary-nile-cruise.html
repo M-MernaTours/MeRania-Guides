@@ -39,8 +39,7 @@
           "url": "https://mmernaguide.info",
           "image": "https://mmernaguide.info/logo.png",
           "telephone": "+201029545765",
-          "priceRange": "$$$",
-          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "77" }
+          "priceRange": "$$$"
         },
         {
           "@type": "TouristTrip",
@@ -127,6 +126,8 @@
 
         .playfair { font-family: 'Playfair Display', serif; }
         .container { max-width: 1300px; margin: 0 auto; width: 92%; }
+        .gold-text { color: var(--gold); }
+        .text-center { text-align: center; }
         
         /* Navigation */
         .main-header { background: rgba(15, 15, 15, 0.98); padding: 20px 0; border-bottom: 1px solid rgba(197, 160, 89, 0.1); position: sticky; top: 0; z-index: 4000; }
@@ -174,7 +175,8 @@
         .book-btn { display: block; width: 100%; padding: 20px; background: var(--gold); color: #000; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
 
         /* FAQ */
-        .faq-wrap { padding: 80px 0; border-top: 1px solid #222; }
+        .faq-wrap { padding: 80px 0; border-top: 1px solid #222; margin-top: 50px; }
+        .faq-wrap h2 { margin-bottom: 30px; }
         .faq-item { border-bottom: 1px solid #222; padding: 25px 0; }
         .faq-item strong { color: var(--gold); display: block; margin-bottom: 10px; font-size: 1.1rem; }
 
@@ -194,7 +196,8 @@
             .booking-sidebar { position: static; margin-top: 40px; }
             .list-style { display: inline-block; text-align: left; }
         }
-        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
@@ -231,22 +234,22 @@
             
             <div class="day-box">
                 <h3>Day 1: The Monumental East Bank</h3>
-                <p>Arrival in Luxor and check-in. Explore **Karnak Temple**, the largest religious complex ever built, followed by the majestic **Luxor Temple** at sunset with your private guide. Overnight on the Nile.</p>
+                <p>Arrival in Luxor and check-in. Explore <strong>Karnak Temple</strong>, the largest religious complex ever built, followed by the majestic <strong>Luxor Temple</strong> at sunset with your private guide. Overnight on the Nile.</p>
             </div>
 
             <div class="day-box">
                 <h3>Day 2: The Gateway to Afterlife</h3>
-                <p>Cross to the West Bank to discover the **Valley of the Kings**, the **Temple of Hatshepsut**, and the Colossi of Memnon. Set sail towards Edfu, passing through the Esna Lock.</p>
+                <p>Cross to the West Bank to discover the <strong>Valley of the Kings</strong>, the <strong>Temple of Hatshepsut</strong>, and the Colossi of Memnon. Set sail towards Edfu, passing through the Esna Lock.</p>
             </div>
 
             <div class="day-box">
                 <h3>Day 3: Temples of the Gods</h3>
-                <p>Visit the incredibly preserved **Edfu Temple**. Continue sailing to **Kom Ombo** to explore the unique double temple of Sobek and Horus. Sail towards Aswan.</p>
+                <p>Visit the incredibly preserved <strong>Edfu Temple</strong>. Continue sailing to <strong>Kom Ombo</strong> to explore the unique double temple of Sobek and Horus. Sail towards Aswan.</p>
             </div>
 
             <div class="day-box">
                 <h3>Day 4: Romantic Aswan & Philae</h3>
-                <p>Experience the island beauty of **Philae Temple** and the engineering marvel of the High Dam. Optional early morning visit to **Abu Simbel**. Check-out and private transfer.</p>
+                <p>Experience the island beauty of <strong>Philae Temple</strong> and the engineering marvel of the High Dam. Optional early morning visit to <strong>Abu Simbel</strong>. Check-out and private transfer.</p>
             </div>
 
             <div class="details-flex">
@@ -338,7 +341,7 @@
     </div>
 </footer>
 
-<a href="https://wa.me/201029545765" class="wa-float" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Support" width="35"></a>
+<a href="https://wa.me/201029545765" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="35" aria-hidden="true"></a>
 
 <script>
     const hb = document.getElementById('hamburger');

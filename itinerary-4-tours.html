@@ -39,8 +39,7 @@
           "url": "https://mmernaguide.info",
           "image": "https://mmernaguide.info/logo.png",
           "telephone": "+201029545765",
-          "priceRange": "$$$",
-          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "77" }
+          "priceRange": "$$$"
         },
         {
           "@type": "ItemList",
@@ -120,6 +119,8 @@
 
         .playfair { font-family: 'Playfair Display', serif; }
         .container { max-width: 1300px; margin: 0 auto; width: 92%; }
+        .gold-text { color: var(--gold); }
+        .text-center { text-align: center; }
         
         /* Navigation */
         .main-header { background: rgba(15, 15, 15, 0.98); padding: 20px 0; border-bottom: 1px solid rgba(197, 160, 89, 0.1); position: sticky; top: 0; z-index: 4000; }
@@ -172,7 +173,8 @@
         .cta-btn { display: block; width: 100%; padding: 20px; background: var(--gold); color: #000; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
 
         /* FAQ */
-        .faq-wrap { padding: 60px 0; border-top: 1px solid #222; }
+        .faq-wrap { padding: 60px 0; border-top: 1px solid #222; margin-top: 50px; }
+        .faq-wrap h2 { margin-bottom: 30px; }
         .faq-item { border-bottom: 1px solid #222; padding: 25px 0; }
         .faq-item strong { color: var(--gold); display: block; margin-bottom: 10px; font-size: 1.1rem; }
 
@@ -192,7 +194,8 @@
             .booking-sidebar { position: static; margin-top: 40px; }
             .list-style { display: inline-block; }
         }
-        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
@@ -216,7 +219,7 @@
 <main class="container">
     <section class="hero-section">
         <h1 class="playfair">The Ultimate 4-Tour Egypt Experience</h1>
-        <p>A deep Egyptian odyssey designed for those who want it all. Select any **four** of our premium private tours below and enjoy a bespoke archaeological and cultural journey led by licensed experts.</p>
+        <p>A deep Egyptian odyssey designed for those who want it all. Select any <strong>four</strong> of our premium private tours below and enjoy a bespoke archaeological and cultural journey led by licensed experts.</p>
     </section>
 
     <div class="itinerary-grid">
@@ -333,7 +336,7 @@
     </div>
 </footer>
 
-<a href="https://wa.me/201029545765" class="wa-float" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Support" width="35"></a>
+<a href="https://wa.me/201029545765" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="35" aria-hidden="true"></a>
 
 <script>
     const hb = document.getElementById('hamburger');

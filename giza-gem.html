@@ -44,11 +44,6 @@
             "@type": "PostalAddress",
             "addressLocality": "Cairo",
             "addressCountry": "EG"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": "77"
           }
         },
         {
@@ -196,6 +191,9 @@
         .footer-links a { color: #888; text-decoration: none; display: block; margin-bottom: 15px; font-size: 0.9rem; transition: 0.3s; }
         .footer-links a:hover { color: var(--gold); padding-left: 8px; }
 
+        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.1); }
+
         @media (max-width: 992px) {
             .tour-content-wrapper { grid-template-columns: 1fr; }
             .booking-sidebar { position: static; margin-top: 40px; }
@@ -330,6 +328,8 @@
     </div>
     <p class="text-center" style="margin-top: 50px; color: #444; font-size: 0.8rem;">© 2025 EGYPTIAN TOUR GUIDE – MERNA & RANIA. ALL RIGHTS RESERVED.</p>
 </footer>
+
+<a href="https://wa.me/201029545765" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="35" aria-hidden="true"></a>
 
 <script>
     const hb = document.getElementById('hamburger');

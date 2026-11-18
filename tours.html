@@ -69,13 +69,6 @@
             "latitude": "30.00500695131799",
             "longitude": "31.222095705214368"
           },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "77",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
           "sameAs": [
             "https://www.facebook.com/mmernaguide",
             "https://www.instagram.com/mmerna.guide/",
@@ -254,7 +247,8 @@
             .page-intro h1 { font-size: 2.2rem; }
         }
 
-        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.1); }
 
         /* Accessibility: visible keyboard focus */
         a:focus-visible, button:focus-visible {

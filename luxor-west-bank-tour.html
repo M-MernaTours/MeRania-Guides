@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Luxor West Bank PrivateTour | Merna & Rania</title>
+    <title>Luxor West Bank Private Tour | Merna & Rania</title>
     <meta name="description" content="Book an exclusive private tour of Luxor's west bank with licensed experts. 5-star rated experience, luxury transport, and all entrance tickets included.">
     <meta name="keywords" content="private luxor tour, luxor west bank tour, grand egyptian museum private tour, GEM guided tour, pyramids expert guide, cairo day tour pyramids sphinx, luxury giza tour, licensed egyptologist guide, private archaeological tour cairo, best egypt tours, merna and rania guides">
     <link rel="canonical" href="https://mmernaguide.info/luxor-west-bank-tour.html">
@@ -44,11 +44,6 @@
             "@type": "PostalAddress",
             "addressLocality": "Luxor",
             "addressCountry": "EG"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": "77"
           }
         },
         {
@@ -164,15 +159,20 @@
         .breadcrumbs a { color: var(--gold); text-decoration: none; }
         
         .tour-hero { padding-bottom: 60px; }
-        .hero-img { width: 100%; height: 550px; object-fit: cover; border-radius: 4px; border: 1px solid rgba(197,160,89,0.1); }
+        .hero-img { width: 100%; height: auto; display: block; border-radius: 4px; border: 1px solid rgba(197,160,89,0.1); }
 
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0; }
-        .gallery-grid img { width: 100%; height: 220px; object-fit: cover; border: 1px solid #222; transition: 0.3s; }
+        .gallery-grid img { width: 100%; height: 260px; object-fit: contain; background: #141414; border-radius: 4px; border: 1px solid #222; transition: 0.3s; }
         .gallery-grid img:hover { border-color: var(--gold); transform: scale(1.03); }
 
         .tour-content-wrapper { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; margin: 80px 0; }
         .info-section h2 { font-family: 'Playfair Display'; color: var(--gold); font-size: 2.2rem; margin-bottom: 25px; }
+        .info-section h3 { font-family: 'Playfair Display'; color: var(--gold); font-size: 1.5rem; margin: 30px 0 15px; }
         .info-section p { line-height: 2; color: #ccc; margin-bottom: 30px; }
+        .info-section ul:not(.tour-list) { list-style: disc; padding-left: 22px; margin-bottom: 35px; color: #ccc; line-height: 1.9; }
+        .info-section ul:not(.tour-list) li { margin-bottom: 12px; }
+        .info-section ul:not(.tour-list) strong { color: var(--gold); }
+        .internal-link { color: var(--gold); text-decoration: underline; font-weight: 600; }
         
         .tour-list { list-style: none; margin-bottom: 40px; }
         .tour-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 15px; color: #aaa; }
@@ -196,10 +196,13 @@
         .footer-links a { color: #888; text-decoration: none; display: block; margin-bottom: 15px; font-size: 0.9rem; transition: 0.3s; }
         .footer-links a:hover { color: var(--gold); padding-left: 8px; }
 
+        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.1); }
+
         @media (max-width: 992px) {
             .tour-content-wrapper { grid-template-columns: 1fr; }
             .booking-sidebar { position: static; margin-top: 40px; }
-            .hero-img { height: 350px; }
+            .gallery-grid img { height: auto; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
@@ -234,16 +237,15 @@
     </section>
 
     <div class="gallery-grid">
-        <img src="Hatshebsut.webp" alt="Private Temple of Hatshepsut tour with licensed Egyptologist guide - Panoramic view of the temple complex">
         <img src="Hatshebsutt.webp" alt="Close-up of the Temple of Hatshepsut with a professional licensed guide">
-        <img src="Valleyofthekings.webp" alt="The Mortuary Temple of Amenhotep III - Private tour experience in Luxor">
-        <img src="Valleyofthekingwest.webp" alt="View of the Colossi of Memnon - Private tour experience in Luxor">
+        <img src="Valleyofthekings.webp" alt="The Valley of the Kings - Private archaeological tour with licensed guide">
+        <img src="Valleyofthekingwest.webp" alt="Exploring the royal tombs in the Valley of the Kings - Private tour experience in Luxor">
     </div>
 
     <div class="tour-content-wrapper">
         <div class="info-section">
             <h2>Discover the Wonders of Luxor’s West Bank</h2>
-            <p>Embark on a journey through the "City of a Hundred Gates" and witness the monumental legacy of the Ancient Egyptian Empire. The West Bank of Luxor is where history breathes, home to the most massive temple complexes ever built by human hands. and the final resting places of pharaohs and queens. With Merna & Rania, you will experience this archaeological wonderland with the insight and expertise of licensed Egyptologists, ensuring a deeply enriching and unforgettable tour.</p>
+            <p>Embark on a journey through the "City of a Hundred Gates" and witness the monumental legacy of the Ancient Egyptian Empire. The West Bank of Luxor is where history breathes, home to the final resting places of pharaohs and queens. With Merna & Rania, you will experience this archaeological wonderland with the insight and expertise of licensed Egyptologists, ensuring a deeply enriching and unforgettable tour.</p>
 
             <p>Want to make Luxor part of a bigger journey? Our <a href="itinerary-8-days.html" class="internal-link">8-Day Grand Egypt Odyssey</a> pairs this with Cairo and Aswan for a complete private expedition.</p>
             
@@ -344,6 +346,8 @@
     </div>
     <p class="text-center" style="margin-top: 50px; color: #444; font-size: 0.8rem;">© 2025 EGYPTIAN TOUR GUIDE – MERNA & RANIA. ALL RIGHTS RESERVED.</p>
 </footer>
+
+<a href="https://wa.me/201029545765" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="35" aria-hidden="true"></a>
 
 <script>
     const hb = document.getElementById('hamburger');

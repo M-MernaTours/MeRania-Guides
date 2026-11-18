@@ -39,8 +39,7 @@
           "url": "https://mmernaguide.info",
           "image": "https://mmernaguide.info/logo.png",
           "telephone": "+201029545765",
-          "priceRange": "$$$",
-          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "77" }
+          "priceRange": "$$$"
         },
         {
           "@type": "ItemList",
@@ -112,6 +111,8 @@
 
         .playfair { font-family: 'Playfair Display', serif; }
         .container { max-width: 1300px; margin: 0 auto; width: 92%; }
+        .gold-text { color: var(--gold); }
+        .text-center { text-align: center; }
         
         /* Navigation */
         .main-header { background: rgba(15, 15, 15, 0.98); padding: 20px 0; border-bottom: 1px solid rgba(197, 160, 89, 0.1); position: sticky; top: 0; z-index: 4000; }
@@ -157,6 +158,13 @@
         .cta-btn { display: block; width: 100%; padding: 20px; background: var(--gold); color: #000; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
         .cta-btn:hover { background: #fff; }
 
+        /* FAQ */
+        .faq-wrap { padding: 60px 0; border-top: 1px solid #222; margin-top: 50px; }
+        .faq-wrap h2 { margin-bottom: 30px; }
+        .faq-item { border-bottom: 1px solid #222; padding: 25px 0; }
+        .faq-item strong { color: var(--gold); display: block; margin-bottom: 10px; font-size: 1.1rem; }
+        .faq-item p { color: #888; font-size: 0.95rem; line-height: 1.8; }
+
         /* Footer & Copyright Center */
         .master-footer { background: #050505; padding: 100px 0 40px; border-top: 1px solid var(--gold); }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
@@ -173,7 +181,8 @@
             .booking-sidebar { position: static; margin-top: 40px; }
             .list-style { display: inline-block; }
         }
-        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
@@ -197,7 +206,7 @@
 <main class="container">
     <section class="hero-section">
         <h1 class="playfair">Bespoke 2-Day Private Itinerary</h1>
-        <p>Your time in Egypt is precious. Design a journey that matches your pace. Select any **two** of our signature private tours and experience Cairo with high-end luxury and expert guiding.</p>
+        <p>Your time in Egypt is precious. Design a journey that matches your pace. Select any <strong>two</strong> of our signature private tours and experience Cairo with high-end luxury and expert guiding.</p>
     </section>
 
     <div class="itinerary-grid">
@@ -233,7 +242,7 @@
             </div>
 
             <h2 class="option-heading">Expert Recommendation</h2>
-            <p style="color:#ccc; line-height:1.9;">For a perfect 48-hour introduction to Egypt, we highly recommend combining **Day 1: Giza Pyramids** with **Day 2: Memphis & Saqqara**. This combination provides a complete picture of the pyramid-builders' evolution.</p>
+            <p style="color:#ccc; line-height:1.9;">For a perfect 48-hour introduction to Egypt, we highly recommend combining <strong>Day 1: Giza Pyramids</strong> with <strong>Day 2: Memphis & Saqqara</strong>. This combination provides a complete picture of the pyramid-builders' evolution.</p>
         </div>
 
         <aside>
@@ -256,6 +265,14 @@
     <section>
         <h2 class="option-heading">Explore More Egypt Itineraries</h2>
         <p style="color:#ccc; line-height:1.9;">Looking for more time in Egypt? Extend this into our <a href="itinerary-3-days.html" class="internal-link">Signature 3-Day Itinerary</a>, go further with <a href="itinerary-4-tours.html" class="internal-link">The Ultimate 4-Tour Experience</a>, or add the Nile with our <a href="itinerary-nile-cruise.html" class="internal-link">4-Day Private Nile Cruise</a>.</p>
+    </section>
+
+    <section class="faq-wrap">
+        <h2 class="playfair gold-text text-center">Itinerary Intelligence (FAQ)</h2>
+        <div class="faq-item">
+            <strong>Is the 2-day itinerary flexible?</strong>
+            <p>Yes, our private 2-day packages are 100% customizable. You can choose any of our 5 main tours and set your own starting time.</p>
+        </div>
     </section>
 </main>
 
@@ -297,7 +314,7 @@
     </div>
 </footer>
 
-<a href="https://wa.me/201029545765" class="wa-float" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Support" width="35"></a>
+<a href="https://wa.me/201029545765" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="35" aria-hidden="true"></a>
 
 <script>
     const hb = document.getElementById('hamburger');
