@@ -50,16 +50,35 @@ Status: ⏳ Pending approval
 These are isolated, low-risk, high-value fixes — none require touching shared layout or design.
 
 **High priority:**
-- [ ] Fix broken image references on `post-safety-tips.html` (`Nile-felluca.webp` → `Nile-Felluca.webp`; `Fatoum1 (1).webp` → `Fayoum1 (1).webp`).
-- [ ] Fix incorrect canonical URLs and matching JSON-LD `url` fields on `itinerary-10-days.html` and `itinerary-nile-cruise.html` so they point to themselves, not nonexistent pages.
-- [ ] Add the Google Analytics (`gtag.js`) snippet to `about.html`, `egypt-tour-reviews.html`, and `process-policies.html` so those pages are tracked.
-- [ ] Replace the full-resolution `slide1.jpg`/`slide3.jpg` hero backgrounds on `egypt-tour-reviews.html` and `process-policies.html` with the existing `slide1.webp`/`slide3.webp` (same image, ~19x smaller).
-- [ ] Add a favicon (`<link rel="icon">`) to all 36 real pages.
+- [x] Fix broken image references on `post-safety-tips.html` (`Nile-felluca.webp` → `Nile-Felluca.webp`; `Fatoum1 (1).webp` → `Fayoum1 (1).webp`). (Completed Session 2.)
+- [x] Fix incorrect canonical URLs and matching JSON-LD `url` fields on `itinerary-10-days.html` and `itinerary-nile-cruise.html` so they point to themselves, not nonexistent pages. (Completed Session 3.)
+- [x] Add the Google Analytics (`gtag.js`) snippet to `about.html`, `egypt-tour-reviews.html`, and `process-policies.html` so those pages are tracked. (Completed Session 4.)
+- [x] Replace the full-resolution `slide1.jpg`/`slide3.jpg` hero backgrounds on `egypt-tour-reviews.html` and `process-policies.html` with the existing `slide1.webp`/`slide3.webp` (same image, ~19x smaller). (Completed Session 5.)
+- [x] Add a favicon (`<link rel="icon">`) to all 36 real pages. (Completed Session 6; `apple-touch-icon.png` generated in Session 17 / P3 — approved and completed locally.)
 
 **Medium priority:**
-- [ ] Trim `giza-pyramids-quad-bike-tour.html`'s meta description from 236 to under ~160 characters; tighten the ~11 other pages that are modestly over.
-- [ ] Give the WhatsApp floating-button icon real `alt` text (e.g. "Chat on WhatsApp") on the 7 pages where it's currently empty.
-- [ ] Standardize the homepage link URL site-wide (`https://mmernaguide.info/` with trailing slash — 6 blog posts currently omit it).
+- [x] Trim `giza-pyramids-quad-bike-tour.html`'s meta description from 236 to under ~160 characters; tighten the ~11 other pages that are modestly over. (Completed Session 9 — all 20 pages over 160 chars shortened.)
+- [x] Standardize the floating WhatsApp CTA button (`.wa-float`) across all 36 real pages: added missing `.wa-float` to `giza-gem.html`, `luxor-east-bank-tour.html`, and `luxor-west-bank-tour.html`, and standardized `aria-label="Contact us on WhatsApp"` on `<a>` with decorative `alt="" aria-hidden="true"` on `<img>` across all 36 pages. (Completed Session 16 / P2.)
+- [x] Standardize the homepage link URL site-wide (`https://mmernaguide.info/` with trailing slash — implemented on all 6 blog posts in Session 17 / P3, approved and completed locally).
+
+---
+
+# Completed Local / Review-Branch Final Completion Phases
+
+- **P3:** UI/UX polish, 404, Apple Touch Icon. *(Uploaded to `p3-p4-review` at `b1f7e60`; not merged to `main`.)*
+- **P4:** Performance, image optimization, mobile Safari hero fixes. *(Uploaded to `p3-p4-review` at `b1f7e60`; not merged to `main`.)*
+- **P5:** Metadata, schema accuracy, copied keywords, and itinerary content corrections, including the 31 OG title mismatches, `post-fayoum-safari.html` JSON-LD URL encoding, Luxor keywords, and `itinerary-3-days.html` / `itinerary-8-days.html` fixes. *(Uploaded to `p3-p4-review` at `caf598a`; not merged to `main`.)*
+- **P6:** Site-wide navigation unification — standardized all 23 non-standard `<ul class="nav-menu">` pages to the 7-link Pattern 1 with single-line desktop CSS (`gap: 30px`, `font-size: 0.75rem; white-space: nowrap;`) and fixed logo trailing slash on all 6 `post-*.html` pages. *(Uploaded to `p3-p4-review` at `d7a53c4`; not merged to `main`.)*
+- **P7:** Itinerary content de-templatization — rewrote all 8 itinerary pages (`itineraries.html` + 7 detail pages) with distinct, Egyptologist-voiced copy, resolved 8-day/10-day/12-day factual & pacing contradictions, preserved 3-day/4-tour airport-transfer commitments, and synchronized `FAQPage` JSON-LD with visible FAQs. *(Uploaded to `p3-p4-review` at `2e8b92b`; not merged to `main`.)*
+- **P8:** Clean URL migration — migrated all 35 non-home real pages to `/<slug>/index.html` (normalizing `Blogs.html` → `/blogs/`), updated internal links, canonicals, `og:url`, JSON-LD URLs, `404.html`, and `sitemap_index.xml` (`36` clean URLs), converted relative assets on moved pages to root-relative paths, and replaced all 36 legacy redirect stubs (the 35 root `.html` files + `process & policies.html`) with GitHub Pages-compatible client-side redirect stubs using `noindex, follow`, immediate meta refresh, JavaScript `location.replace()`, and a visible fallback link (no `rel="canonical"` on the stubs; client-side redirects, NOT HTTP 301 redirects). *(Uploaded to `p3-p4-review` at `42d9668c6a071f47e3dd3072ade4f0b3e08ddfcf`; not merged to `main` or deployed.)*
+- **P8.1:** Corrective maintenance — added responsive `@media (max-width: 992px)` `.footer-grid` stacking on all 6 `post-*/index.html` blog post pages to eliminate mobile horizontal overflow, aligned `FAQPage` JSON-LD verbatim with visible FAQs on `alexandria-day-tour/index.html` (`3/3`) and `process-policies/index.html` (`4/4`), and synced P8 upload status in documentation. *(Uploaded to `p3-p4-review` at `e31d52af0762c280689414312d57f8bf87375e9f`; not merged to `main` or deployed.)*
+- **P9 (Group 1 — Orphaned Files Cleanup):** Removed the 5 orphaned root files (`style.css`, `reviews.css`, `script.js`, `reviews.js`, `reviews-data.json`) and updated two documentation files after confirming zero active dependencies across all 36 live pages, `404.html`, and project files. *(Uploaded and verified on `p3-p4-review` at `d1eb257`–`1d4172b`; not merged to `main` or deployed.)*
+- **P9 (Group 2 — Unused Legacy Images Cleanup):** Deleted exactly 83 approved unused legacy images (`53.09 MB` recovered; backed up outside the repository). *(Uploaded and verified on `p3-p4-review` at `fcedca2a9ac70fddf7044ecda431fa5c8cc2b50f`; not merged to `main` or deployed.)*
+- **P9 (Group 3 — Image Optimization):** Optimized and replaced exactly 8 approved active images (`3.89 MB` saved, `71.0%` reduction; `logo.png`, `slide3.webp`, and `day-tours-egypt.webp` retained unchanged). *(Uploaded and verified on `p3-p4-review` at `d170daddaddc2caec59b60d644ba26196eea1713`; not merged to `main` or deployed.)*
+
+# Remaining Optional Housekeeping
+
+- Optional future items pending review: disposition of the 15 retained Group B unused images and confirmation with Merna & Rania on the duplicate Google review screenshot (`google-review-egypt-tour-guide-4.png`).
 
 ---
 
