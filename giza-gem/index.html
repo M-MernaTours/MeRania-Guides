@@ -24,9 +24,16 @@
 
     <meta property="og:title" content="Private Giza Pyramids & GEM Tour | Merna & Rania">
     <meta property="og:description" content="Private Giza Pyramids & Grand Egyptian Museum tour with a licensed Egyptologist, private AC transport, hotel pickup and flexible entrance-ticket options.">
-    <meta property="og:image" content="https://mmernaguide.info/pyr4.jpg">
+    <meta property="og:image" content="https://mmernaguide.info/grand-egyptian-museum-private-tour-group.webp">
+    <meta property="og:image:width" content="1080">
+    <meta property="og:image:height" content="886">
+    <meta property="og:image:alt" content="Private tour guests holding the Egyptian Tour Guide sign in front of a colossal seated royal statue at the Grand Egyptian Museum">
     <meta property="og:url" content="https://mmernaguide.info/giza-gem/">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Private Giza Pyramids &amp; GEM Tour | Merna &amp; Rania">
+    <meta name="twitter:description" content="Private Giza Pyramids &amp; Grand Egyptian Museum tour with a licensed Egyptologist, private AC transport, hotel pickup and flexible entrance-ticket options.">
+    <meta name="twitter:image" content="https://mmernaguide.info/grand-egyptian-museum-private-tour-group.webp">
+    <meta name="twitter:image:alt" content="Private tour guests holding the Egyptian Tour Guide sign in front of a colossal seated royal statue at the Grand Egyptian Museum">
 
     <script type="application/ld+json">
     {
@@ -49,20 +56,13 @@
         {
           "@type": "TouristTrip",
           "name": "Giza Pyramids & Grand Egyptian Museum Private Day Tour",
-          "description": "Premium 8-hour private tour to Giza Pyramids, Sphinx, and GEM with a licensed Egyptologist.",
+          "description": "Private 8-hour tour to the Giza Pyramids, the Sphinx, and the Grand Egyptian Museum with a licensed Egyptologist.",
           "touristType": "Private",
           "duration": "PT8H",
           "itinerary": [
             { "@type": "City", "name": "Giza", "description": "Visit the Great Pyramids and the Sphinx." },
-            { "@type": "Museum", "name": "Grand Egyptian Museum", "description": "Explore the world's largest archaeological museum." }
+            { "@type": "Museum", "name": "Grand Egyptian Museum", "description": "Explore the Grand Egyptian Museum near the Giza Pyramids, including the colossal statue of Ramesses II and the Grand Staircase." }
           ],
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "url": "https://mmernaguide.info/giza-gem/",
-            "offeredBy": { "@id": "https://mmernaguide.info/#agency" }
-          },
           "provider": { "@id": "https://mmernaguide.info/#agency" }
         },
         {
@@ -159,11 +159,14 @@
         .breadcrumbs a { color: var(--gold); text-decoration: none; }
         
         .tour-hero { padding-bottom: 60px; }
-        .hero-img { width: 100%; height: 550px; object-fit: cover; border-radius: 4px; border: 1px solid rgba(197,160,89,0.1); }
+        .hero-img { width: 100%; height: 550px; object-fit: cover; object-position: 50% 22%; border-radius: 4px; border: 1px solid rgba(197,160,89,0.1); }
 
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0; }
         .gallery-grid img { width: 100%; height: 220px; object-fit: cover; border: 1px solid #222; transition: 0.3s; }
         .gallery-grid img:hover { border-color: var(--gold); transform: scale(1.03); }
+        .gallery-grid img.pos-45 { object-position: 50% 45%; }
+        .gallery-grid img.pos-70 { object-position: 50% 70%; }
+        @media (max-width: 600px) { .tour-hero .hero-img { height: auto; } }
 
         .tour-content-wrapper { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; margin: 80px 0; }
         .info-section h2 { font-family: 'Playfair Display'; color: var(--gold); font-size: 2.2rem; margin-bottom: 25px; }
@@ -231,25 +234,19 @@
     <section class="tour-hero">
         <h1 class="playfair gold-text" style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px;">Giza Pyramids & Grand Egyptian Museum Private Tour</h1>
         <p style="color: #888; margin-bottom: 40px; font-size: 1.1rem;">An exclusive journey through the last surviving Wonder of the Ancient World and the masterpiece of modern Egypt.</p>
-        <img src="/pyramids1.webp" alt="Great Pyramids of Giza Panorama" class="hero-img">
+        <img src="/grand-egyptian-museum-private-tour-group.webp" alt="Private tour guests holding the Egyptian Tour Guide sign in front of a colossal seated royal statue at the Grand Egyptian Museum" class="hero-img" width="1080" height="886" fetchpriority="high" decoding="async">
     </section>
 
     <div class="gallery-grid">
-        <img src="/pyramids2.webp" alt="Close-up of the Great Pyramid of Khufu during a private tour with Merna and Rania Guides" loading="lazy" decoding="async">
-        <img src="/pyramids3.webp" alt="The Sphinx at Giza Plateau - Private tour experience with expert Egyptologist guide in Cairo" loading="lazy" decoding="async">
-        <img src="/pyramids4.webp" alt="View of the Giza Pyramids from the Sphinx" loading="lazy" decoding="async">
-        <img src="/pyramids5.webp" alt="The Great Pyramid of Khafre" loading="lazy" decoding="async">
-        <img src="/pyramids6.webp" alt="Merna and Rania Guides providing private archaeological tour at Great Pyramid of Khufu" loading="lazy" decoding="async">
-        <img src="/gem1.webp" alt="Colossal Statue of Ramses II at the Grand Egyptian Museum entrance - Private guided tour" loading="lazy" decoding="async">
-        <img src="/gem2.webp" alt="Exploring the Grand Staircase at GEM with a professional licensed guide" loading="lazy" decoding="async">
-        <img src="/gem3.webp" alt="GEM Grand Staircase view showcasing ancient artifacts - Private tour experience in Cairo" loading="lazy" decoding="async">
-        <img src="/gem4.webp" alt="The modern architecture of Grand Egyptian Museum - GEM private day tour from Cairo" loading="lazy" decoding="async">
+        <img src="/grand-egyptian-museum-ramses-ii-tour-group.webp" alt="Tour group holding the Egyptian Tour Guide sign beneath the colossal statue of Ramesses II at the Grand Egyptian Museum" class="pos-45" width="1200" height="1600" loading="lazy" decoding="async">
+        <img src="/giza-pyramids-private-tour-guests.webp" alt="Four guests holding the Egyptian Tour Guide sign with the Giza Pyramids behind them" width="739" height="420" loading="lazy" decoding="async">
+        <img src="/rania-licensed-tour-guide-giza-pyramids.webp" alt="Licensed guide Rania on horseback in front of the Giza Pyramids" class="pos-70" width="1600" height="1450" loading="lazy" decoding="async">
     </div>
 
     <div class="tour-content-wrapper">
         <div class="info-section">
             <h2>Experience Details</h2>
-            <p>Our signature private tour begins at the Giza Plateau, where your licensed archaeologist guide will unveil the architectural secrets of Khufu, Khafre, and Menkaure. Witness the Sphinx's eternal gaze before transitioning to the world's most anticipated cultural project: The Grand Egyptian Museum (GEM).</p>
+            <p>Our signature private tour begins at the Giza Plateau, where your licensed Egyptologist guide will unveil the architectural secrets of the pyramids of Khufu, Khafre, and Menkaure. Witness the Sphinx's eternal gaze before continuing to the Grand Egyptian Museum (GEM).</p>
             
             <p>Inside the GEM, experience the grandeur of the Ramses II colossus and explore the majestic Grand Staircase, offering a preview of Egypt's unparalleled heritage in a futuristic setting.</p>
 
@@ -258,7 +255,7 @@
             <h2>Premium Inclusions</h2>
             <ul class="tour-list">
                 <li>Licensed Professional Egyptologist Guide</li>
-                <li>Private High-End AC Vehicle (HiAce or Sedan)</li>
+                <li>Private Air-Conditioned Vehicle (HiAce or Sedan)</li>
                 <li><strong>Guidance on Official Entrance Tickets</strong></li>
                 <li>Private Hotel Pickup and Drop-off</li>
                 <li>Chilled Bottled Water</li>
@@ -277,7 +274,7 @@
             <div class="booking-sidebar">
                 <h3>Private Booking</h3>
                 <p>Enjoy a bespoke itinerary at your own pace. This tour is 100% private – just you and your guide.</p>
-                <a href="https://wa.me/201029545765?text=Hi%20Merna%20%26%20Rania%2C%20I'm%20interested%20in%20booking%20the%20Giza%20Pyramids%20%26%20GEM%20Private%20Tour.%20Could%20you%20check%20availability?" target="_blank" class="sidebar-btn">
+                <a href="https://wa.me/201029545765?text=Hi%20Merna%20%26%20Rania%2C%20I'm%20interested%20in%20booking%20the%20Giza%20Pyramids%20%26%20GEM%20Private%20Tour.%20Could%20you%20check%20availability?" target="_blank" rel="noopener noreferrer" class="sidebar-btn">
                     Check Availability
                 </a>
             </div>
