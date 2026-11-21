@@ -41,6 +41,7 @@
     {
       "@context": "https://schema.org",
       "@type": "TravelAgency",
+      "@id": "https://mmernaguide.info/#agency",
       "name": "Egyptian Tour Guide - Merna & Rania",
       "description": "Licensed private Egyptian tour guide services in Cairo, Giza, and across Egypt.",
       "url": "https://mmernaguide.info/",
@@ -211,6 +212,7 @@
             transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.12s ease;
         }
         .slider-dot.active { background: var(--gold); }
+        .slider-pause-btn { font-size: 0.7rem; letter-spacing: -1px; }
 
         /* Subtle gold press glow ONLY while actively pressed */
         .btn-outline:active,
@@ -397,6 +399,7 @@
                     <button type="button" class="slider-dot" data-slide="4" aria-label="Slide 5 of 5"></button>
                 </div>
                 <button type="button" class="slider-nav-btn" id="slider-next" aria-label="Next slide">&#8250;</button>
+                <button type="button" class="slider-nav-btn slider-pause-btn" id="slider-pause" aria-label="Pause slideshow">&#10074;&#10074;</button>
             </div>
         </section>
 
@@ -418,7 +421,8 @@
                 <div class="intro-box">
                     <span class="intro-eyebrow">Your Guides in Egypt</span>
                     <h2 class="gold-text playfair section-heading">Meet Merna &amp; Rania</h2>
-                    <p>We are Merna and Rania, two licensed Egyptian Egyptologist tour guides with more than 10 years of experience welcoming international travelers from around the world. Every tour we lead is private, flexible, and tailored to your pace—whether you are traveling solo, as a couple, with family, or in a private group.</p>
+                    <p>We are Merna and Rania, two licensed Egyptian Egyptologist tour guides with more than 10 years of experience welcoming international travelers from around the world. Every tour we arrange is private, flexible, and tailored to your pace—whether you are traveling solo, as a couple, with family, or in a private group.</p>
+                    <p>Alongside us, a team of 32 licensed male and female guides covers destinations across Egypt, with guiding available in nine languages, subject to availability. We help you find a suitable licensed guide for your itinerary and travel dates.</p>
                     <p>Having licensed female guides often offers added comfort and ease for women travelers and families, while every guest enjoys clear communication, deep historical context, and genuine local insight.</p>
                     <a href="/about/" class="text-link">Meet Your Guides →</a>
                 </div>
@@ -459,14 +463,14 @@
                     <div class="explore-card">
                         <div>
                             <h3>Cairo &amp; Beyond Day Tours</h3>
-                            <p>Private guided visits to the <a href="/giza-gem/">Giza Pyramids &amp; Grand Egyptian Museum</a>, <a href="/memphis-saqqara-dahshur/">Memphis, Saqqara &amp; Dahshur</a>, <a href="/islamic-coptic-cairo/">Islamic &amp; Coptic Cairo</a>, <a href="/alexandria-day-tour/">Alexandria</a>, and <a href="/fayoum-day-tour/">Fayoum</a>.</p>
+                            <p>Private guided visits to the <a href="/giza-gem/">Giza Pyramids &amp; Grand Egyptian Museum</a>, <a href="/memphis-saqqara-dahshur/">Memphis, Saqqara &amp; Dahshur</a>, <a href="/islamic-coptic-cairo/">Islamic &amp; Coptic Cairo</a>, the <a href="/egyptian-museum-nmec-tour/">Egyptian Museum &amp; NMEC</a>, <a href="/garbage-city-cave-church-tour/">Garbage City &amp; the Cave Church</a>, <a href="/alexandria-day-tour/">Alexandria</a>, and <a href="/fayoum-day-tour/">Fayoum</a>.</p>
                         </div>
                         <a href="/day-tours/" class="text-link">View Day Tours →</a>
                     </div>
                     <div class="explore-card">
                         <div>
                             <h3>Multi-Day Itineraries &amp; Nile Cruises</h3>
-                            <p>Seamless private journeys from <a href="/itinerary-2-tours/">2-day Cairo stays</a> to multi-city itineraries covering Cairo, <a href="/luxor-east-bank-tour/">Luxor</a>, Aswan, and <a href="/itinerary-nile-cruise/">Nile Cruises</a>.</p>
+                            <p>Seamless private journeys from <a href="/itinerary-2-tours/">2-day Cairo stays</a> to <a href="/itinerary-8-days/">multi-city itineraries covering Cairo, Luxor, and Aswan</a>, as well as private <a href="/itinerary-nile-cruise/">Nile Cruises</a>.</p>
                         </div>
                         <a href="/itineraries/" class="text-link">Explore Itineraries →</a>
                     </div>
@@ -492,7 +496,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="gold-text playfair section-heading">Why Travelers Book Directly With Us</h2>
-                    <p class="section-subtitle">Direct planning with your licensed guide means honest advice, flexible timing, and zero middleman markups.</p>
+                    <p class="section-subtitle">Book directly with our team for honest advice, flexible timing, and clear, transparent quotations.</p>
                 </div>
                 <div class="why-grid">
                     <div class="why-card">
@@ -501,7 +505,7 @@
                     </div>
                     <div class="why-card">
                         <h3>Transparent Pricing</h3>
-                        <p>Clear inclusions from the start with no hidden fees and no forced shopping stops or unwanted detours.</p>
+                        <p>Clear inclusions from the start, no deposit required, no hidden fees, and no forced shopping stops or unwanted detours.</p>
                     </div>
                     <div class="why-card">
                         <h3>Direct Communication</h3>
@@ -509,7 +513,7 @@
                     </div>
                     <div class="why-card">
                         <h3>Genuine Guest Moments</h3>
-                        <p>Real photographs from our tours and consistent 5-star guest ratings from travelers across the globe.</p>
+                        <p>Real photographs from our tours and a 5.0 overall guest rating from travelers across the globe.</p>
                     </div>
                 </div>
             </div>
@@ -529,7 +533,7 @@
                     <div class="trust-item">
                         <div class="counter-box" data-target="5" data-format="decimal" data-suffix=" / 5">5.0 / 5</div>
                         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-                        <p>All 5-Star Guest Ratings</p>
+                        <p>Overall Guest Rating</p>
                     </div>
                     <div class="trust-item">
                         <h3 class="gold-text playfair">Guest Stories</h3>
@@ -621,6 +625,8 @@
         const SLIDE_INTERVAL_MS = 4500;
         const PREFETCH_LEAD_MS = 2000;
 
+        const pauseBtn = document.getElementById('slider-pause');
+        let isPaused = reducedMotionQuery.matches;
         let currentSlide = 0;
         let rotateTimer = null;
         let prefetchTimer = null;
@@ -658,7 +664,7 @@
                 currentSlide = nextIndex;
                 slides[currentSlide].classList.add('active');
                 updateDots(currentSlide);
-                if (!reducedMotionQuery.matches && !document.hidden) {
+                if (!isPaused && !document.hidden) {
                     scheduleNext();
                 }
             });
@@ -671,7 +677,7 @@
 
         const scheduleNext = () => {
             clearSliderTimers();
-            if (slides.length <= 1 || reducedMotionQuery.matches || document.hidden) return;
+            if (slides.length <= 1 || isPaused || document.hidden) return;
             const upcoming = (currentSlide + 1) % slides.length;
             prefetchTimer = setTimeout(() => {
                 hydrateSlide(upcoming);
@@ -703,6 +709,20 @@
             });
         });
 
+        const updatePauseBtn = () => {
+            if (!pauseBtn) return;
+            pauseBtn.setAttribute('aria-label', isPaused ? 'Play slideshow' : 'Pause slideshow');
+            pauseBtn.innerHTML = isPaused ? '&#9654;' : '&#10074;&#10074;';
+        };
+        if (pauseBtn) {
+            pauseBtn.addEventListener('click', () => {
+                isPaused = !isPaused;
+                updatePauseBtn();
+                if (isPaused) { clearSliderTimers(); } else { scheduleNext(); }
+            });
+        }
+        updatePauseBtn();
+
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {
                 clearSliderTimers();
@@ -713,7 +733,9 @@
 
         if (reducedMotionQuery.addEventListener) {
             reducedMotionQuery.addEventListener('change', () => {
-                if (reducedMotionQuery.matches) {
+                isPaused = reducedMotionQuery.matches;
+                updatePauseBtn();
+                if (isPaused) {
                     clearSliderTimers();
                 } else {
                     scheduleNext();
