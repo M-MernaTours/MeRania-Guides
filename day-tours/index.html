@@ -248,6 +248,16 @@
         }
         .info-btn:hover { background: var(--gold); color: #000; }
 
+        /* --- Day Tours card photo framing (per-photo focal point) --- */
+        .tour-box img.card-img-pos-25 { object-position: 50% 25%; }
+        .tour-box img.card-img-pos-30 { object-position: 50% 30%; }
+        .tour-box img.card-img-pos-40 { object-position: 50% 40%; }
+        .tour-box img.card-img-pos-45 { object-position: 50% 45%; }
+        .tour-box img.card-img-pos-50 { object-position: 50% 50%; }
+        .tour-box img.card-img-pos-65 { object-position: 50% 65%; }
+        /* Center a lone last card in the two-column desktop grid */
+        @media (min-width: 1101px) { .tours-grid > .tour-box:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc((100% - 40px) / 2); } }
+
         /* --- Footer (Unified) --- */
         .master-footer { background: #050505; padding: 100px 0 30px; border-top: 1px solid var(--gold); }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 80px; }
@@ -295,7 +305,7 @@
 
     <div class="tours-grid">
         <div class="tour-box">
-            <img src="/Giza-Plateu.webp" alt="Private Giza Pyramids and Grand Egyptian Museum Archaeological Tour">
+            <img src="/giza-sphinx-private-tour-group-selfie.webp" alt="Smiling group of travelers posing in front of the Great Sphinx with the Giza pyramids behind them" width="1600" height="1200" class="card-img-pos-40" loading="eager" decoding="async">
             <div class="tour-content">
                 <h2>Giza Pyramids & GEM</h2>
                 <p>An immersive journey to the Great Pyramids, the enigmatic Sphinx, and the world-renowned Grand Egyptian Museum with an expert licensed guide.</p>
@@ -304,7 +314,7 @@
         </div>
 
         <div class="tour-box">
-            <img src="/Alexandria.webp" alt="Private Alexandria Day Trip from Cairo with Licensed Archaeologist">
+            <img src="/alexandria-waterfront-private-tour-group-selfie-merna-rania.webp" alt="Group of travelers taking a cheerful selfie on the Mediterranean waterfront in Alexandria" width="1024" height="733" class="card-img-pos-40" loading="eager" decoding="async">
             <div class="tour-content">
                 <h2>Alexandria Day Tour</h2>
                 <p>Escape to the coast and explore the Library of Alexandria, Qaitbay Citadel, and the haunting Roman Catacombs in one exclusive day.</p>
@@ -322,7 +332,7 @@
         </div>
 
         <div class="tour-box">
-            <img src="/Islamic.webp" alt="Islamic and Coptic Cairo Religious Heritage Tour" loading="lazy" decoding="async">
+            <img src="/islamic-cairo-mosque-courtyard-tour-group.webp" alt="Family group taking a selfie in the marble courtyard of a historic mosque in Islamic Cairo" width="1600" height="1199" class="card-img-pos-40" loading="lazy" decoding="async">
             <div class="tour-content">
                 <h2>Islamic & Coptic Cairo</h2>
                 <p>Explore the spiritual history of Old Cairo, visiting the Saladin Citadel, the Hanging Church, and the historic Khan El Khalili bazaar.</p>
@@ -331,7 +341,7 @@
         </div>
 
         <div class="tour-box">
-            <img src="/Fayoum.webp" alt="Fayoum Day Tour Desert Safari and Wadi El Hitan" loading="lazy" decoding="async">
+            <img src="/fayoum-desert-lake-private-tour-group.webp" alt="Family on the shore of a desert lake with golden sand dunes in Fayoum" width="1600" height="1086" class="card-img-pos-45" loading="lazy" decoding="async">
             <div class="tour-content">
                 <h2>Fayoum Safari Tour</h2>
                 <p>A natural escape to the Whale Valley (Wadi El Hitan), waterfalls of Wadi El Rayan, and a thrilling private desert safari.</p>
@@ -340,20 +350,38 @@
         </div>
 
                 <div class="tour-box">
-            <img src="/Karnak.webp" alt="Karnak Temple and Luxor East Bank Private Day Tour" loading="lazy" decoding="async">
+            <img src="/luxor-karnak-temple-ram-statues-tour-group.webp" alt="Group of travelers standing among the ram-headed sphinx statues at Karnak Temple in Luxor" width="730" height="698" class="card-img-pos-30" loading="lazy" decoding="async">
             <div class="tour-content">
                 <h2>Luxor East Bank Tour</h2>
-                <p>Explore the ancient temples and tombs on the east bank of the Nile in Luxor.</p>
+                <p>Discover Karnak Temple and Luxor Temple on a private guided tour of Luxor&#39;s historic East Bank.</p>
                 <a href="/luxor-east-bank-tour/" class="info-btn">Experience Now</a>
             </div>
         </div>
 
                 <div class="tour-box">
-            <img src="/Hatshebsut.webp" alt="Luxor West Bank Tour with Hatshepsut Temple and Valley of the Kings" loading="lazy" decoding="async">
+            <img src="/luxor-hatshepsut-temple-private-tour-group.webp" alt="Group of travelers in front of the terraced Temple of Hatshepsut on Luxor&#39;s West Bank" width="997" height="731" class="card-img-pos-25" loading="lazy" decoding="async">
             <div class="tour-content">
                 <h2>Luxor West Bank Tour</h2>
                 <p>Explore the ancient temples and tombs on the west bank of the Nile in Luxor.</p>
                 <a href="/luxor-west-bank-tour/" class="info-btn">Experience Now</a>
+            </div>
+        </div>
+
+        <div class="tour-box">
+            <img src="/egyptian-museum-tahrir-private-tour-selfie.webp" alt="Travelers taking a selfie in front of the historic Egyptian Museum facade in Tahrir Square" width="1200" height="1030" class="card-img-pos-50" loading="lazy" decoding="async">
+            <div class="tour-content">
+                <h2>Egyptian Museum &amp; NMEC Private Tour</h2>
+                <p>Explore the historic Egyptian Museum in Tahrir Square and the National Museum of Egyptian Civilization, home to the Royal Mummies Hall, on a private guided Cairo tour.</p>
+                <a href="https://wa.me/201029545765?text=Hello%20Merna%20%26%20Rania%2C%20I%27m%20interested%20in%20the%20Egyptian%20Museum%20%26%20NMEC%20Private%20Tour.%20Could%20you%20please%20share%20more%20details%3F" class="info-btn" target="_blank" rel="noopener noreferrer" aria-label="Ask about the Egyptian Museum &amp; NMEC Private Tour on WhatsApp (opens in a new tab)">Ask About This Tour</a>
+            </div>
+        </div>
+
+        <div class="tour-box">
+            <img src="/mokattam-cave-church-rock-carvings-visitor.webp" alt="Visitor beside rock-carved biblical reliefs at the Cave Church in Mokattam, Cairo" width="1200" height="1017" class="card-img-pos-65" loading="lazy" decoding="async">
+            <div class="tour-content">
+                <h2>Garbage City (Zabbaleen) &amp; Cave Church Tour</h2>
+                <p>Discover Cairo&#39;s famous Garbage City, home to the Zabbaleen community in Manshiyat Naser, and visit the remarkable Cave Church of Saint Simon the Tanner in Mokattam on a private guided tour.</p>
+                <a href="https://wa.me/201029545765?text=Hello%20Merna%20%26%20Rania%2C%20I%27m%20interested%20in%20the%20Garbage%20City%20%28Zabbaleen%29%20%26%20Cave%20Church%20Tour.%20Could%20you%20please%20share%20more%20details%3F" class="info-btn" target="_blank" rel="noopener noreferrer" aria-label="Ask about the Garbage City (Zabbaleen) &amp; Cave Church Tour on WhatsApp (opens in a new tab)">Ask About This Tour</a>
             </div>
         </div>
 
