@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Private Alexandria Day Tour from Cairo | Merna & Rania</title>
-    <meta name="description" content="Book a premium private full-day tour from Cairo to Alexandria. Visit Qaitbay Citadel, the Library of Alexandria, and Catacombs with a licensed Egyptologist.">
+    <meta name="description" content="Private full-day tour from Cairo to Alexandria with a licensed Egyptologist: the Citadel of Qaitbay, Bibliotheca Alexandrina and Catacombs of Kom El Shoqafa.">
     <meta name="keywords" content="Alexandria day tour from cairo, private alexandria guide, library of alexandria tour, qaitbay citadel private trip, cairo to alexandria private car, luxury egypt tours, licensed egyptologist alexandria">
     <link rel="canonical" href="https://mmernaguide.info/alexandria-day-tour/">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -22,11 +22,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta name="robots" content="index, follow">
 
-    <meta property="og:title" content="Private Alexandria Day Tour from Cairo | Merna & Rania">
-    <meta property="og:description" content="Book a premium private full-day tour from Cairo to Alexandria. Visit Qaitbay Citadel, the Library of Alexandria, and Catacombs with a licensed Egyptologist.">
-    <meta property="og:image" content="https://mmernaguide.info/alex8.webp">
+    <meta property="og:title" content="Private Alexandria Day Tour from Cairo | Merna &amp; Rania">
+    <meta property="og:description" content="Private full-day tour from Cairo to Alexandria with a licensed Egyptologist: the Citadel of Qaitbay, Bibliotheca Alexandrina and Catacombs of Kom El Shoqafa.">
+    <meta property="og:image" content="https://mmernaguide.info/alexandria-qaitbay-citadel-private-tour-group.webp">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="720">
+    <meta property="og:image:alt" content="Private tour group standing by the harbor beside the walls of the Citadel of Qaitbay in Alexandria">
     <meta property="og:url" content="https://mmernaguide.info/alexandria-day-tour/">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Private Alexandria Day Tour from Cairo | Merna &amp; Rania">
+    <meta name="twitter:description" content="Private full-day tour from Cairo to Alexandria with a licensed Egyptologist: the Citadel of Qaitbay, Bibliotheca Alexandrina and Catacombs of Kom El Shoqafa.">
+    <meta name="twitter:image" content="https://mmernaguide.info/alexandria-qaitbay-citadel-private-tour-group.webp">
+    <meta name="twitter:image:alt" content="Private tour group standing by the harbor beside the walls of the Citadel of Qaitbay in Alexandria">
 
     <script type="application/ld+json">
     {
@@ -49,7 +56,7 @@
         {
           "@type": "TouristTrip",
           "name": "Alexandria Full-Day Private Tour from Cairo",
-          "description": "A premium 12-hour private archaeological journey from Cairo to Alexandria led by a licensed Egyptologist.",
+          "description": "A private 12-hour journey from Cairo to Alexandria led by a licensed Egyptologist, visiting the Citadel of Qaitbay, the Bibliotheca Alexandrina and the Catacombs of Kom El Shoqafa.",
           "touristType": "Private",
           "duration": "PT12H",
           "itinerary": [
@@ -58,13 +65,6 @@
             { "@type": "Library", "name": "Bibliotheca Alexandrina" },
             { "@type": "LandmarksOrHistoricalBuildings", "name": "Catacombs of Kom El Shoqafa" }
           ],
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "url": "https://mmernaguide.info/alexandria-day-tour/",
-            "offeredBy": { "@id": "https://mmernaguide.info/#agency" }
-          },
           "provider": { "@id": "https://mmernaguide.info/#agency" }
         },
         {
@@ -173,11 +173,13 @@
         .breadcrumbs { padding: 30px 0 10px; font-size: 0.75rem; color: #666; text-transform: uppercase; }
         .breadcrumbs a { color: var(--gold); text-decoration: none; }
         .hero-banner { text-align: center; margin-bottom: 40px; }
-        .hero-banner img { width: 100%; height: 550px; object-fit: cover; border-radius: 4px; border: 1px solid rgba(197,160,89,0.1); margin-top: 20px; }
+        .hero-banner img { width: 100%; height: 550px; object-fit: cover; object-position: 20% 50%; border-radius: 4px; border: 1px solid rgba(197,160,89,0.1); margin-top: 20px; }
 
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 40px 0; }
         .gallery-grid img { width: 100%; height: 200px; object-fit: cover; border: 1px solid #222; border-radius: 8px; transition: 0.3s; }
         .gallery-grid img:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .gallery-grid img.pos-30 { object-position: 50% 30%; }
+        .gallery-grid img.pos-left { object-position: 30% 50%; }
 
         .tour-content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; margin-bottom: 80px; }
         .info-block h2 { font-family: 'Playfair Display'; color: var(--gold); font-size: 2.2rem; margin-bottom: 25px; border-bottom: 1px solid rgba(197,160,89,0.1); padding-bottom: 10px; }
@@ -213,6 +215,7 @@
             .hero-banner img { height: 350px; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
+        @media (max-width: 600px) { .hero-banner img { height: auto; } }
 
         .wa-float { position: fixed; bottom: 35px; left: 35px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
         .wa-float:hover { transform: scale(1.1); }
@@ -246,34 +249,29 @@
     <section class="hero-banner">
         <h1 class="playfair gold-text" style="font-size: clamp(2.2rem, 5vw, 3.5rem);">Alexandria Day Tour from Cairo</h1>
         <p style="color: #888; font-size: 1.1rem; margin-top: 10px;">Private 12-hour archaeological journey to the Pearl of the Mediterranean.</p>
-        <img src="/alex8.webp" alt="Alexandria Full Day Tour from Cairo with Licensed Guide">
+        <img src="/alexandria-qaitbay-citadel-private-tour-group.webp" alt="Private tour group standing by the harbor beside the walls of the Citadel of Qaitbay in Alexandria" width="1600" height="720" fetchpriority="high" decoding="async">
     </section>
 
     <div class="gallery-grid">
-        <img src="/alex1.webp" alt="Citadel of Qaitbay Alexandria - Private Tour" loading="lazy" decoding="async">
-        <img src="/alex3.webp" alt="Alexandria Corniche Mediterranean Sea View" loading="lazy" decoding="async">
-        <img src="/alex4.webp" alt="Catacombs of Kom El Shoqafa Roman Site" loading="lazy" decoding="async">
-        <img src="/alex5.webp" alt="Alexandria Coastal View with Archaeologist" loading="lazy" decoding="async">
-        <img src="/alex6.webp" alt="Alexandria Historic Roman Sites Exploration" loading="lazy" decoding="async">
-        <img src="/alex7.webp" alt="Alexandria Cultural Highlights Full Day" loading="lazy" decoding="async">
-        <img src="/alex8.webp" alt="Alexandria Private Luxury Tour Experience" loading="lazy" decoding="async">
-        <img src="/alex9.webp" alt="Alexandria Private Luxury Tour Experience" loading="lazy" decoding="async">
-        <img src="/alex10.webp" alt="Alexandria Private Luxury Tour Experience" loading="lazy" decoding="async">
+        <img src="/alex1.webp" alt="Two travelers on the harbor wall with the Citadel of Qaitbay behind them in Alexandria" width="1169" height="768" loading="lazy" decoding="async">
+        <img src="/alexandria-kom-el-shoqafa-catacombs-interior-visitors.webp" alt="View looking up from inside the Catacombs of Kom El Shoqafa toward two visitors at an opening above" class="pos-30" width="1204" height="1600" loading="lazy" decoding="async">
+        <img src="/alexandria-waterfront-private-tour-selfie.webp" alt="Two travelers taking a selfie on the Alexandria waterfront with fishing boats behind them" width="3264" height="1464" loading="lazy" decoding="async">
+        <img src="/cairo-to-alexandria-private-tour-road-trip.webp" alt="Smiling travelers inside a private air-conditioned vehicle on the road from Cairo to Alexandria" width="1599" height="1200" loading="lazy" decoding="async">
     </div>
 
     <div class="tour-content-grid">
         <div class="info-block">
             <h2>The Mediterranean Experience</h2>
-            <p>Step away from the desert and breathe the Mediterranean air. Founded by Alexander the Great, Alexandria is a city where history meets the sea. On this private journey, we explore the majestic 15th-century Citadel of Qaitbay, built upon the exact site of the ancient Lighthouse of Alexandria.</p>
+            <p>Step away from the desert and breathe the Mediterranean air. Founded by Alexander the Great, Alexandria is a city where history meets the sea. On this private journey, we explore the 15th-century Citadel of Qaitbay, built on the site of the ancient Lighthouse of Alexandria.</p>
             
-            <p>You will marvel at the architectural genius of the modern Library of Alexandria and descend into the fascinating Kom El Shoqafa Catacombs. Every step is curated and guided by a licensed Egyptologist for a deep, insightful experience.</p>
+            <p>You will see the striking modern architecture of the Bibliotheca Alexandrina, which honors the legacy of the ancient Library of Alexandria, and descend into the Catacombs of Kom El Shoqafa. Every step is curated and guided by a licensed Egyptologist for a deep, insightful experience.</p>
 
             <p>Want Alexandria as part of a grand Egypt journey? Our <a href="/itinerary-12-days/" class="internal-link">Ultimate 12-Day Egypt Masterpiece</a> combines this coastal escape with Cairo, Luxor, and Aswan.</p>
 
-            <h2>Premium Inclusions</h2>
+            <h2>Included</h2>
             <ul class="check-list">
                 <li>Licensed Professional Egyptologist Guide</li>
-                <li>Private High-End AC Vehicle (HiAce/Sedan)</li>
+                <li>Private Air-Conditioned Vehicle (HiAce/Sedan)</li>
                 <li>Hotel Pickup & Drop-off (Cairo or Giza)</li>
                 <li><strong>Guidance on Official Entrance Tickets</strong></li>
                 <li>Chilled Bottled Water during the tour</li>
@@ -290,9 +288,9 @@
 
         <aside>
             <div class="booking-sidebar">
-                <h3>Private VIP Booking</h3>
+                <h3>Private Booking</h3>
                 <p>Enjoy a bespoke 100% private itinerary. No shared groups, no rushing.</p>
-                <a href="https://wa.me/201029545765?text=Hi%20Merna%20%26%20Rania%2C%20I'd%20like%20to%20book%20the%20Alexandria%20Full%20Day%20Tour.%20Please%20confirm%20availability." target="_blank" class="sidebar-btn">Check Availability</a>
+                <a href="https://wa.me/201029545765?text=Hi%20Merna%20%26%20Rania%2C%20I'd%20like%20to%20book%20the%20Alexandria%20Full%20Day%20Tour.%20Please%20confirm%20availability." target="_blank" rel="noopener noreferrer" class="sidebar-btn">Check Availability</a>
             </div>
         </aside>
     </div>
