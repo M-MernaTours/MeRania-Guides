@@ -127,6 +127,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* Metric-matched fallback fonts: reduce layout shift while Poppins / Playfair Display load */
+        @font-face { font-family: 'Poppins Fallback'; src: local('Arial'), local('ArialMT'), local('Liberation Sans'), local('Arimo'); font-weight: 100 500; size-adjust: 111.04%; ascent-override: 94.56%; descent-override: 31.52%; line-gap-override: 9.01%; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'Poppins Fallback'; src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'), local('Arimo Bold'); font-weight: 600 900; size-adjust: 100.50%; ascent-override: 104.48%; descent-override: 34.83%; line-gap-override: 9.95%; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'Playfair Display Fallback'; src: local('Times New Roman Bold'), local('TimesNewRomanPS-BoldMT'), local('Liberation Serif Bold'), local('Tinos Bold'); font-weight: 100 900; size-adjust: 105.54%; ascent-override: 102.52%; descent-override: 23.78%; line-gap-override: 0.00%; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
         :root {
             --gold: #C5A059;
             --bg-dark: #0F0F0F;
@@ -136,9 +141,9 @@
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', 'Poppins Fallback', sans-serif; }
         body { background: var(--bg-dark); color: var(--white); overflow-x: hidden; scroll-behavior: smooth; }
-        .playfair { font-family: 'Playfair Display', serif; }
+        .playfair { font-family: 'Playfair Display', 'Playfair Display Fallback', serif; }
         .container { max-width: 1400px; margin: 0 auto; width: 92%; }
         .gold-text { color: var(--gold); }
         .text-center { text-align: center; }
@@ -198,7 +203,7 @@
         .service-box:hover img { transform: scale(1.08); filter: brightness(1); }
 
         .service-content { padding: 45px; text-align: center; }
-        .service-content h2 { font-family: 'Playfair Display'; color: var(--gold); font-size: 2.2rem; margin-bottom: 20px; }
+        .service-content h2 { font-family: 'Playfair Display', 'Playfair Display Fallback', serif; color: var(--gold); font-size: 2.2rem; margin-bottom: 20px; }
         .service-content ul { list-style: none; margin-bottom: 30px; color: #888; line-height: 2; font-size: 1.05rem; }
         .service-content ul li::before { content: "✔ "; color: var(--gold); font-weight: bold; }
         
@@ -215,7 +220,7 @@
         .why-p { max-width: 900px; margin: 0 auto; color: #aaa; line-height: 2; font-size: 1.15rem; }
         .why-section:not(:last-of-type) { margin-bottom: 0; }
         .why-section h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 25px; }
-        .why-section h3 { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.4rem; margin: 35px 0 15px; }
+        .why-section h3 { font-family: 'Playfair Display', 'Playfair Display Fallback', serif; color: var(--gold); font-size: 1.4rem; margin: 35px 0 15px; }
         .why-section .why-p + .why-p, .quote-list + .why-p { margin-top: 20px; }
         .hero-p { max-width: 850px; margin: 0 auto; color: var(--text-gray); line-height: 2; font-size: 1.1rem; }
         .text-link { color: var(--gold); text-decoration: none; border-bottom: 1px dashed var(--gold); }
