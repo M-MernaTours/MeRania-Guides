@@ -5,6 +5,32 @@ customer data, quotations, credentials, secrets, or private business details.
 Claude Code has NO access to the Claude.ai Project knowledge base or memory;
 only what is in this repo or provided by the owner in the session is known.
 
+### Exception — Owner-Approved Nile Felucca Guest Photographs
+The repository is public, and customer privacy must remain protected.
+The business owner has explicitly confirmed publication consent from all
+identifiable guests appearing in the following four photographs. These specific
+photographs are approved for use on `nile-felucca-ride/`:
+- `cairo-nile-boat-tour-guests.webp`
+- `nile-felucca-deck-mast-rigging.webp`
+- `nile-boat-guest-seated-on-deck.webp`
+- `two-women-smiling-nile-boat-ride-egypt.webp`
+
+Conditions:
+- Use only these authentic owner-approved image files within this exception.
+- Preserve the actual photographic content.
+- Do not invent guest names, relationships, nationalities or identities.
+- Do not disclose private customer information.
+- Do not publish booking records, private communications, phone numbers or
+  email addresses.
+- Remove any unnecessary sensitive metadata before public publication, without
+  modifying the visible photograph.
+- Do not extend this permission to other customer photographs or other pages
+  without separate authorization.
+- Preserve all other repository safety rules.
+
+This exception documents the owner's confirmation of guest consent. It does not
+authorize unrelated use of personal information.
+
 ## 1. Project identity
 - Business: Egyptian Tour Guide – Merna & Rania (private guided tours in Egypt).
 - Website: https://mmernaguide.info/
