@@ -12,8 +12,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Top Things to Do in Cairo | Camel Rides & Bazaar Tours</title>
-    <meta name="description" content="Discover authentic things to do in Cairo with licensed experts Merna & Rania. Book private camel rides at the Pyramids, Khan El Khalili tours, and Nile cruises.">
+    <title>Things to Do in Cairo &amp; Giza | Merna &amp; Rania</title>
+    <meta name="description" content="Things to do in Cairo and Giza: the Pyramids and museums, Islamic and Coptic Cairo, Khan El Khalili, Nile felucca rides, camel rides and quad biking.">
     <meta name="keywords" content="things to do in cairo, camel ride pyramids, khan el khalili bazaar tour, nile felucca ride, giza quad bike tour, cairo private activities, authentic cairo tours">
     <link rel="canonical" href="https://mmernaguide.info/things-to-do-in-cairo/">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -22,11 +22,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta name="robots" content="index, follow">
 
-    <meta property="og:title" content="Top Things to Do in Cairo | Camel Rides & Bazaar Tours">
-    <meta property="og:description" content="Discover authentic things to do in Cairo with licensed experts Merna & Rania. Book private camel rides at the Pyramids, Khan El Khalili tours, and Nile cruises.">
+    <meta property="og:title" content="Things to Do in Cairo &amp; Giza | Merna &amp; Rania">
+    <meta property="og:description" content="Things to do in Cairo and Giza: the Pyramids and museums, Islamic and Coptic Cairo, Khan El Khalili, Nile felucca rides, camel rides and quad biking.">
     <meta property="og:image" content="https://mmernaguide.info/things.jpg">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="622">
+    <meta property="og:image:alt" content="Illustrated Egyptian Tour Guide banner showing a selection of Egypt travel activities">
     <meta property="og:url" content="https://mmernaguide.info/things-to-do-in-cairo/">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Things to Do in Cairo &amp; Giza | Merna &amp; Rania">
+    <meta name="twitter:description" content="Things to do in Cairo and Giza: the Pyramids and museums, Islamic and Coptic Cairo, Khan El Khalili, Nile felucca rides, camel rides and quad biking.">
+    <meta name="twitter:image" content="https://mmernaguide.info/things.jpg">
+    <meta name="twitter:image:alt" content="Illustrated Egyptian Tour Guide banner showing a selection of Egypt travel activities">
 
     <script type="application/ld+json">
     {
@@ -35,36 +42,40 @@
         {
           "@type": "TravelAgency",
           "@id": "https://mmernaguide.info/#agency",
-          "name": "Egyptian Tour Guide – Merna & Rania",
-          "url": "https://mmernaguide.info",
+          "name": "Egyptian Tour Guide - Merna & Rania",
+          "url": "https://mmernaguide.info/",
           "image": "https://mmernaguide.info/things.jpg",
           "telephone": "+201029545765",
           "priceRange": "$$"
         },
         {
           "@type": "ItemList",
-          "name": "Must-Try Cairo Experiences",
-          "description": "A curated list of private guided activities in Cairo, Egypt.",
+          "name": "Things to Do in Cairo and Giza",
+          "description": "Optional activities in Cairo and Giza that can be arranged privately.",
           "itemListElement": [
             {
               "@type": "ListItem",
               "position": 1,
-              "item": {
-                "@type": "TouristAttraction",
-                "name": "Camel Ride at Giza Pyramids",
-                "url": "https://mmernaguide.info/camel-ride-pyramids/",
-                "description": "Guided private camel trek at the Giza Plateau."
-              }
+              "name": "Camel Ride at the Pyramids",
+              "url": "https://mmernaguide.info/camel-ride-pyramids/"
             },
             {
               "@type": "ListItem",
               "position": 2,
-              "item": {
-                "@type": "TouristAttraction",
-                "name": "Khan El Khalili Bazaar Tour",
-                "url": "https://mmernaguide.info/khan-el-khalili-bazaar-tour/",
-                "description": "Cultural walking tour in the world's oldest market."
-              }
+              "name": "Khan El Khalili Bazaar Tour",
+              "url": "https://mmernaguide.info/khan-el-khalili-bazaar-tour/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Nile Felucca Ride",
+              "url": "https://mmernaguide.info/nile-felucca-ride/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Quad Bike Ride Near the Pyramids",
+              "url": "https://mmernaguide.info/giza-pyramids-quad-bike-tour/"
             }
           ]
         }
@@ -85,7 +96,7 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Things to Do",
+          "name": "Things to Do in Cairo",
           "item": "https://mmernaguide.info/things-to-do-in-cairo/"
         }
       ]
@@ -155,6 +166,22 @@
 
         /* --- Interactive Grid --- */
         .tours-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-bottom: 120px; }
+        .section-head { font-family: 'Playfair Display'; color: var(--gold); font-size: clamp(1.8rem, 4vw, 2.6rem); text-align: center; margin-bottom: 20px; }
+        .section-lead { max-width: 850px; margin: 0 auto 40px; color: var(--text-gray); line-height: 1.9; text-align: center; }
+        .info-section { margin-bottom: 110px; }
+        .sights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .sight-card { background: var(--card-bg); border: 1px solid rgba(197, 160, 89, 0.15); padding: 30px; border-radius: 6px; }
+        .sight-card h3 { font-family: 'Playfair Display'; color: var(--gold); font-size: 1.35rem; margin-bottom: 12px; }
+        .sight-card p { color: #aaa; line-height: 1.8; margin-bottom: 15px; font-size: 0.98rem; }
+        .text-link { color: var(--gold); text-decoration: underline; font-weight: 600; }
+        .tips-list { max-width: 900px; margin: 0 auto; list-style: none; }
+        .tips-list li { color: #bbb; line-height: 1.9; padding: 14px 0 14px 28px; border-bottom: 1px solid #222; position: relative; }
+        .tips-list li::before { content: "✦"; color: var(--gold); position: absolute; left: 0; }
+        .tips-list strong { color: #eee; }
+        .plan-cta { text-align: center; padding: 60px 30px; margin-bottom: 110px; border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 8px; background: rgba(197, 160, 89, 0.04); }
+        .plan-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .plan-links a { display: inline-block; padding: 14px 30px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; }
+        .plan-links a:hover, .plan-links a:focus-visible { background: var(--gold); color: #000; }
         .tour-box { 
             background: var(--card-bg); 
             border: 1px solid rgba(197, 160, 89, 0.05); 
@@ -169,7 +196,7 @@
         .tour-box:hover img { transform: scale(1.06); filter: brightness(1); }
 
         .tour-content { padding: 50px; text-align: center; }
-        .tour-content h2 { font-family: 'Playfair Display'; color: var(--gold); font-size: 2.2rem; margin-bottom: 20px; letter-spacing: 1px; }
+        .tour-content h2, .tour-content h3 { font-family: 'Playfair Display'; color: var(--gold); font-size: 2.2rem; margin-bottom: 20px; letter-spacing: 1px; }
         .tour-content p { color: #999; font-size: 1.05rem; line-height: 1.8; margin-bottom: 35px; }
         
         .info-btn { 
@@ -220,48 +247,102 @@
 
 <main class="container">
     <section class="page-intro">
-        <h1 class="playfair gold-text">Essential Cairo Experiences</h1>
+        <h1 class="playfair gold-text">Things to Do in Cairo &amp; Giza</h1>
         <div class="divider"></div>
-        <p>Go beyond the museums and monuments. From the thrill of a desert camel trek to the serenity of a Nile sunset, we've curated the most authentic activities to help you experience the real heart of Egypt's capital.</p>
+        <p>Cairo and neighboring Giza combine ancient monuments, major museums, historic neighborhoods and relaxed outdoor experiences. Here is how to choose what suits your trip.</p>
     </section>
 
     <div class="tours-grid">
         <a href="/camel-ride-pyramids/" class="tour-box">
-            <img src="/Camel.webp" alt="Authentic Camel Ride Experience at Giza Pyramids with Merna & Rania">
+            <img src="/Camel.webp" alt="Decorated camel resting in the desert with the Giza pyramids in the distance" width="1080" height="1546" decoding="async">
             <div class="tour-content">
                 <h2>Camel Ride at the Pyramids</h2>
-                <p>An iconic journey across the Giza Plateau. Experience the breathtaking panoramic views of the pyramids from the back of a traditional camel.</p>
+                <p>A classic way to enjoy the desert setting of the Giza Pyramids. The ride is arranged privately and can be combined with a guided visit to the pyramids.</p>
                 <span class="info-btn">View Experience</span>
             </div>
         </a>
 
         <a href="/khan-el-khalili-bazaar-tour/" class="tour-box">
-            <img src="/Khan-4.webp" alt="Historic Khan El Khalili Bazaar Walking Tour Cairo">
+            <img src="/Khan-4.webp" alt="Family group sitting at a table in a traditional café in Khan El Khalili" width="1280" height="1052" decoding="async">
             <div class="tour-content">
                 <h2>Khan El Khalili Bazaar Tour</h2>
-                <p>Step into the Middle Ages. Wander through vibrant alleys, visit historic coffee houses, and discover the hidden gems of Cairo's oldest market.</p>
+                <p>A guided walk through the historic alleys of one of Cairo's best-known markets, with its crafts, workshops and traditional coffee houses.</p>
                 <span class="info-btn">View Experience</span>
             </div>
         </a>
 
         <a href="/nile-felucca-ride/" class="tour-box">
-            <img src="/Nile-Felluca.webp" alt="Traditional Wooden Nile Felucca Sunset Ride Cairo" loading="lazy" decoding="async">
+            <img src="/Nile-Felluca.webp" alt="Family group on a boat deck by the Nile at night with the Cairo skyline lit up behind them" width="1409" height="960" loading="lazy" decoding="async">
             <div class="tour-content">
                 <h2>Nile Felucca Ride</h2>
-                <p>Sail the eternal river on a private wooden felucca. A peaceful, timeless experience as the sun sets over Cairo’s modern skyline.</p>
+                <p>A relaxed private sail on a traditional wooden felucca on the Nile in Cairo. The hour before sunset is a popular time to go.</p>
                 <span class="info-btn">View Experience</span>
             </div>
         </a>
 
-                <a href="/giza-pyramids-quad-bike-tour/" class="tour-box">
-            <img src="/quadbike.webp" alt="Quad Bike Tour at Giza Pyramids" loading="lazy" decoding="async">
+        <a href="/giza-pyramids-quad-bike-tour/" class="tour-box">
+            <img src="/quadbike.webp" alt="Rider standing on a red quad bike in the desert with the Giza pyramids in the distance" width="1200" height="1061" loading="lazy" decoding="async">
             <div class="tour-content">
-                <h2>Quad Bike Tour at the Pyramids</h2>
-                <p>Experience the Giza Pyramids like never before. Ride a powerful quad bike across the desert sands and get up close to these ancient wonders.</p>
+                <h2>Quad Bike Ride Near the Pyramids</h2>
+                <p>A private quad bike ride in the desert near the Giza Pyramids, with views of the pyramids on the horizon. No riding experience is needed.</p>
                 <span class="info-btn">View Experience</span>
             </div>
         </a>
     </div>
+
+    <section class="info-section" aria-labelledby="sights-heading">
+        <h2 id="sights-heading" class="section-head">Historic Sights in Cairo and Giza</h2>
+        <p class="section-lead">Most visitors build their days around the great historical sites. These are usually visited with a licensed Egyptologist guide, and entrance tickets are separate from optional activities.</p>
+        <div class="sights-grid">
+            <div class="sight-card">
+                <h3>Giza Pyramids &amp; the Grand Egyptian Museum</h3>
+                <p>The Pyramids of Giza and the Great Sphinx on the Giza Plateau, combined with the Grand Egyptian Museum nearby.</p>
+                <a href="/giza-gem/" class="text-link">Giza Pyramids &amp; GEM tour</a>
+            </div>
+            <div class="sight-card">
+                <h3>Memphis, Saqqara &amp; Dahshur</h3>
+                <p>South of Giza: the ancient capital of Memphis, the Step Pyramid at Saqqara and the Bent and Red Pyramids at Dahshur.</p>
+                <a href="/memphis-saqqara-dahshur/" class="text-link">Memphis, Saqqara &amp; Dahshur tour</a>
+            </div>
+            <div class="sight-card">
+                <h3>Islamic &amp; Coptic Cairo</h3>
+                <p>The Citadel of Salah El-Din and the Mosque of Muhammad Ali, the Sultan Hassan Mosque and the historic churches of Coptic Cairo.</p>
+                <a href="/islamic-coptic-cairo/" class="text-link">Islamic &amp; Coptic Cairo tour</a>
+            </div>
+            <div class="sight-card">
+                <h3>The Egyptian Museum &amp; NMEC</h3>
+                <p>The historic Egyptian Museum in Tahrir and the National Museum of Egyptian Civilization, home to the Royal Mummies Hall.</p>
+                <a href="/egyptian-museum-nmec-tour/" class="text-link">Egyptian Museum &amp; NMEC tour</a>
+            </div>
+            <div class="sight-card">
+                <h3>Garbage City &amp; the Cave Church</h3>
+                <p>The Zabbaleen community of Mokattam and its rock-cut churches, including the Cave Church of St Simon.</p>
+                <a href="/garbage-city-cave-church-tour/" class="text-link">Garbage City &amp; Cave Church tour</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section" aria-labelledby="planning-heading">
+        <h2 id="planning-heading" class="section-head">Planning Your Days in Cairo</h2>
+        <ul class="tips-list">
+            <li><strong>Cairo and Giza are different areas:</strong> the Pyramids and the Grand Egyptian Museum are in Giza, while Islamic and Coptic Cairo, Khan El Khalili and the Egyptian Museum are in Cairo itself. Grouping nearby sights on the same day saves time in traffic.</li>
+            <li><strong>Historic sites and activities are booked separately:</strong> a camel ride or quad bike ride does not automatically include admission to the archaeological site, and site entrance tickets are separate from optional activities.</li>
+            <li><strong>Plan around the heat:</strong> in the warmer months, open-air sites and desert activities are more comfortable early in the morning or later in the afternoon.</li>
+            <li><strong>Leave time to slow down:</strong> a felucca ride or an evening in Khan El Khalili is a relaxing contrast to a full day of monuments.</li>
+            <li><strong>Prepare for the trip:</strong> our <a href="/post-safety-tips/" class="text-link">Egypt travel safety tips</a> cover documents, money, tipping and local customs.</li>
+        </ul>
+    </section>
+
+    <section class="plan-cta" aria-labelledby="plan-heading">
+        <h2 id="plan-heading" class="section-head">Plan Your Private Cairo Days</h2>
+        <p class="section-lead">Tell us what interests you, and we will help you combine sights and activities at a comfortable pace with a licensed guide.</p>
+        <div class="plan-links">
+            <a href="/day-tours/">Private Day Tours</a>
+            <a href="/itineraries/">Multi-Day Itineraries</a>
+            <a href="/contact/">Contact Us</a>
+            <a href="https://wa.me/201029545765" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+    </section>
 </main>
 
 <footer class="master-footer">
