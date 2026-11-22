@@ -14,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Primary Tags -->
-    <title>Egypt Travel Guide & Blogs | Merna & Rania Insider Tips</title>
-    <meta name="description" content="Master your Egypt trip with insider blogs and travel tips from licensed guides Merna & Rania. Expert advice on Pyramids, GEM, Luxor, and more.">
+    <title>Egypt Travel Blog &amp; Tips | Merna &amp; Rania</title>
+    <meta name="description" content="Egypt travel blog by licensed local guides: practical guides to the Giza Pyramids and GEM, Luxor, Alexandria, Fayoum, Cairo activities and travel safety.">
     <meta name="keywords" content="Egypt travel guide, Egypt blogs, Giza Pyramids tips, Grand Egyptian Museum tour, Luxor travel guide, Alexandria day trip, Fayoum safari, Egypt safety tips, Cairo activities guide, Egypt tour guides, Merna and Rania">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <meta name="googlebot" content="index, follow">
@@ -33,8 +33,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mmernaguide.info/blogs/">
-    <meta property="og:title" content="Egypt Travel Guide & Blogs | Merna & Rania Insider Tips">
-    <meta property="og:description" content="Master your Egypt trip with insider blogs and travel tips from licensed guides Merna & Rania. Expert advice on Pyramids, GEM, Luxor, and more.">
+    <meta property="og:title" content="Egypt Travel Blog &amp; Tips | Merna &amp; Rania">
+    <meta property="og:description" content="Egypt travel blog by licensed local guides: practical guides to the Giza Pyramids and GEM, Luxor, Alexandria, Fayoum, Cairo activities and travel safety.">
     <meta property="og:image" content="https://mmernaguide.info/pyramids1.webp">
     <meta property="og:image:width" content="1400">
     <meta property="og:image:height" content="1389">
@@ -44,8 +44,8 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Egypt Travel Guide & Vlogs">
-    <meta name="twitter:description" content="Master your Egypt trip with insider tips from Merna & Rania.">
+    <meta name="twitter:title" content="Egypt Travel Blog &amp; Tips | Merna &amp; Rania">
+    <meta name="twitter:description" content="Egypt travel blog by licensed local guides: practical guides to the Giza Pyramids and GEM, Luxor, Alexandria, Fayoum, Cairo activities and travel safety.">
     <meta name="twitter:image" content="https://mmernaguide.info/pyramids1.webp">
 
     <!-- Schema Markup (JSON-LD) -->
@@ -53,9 +53,10 @@
     {
       "@context": "https://schema.org",
       "@type": "TravelAgency",
+      "@id": "https://mmernaguide.info/#agency",
       "name": "Egyptian Tour Guide - Merna & Rania",
       "description": "Licensed private Egyptian tour guide services in Cairo, Giza, and across Egypt.",
-      "url": "https://mmernaguide.info/blogs/",
+      "url": "https://mmernaguide.info/",
       "telephone": "+201029545765",
       "email": "mmernaguide@mmernaguide.info",
       "image": "https://mmernaguide.info/logo.png",
@@ -88,16 +89,10 @@
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      "name": "Egypt Travel Guide & Blogs",
-      "description": "A collection of travel guides and vlogs about Egypt's top destinations.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Merna & Rania Egypt Guide",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://mmernaguide.info/logo.png"
-        }
-      },
+      "name": "Egypt Travel Blog & Tips",
+      "url": "https://mmernaguide.info/blogs/",
+      "description": "Practical Egypt travel guides by licensed local guides, covering the Giza Pyramids and GEM, Luxor, Alexandria, Fayoum, Cairo activities and travel safety.",
+      "publisher": { "@id": "https://mmernaguide.info/#agency" },
       "mainEntity": {
         "@type": "ItemList",
         "itemListElement": [
@@ -122,19 +117,19 @@
           {
             "@type": "ListItem",
             "position": 4,
-            "name": "Luxor Express Guide",
+            "name": "Luxor in One Day",
             "url": "https://mmernaguide.info/post-luxor-express/"
           },
           {
             "@type": "ListItem",
             "position": 5,
-            "name": "Top Cairo Activities",
+            "name": "Things to Do in Cairo",
             "url": "https://mmernaguide.info/post-cairo-activities/"
           },
           {
             "@type": "ListItem",
             "position": 6,
-            "name": "Travel Like a Pro - Egypt Safety Tips",
+            "name": "Egypt Travel Safety Tips",
             "url": "https://mmernaguide.info/post-safety-tips/"
           }
         ]
@@ -249,6 +244,10 @@
             text-transform: uppercase; font-size: 0.8rem; transition: 0.4s;
         }
         .read-btn:hover { background: var(--gold); color: #000; }
+        .blog-plan { text-align: center; padding: 0 0 100px; }
+        .blog-plan h2 { font-family: 'Playfair Display'; color: var(--gold); font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 20px; }
+        .blog-plan p { max-width: 760px; margin: 0 auto 30px; color: var(--text-gray); line-height: 1.8; }
+        .blog-plan-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
 
         /* --- Footer --- */
         .master-footer { background: #050505; padding: 100px 0 30px; border-top: 1px solid var(--gold); }
@@ -302,9 +301,9 @@
 
 <main class="container">
     <section class="page-intro">
-        <h1 class="playfair gold-text">Egypt Travel Tips & Vlogs</h1>
+        <h1 class="playfair gold-text">Egypt Travel Blog &amp; Tips</h1>
         <div class="divider"></div>
-        <p>Explore Egypt through the eyes of local experts. We've curated the most searched travel topics to help you navigate our beautiful country with confidence and ease.</p>
+        <p>Practical guides from our licensed local guides to help you plan your time in Egypt: what to see, how long to allow and what to expect on the day.</p>
     </section>
 
     <div class="vlogs-grid">
@@ -316,8 +315,8 @@
             </div>
             <div class="vlog-content">
                 <h2>Giza Pyramids & The GEM</h2>
-                <p>The ultimate 2026 strategy: Learn how to beat the crowds and see the latest openings at the Grand Egyptian Museum.</p>
-                <a href="/post-pyramids-gem/" class="read-btn">Read Guide</a>
+                <p>How to plan a visit to the Giza Pyramids and the Grand Egyptian Museum, including timing, crowds and the highlights worth prioritizing.</p>
+                <a href="/post-pyramids-gem/" class="read-btn" aria-label="Read the Giza Pyramids and Grand Egyptian Museum guide">Read Guide</a>
             </div>
         </article>
 
@@ -329,7 +328,7 @@
             <div class="vlog-content">
                 <h2>Fayoum Desert Safari Guide</h2>
                 <p>Desert lakes, golden dunes, and the whale fossils of Wadi El-Hitan: what to expect on a desert day trip to Fayoum.</p>
-                <a href="/post-fayoum-safari/" class="read-btn">Read Guide</a>
+                <a href="/post-fayoum-safari/" class="read-btn" aria-label="Read the Fayoum Desert Safari guide">Read Guide</a>
             </div>
         </article>
 
@@ -340,48 +339,58 @@
             </div>
             <div class="vlog-content">
                 <h2>Alexandria in One Day</h2>
-                <p>From the Roman Catacombs to the best Mediterranean seafood. How to fit the best of Alexandria into a 24-hour trip.</p>
-                <a href="/post-alexandria-day/" class="read-btn">Read Guide</a>
+                <p>The Citadel of Qaitbay, the Catacombs of Kom El Shoqafa and the Bibliotheca Alexandrina: how to plan a day trip from Cairo to the Mediterranean coast.</p>
+                <a href="/post-alexandria-day/" class="read-btn" aria-label="Read the Alexandria day trip guide">Read Guide</a>
             </div>
         </article>
 
         <!-- Vlog Card 4: Luxor -->
         <article class="vlog-box">
             <div class="vlog-img-holder">
-                <img src="/Valleyofthekingwest.webp" alt="Luxor East and West Bank historic tour guide" loading="lazy">
+                <img src="/Valleyofthekingwest.webp" alt="Private tour group holding the Egyptian Tour Guide sign in the Valley of the Kings on Luxor's West Bank" width="727" height="673" loading="lazy" decoding="async">
             </div>
             <div class="vlog-content">
-                <h2>Luxor Express Guide</h2>
-                <p>Short on time? We show you how to experience the Valley of the Kings and Karnak Temple in just one day.</p>
-                <a href="/post-luxor-express/" class="read-btn">Read Guide</a>
+                <h2>Luxor in One Day</h2>
+                <p>Short on time? A realistic one-day route through Luxor's East and West Banks, from Karnak Temple to the Valley of the Kings.</p>
+                <a href="/post-luxor-express/" class="read-btn" aria-label="Read the Luxor in One Day guide">Read Guide</a>
             </div>
         </article>
 
         <!-- Vlog Card 5: Cairo Activities -->
         <article class="vlog-box">
             <div class="vlog-img-holder">
-                <img src="/quadbike.webp" alt="Fun things to do in Cairo like Quad biking and Felucca rides" loading="lazy">
+                <img src="/quadbike.webp" alt="Rider standing on a red quad bike in the desert with the Giza pyramids in the distance" width="1200" height="1061" loading="lazy" decoding="async">
             </div>
             <div class="vlog-content">
-                <h2>Top Cairo Activities</h2>
-                <p>Beyond the monuments: Experience the Nile by Felucca, local markets, and Cairo's vibrant night life secrets.</p>
-                <a href="/post-cairo-activities/" class="read-btn">Read Guide</a>
+                <h2>Things to Do in Cairo</h2>
+                <p>Camel rides and quad biking at Giza, felucca sailing on the Nile and a walk through Khan El Khalili bazaar: ideas for your free time in Cairo.</p>
+                <a href="/post-cairo-activities/" class="read-btn" aria-label="Read the things to do in Cairo guide">Read Guide</a>
             </div>
         </article>
 
         <!-- 6. Safety & Scams -->
         <article class="vlog-box">
             <div class="vlog-img-holder">
-                <img src="/alex8.webp" alt="Travel safety tips and how to avoid scams in Egypt with Merna and Rania" loading="lazy">
+                <img src="/alex8.webp" alt="Large private tour group smiling on the Alexandria waterfront by the Mediterranean" width="1024" height="733" loading="lazy" decoding="async">
             </div>
             <div class="vlog-content">
-                <h2>Travel Like a Pro</h2>
-                <p>Your safety is our priority. Honest advice on avoiding scams, handling street vendors, and navigating Egypt with confidence.</p>
-                <a href="/post-safety-tips/" class="read-btn">Read Guide</a>
+                <h2>Egypt Travel Safety Tips</h2>
+                <p>Practical advice on documents, money and tipping, visiting historic sites, coping with the heat and respecting local customs.</p>
+                <a href="/post-safety-tips/" class="read-btn" aria-label="Read the Egypt travel safety tips">Read Guide</a>
             </div>
         </article>
 
     </div>
+
+    <section class="blog-plan" aria-labelledby="plan-heading">
+        <h2 id="plan-heading">Plan Your Private Egypt Tour</h2>
+        <p>Ready to turn these ideas into a plan? Browse our private day tours and multi-day itineraries, or contact us with your dates and interests.</p>
+        <div class="blog-plan-links">
+            <a href="/day-tours/" class="read-btn">Day Tours</a>
+            <a href="/itineraries/" class="read-btn">Multi-Day Itineraries</a>
+            <a href="/contact/" class="read-btn">Contact Us</a>
+        </div>
+    </section>
 </main>
 
 <footer class="master-footer">
