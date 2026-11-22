@@ -156,6 +156,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* Metric-matched fallback fonts: reduce layout shift while Poppins / Playfair Display load */
+        @font-face { font-family: 'Poppins Fallback'; src: local('Arial'), local('ArialMT'), local('Liberation Sans'), local('Arimo'); font-weight: 100 500; size-adjust: 111.04%; ascent-override: 94.56%; descent-override: 31.52%; line-gap-override: 9.01%; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'Poppins Fallback'; src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'), local('Arimo Bold'); font-weight: 600 900; size-adjust: 100.50%; ascent-override: 104.48%; descent-override: 34.83%; line-gap-override: 9.95%; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'Playfair Display Fallback'; src: local('Times New Roman Bold'), local('TimesNewRomanPS-BoldMT'), local('Liberation Serif Bold'), local('Tinos Bold'); font-weight: 100 900; size-adjust: 105.54%; ascent-override: 102.52%; descent-override: 23.78%; line-gap-override: 0.00%; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
         :root {
             --gold: #C5A059;
             --bg-dark: #0F0F0F;
@@ -165,9 +170,9 @@
             --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', 'Poppins Fallback', sans-serif; }
         body { background: var(--bg-dark); color: var(--white); overflow-x: hidden; scroll-behavior: smooth; }
-        .playfair { font-family: 'Playfair Display', serif; }
+        .playfair { font-family: 'Playfair Display', 'Playfair Display Fallback', serif; }
         .container { max-width: 1400px; margin: 0 auto; width: 92%; }
         .gold-text { color: var(--gold); }
         .text-center { text-align: center; }
@@ -213,7 +218,7 @@
         .divider { width: 80px; height: 2px; background: var(--gold); margin: 30px auto; }
 
         /* --- Section Headings --- */
-        .section-title { font-family: 'Playfair Display', serif; color: var(--gold); font-size: clamp(1.7rem, 3.5vw, 2.4rem); text-align: center; margin-bottom: 16px; }
+        .section-title { font-family: 'Playfair Display', 'Playfair Display Fallback', serif; color: var(--gold); font-size: clamp(1.7rem, 3.5vw, 2.4rem); text-align: center; margin-bottom: 16px; }
         .section-lead { text-align: center; color: var(--text-gray); max-width: 780px; margin: 0 auto 36px; line-height: 1.8; font-size: 0.96rem; }
 
         /* --- Comparison Table --- */
@@ -242,7 +247,7 @@
             transition: var(--transition);
         }
         .box:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
-        .box h3 { font-family: 'Playfair Display'; color: var(--gold); font-size: 1.8rem; margin-bottom: 20px; }
+        .box h3 { font-family: 'Playfair Display', 'Playfair Display Fallback', serif; color: var(--gold); font-size: 1.8rem; margin-bottom: 20px; }
         .box ul { list-style: none; margin-bottom: 30px; }
         .box ul li { margin-bottom: 12px; color: #aaa; font-size: 0.95rem; display: flex; align-items: flex-start; gap: 10px; line-height: 1.6; }
         .box ul li::before { content: "✔"; color: var(--gold); font-weight: bold; flex-shrink: 0; }
@@ -259,7 +264,7 @@
         .trust-info { margin-bottom: 90px; }
         .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .trust-card { background: var(--card-bg); padding: 36px 30px; border: 1px solid rgba(197, 160, 89, 0.1); }
-        .trust-card h3 { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.4rem; margin-bottom: 14px; }
+        .trust-card h3 { font-family: 'Playfair Display', 'Playfair Display Fallback', serif; color: var(--gold); font-size: 1.4rem; margin-bottom: 14px; }
         .trust-card p { color: #bbb; font-size: 0.94rem; line-height: 1.8; }
         .trust-card a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
         .trust-card a:hover { color: var(--white); }
@@ -269,7 +274,7 @@
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('/slide2.webp') center/cover no-repeat;
             padding: 100px 20px; text-align: center; border: 1px solid var(--gold); margin-bottom: 100px;
         }
-        .cta h2 { font-family: 'Playfair Display'; color: var(--gold); font-size: 2.5rem; margin-bottom: 25px; }
+        .cta h2 { font-family: 'Playfair Display', 'Playfair Display Fallback', serif; color: var(--gold); font-size: 2.5rem; margin-bottom: 25px; }
         .cta p { max-width: 800px; margin: 0 auto; color: #ddd; line-height: 1.8; }
         .cta-actions { margin-top: 35px; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; align-items: center; }
         .cta-btn { 
