@@ -45,6 +45,18 @@ publish guest names, nationalities, private contact information or booking
 records, and do not extend this permission to other images, pages or customer
 information without separate authorization.
 
+### Exception — Owner-Approved About Us Guest Photograph
+The business owner has explicitly confirmed publication consent from all
+identifiable guests appearing in the following photograph. This specific
+photograph is approved for use only on `about/`:
+- `merna-egyptologist-guide-cairo-group-selfie.webp`
+
+The same conditions listed under the Nile Felucca exception apply. Do not
+publish guest names, nationalities, contact information, booking records or
+private messages. This exception does not authorize other customer photographs
+or use of this photograph on other pages; additional guest photographs require
+separate authorization.
+
 ## 1. Project identity
 - Business: Egyptian Tour Guide – Merna & Rania (private guided tours in Egypt).
 - Website: https://mmernaguide.info/
