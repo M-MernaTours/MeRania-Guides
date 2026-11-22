@@ -31,6 +31,20 @@ Conditions:
 This exception documents the owner's confirmation of guest consent. It does not
 authorize unrelated use of personal information.
 
+### Exception — Owner-Approved Khan El Khalili Guest Photographs
+The business owner has explicitly confirmed publication consent from all
+identifiable guests appearing in the following four photographs. These specific
+photographs are approved for use only on `khan-el-khalili-bazaar-tour/`:
+- `khan-el-khalili-lantern-lit-evening-tour-group.webp`
+- `khan-el-khalili-night-market-tour-group.webp`
+- `khan-el-khalili-cafe-tour-group.webp`
+- `islamic-cairo-mosque-minarets-tour-guest.webp`
+
+The same conditions listed under the Nile Felucca exception apply. Do not
+publish guest names, nationalities, private contact information or booking
+records, and do not extend this permission to other images, pages or customer
+information without separate authorization.
+
 ## 1. Project identity
 - Business: Egyptian Tour Guide – Merna & Rania (private guided tours in Egypt).
 - Website: https://mmernaguide.info/
