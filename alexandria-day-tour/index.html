@@ -164,8 +164,8 @@
         
         @media (max-width: 992px) {
             .hamburger { display: block; }
-            .nav-container { position: fixed; right: -100%; top: 0; width: 100%; height: 100vh; background: #0A0A0A; flex-direction: column; justify-content: center; transition: 0.5s; z-index: 4500; }
-            .nav-container.active { right: 0; }
+            .nav-container { position: fixed; right: -100%; top: 0; width: 100%; height: 100vh; background: #0A0A0A; flex-direction: column; justify-content: center; transition: 0.5s; z-index: 4500; visibility: hidden; }
+            .nav-container.active { right: 0; visibility: visible; }
             .nav-menu { flex-direction: column; align-items: center; gap: 30px; }
             .nav-menu a { font-size: 1.5rem; }
             .hamburger.open span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
@@ -174,8 +174,8 @@
         }
 
         /* --- Tour Styles --- */
-        .breadcrumbs { padding: 30px 0 10px; font-size: 0.75rem; color: #666; text-transform: uppercase; }
-        .breadcrumbs a { color: var(--gold); text-decoration: none; }
+        .breadcrumbs { padding: 30px 0 10px; font-size: 0.75rem; color: #7d7d7d; text-transform: uppercase; }
+        .breadcrumbs a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
         .hero-banner { text-align: center; margin-bottom: 40px; }
         .hero-banner img { width: 100%; height: 550px; object-fit: cover; object-position: 20% 50%; border-radius: 4px; border: 1px solid rgba(197,160,89,0.1); margin-top: 20px; }
 
@@ -320,11 +320,11 @@
     <div class="container footer-grid">
         <div class="footer-brand">
             <img src="/logo-header.webp" alt="Merna & Rania" style="height: 60px; margin-bottom: 25px;" width="90" height="60" decoding="async">
-            <p style="color: #666; font-size: 0.85rem; line-height: 1.8;">Official Licensed Private Tour Guides providing authentic luxury archaeological experiences in Egypt.</p>
+            <p style="color: #777; font-size: 0.85rem; line-height: 1.8;">Official Licensed Private Tour Guides providing authentic luxury archaeological experiences in Egypt.</p>
         </div>
-        <div><h4 class="footer-head">Explore</h4><div class="footer-links"><a href="https://mmernaguide.info/">Home</a><a href="/tours/">Our Tours</a><a href="/day-tours/">Day Tours</a></div></div>
-        <div><h4 class="footer-head">Direct</h4><div class="footer-links"><a href="mailto:mmernaguide@mmernaguide.info">Email Us</a><a href="https://wa.me/201029545765">WhatsApp</a></div></div>
-        <div><h4 class="footer-head">Social</h4><div class="footer-links"><a href="https://www.facebook.com/mmernaguide" target="_blank">Facebook</a><a href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a></div></div>
+        <div><h2 class="footer-head">Explore</h2><div class="footer-links"><a href="https://mmernaguide.info/">Home</a><a href="/tours/">Our Tours</a><a href="/day-tours/">Day Tours</a></div></div>
+        <div><h2 class="footer-head">Direct</h2><div class="footer-links"><a href="mailto:mmernaguide@mmernaguide.info">Email Us</a><a href="https://wa.me/201029545765">WhatsApp</a></div></div>
+        <div><h2 class="footer-head">Social</h2><div class="footer-links"><a href="https://www.facebook.com/mmernaguide" target="_blank">Facebook</a><a href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a></div></div>
     </div>
 </footer>
 
@@ -351,5 +351,32 @@
     });
 </script>
 
+    <script>
+        // Mobile menu keyboard support: move focus into the menu when it opens,
+        // close it with Escape, and close it when focus moves outside it.
+        (function () {
+            const btn = document.getElementById('hamburger');
+            const menu = document.getElementById('nav-container');
+            if (!btn || !menu) return;
+            const isOpen = () => menu.classList.contains('active');
+            btn.addEventListener('click', () => {
+                // Retry briefly: the menu becomes focusable once its slide-in transition starts.
+                let tries = 0;
+                const focusFirst = () => {
+                    const first = menu.querySelector('a');
+                    if (!isOpen() || !first) return;
+                    first.focus({ preventScroll: true });
+                    if (document.activeElement !== first && ++tries < 10) setTimeout(focusFirst, 30);
+                };
+                setTimeout(focusFirst, 0);
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && isOpen()) { btn.click(); btn.focus(); }
+            });
+            document.addEventListener('focusin', (e) => {
+                if (isOpen() && !menu.contains(e.target) && e.target !== btn) btn.click();
+            });
+        })();
+    </script>
 </body>
 </html>

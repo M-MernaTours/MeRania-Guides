@@ -148,9 +148,9 @@
                 position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
                 background: #080808; flex-direction: column; justify-content: center;
                 align-items: center; transition: 0.5s; z-index: 2100;
-                display: flex;
+                display: flex; visibility: hidden;
             }
-            .nav-container.active { right: 0; }
+            .nav-container.active { right: 0; visibility: visible; }
             .nav-menu {
                 flex-direction: column; align-items: center; justify-content: center; gap: 40px;
                 width: 100%; height: auto;
@@ -201,20 +201,26 @@
             transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.12s ease;
         }
         .slider-nav-btn:hover { background: var(--gold); color: #0F0F0F; box-shadow: none; }
-        .slider-dots { display: flex; align-items: center; gap: 8px; }
+        .slider-dots { display: flex; align-items: center; gap: 0; margin: 0 -7px; }
+        /* 24x24 touch target around the same 10px visual dot */
         .slider-dot {
-            width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--gold);
-            background: rgba(15, 15, 15, 0.6); cursor: pointer; padding: 0; box-shadow: none; -webkit-tap-highlight-color: transparent;
+            width: 24px; height: 24px; border-radius: 50%; border: 0; background: transparent;
+            cursor: pointer; padding: 0; box-shadow: none; -webkit-tap-highlight-color: transparent;
+            display: inline-flex; align-items: center; justify-content: center;
+        }
+        .slider-dot::before {
+            content: ''; width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--gold);
+            background: rgba(15, 15, 15, 0.6); box-sizing: border-box;
             transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.12s ease;
         }
-        .slider-dot.active { background: var(--gold); }
+        .slider-dot.active::before { background: var(--gold); }
         .slider-pause-btn { font-size: 0.7rem; letter-spacing: -1px; }
 
         /* Subtle gold press glow ONLY while actively pressed */
         .btn-outline:active,
         .reviews-link-btn:active,
         .slider-nav-btn:active,
-        .slider-dot:active {
+        .slider-dot:active::before {
             box-shadow: 0 0 14px rgba(197, 160, 89, 0.55), 0 0 4px rgba(197, 160, 89, 0.35);
         }
 
@@ -774,6 +780,33 @@
             const trustSection = document.querySelector('.trust-section');
             if (trustSection) observer.observe(trustSection);
         }
+    </script>
+    <script>
+        // Mobile menu keyboard support: move focus into the menu when it opens,
+        // close it with Escape, and close it when focus moves outside it.
+        (function () {
+            const btn = document.getElementById('hamburger');
+            const menu = document.getElementById('nav-container');
+            if (!btn || !menu) return;
+            const isOpen = () => menu.classList.contains('active');
+            btn.addEventListener('click', () => {
+                // Retry briefly: the menu becomes focusable once its slide-in transition starts.
+                let tries = 0;
+                const focusFirst = () => {
+                    const first = menu.querySelector('a');
+                    if (!isOpen() || !first) return;
+                    first.focus({ preventScroll: true });
+                    if (document.activeElement !== first && ++tries < 10) setTimeout(focusFirst, 30);
+                };
+                setTimeout(focusFirst, 0);
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && isOpen()) { btn.click(); btn.focus(); }
+            });
+            document.addEventListener('focusin', (e) => {
+                if (isOpen() && !menu.contains(e.target) && e.target !== btn) btn.click();
+            });
+        })();
     </script>
 </body>
 </html>

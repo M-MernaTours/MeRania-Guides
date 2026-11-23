@@ -202,7 +202,7 @@
 
         /* Breadcrumbs & Hero */
         .breadcrumbs { padding: 26px 0 12px; font-size: 0.76rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
-        .breadcrumbs a { color: #b8b8b8; }
+        .breadcrumbs a { color: #b8b8b8; text-decoration: underline; text-underline-offset: 3px; }
         .breadcrumbs a:hover { color: var(--gold); }
 
         .hero-section { padding: 14px 0 36px; border-bottom: 1px solid rgba(197, 160, 89, 0.16); }
@@ -323,7 +323,7 @@
         .footer-links li { margin-bottom: 14px; }
         .footer-links a { color: #888; font-size: 0.9rem; }
         .footer-links a:hover { color: var(--gold); padding-left: 5px; }
-        .copyright-center { text-align: center; border-top: 1px solid #222; padding-top: 28px; color: #666; font-size: 0.8rem; letter-spacing: 1px; }
+        .copyright-center { text-align: center; border-top: 1px solid #222; padding-top: 28px; color: #777; font-size: 0.8rem; letter-spacing: 1px; }
 
         .wa-float { position: fixed; bottom: 30px; left: 30px; width: 62px; height: 62px; background: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 3900; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
         .wa-float:hover { transform: scale(1.08); }
@@ -562,7 +562,7 @@
                 <p>Official Licensed Private Tour Guides providing authentic archaeological and cultural experiences across Egypt.</p>
             </div>
             <div>
-                <h4 class="footer-head">Explore</h4>
+                <h2 class="footer-head">Explore</h2>
                 <ul class="footer-links">
                     <li><a href="https://mmernaguide.info/">Home Page</a></li>
                     <li><a href="/day-tours/">Daily Private Tours</a></li>
@@ -571,7 +571,7 @@
                 </ul>
             </div>
             <div>
-                <h4 class="footer-head">Planning</h4>
+                <h2 class="footer-head">Planning</h2>
                 <ul class="footer-links">
                     <li><a href="/about/">Our Story</a></li>
                     <li><a href="/things-to-do-in-cairo/">Activities</a></li>
@@ -580,7 +580,7 @@
                 </ul>
             </div>
             <div>
-                <h4 class="footer-head">Social</h4>
+                <h2 class="footer-head">Social</h2>
                 <ul class="footer-links">
                     <li><a href="https://www.facebook.com/mmernaguide" target="_blank" rel="noopener noreferrer">Facebook</a></li>
                     <li><a href="https://www.instagram.com/mmerna.guide/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
@@ -618,5 +618,32 @@
     });
 </script>
 
+    <script>
+        // Mobile menu keyboard support: move focus into the menu when it opens,
+        // close it with Escape, and close it when focus moves outside it.
+        (function () {
+            const btn = document.getElementById('hamburger');
+            const menu = document.getElementById('nav-container');
+            if (!btn || !menu) return;
+            const isOpen = () => menu.classList.contains('active');
+            btn.addEventListener('click', () => {
+                // Retry briefly: the menu becomes focusable once its slide-in transition starts.
+                let tries = 0;
+                const focusFirst = () => {
+                    const first = menu.querySelector('a');
+                    if (!isOpen() || !first) return;
+                    first.focus({ preventScroll: true });
+                    if (document.activeElement !== first && ++tries < 10) setTimeout(focusFirst, 30);
+                };
+                setTimeout(focusFirst, 0);
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && isOpen()) { btn.click(); btn.focus(); }
+            });
+            document.addEventListener('focusin', (e) => {
+                if (isOpen() && !menu.contains(e.target) && e.target !== btn) btn.click();
+            });
+        })();
+    </script>
 </body>
 </html>
