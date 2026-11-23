@@ -174,7 +174,7 @@
         }
         .policy-card:hover { border-color: var(--gold); }
         .policy-card.full-width { grid-column: 1 / -1; }
-        .policy-num { font-family: 'Playfair Display', 'Playfair Display Fallback', serif; font-size: 1.4rem; color: rgba(197, 160, 89, 0.45); display: block; margin-bottom: 8px; font-weight: 700; }
+        .policy-num { font-family: 'Playfair Display', 'Playfair Display Fallback', serif; font-size: 1.4rem; color: rgba(197, 160, 89, 0.55); display: block; margin-bottom: 8px; font-weight: 700; }
         .policy-card h2 { font-family: 'Playfair Display', 'Playfair Display Fallback', serif; color: var(--gold); margin-bottom: 14px; font-size: 1.5rem; line-height: 1.3; }
         .policy-card p { color: var(--text-gray); font-size: 0.96rem; line-height: 1.8; margin-bottom: 12px; }
         .policy-card p:last-child { margin-bottom: 0; }
@@ -215,7 +215,7 @@
         .master-footer { background: #050505; padding: 100px 0 30px; border-top: 1px solid var(--gold); }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 80px; }
         .footer-brand img { height: 65px; margin-bottom: 35px; }
-        .footer-brand p { color: #666; font-size: 0.95rem; line-height: 1.8; max-width: 400px; }
+        .footer-brand p { color: #777; font-size: 0.95rem; line-height: 1.8; max-width: 400px; }
         .footer-head { color: var(--gold); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 35px; font-weight: 700; }
         .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 18px; }
@@ -410,7 +410,7 @@
                     <p>Official Licensed Private Tour Guides. Providing secure, high-end archaeological experiences for global travelers visiting Egypt.</p>
                 </div>
                 <div>
-                    <h4 class="footer-head">Navigate</h4>
+                    <h2 class="footer-head">Navigate</h2>
                     <ul class="footer-links">
                         <li><a href="https://mmernaguide.info/">Home</a></li>
                         <li><a href="/about/">About Us</a></li>
@@ -419,7 +419,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="footer-head">Direct Contact</h4>
+                    <h2 class="footer-head">Direct Contact</h2>
                     <ul class="footer-links">
                         <li><a href="mailto:mmernaguide@mmernaguide.info">✉️ Email Us</a></li>
                         <li><a href="https://wa.me/201029545765" target="_blank" rel="noopener noreferrer">📞 +20 102 954 5765</a></li>
@@ -427,7 +427,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="footer-head">Follow</h4>
+                    <h2 class="footer-head">Follow</h2>
                     <ul class="footer-links">
                         <li><a href="https://www.facebook.com/mmernaguide" target="_blank" rel="noopener noreferrer">Facebook</a></li>
                         <li><a href="https://www.instagram.com/mmerna.guide/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
@@ -436,7 +436,7 @@
                     </ul>
                 </div>
             </div>
-            <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 40px; color: #555; font-size: 0.8rem; letter-spacing: 1px;">
+            <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 40px; color: #777; font-size: 0.8rem; letter-spacing: 1px;">
                 © 2025 EGYPTIAN TOUR GUIDE – MERNA &amp; RANIA. ALL RIGHTS RESERVED.
             </div>
         </div>
@@ -466,6 +466,33 @@
                 document.body.style.overflowY = '';
             });
         });
+    </script>
+    <script>
+        // Mobile menu keyboard support: move focus into the menu when it opens,
+        // close it with Escape, and close it when focus moves outside it.
+        (function () {
+            const btn = document.getElementById('hamburger');
+            const menu = document.getElementById('nav-container');
+            if (!btn || !menu) return;
+            const isOpen = () => menu.classList.contains('active');
+            btn.addEventListener('click', () => {
+                // Retry briefly: the menu becomes focusable once its slide-in transition starts.
+                let tries = 0;
+                const focusFirst = () => {
+                    const first = menu.querySelector('a');
+                    if (!isOpen() || !first) return;
+                    first.focus({ preventScroll: true });
+                    if (document.activeElement !== first && ++tries < 10) setTimeout(focusFirst, 30);
+                };
+                setTimeout(focusFirst, 0);
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && isOpen()) { btn.click(); btn.focus(); }
+            });
+            document.addEventListener('focusin', (e) => {
+                if (isOpen() && !menu.contains(e.target) && e.target !== btn) btn.click();
+            });
+        })();
     </script>
 </body>
 </html>

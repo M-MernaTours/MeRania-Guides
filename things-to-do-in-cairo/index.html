@@ -152,9 +152,9 @@
             .nav-container {
                 position: fixed; right: -100%; top: 0; width: 100%; height: 100vh;
                 background: rgba(10, 10, 10, 0.98); flex-direction: column; justify-content: center;
-                transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1); z-index: 4500;
+                transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1); z-index: 4500; visibility: hidden;
             }
-            .nav-container.active { right: 0; }
+            .nav-container.active { right: 0; visibility: visible; }
             .nav-menu { flex-direction: column; align-items: center; gap: 30px; }
             .nav-menu a { font-size: 1.5rem; }
             .hamburger.open span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
@@ -353,11 +353,11 @@
 <footer class="master-footer">
     <div class="container footer-grid">
         <div class="footer-brand"><img src="/logo-header.webp" alt="Merna & Rania" width="98" height="65" decoding="async"><p>Official Licensed Private Tour Guides. Providing high-end archaeological experiences and cultural activities across Egypt.</p></div>
-        <div><h4 class="footer-head">Navigate</h4><ul class="footer-links"><li><a href="https://mmernaguide.info/">Home</a></li><li><a href="/about/">About Us</a></li><li><a href="/tours/">Our Tours</a></li><li><a href="/contact/">Contact Us</a></li></ul></div>
-        <div><h4 class="footer-head">Direct Contact</h4><ul class="footer-links"><li><a href="mailto:mmernaguide@mmernaguide.info">Email Us</a></li><li><a href="https://wa.me/201029545765">WhatsApp</a></li></ul></div>
-        <div><h4 class="footer-head">Follow</h4><ul class="footer-links"><li><a href="https://www.facebook.com/mmernaguide" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a></li><li><a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank">TikTok</a></li></ul></div>
+        <div><h2 class="footer-head">Navigate</h2><ul class="footer-links"><li><a href="https://mmernaguide.info/">Home</a></li><li><a href="/about/">About Us</a></li><li><a href="/tours/">Our Tours</a></li><li><a href="/contact/">Contact Us</a></li></ul></div>
+        <div><h2 class="footer-head">Direct Contact</h2><ul class="footer-links"><li><a href="mailto:mmernaguide@mmernaguide.info">Email Us</a></li><li><a href="https://wa.me/201029545765">WhatsApp</a></li></ul></div>
+        <div><h2 class="footer-head">Follow</h2><ul class="footer-links"><li><a href="https://www.facebook.com/mmernaguide" target="_blank">Facebook</a></li><li><a href="https://www.instagram.com/mmerna.guide/" target="_blank">Instagram</a></li><li><a href="https://www.tiktok.com/@egyptiantour.guide" target="_blank">TikTok</a></li></ul></div>
     </div>
-    <p class="text-center" style="margin-top: 50px; color: #555; font-size: 0.8rem; letter-spacing: 1px;">© 2025 EGYPTIAN TOUR GUIDE – MERNA & RANIA. ALL RIGHTS RESERVED.</p>
+    <p class="text-center" style="margin-top: 50px; color: #777; font-size: 0.8rem; letter-spacing: 1px;">© 2025 EGYPTIAN TOUR GUIDE – MERNA & RANIA. ALL RIGHTS RESERVED.</p>
 </footer>
 
 <a href="https://wa.me/201029545765" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" width="35" aria-hidden="true"></a>
@@ -383,5 +383,32 @@
     });
 </script>
 
+    <script>
+        // Mobile menu keyboard support: move focus into the menu when it opens,
+        // close it with Escape, and close it when focus moves outside it.
+        (function () {
+            const btn = document.getElementById('hamburger');
+            const menu = document.getElementById('nav-container');
+            if (!btn || !menu) return;
+            const isOpen = () => menu.classList.contains('active');
+            btn.addEventListener('click', () => {
+                // Retry briefly: the menu becomes focusable once its slide-in transition starts.
+                let tries = 0;
+                const focusFirst = () => {
+                    const first = menu.querySelector('a');
+                    if (!isOpen() || !first) return;
+                    first.focus({ preventScroll: true });
+                    if (document.activeElement !== first && ++tries < 10) setTimeout(focusFirst, 30);
+                };
+                setTimeout(focusFirst, 0);
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && isOpen()) { btn.click(); btn.focus(); }
+            });
+            document.addEventListener('focusin', (e) => {
+                if (isOpen() && !menu.contains(e.target) && e.target !== btn) btn.click();
+            });
+        })();
+    </script>
 </body>
 </html>

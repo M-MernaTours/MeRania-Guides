@@ -141,6 +141,7 @@
         
         /* Fixed Gold Links */
         a { color: var(--gold); text-decoration: none; transition: var(--transition); }
+        .internal-link { text-decoration: underline; text-underline-offset: 3px; }
         a:hover { color: var(--white); }
 
         .playfair { font-family: 'Playfair Display', 'Playfair Display Fallback', serif; }
@@ -162,8 +163,8 @@
 
         @media (max-width: 992px) {
             .hamburger { display: block; }
-            .nav-container { position: fixed; right: -100%; top: 0; width: 100%; height: 100vh; background: #0A0A0A; flex-direction: column; justify-content: center; transition: 0.5s; z-index: 4500; }
-            .nav-container.active { right: 0; }
+            .nav-container { position: fixed; right: -100%; top: 0; width: 100%; height: 100vh; background: #0A0A0A; flex-direction: column; justify-content: center; transition: 0.5s; z-index: 4500; visibility: hidden; }
+            .nav-container.active { right: 0; visibility: visible; }
             .nav-menu { flex-direction: column; align-items: center; gap: 30px; }
             .hamburger.open span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
             .hamburger.open span:nth-child(2) { opacity: 0; }
@@ -184,7 +185,7 @@
         .tour-select-card { background: #151515; border: 1px solid #222; padding: 35px; border-radius: 4px; transition: var(--transition); border-left: 2px solid transparent; }
         .tour-select-card:hover { border-color: var(--gold); transform: translateY(-5px); background: #1a1a1a; }
         .tour-select-card h3 { color: var(--gold); font-family: 'Playfair Display', 'Playfair Display Fallback', serif; font-size: 1.4rem; margin-bottom: 15px; }
-        .tour-select-card p { font-size: 0.9rem; color: #777; line-height: 1.7; margin-bottom: 20px; }
+        .tour-select-card p { font-size: 0.9rem; color: #808080; line-height: 1.7; margin-bottom: 20px; }
         .select-link { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); text-decoration: underline; }
 
         /* Suggested Sequence */
@@ -217,7 +218,7 @@
         .footer-links a { color: #888; text-decoration: none; font-size: 0.9rem; }
         .footer-links a:hover { color: var(--gold); padding-left: 8px; }
         
-        .copyright-center { text-align: center; border-top: 1px solid #222; padding-top: 40px; color: #555; font-size: 0.8rem; letter-spacing: 1px; }
+        .copyright-center { text-align: center; border-top: 1px solid #222; padding-top: 40px; color: #777; font-size: 0.8rem; letter-spacing: 1px; }
 
         @media (max-width: 992px) { 
             .itinerary-grid, .footer-grid { grid-template-columns: 1fr; text-align: center; } 
@@ -318,7 +319,7 @@
                     <li>Chilled Bottled Water & Complimentary Airport Transfers</li>
                 </ul>
                 <a href="https://wa.me/201029545765?text=Hi%20Merna%20%26%20Rania%2C%20I'd%20like%20to%20book%20the%20Bespoke%204-Tour%20Egypt%20Itinerary." target="_blank" rel="noopener noreferrer" class="cta-btn">Book Custom Itinerary</a>
-                <p style="margin-top:20px; font-size:0.8rem; color:#666;">Direct reply on WhatsApp · No deposit required</p>
+                <p style="margin-top:20px; font-size:0.8rem; color:#858585;">Direct reply on WhatsApp · No deposit required</p>
             </div>
         </aside>
     </div>
@@ -353,10 +354,10 @@
     <div class="container footer-grid">
         <div class="footer-col">
             <div class="footer-brand"><img src="/logo-header.webp" alt="Merna & Rania Guides" style="height: 50px; margin-bottom: 25px;" width="75" height="50" decoding="async"></div>
-            <p style="color: #666; font-size: 0.85rem; line-height: 1.8;">Official Licensed Private Tour Guides providing luxury archaeological experiences across Egypt.</p>
+            <p style="color: #777; font-size: 0.85rem; line-height: 1.8;">Official Licensed Private Tour Guides providing luxury archaeological experiences across Egypt.</p>
         </div>
         <div class="footer-col">
-            <h4 class="footer-head">Explore</h4>
+            <h2 class="footer-head">Explore</h2>
             <ul class="footer-links">
                 <li><a href="https://mmernaguide.info/">Home Page</a></li>
                 <li><a href="/day-tours/">Daily Private Tours</a></li>
@@ -365,7 +366,7 @@
             </ul>
         </div>
         <div class="footer-col">
-            <h4 class="footer-head">Company</h4>
+            <h2 class="footer-head">Company</h2>
             <ul class="footer-links">
                 <li><a href="/about/">Our Story</a></li>
                 <li><a href="/things-to-do-in-cairo/">Activities</a></li>
@@ -374,7 +375,7 @@
             </ul>
         </div>
         <div class="footer-col">
-            <h4 class="footer-head">Social</h4>
+            <h2 class="footer-head">Social</h2>
             <ul class="footer-links">
                 <li><a href="https://www.facebook.com/mmernaguide">Facebook</a></li>
                 <li><a href="https://www.instagram.com/mmerna.guide/">Instagram</a></li>
@@ -410,5 +411,32 @@
     });
 </script>
 
+    <script>
+        // Mobile menu keyboard support: move focus into the menu when it opens,
+        // close it with Escape, and close it when focus moves outside it.
+        (function () {
+            const btn = document.getElementById('hamburger');
+            const menu = document.getElementById('nav-container');
+            if (!btn || !menu) return;
+            const isOpen = () => menu.classList.contains('active');
+            btn.addEventListener('click', () => {
+                // Retry briefly: the menu becomes focusable once its slide-in transition starts.
+                let tries = 0;
+                const focusFirst = () => {
+                    const first = menu.querySelector('a');
+                    if (!isOpen() || !first) return;
+                    first.focus({ preventScroll: true });
+                    if (document.activeElement !== first && ++tries < 10) setTimeout(focusFirst, 30);
+                };
+                setTimeout(focusFirst, 0);
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && isOpen()) { btn.click(); btn.focus(); }
+            });
+            document.addEventListener('focusin', (e) => {
+                if (isOpen() && !menu.contains(e.target) && e.target !== btn) btn.click();
+            });
+        })();
+    </script>
 </body>
 </html>
